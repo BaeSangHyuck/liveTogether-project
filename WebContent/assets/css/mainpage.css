@@ -1,0 +1,77 @@
+#banner{
+    background-image: url("../../images/banner.jpg") !important;
+    margin-top: 55px;
+}
+
+div.inner{
+    width: 60%;
+    text-align: left;
+    padding: 0 !important;
+}
+.inner .content{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.filter{
+    width: 90%;
+    height: 70px;
+    background-color: white;
+    border-radius: 5rem;
+}
+
+form{
+    display: flex;
+    color: black;
+    margin: 0;
+    height: 100%;
+}
+
+form input[type="text"]{
+    background: none;
+    border: none;
+    border-right: 2px solid #ededed;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    color: black !important;
+}
+
+div.text-wrap{
+    margin-left: 32px !important;
+    height: 100%;
+    width: 30%;
+}
+
+div.gender-wrap{
+    line-height: 70px;
+    width: 15%;
+    text-align: center;
+    border-right: 2px solid #ededed;
+}
+
+div.house-wrap{
+    line-height: 70px;
+    width: 15%;
+    text-align: center;
+}
+
+.arrow{
+    font-size: 25px;
+    color: #8AAAE5;
+}
+
+form div.submit-button{
+    width: 20%;
+}
+
+form div input[type="submit"]{
+    margin-top: 5px;
+    margin-left: 5px;
+    background-image: url("../../images/button.png");
+    background-size: cover;
+    width: 100%;
+    border: none;
+
+}
+

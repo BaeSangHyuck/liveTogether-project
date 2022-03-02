@@ -1,0 +1,232 @@
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#main {
+	margin-top: 100px;
+	margin-bottom: 195px;
+}
+
+li a.button.alt.kakao {
+	background-color: #ffe500;
+}
+
+ul.actions.fit.kakaochoice li {
+	width: 350px;
+}
+
+ul.actions.fit.kakaochoice {
+	display: flex;
+	flex-direction: column;
+}
+
+ul.kakaochoice li {
+	margin: 0 auto;
+}
+
+ul.kakaochoice li img {
+	position: absolute;
+	width: 40px;
+	left: 56px;
+	top: 9px;
+}
+
+ul.kakaochoice li img.tstory {
+	top: 6px;
+}
+
+a.button.alt.kakao {
+	box-shadow: none;
+}
+
+li a.kakao, li a.tstory {
+	position: relative;
+}
+
+a#starttsory {
+	color: #616161;
+	font-size: 14px;
+	margin: 0 auto;
+}
+
+span.ir_wa {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+
+div#starttsory {
+	text-align: center;
+}
+
+#main {
+	margin: 0 auto;
+}
+
+#kakaoServiceLogo {
+	margin-bottom: 20px;
+    text-align: center;
+}
+
+div#mArticle {
+	display: flex;
+	justify-content: center;
+    margin-top: 210px;
+	margin-bottom: 200px;
+}
+
+#total {
+   width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 3px 15px rgb(0 0 0 / 20%);
+}
+
+#kakaoServiceLogo img{
+    width:250px;
+}
+
+div.wrap_form {
+	
+	padding: 0px 80px 0 80px;
+	width: 480px;
+	height: 550px;
+}
+
+span.line_or {
+	font-size: 14px;
+}
+
+form#login-form {
+	margin: 0;
+}
+
+div.item_tf {
+	position: relative;
+}
+
+label#id_email_2_label, label#id_password_3_label {
+	position: absolute;
+}
+
+div.wrap_btn {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: column;
+	color: #616161;
+	margin-top: 20px;
+}
+
+div.info_user {
+	display: flex;
+	justify-content: space-between;
+}
+
+ul.list_user {
+	display: flex;
+	list-style: none;
+}
+
+div.info_user a {
+	color: black;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+div.login_banner {
+	margin: auto 0;
+}
+
+.btn_g {
+	display: block;
+	width: 70%;
+	height: 50px;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	font-size: 15px;
+	background-color: #f6f6f6;
+	color: black !important;
+	font-weight: 550;
+}
+
+.btn_g:hover {
+	background-color: #e7e7e7;
+}
+
+input#id_email_2, input#id_password_3, input#nickname, input#tel {
+	border: none;
+	border-bottom: 2px solid #e5e5e5;
+	border-radius: 0;
+	background: none;
+	color: #888888;
+}
+
+.ico_qr img {
+	width: 20px;
+	height: 20px;
+	margin: 8px 5px -4px -1px;
+}
+
+.btn_confirm {
+	background-color: #fee500;
+}
+
+.btn_confirm:hover {
+	background-color: #fee500;
+}
+
+.item_inp.item_check {
+	margin: 20px 0 40px 0;
+}
+
+div.item_tf {
+	margin-top: 18px;
+}
+
+#loginEmailField p {
+	font-size: 14px;
+	margin: 0;
+
+	line-height: 16px;
+	margin-top: 6px;
+}
+
+input[type="checkbox"]+label:before {
+	border-radius: 12px;
+}
+
+input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+	background-color: white;
+	height: 20px;
+	width: 20px;
+	top: 3px;
+	left: 3px;
+}
+
+input[type="checkbox"]:checked+label:before, input[type="radio"]:checked+label:before
+	{
+	background: #fee500;
+	border-color: #fee500;
+	color: #ffffff;
+	content: '\f00c';
+}
+
+input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
+	{
+	border-color: #e5e5e5;
+	box-shadow: 0 0 0 1px #ffffff;
+}
+
+input[type="checkbox"]+label, input[type="radio"]+label {
+	font-size: 15px;
+}
+
+
+
+div#nickname_wrap {
+	margin-top: 30px;
+}
+
+div#trans {
+	transform: scale(0.85);
+}

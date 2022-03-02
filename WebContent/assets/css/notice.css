@@ -1,0 +1,95 @@
+@charset "UTF-8";
+      div.second-wrap{
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      div.third-wrap{
+        text-align: left;
+        margin-top: 90px;
+      }
+
+      p.first-ptag{
+        font-size: 2rem;
+        font-weight: 300;
+        color: black;
+        
+      }
+      
+      input.first-input{
+        border-radius: 2rem;
+        padding: 15px 45px 13px 25px;
+        width: 350px;
+        height: 45px;
+        border-color: #8AAAE5;
+        outline: none;
+        font-size: 1em;
+        font-weight: 400;
+      }
+
+      form#search{
+        position: relative;
+        width: 31%;
+      }
+      
+      button.img1{
+        background-image: url("../../images/search.png");
+        height: 25px;
+        background-size: cover;
+        background-color: white;
+        border: none;
+        width: 25px;
+        position: absolute;
+        right: 90px;
+        top: 11px;
+      }
+
+      table#first-table{
+        width: 100%;
+        border-spacing: 0;
+        margin-top: 30px;
+        margin-bottom: 200px;
+      }
+
+      tr.table-tr{
+        height: 2.8rem;
+        color: #8e929f;
+        background-color: #f7f7f6;
+        font-size: 1rem;
+      }
+
+      tr.table-tr th{
+        text-align: center;
+      }
+
+      th.first-th{
+        width: 10%;
+      }
+
+      th.second-th{
+        width: 70%;
+      }
+
+      th.third-th{
+        width: 20%;
+      }
+
+      th#first-th, th#third-th{
+        text-align: center;
+        height: 2.8rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: black;
+      }
+
+      th#second-th{
+        text-align: left;
+        height: 2.8rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: black;
+      }
+
+      tbody.table-tbody tr th{
+        border-bottom : 2px solid #f7f7f6;
+      }

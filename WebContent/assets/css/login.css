@@ -1,0 +1,166 @@
+body {
+	font-family: 'NanumSquareAcr';
+}
+
+
+input#title {
+	position: relative;
+}
+
+div.form_data {
+	position: absolute;
+}
+
+div#forumkind {
+	display: flex;
+}
+
+textarea#content {
+	height: 170px;
+	resize: none;
+}
+
+div.send {
+	width: 100px;
+	margin: 0 auto;
+}
+
+div.table-wrapper {
+	width: 670px;
+	margin: 0 auto;
+}
+
+#main header.major {
+	text-align: left;
+}
+
+#forumtable {
+	margin-bottom: 30px;
+}
+
+#main {
+	padding: 3em 0 6em 0 !important;
+}
+
+#nav ul li a.menu:hover {
+	text-decoration: underline;
+}
+
+#mArticle {
+	width: 320px;
+	margin: 0 auto;
+	margin-bottom: 200px;
+    margin-top: 230px; 
+}
+
+#total {
+    width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 3px 15px rgb(0 0 0 / 20%);
+}
+
+#findUrlOrNickname {
+	margin-top: 5px;
+	border-radius: 0;
+	background-color: #fff !important;
+}
+
+.wrap_btn {
+	margin-top: 24px;
+	text-align: center;
+}
+
+div.find_another {
+	font-size: 13px;
+	width: 50%;
+}
+
+div.find_another a{
+	text-decoration: none;
+}
+div.find_another a:hover{
+	text-decoration: underline;
+}
+
+
+div#find_join {
+    display: flex;
+}
+
+div.join {
+    text-align: right;
+    width:50%;
+}
+
+a {
+	color: #888888;
+}
+
+button.btn_tistory.btn_tistory_type5 {
+	border-radius: 0;
+	width: 100%;
+}
+
+div.inp_text a#logo_img {
+	text-align: center;
+	font-size: 34px;
+	font-weight: 700;
+	color: #000000;
+	margin-bottom: 29px;
+}
+
+div.inp_text {
+    text-align: center;
+}
+
+a#logo_img img{
+    width: 200px;
+    margin-top: 12px;
+}
+
+
+li a.button.alt.kakao {
+	background-color: #ffe500;
+    position: relative;
+}
+
+/* ul.actions.fit.kakaochoice li {
+	width: 350px;
+} */
+
+ul.actions.fit.kakaochoice {
+	display: flex;
+	flex-direction: column;
+}
+
+ul.kakaochoice li {
+	margin: 0 auto;
+	width: 330px;
+}
+
+ul.kakaochoice li a{
+	border-radius: 0;
+}
+
+div#kakaochoice {
+    margin-top: 25px;
+}
+
+ul.kakaochoice li img {
+    position: absolute;
+    width: 40px;
+    left: 58px;
+    top: 9px;
+}
+
+ul.kakaochoice li img#tstory-logo {
+	width: 27px;
+    top: 14px;
+    left: 66px;
+}
+
+a.button.alt.kakao {
+	box-shadow: none;
+}
+
+

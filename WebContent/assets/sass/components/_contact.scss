@@ -1,0 +1,26 @@
+///
+/// Tactile by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Contact */
+
+	ul.contact {
+		list-style: none;
+		padding: 0;
+
+		li {
+			padding: 0.65em 0 0 2em;
+
+			&:before {
+				float: left;
+				line-height: inherit;
+				margin-left: -2em;
+			}
+
+			&:first-child {
+				padding-top: 0;
+			}
+		}
+	}

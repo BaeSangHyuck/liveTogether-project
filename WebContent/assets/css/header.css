@@ -1,0 +1,86 @@
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255);
+}
+
+body{
+    position: relative;
+}
+
+#header #container{
+    max-width: 1320px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header .menu-btn-list{
+    width: 66%;
+    float: right;
+    font-size: 1vw;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+#header li.p_menu{
+    display: inline-block;
+    line-height: 80px;
+    width: 130px;
+    text-align: center;
+}
+
+#header a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#header a:hover{
+    color:#013DC4;
+    font-weight: bold;
+}
+
+#header .sub-menu-btn-list a{
+    display: block;
+}
+
+#header li{
+    list-style: none;
+    padding: 0 !important;
+}
+
+#header ul{
+    padding: 0;
+    margin: 0 0 0.5em 0;
+}
+
+#header .login_status{
+    display: none;
+}
+
+#header .mouseover{
+    display: none;
+}
+
+#header .mouseover li{
+    height: 50px;
+    line-height: 50px;
+}
+
+#header #slogun{
+    position: absolute;
+    top: 85px;
+    left: 320px;
+    border-radius: 2em;
+    width: 140px;
+}
