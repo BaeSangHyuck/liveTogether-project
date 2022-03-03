@@ -1,4 +1,12 @@
 @charset "UTF-8";
+		button{
+			padding: 0 !important;
+		}
+
+		table th{
+			padding: 0px !important;
+		}
+
       div.second-wrap{
         width: 70%;
         margin: 0 auto;
@@ -6,42 +14,57 @@
 
       div.third-wrap{
         text-align: left;
-        margin-top: 90px;
+        margin-top: 145px;
       }
 
       p.first-ptag{
         font-size: 2rem;
         font-weight: 300;
         color: black;
-        
+        margin: 0px 0 1em 0;
       }
-      
+		
+		table tr th{
+		height: 45px !important;
+        line-height: 45px;
+		}
+	  
+	  input.first-input::after {
+	  	content : '';
+	  	display: block;
+	  	padding:15%;
+	  }
+	  
       input.first-input{
         border-radius: 2rem;
         padding: 15px 45px 13px 25px;
-        width: 350px;
-        height: 45px;
+        width: 80%;
         border-color: #8AAAE5;
         outline: none;
         font-size: 1em;
         font-weight: 400;
+        height: 47px;
+        margin-bottom: 30px;
+        margin-top: 30px;
       }
 
       form#search{
         position: relative;
         width: 31%;
+        float: right;
+    	text-align: right;
       }
       
       button.img1{
         background-image: url("../../images/search.png");
-        height: 25px;
-        background-size: cover;
-        background-color: white;
-        border: none;
-        width: 25px;
-        position: absolute;
-        right: 90px;
-        top: 11px;
+	    background-size: cover;
+	    background-color: white;
+	    position: absolute;
+	    border: none;
+	    right: 21px;
+	    top: 38.5px;
+	    width: 30px;
+	    height: 30px;
       }
 
       table#first-table{
@@ -84,10 +107,11 @@
 
       th#second-th{
         text-align: left;
-        height: 2.8rem;
+        height: 100%;
         font-size: 0.9rem;
         font-weight: 400;
         color: black;
+        line-height: 44px;
       }
 
       tbody.table-tbody tr th{

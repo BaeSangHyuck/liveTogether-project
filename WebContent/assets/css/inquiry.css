@@ -1,4 +1,4 @@
-@charset "UTF-8";
+
 		div#second-wrap{
 			width: 40%;
 			margin: 0 auto;
@@ -12,7 +12,7 @@
 			text-align: center;
 		}
 	
-		p#first-p{
+		p#first-p, #question-p1{
 			color: #393939;
 			font-size: 25px;
 			font-weight: 550;
@@ -43,8 +43,13 @@
 			border-bottom: 1px solid #f4f4f4;
 			width: 100%;
 		}
-	
-		input[type=text]#first-input, input[type=text]#second-input, input[type=text]#third-input, input[type=text]#fourth-input{
+		
+		div#hr-tag2{
+			border-bottom: 1px solid #f4f4f4;
+			width: 600px;
+		}
+
+		input[type=text]#first-input, input[type=text]#second-input, input[type=text]#third-input, input[type=text]#fourth-input, input[type=text]#bonus-input {
 			width: 100%;
 			height: 50px;
 			border: 0;
@@ -95,4 +100,45 @@
 			width: 104%;
 			font-size: 22px;
 			letter-spacing: -0.5px;
+		}
+
+		p#question-p2, p#question-p3, p#question-p4, p#question-p5{
+			font-size: 17px;
+		}
+		
+		input:focus{
+			outline: none;
+		}
+
+		textarea:focus{
+			outline: none;
+			background: #f6f6f6;
+		}
+
+		div#question-p1-wrap, div#question-p2-wrap, div#question-p3-wrap, div#question-p4-wrap, div#question-p5-wrap{
+			position: relative;
+		}
+
+		button.img2{
+			background-image: url("images/search.png");
+	    	background-size: cover;
+			background-color: white;
+			position: absolute;
+	    	border: none;
+	    	width: 20px;
+	    	height: 20px;
+			top: 8.5px;
+    		right: -60px;
+		}
+
+		button.img3{
+			background-image: url("images/inquiryPlus.png");
+	    	background-size: cover;
+			background-color: white;
+			position: absolute;
+	    	border: none;
+	    	width: 20px;
+	    	height: 20px;
+			top: 8.5px;
+    		right: -17px;
 		}

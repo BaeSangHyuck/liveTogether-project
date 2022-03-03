@@ -1,6 +1,6 @@
-body {
+/* body {
 	font-family: 'NanumSquareAcr';
-}
+} */
 
 
 input#title {
@@ -49,15 +49,46 @@ div.table-wrapper {
 #mArticle {
 	width: 320px;
 	margin: 0 auto;
-	margin-bottom: 200px;
-    margin-top: 230px; 
+	padding: 50px 20px 50px 20px;
 }
 
-#total {
-    width: 400px;
-    margin: 0 auto;
-    box-shadow: 0 3px 15px rgb(0 0 0 / 20%);
+#box {
+	display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #edeff0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 40px #0000001a;
+    border-width: 0;
+    width: 440px;
+    margin: 200px auto;
 }
+
+#choices {
+	display: flex;
+    justify-content: space-evenly;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.choice{
+	width: 50%;
+    text-align: center;
+    padding: 0px;
+    line-height: 60px;
+}
+
+.choice a{
+	text-decoration: none;
+	color: #888888 !important;
+	font-weight: 500;
+}
+
+/* .choice.one {
+
+} */
+
 
 #findUrlOrNickname {
 	margin-top: 5px;
@@ -71,12 +102,13 @@ div.table-wrapper {
 }
 
 div.find_another {
-	font-size: 13px;
+	font-size: 11px;
 	width: 50%;
 }
 
 div.find_another a{
 	text-decoration: none;
+	color: #888888 !important;
 }
 div.find_another a:hover{
 	text-decoration: underline;
@@ -92,13 +124,12 @@ div.join {
     width:50%;
 }
 
-a {
-	color: #888888;
-}
+
 
 button.btn_tistory.btn_tistory_type5 {
 	border-radius: 0;
 	width: 100%;
+	
 }
 
 div.inp_text a#logo_img {
@@ -122,6 +153,7 @@ a#logo_img img{
 li a.button.alt.kakao {
 	background-color: #ffe500;
     position: relative;
+	border:none;
 }
 
 /* ul.actions.fit.kakaochoice li {
@@ -140,6 +172,20 @@ ul.kakaochoice li {
 
 ul.kakaochoice li a{
 	border-radius: 0;
+	border: none !important ;
+	background-color: #8AAAE5;
+	color: #fff;
+}
+
+a#kakao_btn{
+	border-color: none !important;
+	color: #000 !important;
+}
+
+ul.kakaochoice li a:hover{
+
+	border: none !important ;
+	background-color: #e7e7e7;
 }
 
 div#kakaochoice {
@@ -149,7 +195,7 @@ div#kakaochoice {
 ul.kakaochoice li img {
     position: absolute;
     width: 40px;
-    left: 58px;
+    left: 30px;
     top: 9px;
 }
 

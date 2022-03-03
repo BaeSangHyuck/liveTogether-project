@@ -1,0 +1,43 @@
+#aside #room a {
+	width: 90px;
+	height: 90px;
+	background-image: url("../../images/room.png");
+	background-size: cover;
+	display: inline-block;
+	border-radius: 1rem;
+}
+
+#aside #room {
+	width: 100%;
+	height: 90px
+}
+
+#aside div{
+	margin-bottom: 10px;
+}
+
+#aside #top a {
+	width: 90px;
+	height: 50px;
+	background-image: url("../../images/top.png");
+	background-size: cover;
+	display: inline-block;
+	border-radius: 1rem;
+}
+
+#aside #top {
+	width: 100%;
+	height: 50px
+}
+
+#aside {
+	width: 90px;
+	right: 5vw;
+	bottom: 7vw;
+	position: fixed;
+	z-index: 999;
+}
+
+body {
+	position: relative;
+}

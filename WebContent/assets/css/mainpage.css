@@ -1,77 +1,146 @@
-#banner{
-    background-image: url("../../images/banner.jpg") !important;
-    margin-top: 55px;
+#banner {
+	background-image: url("../../images/banner.jpg") !important;
+	margin-top: 0px !important;
+    height: calc(100vh - 0.125em) !important;
+    padding: 0px !important;
 }
 
-div.inner{
-    width: 60%;
-    text-align: left;
-    padding: 0 !important;
-}
-.inner .content{
-    font-size: 50px;
-    font-weight: bolder;
+div.inner {
+	width: 60%;
+	text-align: left;
+	padding: 0 !important;
 }
 
-.filter{
-    width: 90%;
-    height: 70px;
-    background-color: white;
-    border-radius: 5rem;
+.inner .content {
+	font-size: 50px;
+	font-weight: bolder;
 }
 
-form{
-    display: flex;
-    color: black;
-    margin: 0;
-    height: 100%;
+.filter {
+	width: 90%;
+	height: 70px;
+	background-color: white;
+	border-radius: 5rem;
 }
 
-form input[type="text"]{
-    background: none;
-    border: none;
-    border-right: 2px solid #ededed;
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-    color: black !important;
+form {
+	display: flex;
+	color: black;
+	margin: 0 !important;
+	height: 100%;
 }
 
-div.text-wrap{
-    margin-left: 32px !important;
-    height: 100%;
-    width: 30%;
+form input[type="text"] {
+	background: none;
+	border: none;
+	border-right: 2px solid #ededed;
+	border-radius: 0;
+	width: 100%;
+	height: 100%;
+	color: black !important;
 }
 
-div.gender-wrap{
-    line-height: 70px;
-    width: 15%;
-    text-align: center;
-    border-right: 2px solid #ededed;
+div.text-wrap {
+	margin-left: 32px !important;
+	height: 100%;
+	width: 30%;
 }
 
-div.house-wrap{
-    line-height: 70px;
-    width: 15%;
-    text-align: center;
+div.gender-wrap {
+	line-height: 70px;
+	width: 15%;
+	text-align: center;
+	border-right: 2px solid #ededed;
+	cursor: pointer;
 }
 
-.arrow{
-    font-size: 25px;
-    color: #8AAAE5;
+div.choice{
+	display: none;
+	border-bottom-left-radius:1rem;
+	border-bottom-right-radius:1rem;
+
 }
 
-form div.submit-button{
-    width: 20%;
+form ul li.last{
+	border-bottom-left-radius:1rem;
+	border-bottom-right-radius:1rem;
 }
 
-form div input[type="submit"]{
-    margin-top: 5px;
-    margin-left: 5px;
-    background-image: url("../../images/button.png");
+div.choice ul{
+	margin: 0;
+	padding: 0 !important;
+	border-bottom-left-radius:1rem;
+	border-bottom-right-radius:1rem;
+}
+
+form ul li:hover{
+	background: #8AAAE5;
+	color: white;
+	opacity: 1;
+}
+
+form ul li{
+	padding: 0 !important;
+	opacity: 0.8;
+	background-color: white;
+}
+
+div#gender-wrap,div#room-wrap,div#house-wrap {
+	display: flex;
+	justify-content: center;
+}
+
+
+input#gender {
+	display: none;
+}
+
+input[type="checkbox"]+label:before {
+	display: none !important;
+}
+
+input#gender+label {
+	display: block;
+	width: 25px;
+	height: 40px;
+	position: relative;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	top: 30px !important;
+}
+
+input#gender+label span {
+	display: block;
+	position: absolute;
+	width: 80%;
+	height: 5px;
+	border-radius: 30px;
+	background: #8AAAE5;
+	transition: all .35s;
+}
+
+input#gender+label span:first-child {
+	transform: rotate(45deg);
+	left: 12px;
+	top: 2px;
+}
+
+input#gender+label span:last-child {
+	transform: rotate(-45deg);
+	top: 2px;
+}
+
+form div.submit-button {
+	width: 20%;
+}
+
+form div input[type="submit"] {
+    margin-top: 9px;
+    margin-left: 25px;
+    background-image: url(../../images/button.png);
     background-size: cover;
-    width: 100%;
+    width: 170px;
     border: none;
-
+    height: 50px;
 }
-

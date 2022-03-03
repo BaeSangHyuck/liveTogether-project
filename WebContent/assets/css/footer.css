@@ -74,6 +74,7 @@
 #footer .lower-footer .wrapper.right-wrapper .sns-btn-list {
     text-align: center;
     margin-top: 1rem;
+    
 }
 
 #footer .lower-footer .wrapper.left-wrapper .header {
@@ -98,4 +99,9 @@
 
 #footer .lower-footer .wrapper.left-wrapper .header .logo{
     margin-right: 0;
+}
+
+#footer div.right-wrapper{
+	width: 400px !important;
+	height: 200px !important;
 }
