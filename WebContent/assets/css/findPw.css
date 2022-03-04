@@ -233,7 +233,7 @@ a.button.alt.kakao {
     z-index: 50;
     background-size: contain;
 	top: -61px;
-    left: 72px;
+    right: 55px;
 }
 
 #login_banner {

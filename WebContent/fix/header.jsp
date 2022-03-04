@@ -12,26 +12,26 @@
 <body>
 	<header id="header">
 		<div id="container">
-			<a> <img src="../images/header_textLogo.png">
-			</a> <img class="mouseover" id="slogun" src="../images/header_slogun.png">
+			<a href="../main/main.jsp"> <img src="../images/textLogo2.png">
+			</a> <img class="mouseover" id="slogun" src="../images/slogun.png">
 			<ul class="menu-btn-list">
 				<li class="btn p_menu"><a href="#">방 찾기</a></li>
-				<li class="btn p_menu"><a href="#">호스팅 하기</a></li>
+				<li class="btn p_menu"><a href="../house/houseregister.jsp">호스팅 하기</a></li>
 				<li class="btn p_menu"><a href="#">서비스 안내</a>
 					<div>
 					<ul class="mouseover">
 						<li><a>가치살자 소개</a></li>
 						<li><a>서비스 소개</a></li>
-						<li><a>공지사항</a></li>
+						<li><a href="../board/notice.jsp">공지사항</a></li>
 					</ul>
 				</div>
 				</li>
-				<li class="btn p_menu"><a href="#">로그인</a> <a
+				<li class="btn p_menu"><a href="../member/login.jsp">로그인</a> <a
 					class="login_status" href="/notices">로그아웃</a>
 					<div>
 					<ul class="mouseover">
-						<li class="login_status"><a>마이페이지</a></li>
-						<li><a>회원가입</a></li>
+						<li class="login_status"><a href="../member/mypage.jsp">마이페이지</a></li>
+						<li><a href="../member/join.jsp">회원가입</a></li>
 					</ul></li>
 				</div>
 			</ul>

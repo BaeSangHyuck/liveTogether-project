@@ -1,4 +1,29 @@
-
+		@font-face {
+	    font-family: 'GmarketSansBold';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'GmarketSansLight';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'GmarketSansMedium';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		body, input, select, textarea, button {
+			font-family: 'GmarketSansLight', Helvetica, Arial, sans-serif;
+		}
+		
+		body{
+			margin: 0;
+		}
+		
 		div#second-wrap{
 			width: 40%;
 			margin: 0 auto;
@@ -16,6 +41,7 @@
 			color: #393939;
 			font-size: 25px;
 			font-weight: 550;
+			padding-right: 12px;
 		}
 	
 		p#second-p{
@@ -46,14 +72,20 @@
 		
 		div#hr-tag2{
 			border-bottom: 1px solid #f4f4f4;
-			width: 600px;
+			width: 605px;
+    		margin-left: 83px;
+		}
+
+		div#hr-tag3{
+			border-bottom: 1px solid #f4f4f4;
+			width: 605px;
 		}
 
 		input[type=text]#first-input, input[type=text]#second-input, input[type=text]#third-input, input[type=text]#fourth-input, input[type=text]#bonus-input {
 			width: 100%;
 			height: 50px;
 			border: 0;
-			border-bottom: 2.5px solid #8AAAE5;
+			border-bottom: 2.5px solid #1187CF;
 			padding: 3px 3px 3px 14px;
 		}
 	
@@ -65,12 +97,11 @@
 		input[type=radio]:checked {
 			width: 16px;
 			height: 16px;
-			color: #8AAAE5;
+			color: #1187CF;
 		}
 	
 		label.first-label{
 			font-size: 20px;
-			letter-spacing: -3.5px;
 		}
 	
 		div.div-wrap{
@@ -91,13 +122,13 @@
 	
 		button#button-submit{
 			height: 3.5rem;
-			background: #8AAAE5;
+			background: #1187CF;
 			color: white;
 			border-radius: 40px;
 			padding: 0 2.5rem;
 			border: none;
 			font-weight: bold;
-			width: 104%;
+			width: 100%;
 			font-size: 22px;
 			letter-spacing: -0.5px;
 		}
@@ -115,12 +146,18 @@
 			background: #f6f6f6;
 		}
 
-		div#question-p1-wrap, div#question-p2-wrap, div#question-p3-wrap, div#question-p4-wrap, div#question-p5-wrap{
+		div#question-p2-wrap, div#question-p3-wrap, div#question-p4-wrap, div#question-p5-wrap{
 			position: relative;
+			width: 580px;
+    		padding-left: 83px;
+		}
+
+		div#question-p1-wrap{
+			position:relative;
 		}
 
 		button.img2{
-			background-image: url("images/search.png");
+			background-image: url("../images/search.png");
 	    	background-size: cover;
 			background-color: white;
 			position: absolute;
@@ -128,11 +165,11 @@
 	    	width: 20px;
 	    	height: 20px;
 			top: 8.5px;
-    		right: -60px;
+    		right: 14px;
 		}
 
 		button.img3{
-			background-image: url("images/inquiryPlus.png");
+			background-image: url("../images/inquiryPlus.png");
 	    	background-size: cover;
 			background-color: white;
 			position: absolute;
@@ -140,5 +177,21 @@
 	    	width: 20px;
 	    	height: 20px;
 			top: 8.5px;
-    		right: -17px;
+    		right: -20px;
+		}
+
+		input[type="checkbox"]:checked + label#second-label:before, input[type="radio"]:checked + label.first-label:before {
+    		background-color: #ffffff !important;
+    		border-color: #ffffff !important;
+    		color: #1187CF !important;
+    		border: 0.5px solid !important;
+		}
+
+		div#shadow-wrap{
+			border: none;
+    		padding: 100px;
+    		padding-top: 50px;
+    		border-radius: 15px;
+    		margin-top: 100px;
+    		box-shadow: 0px 0px 50px #0000001a;
 		}

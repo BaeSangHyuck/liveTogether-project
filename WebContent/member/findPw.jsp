@@ -13,10 +13,8 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=1" />
 <link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/login.css" />
-<link
-	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
-	rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/findPw.css" />
+
 </head>
 <style>
 label.screen_out {
@@ -29,22 +27,22 @@ label.screen_out {
 	background-color: #8AAAE5;
 } */
 button.btn_tistory {
-	background-color: #8AAAE5;
+	background-color: #1187CF;
 	color: #fff;
 }
 
-button.btn_tistory:hover{
-
-	border: none !important ;
+button.btn_tistory:hover {
+	border: none !important;
 	background-color: #e7e7e7;
 }
+
 </style>
 <body class="is-preload">
 
 	<!-- Header -->
 
 	<jsp:include page="../fix/header.jsp" />
-	
+
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
 
@@ -65,8 +63,12 @@ button.btn_tistory:hover{
 	<!-- Main -->
 	<section id="content">
 		<div id="box">
+			<div id="houseIcon">
+				<span id="findPw_right"></span>
+			</div>
 			<ul id="choices">
-				<li class="choice one" style="background-color: #ddd;"><a
+				<li class="choice one"
+					style="background-color: rgba(221, 221, 221, 0.521);"><a
 					id="loginTab" href="findId.jsp">아이디찾기</a></li>
 				<li class="choice two"><a id="joinTab" href="findPw.jsp">비밀번호찾기</a></li>
 			</ul>
@@ -84,22 +86,20 @@ button.btn_tistory:hover{
 										placeholder="이메일" value="" tabindex="3">
 								</div>
 							</div>
-							<div class="wrap_btn">
-								<button type="submit" class="btn_tistory btn_tistory_type5">확인</button>
+							<div id="kakaochoice">
+								<ul class="actions fit kakaochoice">
+									<li><a href="#" class="button alt fit tstory"><span>확인</span></a></li>
+									<li><a href="login.jsp" class="button alt fit tstory find"><span>로그인</span></a></li>
+									<li><a href="join.jsp" class="button alt fit tstory find"><span>회원가입</span></a></li>
+								</ul>
 							</div>
 						</fieldset>
 					</form>
-					<div id="find_join">
-						<div class="find_another">
-							<a href="login.jsp" class="link_find">로그인</a>
-							<!-- <a href="findPw"	class="link_find">회원가입</a> -->
-						</div>
-						<div class="find_another join">
-							<a href="join.jsp" class="link_find">회원가입</a>
-						</div>
-					</div>
 				</div>
 			</div>
+				<div id="login_banner">
+					<img src="../images/login_banner.png">
+				</div>
 		</div>
 	</section>
 

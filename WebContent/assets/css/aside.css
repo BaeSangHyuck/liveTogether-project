@@ -5,6 +5,7 @@
 	background-size: cover;
 	display: inline-block;
 	border-radius: 1rem;
+	border:solid white;
 }
 
 #aside #room {

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가치살자 관리자 페이지</title>
+    <style>
+        #first-wrapper{
+            background-color: white;
+            text-align: right;
+        }
+
+        #second-wrapper{
+            width: 87%;
+            background-color: #EFEFEF;
+            display: inline-block;
+        }
+
+        .two-wrapper{
+            display: flex;
+            width: 100%;
+            height: 280px;
+            justify-content: space-evenly;
+        }
+        
+        #two-wrapper-final{
+            display: flex;
+            width: 100%;
+            height: 98px;
+            justify-content: space-evenly;
+        }
+
+        #two-wrapper-first{
+            margin-top: 15px;
+        }
+
+        #firstBox, #secondBox, #thirdBox, #fourthBox, #fifthBox, #sixthBox, #seventhBox, #eightBox{
+            background: white;
+            width: 48%;
+            height: 93%;
+        }
+
+        div#hr-tag{
+			border-bottom: 3px solid #EFEFEF;
+		}
+        
+        div#hr-tag{
+			border-bottom: 3px solid #EFEFEF;
+		}
+        
+        p.header-p{
+            text-align: left;
+            padding-left: 25px;
+            letter-spacing: -0.5px;
+            font-weight: 540;
+        }
+
+        input.first-input{
+            width: 80%;
+            height: 50px;
+            border: 0;
+            border-bottom: 2.5px solid #f4f4f4;
+            margin-right: 45px;
+            color: #606060;
+        }
+
+        div.half-input1{
+            width: 49.5%;
+            height: 79%;
+            display: inline-block;
+            padding-top: 12px;
+        }
+
+        div.half-input2{
+            width: 49.5%;
+            height: 79%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="first-wrapper">
+        <div id="second-wrapper">
+        <div class="two-wrapper" id="two-wrapper-first">
+            <div id="firstBox">
+                <p class="header-p">판매지연</p>
+                <div id="hr-tag"></div>
+            </div>
+            <div id="secondBox">
+                <p class="header-p">상품</p>
+                <div id="hr-tag"></div>
+                <div class="half-input1">
+                <input type="text" class="first-input" value="판매중 상품">
+                <input type="text" class="first-input" value="품절 상품">
+                <input type="text" class="first-input" value="수정요청 상품">
+                </div>
+                
+                <div class="half-input2">
+                <input type="text" class="first-input" value="카탈로그 가격관리 상품">
+                <input type="text" class="first-input" value="카탈로그 인기상품">
+                <input type="text" class="first-input" value="최저가 달성 가능 상품">
+                </div>
+            </div>
+        </div>
+        <div class="two-wrapper">
+            <div id="thirdBox">
+                <p class="header-p">스토어 고객 현황</p>
+                <div id="hr-tag"></div>
+            </div>
+            <div id="fourthBox">
+                <p class="header-p">리뷰</p>
+                <div id="hr-tag"></div>
+            </div>
+        </div>
+        <div class="two-wrapper">
+            <div id="fifthBox">
+                <p class="header-p">판매자 등급</p>
+                <div id="hr-tag"></div>
+            </div>
+            <div id="sixthBox">
+            </div>
+        </div>
+        <div class="two-wrapper" id="two-wrapper-final">
+            <div id="seventhBox"></div>
+            <div id="eightBox"></div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

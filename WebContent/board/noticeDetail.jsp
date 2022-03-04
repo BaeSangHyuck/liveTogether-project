@@ -7,64 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/noticeDetail.css" />
         <title>가치살자 공지사항 내용</title>
-        <style>
-        div#hr-tag{
-                border-bottom: 1px solid #f4f4f4;
-                width: 100%;
-            }
-    
-        div.second-wrap{
-            width: 70%;
-            margin: 0 auto;
-          }
-    
-        div.third-wrap{
-            text-align: left;
-            margin-top: 190px;
-          }
-    
-        p#first-p{
-            font-weight: 600;
-            text-align: left;
-            font-size: 24px;
-            margin-bottom: -10px;
-        }
-    
-        p#second-p{
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: -10px;
-        }
-    
-        #span-wrapper{
-            padding: 2.5rem 2rem;
-        }
-    
-        pre{
-            font-size: 18.6px !important;
-            letter-spacing: -2.5px;
-            margin: 0px 0 -2em 0 !important;
-            line-height: 25px !important;
-        }
-        
-        input#buttonBack{
-                height: 2.5rem;
-                background: white;
-                color: black;
-                border-radius: 40px;
-                padding: 0 4.5rem;
-                border: 1px solid black;
-                font-size: 17px;
-                letter-spacing: -0.5px;
-                margin: 0 auto;
-                line-height: 0px;
-            }
-    
-        div#button-wrapper{
-            text-align: center;
-        }
-        </style>
     </head>
     <body>
 	<!-- Header -->

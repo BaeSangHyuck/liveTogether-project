@@ -1,7 +1,24 @@
 @import url(fontawesome-all.min.css);
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
-
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /*
 	Tactile by Pixelarity
 	pixelarity.com | hello@pixelarity.com
@@ -116,7 +133,7 @@ body {
 }
 
 body, input, select, textarea {
-	font-family: "Raleway", Helvetica, Arial, sans-serif;
+	font-family: 'GmarketSansLight', Helvetica, Arial, sans-serif;
 	font-size: 13pt;
 	font-weight: 300;
 	letter-spacing: 0.02em;
@@ -2715,10 +2732,10 @@ table.alt tbody tr td {
 	align-items: center;
 	padding: 4em 0 2em 0;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgb(0 0 0/ 95%)),
-		url("../../images/banner3.PNG");
+		url("../../images/banner.png");
 	background-position: center;
 	background-size: cover;
-	background-attachment: fixed;
+/* 	background-attachment: fixed; */
 	height: calc(100vh - 3.125em);
 	min-height: 30em;
 	text-align: center;
@@ -2944,12 +2961,12 @@ body.is-preload #banner:after {
 	color: #ffffff;
 	padding: 10em 0 8em 0;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-		url("../../images/banner3.PNG");
+		url("../../images/banner.png");
 	background-attachment: fixed;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+/* 	background-attachment: fixed; */
 	position: relative;
 	text-align: center;
 }

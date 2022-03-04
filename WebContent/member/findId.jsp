@@ -17,18 +17,17 @@
 </head>
 
 <style>
-label.screen_out{
-	font-size:13px;
+label.screen_out {
+	font-size: 13px;
 }
 
-button.btn_tistory{
-	background-color: #8AAAE5;
+button.btn_tistory {
+	background-color: #1187CF;
 	color: #fff;
 }
 
-button.btn_tistory:hover{
-
-	border: none !important ;
+button.btn_tistory:hover {
+	border: none !important;
 	background-color: #e7e7e7;
 }
 </style>
@@ -38,7 +37,7 @@ button.btn_tistory:hover{
 	<!-- Header -->
 
 	<jsp:include page="../fix/header.jsp" />
-	
+
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
 
@@ -59,14 +58,18 @@ button.btn_tistory:hover{
 	<!-- Main -->
 	<section id="content">
 		<div id="box">
+			<div id="houseIcon">
+				<span></span>
+			</div>
 			<ul id="choices">
 				<li class="choice one"><a id="loginTab" href="findId.jsp">아이디찾기</a></li>
-				<li class="choice two" style="background-color: #ddd;"><a
+				<li class="choice two"
+					style="background-color: rgba(221, 221, 221, 0.521);"><a
 					id="joinTab" href="findPw.jsp">비밀번호찾기</a></li>
 			</ul>
 			<div id="mArticle">
 				<div class="content_account">
-					<form id="findLoginId" method="post" action="/member/find/loginId">					
+					<form id="findLoginId" method="post" action="/member/find/loginId">
 						<fieldset class="fld_tistory">
 							<div class="cont_data">
 
@@ -76,24 +79,22 @@ button.btn_tistory:hover{
 										name="url" placeholder="이름" value="" tabindex="3"> <input
 										type="email" id="findUrlOrNickname" name="url"
 										placeholder="이메일" value="" tabindex="3">
-										
+
 								</div>
 							</div>
-							<div class="wrap_btn">
-								<button type="submit" class="btn_tistory btn_tistory_type5"									">확인</button>
+							<div id="kakaochoice">
+								<ul class="actions fit kakaochoice">
+									<li><a href="#" class="button alt fit tstory"><span>확인</span></a></li>
+									<li><a href="login.jsp" class="button alt fit tstory find"><span>로그인</span></a></li>
+									<li><a href="join.jsp" class="button alt fit tstory find"><span>회원가입</span></a></li>
+								</ul>
 							</div>
 						</fieldset>
-					</form>	
-					<div id="find_join">
-						<div class="find_another">
-							<a href="login.jsp" class="link_find">로그인</a>
-							<!-- <a href="findPw"	class="link_find">회원가입</a> -->
-						</div>
-						<div class="find_another join">
-							<a href="join.jsp" class="link_find">회원가입</a>
-						</div> 
-					</div>				
+					</form>
 				</div>
+			</div>
+			<div id="login_banner">
+				<img src="../images/login_banner.png">
 			</div>
 		</div>
 	</section>

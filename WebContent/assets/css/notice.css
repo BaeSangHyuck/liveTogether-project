@@ -1,4 +1,33 @@
 @charset "UTF-8";
+		@font-face {
+		    font-family: 'GmarketSansBold';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		@font-face {
+		    font-family: 'GmarketSansLight';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		@font-face {
+		    font-family: 'GmarketSansMedium';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		body{
+			margin 0;
+		}
+		
+		body, input, select, textarea,button {
+			font-family: 'GmarketSansLight', Helvetica, Arial, sans-serif;
+		}
+		
 		button{
 			padding: 0 !important;
 		}
@@ -19,13 +48,17 @@
 
       p.first-ptag{
         font-size: 2rem;
-        font-weight: 300;
-        color: black;
-        margin: 0px 0 1em 0;
+        color: white;
+    	font-weight: 540;
+        display: inline-block;
+    	background: #1187CF;
+    	border-radius: 2rem;
+    	width: 300px;
+    	text-align: center;
       }
 		
 		table tr th{
-		height: 45px !important;
+		height: 55px !important;
         line-height: 45px;
 		}
 	  
@@ -37,15 +70,14 @@
 	  
       input.first-input{
         border-radius: 2rem;
-        padding: 15px 45px 13px 25px;
-        width: 80%;
-        border-color: #8AAAE5;
-        outline: none;
-        font-size: 1em;
-        font-weight: 400;
-        height: 47px;
-        margin-bottom: 30px;
-        margin-top: 30px;
+	    padding: 15px 45px 13px 25px;
+	    width: 60%;
+	    border-color: #1187CF;
+	    outline: none;
+	    font-size: 14px;
+	    height: 35px;
+	    margin-bottom: 30px;
+	    margin-top: 30px;
       }
 
       form#search{
@@ -62,9 +94,9 @@
 	    position: absolute;
 	    border: none;
 	    right: 21px;
-	    top: 38.5px;
-	    width: 30px;
-	    height: 30px;
+	    top: 37.5px;
+    	width: 20px;
+    	height: 20px;
       }
 
       table#first-table{
@@ -108,7 +140,7 @@
       th#second-th{
         text-align: left;
         height: 100%;
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-weight: 400;
         color: black;
         line-height: 44px;

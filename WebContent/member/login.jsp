@@ -44,9 +44,12 @@
 	<!-- Main -->
 	<section id="content">
 		<div id="box">
+            <div id="houseIcon">
+                <span></span>
+            </div>
 			<ul id="choices">
 				<li class="choice one"><a id="loginTab" href="login.jsp">로그인</a></li>
-				<li class="choice two" style="background-color: #ddd;"><a
+				<li class="choice two" style="background-color: rgba(221, 221, 221, 0.521);"><a
 					id="joinTab" href="join.jsp">회원가입</a></li>
 			</ul>
 			<div id="mArticle">
@@ -66,19 +69,15 @@
 							<li onclick="kakaoLogin();"><a id="kakao_btn" href="#"
 								class="button alt fit kakao"><img src="../images/카카오톡.jpg"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카카오계정
 										로그인</span></a></li>
+                        <li><a href="findId.jsp" class="button alt fit tstory find"><span>아이디 찾기</span></a></li>
+                        <li><a href="findPw.jsp" class="button alt fit tstory find"><span>비밀번호 찾기</span></a></li>
 						</ul>
 					</div>
 				</form>
-				<div id="find_join">
-					<div class="find_another">
-						<a href="findId.jsp" class="link_find">아이디 찾기</a> <a
-							href="findPw.jsp" class="link_find">비밀번호 찾기</a>
-					</div>
-					<!-- <div class="find_another join">
-								<a href="#" class="link_find">회원가입</a>
-							</div> -->
-				</div>
 			</div>
+            <div id="login_banner">
+                <img src="../images/login_banner.png">
+            </div>
 		</div>
 	</section>
 
