@@ -43,8 +43,8 @@
 			border-bottom: 3px solid #EFEFEF;
 		}
         
-        div#hr-tag{
-			border-bottom: 3px solid #EFEFEF;
+        div#hr-tag2{
+			border-bottom: 1px solid #EFEFEF;
 		}
         
         p.header-p{
@@ -52,28 +52,106 @@
             padding-left: 25px;
             letter-spacing: -0.5px;
             font-weight: 540;
+            font-size: 20px;
         }
 
-        input.first-input{
+        .first-span{
             width: 80%;
             height: 50px;
             border: 0;
-            border-bottom: 2.5px solid #f4f4f4;
             margin-right: 45px;
+            color: #606060;
+            font-size: 18px;
+        }
+
+        .second-span{
+            color: #606060;
+            margin-left: 130px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span1{
+            color: #606060;
+            margin-left: 112px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span2{
+            color: #606060;
+            margin-left: 124px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span3{
+            color: #606060;
+            margin-left: 130px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span3{
+            color: #606060;
+            margin-left: 81.5px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span4{
+            color: #606060;
+            margin-left: 111.5px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span5{
+            color: #606060;
+            margin-left: 165.5px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span6{
+            color: #606060;
+            margin-left: 111.5px;
+            font-size: 18px;
+            color: black;
+        }
+
+        div.half-half-div1, div.half-half-div2 {
+            text-align: left;
+            padding-left: 30px;
+            height: 100%;
+            width: 85%;
             color: #606060;
         }
 
-        div.half-input1{
-            width: 49.5%;
-            height: 79%;
-            display: inline-block;
-            padding-top: 12px;
+        div.half-half-div3, div.half-half-div4 {
+            text-align: left;
+            padding-left: 30px;
+            height: 100%;
+            width: 85%;
+            padding-top: 35px;
+            color: #606060;
         }
 
-        div.half-input2{
+        div.half-div1{
             width: 49.5%;
             height: 79%;
             display: inline-block;
+        }
+
+        div.half-div2{
+            width: 49.5%;
+            height: 79%;
+            display: inline-block;
+        }
+
+        #guest-div, #host-div{
+            font-size: 15px;
+            text-align: center;
         }
     </style>
 </head>
@@ -82,41 +160,63 @@
         <div id="second-wrapper">
         <div class="two-wrapper" id="two-wrapper-first">
             <div id="firstBox">
-                <p class="header-p">판매지연</p>
+                <p class="header-p">방관리</p>
                 <div id="hr-tag"></div>
             </div>
             <div id="secondBox">
-                <p class="header-p">상품</p>
+                <p class="header-p">회원관리</p>
                 <div id="hr-tag"></div>
-                <div class="half-input1">
-                <input type="text" class="first-input" value="판매중 상품">
-                <input type="text" class="first-input" value="품절 상품">
-                <input type="text" class="first-input" value="수정요청 상품">
+                <div class="half-div1">
+                    <div id="guest-div"><p>게스트</p></div>
+                <div class="half-half-div1">
+                <span class="first-span">예정된 계약 수</span><span class="second-span">0</span> 건<br><div id="hr-tag2"></div><br>
+                <span class="first-span">예정된 해지 수</span><span class="second-span">0</span> 건<br><div id="hr-tag2"></div><br>
+                <span class="first-span">답변대기 문의 수</span><span class="second-span1">0</span> 건<div id="hr-tag2"></div>
+                </div>
                 </div>
                 
-                <div class="half-input2">
-                <input type="text" class="first-input" value="카탈로그 가격관리 상품">
-                <input type="text" class="first-input" value="카탈로그 인기상품">
-                <input type="text" class="first-input" value="최저가 달성 가능 상품">
+                <div class="half-div2">
+                    <div id="host-div"><p>호스트</p></div>
+                <div class="half-half-div2">
+                <span class="first-span">계약 예정 방 수</span><span class="second-span2">0</span> 건<div id="hr-tag2"></div><br>
+                <span class="first-span">계약 해지 예정 방 수</span><span class="second-span3">0</span> 건<div id="hr-tag2"></div><br>
+                <span class="first-span">답변대기 문의 수</span><span class="second-span4">0</span> 건<div id="hr-tag2"></div>
+                </div>
                 </div>
             </div>
         </div>
         <div class="two-wrapper">
             <div id="thirdBox">
-                <p class="header-p">스토어 고객 현황</p>
+                <p class="header-p">블랙리스트 관리</p>
                 <div id="hr-tag"></div>
             </div>
             <div id="fourthBox">
-                <p class="header-p">리뷰</p>
+                <p class="header-p">스태프 관리</p>
                 <div id="hr-tag"></div>
             </div>
         </div>
         <div class="two-wrapper">
             <div id="fifthBox">
-                <p class="header-p">판매자 등급</p>
+                <p class="header-p">하루 통계</p>
                 <div id="hr-tag"></div>
             </div>
             <div id="sixthBox">
+                <p class="header-p">누적 통계</p>
+                <div id="hr-tag"></div>
+                <div class="half-div1">
+                <div class="half-half-div3">
+                <span class="first-span">총 가입 수</span><span class="second-span5">0</span> 건<br><div id="hr-tag2"></div><br>
+                <span class="first-span">총 계약 수</span><span class="second-span5">0</span> 건<div id="hr-tag2"></div><br>
+                <span class="first-span">총 셰어하우스 수</span><span class="second-span6">0</span> 건<div id="hr-tag2"></div>
+                </div>
+                </div>
+                
+                <div class="half-div2">
+                <div class="half-half-div4">
+                <span class="first-span">총 문의 수</span><span class="second-span5">0</span> 건<div id="hr-tag2"></div><br>
+                <span class="first-span">총 후기 수</span><span class="second-span5">0</span> 건<div id="hr-tag2"></div><br>
+                </div>
+                </div>
             </div>
         </div>
         <div class="two-wrapper" id="two-wrapper-final">

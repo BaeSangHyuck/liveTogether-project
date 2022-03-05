@@ -15,7 +15,7 @@
 			<a href="../main/main.jsp"> <img src="../images/textLogo2.png">
 			</a> <img class="mouseover" id="slogun" src="../images/slogun.png">
 			<ul class="menu-btn-list">
-				<li class="btn p_menu"><a href="#">방 찾기</a></li>
+				<li class="btn p_menu"><a href="../house/findRoom.jsp">방 찾기</a></li>
 				<li class="btn p_menu"><a href="../house/houseregister.jsp">호스팅 하기</a></li>
 				<li class="btn p_menu"><a href="#">서비스 안내</a>
 					<div>

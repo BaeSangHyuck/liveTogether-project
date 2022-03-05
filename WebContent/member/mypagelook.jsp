@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -27,7 +28,7 @@
 			</div>
 		</div>
 
-
+		<div id="box">	
 		<div id="navigation_wraper">
 			<div class="navigation">
 				<a href="mypage.jsp">
@@ -66,20 +67,18 @@
 								<div class="column-wrapper">
 									<label class="gender-input">성별</label>
 									<div class="gender-btn-wrapper">
-											<input class="gender-input" type="radio" value="m"
-												name="user[gender]" id="user_gender_m" checked> <label
-												class="gender-btn" for="user_gender_m">남</label> <input
-												class="gender-input" type="radio" value="f"
-												name="user[gender]" id="user_gender_f" onclick="return false"> <label
-												class="gender-btn" for="user_gender_f"> 여 </label>
+										<input class="gender-input" type="radio" value="m"	name="user[gender]" id="user_gender_m" checked> 
+										<label	class="gender-btn" for="user_gender_m">남</label> 
+										<input class="gender-input" type="radio" value="f" name="user[gender]" id="user_gender_f" onclick="return false"> 
+										<label class="gender-btn" for="user_gender_f">여</label>
 									</div>
 								</div>
 								
-									<div class="column-wrapper profile">
-								<label class="col05">한 줄 소개</label> 
+								<div class="column-wrapper profile">
+									<label class="col05">한 줄 소개</label> 
 									<div class="user_pro">
 									나는 바보입니다.
-										</div>
+									</div>
 								</div>
 
 							<!-- 	<input id="leave-button" type="button" class="update-btn"
@@ -96,6 +95,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		<!-- </div> -->
 	</article>

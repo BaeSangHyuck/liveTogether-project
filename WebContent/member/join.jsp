@@ -63,10 +63,11 @@
 						<span>내 월세를 아껴줄<br>쉐어하우스 <b>'가치살자'</b></span>
 					</div>
 					<div id="memberType">
-							<input class="member-input" type="radio" value="nomal"	name="memberType" id="nomal"> 
-							<label class="member-btn" for="nomal">일반회원</label> 
-							<input class="member-input" type="radio" value="host" name="memberType" id="host"> 
-							<label class="member-btn" for="host">호스트</label>
+						<input class="member-input" type="radio" value="nomal"
+							name="memberType" id="nomal"> <label class="member-btn"
+							for="nomal">일반회원</label> <input class="member-input" type="radio"
+							value="host" name="memberType" id="host"> <label
+							class="member-btn" for="host">호스트</label>
 					</div>
 					<form id="login-form" name="joinForm" action="#">
 						<div id="trans">
@@ -87,7 +88,7 @@
 								<input placeholder="닉네임" class="nickname" name="nickname"
 									type="text" id="nickname" autocomplete="off">
 							</div>
-							<div id="nickname_wrap" >
+							<div id="nickname_wrap">
 								<input placeholder="전화번호" class="nickname" name="phoneNum"
 									type="text" id="phoneNum" autocomplete="off">
 							</div>
@@ -342,8 +343,8 @@
 ② 회사와 이용자간 발생한 분쟁에 관한 소송은 민사소송법 상의 관할법원에 제소합니다.</textarea>
 								<br>
 								<div class="col-12"
-									style="display: flex; justify-content: space-between; height: 25px;">
-									<div style="margin-top: -20px;" >
+									style="display: flex; justify-content: space-between; ">
+									<div style="margin-top: -20px;">
 										<input type="checkbox" id="term2" name="term2" class="terms">
 										<label for="term2">개인정보 수집 및 이용</label>
 									</div>
@@ -481,20 +482,21 @@
 		// 약관 펼쳐보기
 		const aTags = $("a.showTerm");
 		const textAreas = $("textArea.term-content");
-		var check = -1;
+		var check1 = -1;
+		var check2 = -1;
 		aTags.on('click', function(e) {
 			e.preventDefault();
 
 			if ($(this).attr("href") == "term1-content") {
 				$("#term1-content").slideToggle(function() {
-					check *= -1;
-					$(aTags[0]).text(check > 0 ? "닫기" : "펼쳐보기");
+					check1 *= -1;
+					$(aTags[0]).text(check1 > 0 ? "닫기" : "펼쳐보기");
 				});
 
 			} else if ($(this).attr("href") == "term2-content") {
 				$("#term2-content").slideToggle(function() {
-					check *= -1;
-					$(aTags[1]).text(check > 0 ? "닫기" : "펼쳐보기");
+					check2 *= -1;
+					$(aTags[1]).text(check2 > 0 ? "닫기" : "펼쳐보기");
 				});
 			}
 		});

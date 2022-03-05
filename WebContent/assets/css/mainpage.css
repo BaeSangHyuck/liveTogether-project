@@ -317,7 +317,7 @@ section#three {
 	margin: 0 auto;
 	font-family: 'GmarketSansMedium';
 	position: relative;
-	height: 900px;
+	height: 930px;
 	margin-top: 50px;
 }
 
@@ -331,7 +331,7 @@ section#three div#under_line1 {
 	width: 36.5%;
 	position: absolute;
 	left: 32%;
-	top: 30px;
+	top: 80px;
 	z-index: -1;
 	height: 10px;
 }
@@ -341,7 +341,7 @@ section#three div#under_line2 {
 	width: 44%;
 	position: absolute;
 	left: 28%;
-	top: 84px;
+	top: 134px;
 	z-index: -1;
 	height: 10px;
 }
@@ -399,3 +399,12 @@ section#three div#intro_img #img3 {
 section#three div.intro_img div.text-align{
 	text-align:center;
 }
+
+section#three div#intro_wrap{
+	padding-top: 50px;
+}
+
+article{
+    background: #1187cf30;
+}
+

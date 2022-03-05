@@ -1,0 +1,160 @@
+body {
+	-ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
+} /*특정 부분 스크롤바 없애기*/
+.box {
+	-ms-overflow-style: none;
+}
+
+.box::-webkit-scrollbar {
+	display: none;
+}
+
+div#map {
+	width: 100%;
+	height: 100vh;
+}
+
+body {
+	margin: 0;
+	position: relative;
+}
+
+div#nav {
+	position: absolute;
+	width: 40%;
+	height: 91.7vh;
+	background: white;
+	z-index: 100;
+	top: 80px;
+}
+
+.flex {
+	display: flex;
+}
+
+.input_wrap {
+	width: 90%;
+	height: 60px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#img_wrap {
+	background-image: url("../../images/filter.png");
+	width: 12%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#input_wrap {
+	width: 88%;
+	position: relative;
+}
+
+#input_wrap a {
+	cursor: pointer;
+}
+
+.input_wrap input[type="text"] {
+	height: 100%;
+	border-radius: 1.8rem;
+	width: 100%;
+	border: none;
+	background: #d9d4d461;
+}
+
+.input_wrap input[type="text"]::placeholder {
+	margin-left: 20px;
+}
+
+input[type="text"]:focus {
+	background-color: #d9d4d461 !important;
+}
+
+#input_img {
+	position: absolute;
+	background: url("../../images/find_search.png");
+	width: 50px;
+	height: 50px;
+	right: 20px;
+	top: 5px;
+}
+
+div#table {
+	display: table;
+	width: 100%;
+	height: 80vh;
+}
+
+div.table-row {
+	height: 94%;
+	width: 100%;
+	overflow-y: scroll;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+div.table-cell {
+	float: left;
+	width: 33.333%;
+	padding: 2%;
+}
+
+.img-wrap {
+	width: 100%;
+	height: 200px;
+	background:
+		url(https://woozoo.s3.amazonaws.com/uploads/house/main_image/98/m-1638865765.jpg);
+	border-top-right-radius: 1rem;
+	background-size: cover;
+	border-top-left-radius: 1rem;
+}
+
+div.cell-wrap {
+	border: 1px solid;
+	border-radius: 1rem;
+}
+
+div.content-wrapper {
+	border-top: 1px solid;
+	padding: 1px 10px;
+}
+
+span.name, span.gu {
+	color: #1187CF;
+}
+
+span.name {
+	font-family: 'GmarketSansMedium';
+	fon
+}
+
+span.gu {
+	font-size: 0.7em;
+}
+
+div.content {
+	margin-left: 13px;
+}
+
+div.content2 {
+	margin: 0;
+	font-size: 0.8em;
+	text-align: center;
+	color: black;
+}
+span{
+	margin-right: 10px !important;
+}
+span.open-beds,span.opened-beds-count {
+	margin: 0 !important;
+}
+
+a{
+	text-decoration: none !important;
+}

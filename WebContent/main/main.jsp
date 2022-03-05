@@ -103,7 +103,7 @@
 		</div>
 	</section>
 
-
+<article>
 	<section id="three">
 		<div id="intro_wrap">
 			<div id="intro_text">
@@ -115,49 +115,45 @@
 			</div>
 			<div id="intro_border">
 				<div id="border_wrap">
-				<div class="flex_wrap">
-					<div class="border_content">#초역세권</div>
-					<div class="border_content">#아파트</div>
-					<div class="border_content">#프리미엄 1인실</div>
-					<div class="border_content">#단기계약 3개원</div>
-				</div>
-				<div class="flex_wrap">
-					<div class="border_content">#대학인근</div>
-					<div class="border_content">#가성비 다인실</div>
-					<div class="border_content">#건물전체</div>
-				</div>
+					<div class="flex_wrap">
+						<div class="border_content">#초역세권</div>
+						<div class="border_content">#아파트</div>
+						<div class="border_content">#프리미엄 1인실</div>
+						<div class="border_content">#단기계약 3개원</div>
+					</div>
+					<div class="flex_wrap">
+						<div class="border_content">#대학인근</div>
+						<div class="border_content">#가성비 다인실</div>
+						<div class="border_content">#건물전체</div>
+					</div>
 				</div>
 			</div>
 			<div id="intro_img">
 				<div class="intro_img">
 					<div id="img1"></div>
 					<div class="text-align">
-						<span> 아직 주거지를 정하기 어려운<br> 
-						<strong>인턴, 고시생</strong>
+						<span> 아직 주거지를 정하기 어려운<br> <strong>인턴, 고시생</strong>
 						</span>
 					</div>
 				</div>
 				<div class="intro_img">
 					<div id="img2"></div>
 					<div class="text-align">
-						<span> 통학, 통근 거리가 부담스러운<br> 
-						<strong>대학생, 직장인</strong>
+						<span> 통학, 통근 거리가 부담스러운<br> <strong>대학생, 직장인</strong>
 						</span>
 					</div>
 				</div>
 				<div class="intro_img">
 					<div id="img3"></div>
 					<div class="text-align">
-						<span>실용적인 주거 형태를 추구하는<br> 
-						<strong>1인 가구</strong>
+						<span>실용적인 주거 형태를 추구하는<br> <strong>1인 가구</strong>
 						</span>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-
+</article>
 
 
 	<section id="one" class="wrapper alt style2">
@@ -169,7 +165,7 @@
 			<ul id="content-wrap">
 				<li class="content-wrap">
 					<div class="content">
-						<a href="#"> <img
+						<a href="../house/roomDetail.jsp"> <img
 							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/291/m-1567072647.jpg">
 							<span>180호점</span>
 						</a>
@@ -177,7 +173,7 @@
 				</li>
 				<li class="content-wrap">
 					<div class="content">
-						<a href="#"> <img
+						<a href="../house/roomDetail.jsp"> <img
 							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/390/m-1601018080.jpg">
 							<span>181호점</span>
 						</a>
@@ -185,7 +181,7 @@
 				</li>
 				<li class="content-wrap">
 					<div class="content">
-						<a href="#"> <img
+						<a href="../house/roomDetail.jsp"> <img
 							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/391/m-1601018252.jpg">
 							<span>182호점</span>
 						</a>
@@ -193,16 +189,16 @@
 				</li>
 				<li class="content-wrap">
 					<div class="content">
-						<a href="#"> <img
-							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/391/m-1601018252.jpg">
+						<a href="../house/roomDetail.jsp"> <img
+							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/372/m-1607324588.png">
 							<span>183호점</span>
 						</a>
 					</div>
 				</li>
 				<li class="content-wrap">
 					<div class="content">
-						<a href="#"> <img
-							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/391/m-1601018252.jpg">
+						<a href="../house/roomDetail.jsp"> <img
+							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/323/m-1580372741.jpg">
 							<span>184호점</span>
 						</a>
 					</div>

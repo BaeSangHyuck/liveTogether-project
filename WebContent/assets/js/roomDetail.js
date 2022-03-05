@@ -8,7 +8,7 @@ var btn = document.getElementsByClassName("click"); //앵커 후 스타일 주�
 		$(".button.primary.click").on("click", function(){
 			var href = $(this).attr("href");
 			var target = $(href == "#" || href == "" ? "body" : href);
-			var position = target.offset().top - (headerHeight*2);
+			var position = target.offset().top - headerHeight;
 			$("html, body").animate({ scrollTop: position }, 600, "swing");
 		});
 	});
@@ -36,7 +36,7 @@ $(window).scroll(function(){
 	console.log($("#three-ex").offset().top);
 	console.log($("#four-ex").offset().top);
 	console.log($("#five-ex").offset().top);
-	if(scrollValue > 667){
+	if(scrollValue > 830){
 		$("div.intro").addClass("introfix");
 		$("div.tab").css("margin-top","60px");
 	}else{

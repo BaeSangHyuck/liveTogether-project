@@ -1,3 +1,8 @@
+#header {
+	position:unset !important;
+}
+
+
 .tab {
 	padding: 2rem;
 }
@@ -18,6 +23,38 @@ section#three img{
 }
 
 /* section-two */
+
+.option-wrap{
+	width: 80%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.option-wrap p{
+	margin-bottom: 25px;
+    font-size: 20px;
+    margin-top: 40px;
+    text-align: left;
+    font-weight: 600;
+}
+#option-wrap{
+	width: 100%;
+    margin: 0 auto;
+}
+
+.option-wrap-wrap{
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.option {
+	text-align: center;
+    padding-bottom: 15px;
+}
+.option img{
+	display: block;
+}
+
 .intro {
 	width: 100%;
     height: 55px;	
@@ -25,9 +62,9 @@ section#three img{
 
 .introfix {
 	position:fixed;
-	top: 80px;
 	width: 70%;
 	z-index: 10;
+	top: 0;
 }
 
 .button.primary {
@@ -130,7 +167,7 @@ table th {
 }
 
 #two-ex, #three-ex, #four-ex, #five-ex{
-    border-top: 1px solid #e2e2e2;
+    border-top: 4px solid #e2e2e2;
 }
 
 .button.primary.fit {

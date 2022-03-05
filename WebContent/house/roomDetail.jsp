@@ -39,6 +39,27 @@
 				</div>
 				<div class="tab">
 					<fieldset id="two-ex" class="height-fix"><legend>상세 설명</legend></fieldset>
+					<div class="option-wrap">
+						<div>
+							<p>공용 옵션</p>
+							<div id="option-wrap">
+							    <div class="option-wrap-wrap">
+							    <div class="option"><img src="../images/세탁기.png"><span>세탁기</span></div>
+							    <div class="option"><img src="../images/신발장.png"><span>신발장</span></div>
+							    <div class="option"><img src="../images/싱크대.png"><span>싱크대</span></div>
+							    <div class="option"><img src="../images/에어컨.png"><span>에어컨</span></div>
+							    <div class="option"><img src="../images/옷장.png"><span>옷장</span></div>
+							    <div class="option"><img src="../images/인덕션.png"><span>인덕션</span></div>							
+								<div class="option"><img src="../images/전자레인지.png"><span>전자레인지</span></div>
+								<div class="option"><img src="../images/책상.png"><span>책상</span></div>
+								<div class="option"><img src="../images/책상.png">책상</div>
+								<div class="option"><img src="../images/책상.png">책상</div>
+								<div class="option"><img src="../images/책상.png">책상</div>
+								<div class="option"><img src="../images/책상.png">책상</div>
+							</div>
+						</div>
+					</div>
+					</div>					
 					<div class="explain">
 						<pre>
 	서울여자간호대학교 3호선 홍제역 인근 지점,
@@ -191,7 +212,6 @@
 							</tr>
 						</tbody>
 					</table>
-					<div>예시<br>냉장고, 에어프라이어 등등 이미지</div>
 				</div>
 			</section>
 			<section id="four" class="tab">
@@ -314,8 +334,8 @@
 				청구된 공과금은 입주자 분들의 납부 및 정산 편의를 위해 매달 임대료(월세)와 별도로 받고 있습니다.<br>
 	일반적으로, 운영관리비는 3만원, 선불공과금은 5만원이지만 해당 금액은 지점별로 상이할 수 있으니 이 점 꼭 참고해주세요!                   
 					</p></div>
-					<input type="radio" name="live" id="faq-question5">
-					<label for="faq-question5">1. 공지</label>
+					<input type="radio" name="live" id="faq-question11">
+					<label for="faq-question11">1. 공지</label>
 					<div><p>공지사항</p></div>
 				</div>
 	

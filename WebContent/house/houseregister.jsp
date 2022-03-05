@@ -6,18 +6,18 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../assets/css/header.css" />
-<title>header</title>
+<link rel="stylesheet" href="assets/css/header.css" />
+<title>가치살자-방등록</title>
 <style>
 
 body{
-background-color: #e2e1e0;
+background-color: white;
 }
 .content{
 	margin-left: auto;
     margin-right: auto;
 	float: none;
-    width: 630px !important;
+    width: 48% !important;
     padding: 0 15px 50px;
     margin: 23px auto 50px;
     background: white;
@@ -26,16 +26,18 @@ background-color: #e2e1e0;
     overflow: hidden;
     margin-top: 100px;
     width: 652px;
+    box-shadow: 0px 0px 40px #0000001a;
+    margin-top: 82px;
 }
 
 .add-title{
 	padding-top: 20px;
   	border-bottom: 1px solid #d8d8d8;
   	color: #666666;
-  	font-size: 10px;
+  	font-size: 11px;
 	}
 
-.img{width: 595px; height: 130px;}
+.img{width: 595px; height: 130px; padding-left: 45px;}
 
 .fc-red1 {
   color: #ec5848 !important;
@@ -45,7 +47,7 @@ background-color: #e2e1e0;
     border-top: 2px solid #333333;
     border-bottom: 1px solid #999999;
     color: #333333;
-    font-size: 8px;
+    font-size: 14px;
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
@@ -54,6 +56,7 @@ background-color: #e2e1e0;
     text-indent: initial;
     display: table;
     margin-bottom: 40px;
+    
 }
 
 .add-table input{
@@ -94,7 +97,9 @@ th{
 }
 
 .item-txt{
-	font-size: 1px;
+	font-size: 11px;
+	border-bottom: 1px solid;
+	padding-bottom: 30px;
 }
 
 .textMin{
@@ -102,14 +107,18 @@ th{
 }
 
 .add-table select{
-	font-size:10px;
+	font-size:12px;
+}
+
+.add-table td{
+	height: 45px;
 }
 
 .add-table textarea{
 	resize: none;
-	width: 300px;
-    height: 200px;
-    font-size: 10px;
+	width: 450px;
+    height: 300px;
+    font-size: 13px;
 }
 
 div.item-caution{
@@ -127,7 +136,7 @@ div.item-caution{
     top: 0;
     bottom: 0;
     width: 60px;
-    padding-top: 20px;
+    padding-top: 15px;
     background: #ec5848;
     color: white;
     font-size: 17px;
@@ -159,30 +168,104 @@ div.item-caution{
     width: 260px;
     height: 46px;
     margin: 0 auto;
-    background: #f18113;
+    background: #1187CF;
     color: white;
     font-size: 20px;
     border-radius: 8px;
     border: 1px solid;
 }
 
+.i1-options{
+	font-size: 12px !important;
+}
+
+.agent_text{
+	height: 300px !important;
+}
+
+.item-photo{
+    width: 660px;
+    height: 300px;
+    overflow: hidden;
+}
+    
+.ul-sortable{list-style: none;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+    
+.item-photo li {
+    position: relative;
+    float: left;
+    width: 108px;
+    height: 81px;
+    margin-right: 13px;
+    margin-bottom: 11px;
+    border: 1px solid #dddddd;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+    background: #f7f6f4;
+}
+
+.i-btn{
+	position: absolute;
+    top: 28px;
+    left: 33px;
+    padding: 4px 5px 5px;
+    background: white;
+    border: 1px solid #666666;
+    box-shadow: 0 -1px 0 #b6b6b6 inset;
+    border-radius: 5px;
+    right: 30px;
+    font-size: 12px;
+    left: 30px;
+}
+
+.i-count{
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 36px;
+    padding: 0 12px 0 0;
+    background: url(//s.zigbang.com/v1/web/rooms/bg_count.png) no-repeat 0 0;
+    z-index: 1;
+    color: #999999;
+    font-family: Myriad, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.has-col{
+padding: 0 10px;
+    height: 37px !important;
+    vertical-align: middle;
+}
+
 </style>
 </head>
 <body>
-	<!-- Header -->
+<!-- Header -->
 
 	<jsp:include page="../fix/header.jsp" />
 	
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
-	
 <div>
 
 		<div>
 		<div class="content">
 		<div class="add-title">
 			<h3>
-			<img class="img" src="//s.zigbang.com/v1/web/rooms/tit_add_room.png">
+			<img class="img" src="../images/roombanner.png">
 			</h3>
 			<p>
                     · 일반적인 형태의 주거용 전월세 매물만 내놓을 수 있습니다.<br>
@@ -212,7 +295,7 @@ div.item-caution{
                 </tr>
                 <tr>
                     <th>상세주소</th>
-                    <td colspan="3">
+                    <td colspan="3" style="padding-top: 8px">
                         <input type="text" class="text" style="width:360px; margin-right:10px;" id="address2" name="address2">
                        <!--  <button type="button" class="btn-locatino-check"><em class="zbIcon icon-location"></em> <span>위치 확인하기</span></button> -->
                         <div class="item-map">
@@ -303,38 +386,76 @@ div.item-caution{
                 </p>
         
         <!-- 이미지 -->
-                 <div style="display:flex;">
-                              <div class="files">
-                                 <div>
-                                    <label for="board_file1" style="display:inline;">
-                                       <img id="board_file1Img" src="${pageContext.request.contextPath}/images/filePlus.png" width="110px" height="110px" style="display:inline;">
-                                    </label>
-                                 </div>
-                                 <input id="board_file1" name="board_file1" type="file">
-                                 <input type="button" onclick="cancelFile('board_file1')" value="첨부 삭제">
-                              </div>
-                              <div class="files">
-                                 <div>
-                                    <label for="board_file2" style="display:inline;">
-                                       <img id="board_file2Img" src="${pageContext.request.contextPath}/images/filePlus.png" width="110px" height="110px" style="display:inline;">
-                                    </label>
-                                 </div>
-                                 <input id="board_file2" name="board_file2" type="file">
-                                 <input type="button" onclick="cancelFile('board_file2')" value="첨부 삭제">
-                              </div>
-                              <div class="files">
-                                 <div>
-                                    <label for="board_file3" style="display:inline;">
-                                       <img id="board_file3Img" src="${pageContext.request.contextPath}/images/filePlus.png" width="110px" height="110px" style="display:inline;">
-                                    </label>
-                                 </div>
-                                 <input id="board_file3" name="board_file3" type="file">
-                                 <input type="button" onclick="cancelFile('board_file3')" value="첨부 삭제">
-                              </div>
+                  <div class="item-photo" id="add-photo-box">
+                    <ul class="ui-sortable">
+                        <li id="li1" class="ui-sortable-handle">
+                            <span class="i-count">1</span>
+                            <button class="i-btn" type="button" id="add_image1" value="true" data-index="0" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht56umfcljt9rraf1bqb3_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht56umfcljt9rraf1bqb3" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li2" class="ui-sortable-handle">
+                            <span class="i-count">2</span>
+                            <button class="i-btn" type="button" id="add_image2" value="true" data-index="1" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht57k3k2381m5l1dqo8jo6_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht57k3k2381m5l1dqo8jo6" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li3" class="ui-sortable-handle">
+                            <span class="i-count">3</span>
+                            <button class="i-btn" type="button" id="add_image3" value="true" data-index="2" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht581rbvhct1rp21ie2ab59_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht581rbvhct1rp21ie2ab59" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li4" class="ui-sortable-handle">
+                            <span class="i-count">4</span>
+                            <button class="i-btn" type="button" id="add_image4" data-index="3" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht58mt31n61tch1qegqdhc_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht58mt31n61tch1qegqdhc" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li5" class="ui-sortable-handle">
+                            <span class="i-count">5</span>
+                            <button class="i-btn" type="button" id="add_image5" data-index="4" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5912nlfnggbd8i4ph7f_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5912nlfnggbd8i4ph7f" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li6" class="ui-sortable-handle">
+                            <span class="i-count">6</span>
+                            <button class="i-btn" type="button" id="add_image6" data-index="5" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht591t7cduqkcc1beivjdi_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht591t7cduqkcc1beivjdi" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li7" class="ui-sortable-handle">
+                            <span class="i-count">7</span>
+                            <button class="i-btn" type="button" id="add_image7" data-index="6" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5a1c6j1ih219n61hsdgsjl_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5a1c6j1ih219n61hsdgsjl" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li8" class="ui-sortable-handle">
+                            <span class="i-count">8</span>
+                            <button class="i-btn" type="button" id="add_image8" data-index="7" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5a2qirb611ja1ac61agko_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5a2qirb611ja1ac61agko" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li9" class="ui-sortable-handle">
+                            <span class="i-count">9</span>
+                            <button class="i-btn" type="button" id="add_image9" data-index="8" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5b1qck3s8244hge190fr_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5b1qck3s8244hge190fr" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li10" class="ui-sortable-handle">
+                            <span class="i-count">10</span>
+                            <button class="i-btn" type="button" id="add_image10" data-index="9" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5b80l2rr1stg1ejgs0eu_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5b80l2rr1stg1ejgs0eu" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li11" class="ui-sortable-handle">
+                            <span class="i-count">11</span>
+                            <button class="i-btn" type="button" id="add_image11" data-index="10" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5cafo1f291kld1aan1dpr11_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5cafo1f291kld1aan1dpr11" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li12" class="ui-sortable-handle">
+                            <span class="i-count">12</span>
+                            <button class="i-btn" type="button" id="add_image12" data-index="11" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5c7cdejb1sk64db9i614_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5c7cdejb1sk64db9i614" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                         <div id="html5_1ft8hht5cafo1f291kld1aan1dpr11_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5cafo1f291kld1aan1dpr11" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li13" class="ui-sortable-handle">
+                            <span class="i-count">13</span>
+                            <button class="i-btn" type="button" id="add_image12" data-index="11" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5c7cdejb1sk64db9i614_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5c7cdejb1sk64db9i614" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                         <div id="html5_1ft8hht5cafo1f291kld1aan1dpr11_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5cafo1f291kld1aan1dpr11" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li14" class="ui-sortable-handle">
+                            <span class="i-count">14</span>
+                            <button class="i-btn" type="button" id="add_image12" data-index="11" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5c7cdejb1sk64db9i614_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5c7cdejb1sk64db9i614" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                         <div id="html5_1ft8hht5cafo1f291kld1aan1dpr11_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5cafo1f291kld1aan1dpr11" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                        <li id="li15" class="ui-sortable-handle">
+                            <span class="i-count">15</span>
+                            <button class="i-btn" type="button" id="add_image12" data-index="11" style="z-index: 1;">+등록</button>
+                        <div id="html5_1ft8hht5c7cdejb1sk64db9i614_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 28px; left: 33px; width: 41px; height: 29px; overflow: hidden; z-index: 0;"><input id="html5_1ft8hht5c7cdejb1sk64db9i614" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="image/jpeg,image/png"></div></li>
+                    </ul>
+                </div>
                           <!-- 이미지 끝 -->
                 
                 
-                </div>
 		</div>
 		<h4 class="imageH4">상세정보</h4>
 		<!-- 테이블 시작 -->
@@ -356,8 +477,8 @@ div.item-caution{
                 <tr>
                     <th>방구조</th>
                     <td>
-                        <select style="width:180px" name="room_type">
-                            <option value="">선택하세요</option>
+                        <select style="width:180px; height: 25px;" name="room_type">
+                            <option value=""">선택하세요</option>
                             <option value="01">오픈형 원룸 (방1)</option>
                             <option value="02">분리형 원룸 (방1, 거실1)</option>
                             <option value="03">복층형 원룸</option>
@@ -407,12 +528,12 @@ div.item-caution{
                     <th>층수</th>
                     <td>
                         건물 층 수:
-                        <select name="building_floor">
+                        <select name="building_floor" style="height: 24px;">
                             <option value="">선택하세요</option>
                         <option value="1">1층</option><option value="2">2층</option><option value="3">3층</option><option value="4">4층</option><option value="5">5층</option><option value="6">6층</option><option value="7">7층</option><option value="8">8층</option><option value="9">9층</option><option value="10">10층</option><option value="11">11층</option><option value="12">12층</option><option value="13">13층</option><option value="14">14층</option><option value="15">15층</option><option value="16">16층</option><option value="17">17층</option><option value="18">18층</option><option value="19">19층</option><option value="20">20층</option><option value="21">21층</option><option value="22">22층</option><option value="23">23층</option><option value="24">24층</option><option value="25">25층</option><option value="26">26층</option><option value="27">27층</option><option value="28">28층</option><option value="29">29층</option><option value="30">30층</option><option value="31">31층</option><option value="32">32층</option><option value="33">33층</option><option value="34">34층</option><option value="35">35층</option><option value="36">36층</option><option value="37">37층</option><option value="38">38층</option><option value="39">39층</option><option value="40">40층</option><option value="41">41층</option><option value="42">42층</option><option value="43">43층</option><option value="44">44층</option><option value="45">45층</option><option value="46">46층</option><option value="47">47층</option><option value="48">48층</option><option value="49">49층</option><option value="50">50층</option><option value="51">51층</option><option value="52">52층</option><option value="53">53층</option><option value="54">54층</option><option value="55">55층</option><option value="56">56층</option><option value="57">57층</option><option value="58">58층</option><option value="59">59층</option><option value="60">60층</option><option value="61">61층</option><option value="62">62층</option><option value="63">63층</option><option value="64">64층</option><option value="65">65층</option><option value="66">66층</option><option value="67">67층</option><option value="68">68층</option><option value="69">69층</option><option value="70">70층</option><option value="71">71층</option><option value="72">72층</option><option value="73">73층</option><option value="74">74층</option><option value="75">75층</option><option value="76">76층</option><option value="77">77층</option><option value="78">78층</option><option value="79">79층</option><option value="80">80층</option></select>
                         &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
                         해당 층 :
-                        <select name="room_floor">
+                        <select name="room_floor" style="height: 24px;">
                             <option value="">선택하세요</option>
                             <option value="반지하">반지하</option>
                             <option value="옥탑방">옥탑방</option>
@@ -422,7 +543,7 @@ div.item-caution{
                 <tr>
                     <th>방향</th>
                     <td>
-                        <select name="room_direction">
+                        <select name="room_direction" style="height: 24px;">
                             <option value="">선택하세요</option>
                             <option value="E">동향</option>
                             <option value="W">서향</option>
@@ -438,7 +559,7 @@ div.item-caution{
                 </tr>
                 <tr>
                     <th>옵션</th>
-                    <td class="i-options">
+                    <td class="i1-options">
                         <label><input type="checkbox" name="room_options" value="01"> 에어컨</label>
                         <label><input type="checkbox" name="room_options" value="02"> 냉장고</label>
                         <label><input type="checkbox" name="room_options" value="03"> 세탁기</label>
@@ -446,7 +567,7 @@ div.item-caution{
                         <label><input type="checkbox" name="room_options" value="05"> 인덕션</label>
                         <label><input type="checkbox" name="room_options" value="06"> 전자레인지</label>
                         <label><input type="checkbox" name="room_options" value="07"> 책상</label>
-                        <label><input type="checkbox" name="room_options" value="08"> 책장</label>
+                        <label><input type="checkbox" name="room_options" value="08"> 도어락</label>
                         <label><input type="checkbox" name="room_options" value="09"> 침대</label>
                         <label><input type="checkbox" name="room_options" value="10"> 옷장</label>
                         <label><input type="checkbox" name="room_options" value="11"> 신발장</label>
@@ -510,7 +631,7 @@ div.item-caution{
                 <tr id="to_agent_memo">
                     <th>중개사에게<br>남기는 메세지</th>
                     <td>
-                        <textarea id="to_agent_text" name="to_agent" style="height:50px;" placeholder="중개사에게만 보여 집니다. 상세한 조건 등 중개사에게 전달할 말을 적어 주세요"></textarea>
+                        <textarea id="to_agent_text" class="agent_text" name="to_agent" style="height:50px;" placeholder="중개사에게만 보여 집니다. 상세한 조건 등 중개사에게 전달할 말을 적어 주세요"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -541,8 +662,9 @@ div.item-caution{
 		
 		</div>
 		</div>
+		
 		</body>
-	<script src="../assets/js/header.js"></script>
+	<script src="../fix/footer.jsp"></script>
 <script>
 </script>
 </html>

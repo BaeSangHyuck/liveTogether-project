@@ -157,7 +157,7 @@
 		}
 
 		button.img2{
-			background-image: url("../images/search.png");
+			background-image: url("../../images/search.png");
 	    	background-size: cover;
 			background-color: white;
 			position: absolute;
@@ -165,11 +165,11 @@
 	    	width: 20px;
 	    	height: 20px;
 			top: 8.5px;
-    		right: 14px;
+    		right: 19px;
 		}
 
 		button.img3{
-			background-image: url("../images/inquiryPlus.png");
+			background-image: url("../../images/inquiryPlus.png");
 	    	background-size: cover;
 			background-color: white;
 			position: absolute;
@@ -194,4 +194,58 @@
     		border-radius: 15px;
     		margin-top: 100px;
     		box-shadow: 0px 0px 50px #0000001a;
+		}
+
+		input[id*="faq-question"] {
+    display:none;
+}
+
+		input[id*="faq-question"] + label {
+		    display:block;
+		    padding:1.2rem;
+		    font-size:1rem;
+		    font-weight:900;
+		    content: none;
+		    cursor:pointer;
+		    position: relative;
+		}
+		
+		input[type="radio"] + label:before {
+		    content:none;
+		}
+		
+		input[id*="faq-question"] + label + div{
+		    max-height:0;
+		    transition:all .35s;
+		    overflow:hidden;
+		    font-size:1rem;
+			border-bottom: 1px solid #eee;	
+		}
+		
+		input[id*=faq-question] + label + div p{
+		    display:inline-block;
+			padding: 0 1rem;	
+		}
+		
+		input[id*=faq-question]:checked + label + div {max-height:200px;}
+		
+		input[type="radio"]:checked+label:before {
+		    content:none;
+		}
+
+		input[id*="faq-question"] + label em{
+			position:absolute;
+			top:60%;
+			right:0px;
+			width:30px;
+			height:30px;
+			margin-top:-15px;
+			display:inline-block;
+		}
+		input[id*="faq-question"] + label em img{
+			width:55%;
+		}
+
+		input[id*="faq-question"]:checked + label em img{
+			content:url("../../images/inquiryMinus.png");
 		}
