@@ -42,3 +42,9 @@
 body {
 	position: relative;
 }
+
+@media ( max-width :414px){
+	#aside{
+		display: none;
+	}
+}

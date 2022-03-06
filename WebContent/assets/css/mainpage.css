@@ -396,15 +396,74 @@ section#three div#intro_img #img3 {
 	background-size: cover;
 }
 
-section#three div.intro_img div.text-align{
-	text-align:center;
+section#three div.intro_img div.text-align {
+	text-align: center;
 }
 
-section#three div#intro_wrap{
+section#three div#intro_wrap {
 	padding-top: 50px;
 }
 
-article{
-    background: #1187cf30;
+article {
+	background: #1187cf30;
+}
+
+@media ( max-width :414px) {
+	section#one {
+		display: none;
+	}
+	section#two div#info_wrap {
+		display: block;
+	}
+	section#two div#img_wrap, section#two div#text_wrap {
+		width: 100%;
+	}
+	section#two div#img_wrap img {
+		width: 100%;
+	}
+	section#two {
+		height: 540px;
+	}
+	section#three div#intro_border {
+		display: none;
+	}
+	section#three div#intro_text div#under_line1 {
+		background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
+		width: 83.5%;
+		position: absolute;
+		left: 9%;
+		top: 62px;
+		z-index: -1;
+		height: 10px;
+	}
+	section#three div#intro_text div#under_line2 {
+		background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 88px;
+		z-index: -1;
+		height: 10px;
+	}
+	section#three div#intro_img {
+		margin-top: 50px;
+		width: 100%;
+		display: block;
+	}
+	section#three div.intro_img {
+		margin-top: 50px;
+	}
+	section#three {
+		width: 70%;
+		margin: 0 auto;
+		font-family: 'GmarketSansMedium';
+		position: relative;
+		height: 1380px;
+		margin-top: 50px;
+	}
+	section#three div#intro_text {
+		text-align: center;
+		font-size: 0.79rem;
+	}
 }
 

@@ -30,6 +30,7 @@ div#nav {
 	background: white;
 	z-index: 100;
 	top: 80px;
+	left: -40vw;
 }
 
 .flex {
@@ -148,13 +149,222 @@ div.content2 {
 	text-align: center;
 	color: black;
 }
-span{
+
+span {
 	margin-right: 10px !important;
 }
-span.open-beds,span.opened-beds-count {
+
+span.open-beds, span.opened-beds-count {
 	margin: 0 !important;
 }
 
-a{
+a {
 	text-decoration: none !important;
+}
+
+div#open_img {
+	background: url(../../images/open.png);
+	width: 100px;
+	height: 120px;
+	background-size: cover;
+	position: absolute;
+	left: 40vw;
+	top: 15vh;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+div#open_img2 {
+	background: url(../../images/close.png);
+	width: 100px;
+	height: 120px;
+	background-size: cover;
+	position: absolute;
+	left: 40vw;
+	top: 15vh;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	opacity: 0.8;
+	cursor: pointer;
+	display: none;
+}
+
+div#filter-wrap {
+	position: absolute;
+	background: white;
+	width: 100%;
+	left: -40vw;
+	height: 87.7%;
+}
+
+div#container {
+	width: 90%;
+	margin: auto;
+}
+
+div.filter-flex {
+	display: flex;
+}
+
+div.filter-flex>div {
+	border: 1px solid;
+	border-radius: 1rem;
+	width: 15%;
+	text-align: center;
+	margin-right: 10px;
+}
+
+div.filter {
+	margin-top: 40px;
+}
+
+div input[type="range"] {
+	width: 90%;
+}
+
+.middle {
+	position: relative;
+	width: 90%;
+}
+
+.slider {
+	position: relative;
+	z-index: 1;
+	height: 5px;
+	margin: 0 15px;
+}
+
+.slider>.track {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: 5px;
+	background-color: #ade0ff;
+}
+
+.slider>.range {
+	position: absolute;
+	z-index: 2;
+	left: 25%;
+	right: 25%;
+	top: 0;
+	bottom: 0;
+	border-radius: 5px;
+	background-color: #1187CF;
+}
+
+.slider>.thumb {
+	position: absolute;
+	z-index: 3;
+	width: 20px;
+	height: 20px;
+	background-color: #1187CF;
+	border-radius: 50%;
+	right: 30%;
+	top: 2px;
+}
+
+.slider>.thumb.left {
+	transform: translate(-15px, -10px);
+	left: 25%;
+	top: 2px;
+}
+
+.slider>.thumb.right {
+	right: 25%;
+	transform: translate(15px, -10px);
+}
+
+input[type="range"] {
+	position: absolute; /* opacity로 가린 것을 이벤트도 비활성화하기 위해 */
+	pointer-events: none;
+	-webkit-appearance: none;
+	z-index: 2;
+	height: 10px;
+	width: 100%;
+	opacity: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb { /* 겹쳐진 두 thumb를 모두 활성화 */
+	pointer-events: all;
+	width: 30px;
+	height: 30px;
+	border-radius: 0;
+	border: 0 none;
+	background-color: red;
+	cursor: pointer; /* appearance를 해야 위의 스타일들을 볼 수 있음 */
+	-webkit-appearance: none;
+}
+
+div.check {
+	font-size: 0.9rem;
+	height: 100%;
+	line-height: 31px;
+	cursor: pointer;
+	width: 100%;
+	border: 1px solid;
+	border-radius: 1rem;
+}
+
+div.button-wrap {
+	border: none !important;
+	border-radius: 2rem;
+	width: 30% !important;
+	background: #1187CF;
+}
+
+div.button-wrap input {
+	width: 100%;
+	color: white;
+	border: none;
+}
+
+div.filter-flex label {
+	margin: 0 !important;
+}
+
+input[type="checkbox"]+label:before {
+	display: none !important;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+div.filter-flex label {
+	padding: 0 !important;
+	width: 100%;
+	height: 100%
+}
+
+div.filter-flex>div {
+	width: 15%;
+	text-align: center;
+	margin-right: 10px;
+	height: 100%;
+	border: none;
+}
+
+input[type="date"] {
+	border: none;
+	outline: none;
+}
+
+div.btn {
+	margin-top: 40px;
+}
+
+div.btn input[type="button"]:hover {
+	color: white;
+}
+
+.filter-flex input:checked+label {
+    border-radius: 1rem;
+    background: #1187CF;
+    color: #fff;
 }

@@ -16,12 +16,133 @@
 
 	<div id="body">
 		<div id="nav">
+			<div id="open_img"></div>
+			<div id="open_img2"></div>
 			<div class="flex input_wrap">
 				<a id="img_wrap"> </a>
 				<div id="input_wrap">
 					<input type="text" placeholder="지역, 지하철역, 대학주변"> <a>
 						<div id="input_img"></div>
 					</a>
+				</div>
+			</div>
+			<div id="filter-wrap">
+				<div id="container">
+					<div class="filter">
+						<span> <strong>월세 범위</strong> 중복 선택가능
+						</span>
+						<div class="middle">
+							<div class="multi-range-slider">
+								<!-- 진짜 슬라이더 -->
+								<input type="range" id="input-left" min="0" max="100" value="25"
+									step="10" /> <input type="range" id="input-right" min="0"
+									max="100" value="75" step="10" />
+								<!-- 커스텀 슬라이더 -->
+								<div class="slider">
+									<div class="track"></div>
+									<div class="range"></div>
+									<div class="thumb left"></div>
+									<div class="thumb right"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="filter">
+						<span> <strong>성별 타입</strong> 중복 선택가능
+						</span>
+						<div class="filter-flex">
+							<div class="check-wrap">
+								<input type="checkbox" id="check1">
+								<label for="check1"> 
+									<div class="check" >여성전용</div>
+								</label>
+							</div>
+							<div class="check-wrap">
+								<input type="checkbox" id="check2">
+								<label for="check2"> 
+									<div class="check" >남성전용</div>
+								</label>
+							</div>
+							<div class="check-wrap">
+								 <input type="checkbox" id="check3">
+								<label for="check3">
+									<div class="check" >남녀공용</div>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="filter">
+						<span> <strong>주거 유형</strong> 중복 선택 가능
+						</span>
+						<div class="filter-flex">
+							<div class="check-wrap">
+								<input type="checkbox" id="check4">
+								<label for="check4"> 
+									<div class="check" >아파트</div>
+								</label>
+							</div>
+							<div class="check-wrap">
+								<input type="checkbox" id="check5">
+								<label for="check5"> 
+									<div class="check" >단독주택</div>
+								</label>
+							</div>
+							<div class="check-wrap">
+								<input type="checkbox" id="check6">
+								<label for="check6"> 
+									<div class="check">빌라</div>
+								</label>
+							</div>
+							<div class="check-wrap">
+								<input type="checkbox" id="check7">
+								<label for="check7"> 
+									<div class="check">기타</div>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="filter">
+						<span> <strong>룸 형태</strong>
+						</span>
+						<div class="filter-flex">
+							<div class="check-wrap">
+								 <input type="checkbox" id="check8">
+								<label for="check8">
+									<div class="check">1인실</div>
+								</label>
+							</div>
+							<div class="check-wrap">
+								 <input type="checkbox" id="check9">
+								<label for="check9">
+									<div class="check">2인실</div>
+								</label>
+							</div>
+							<div class="check-wrap">
+								 <input type="checkbox" id="check10">
+								<label for="check10">
+									<div class="check">3인실</div>
+								</label>
+							</div>
+
+						</div>
+					</div>
+					<div class="filter">
+						<span> <strong>입주예정일</strong>
+						</span>
+						<div>
+							<input type="date">
+						</div>
+					</div>
+					<div class="btn">
+						<div class="filter-flex">
+							<div class="button-wrap">
+								<input type="button" value="초기화"  onClick="window.location.reload()">
+							</div>
+							<div class="button-wrap">
+								<input type="button" value="적용하기">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div>
@@ -527,7 +648,7 @@
 								</div>
 							</a>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
@@ -542,6 +663,7 @@
 
 
 </body>
+
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript"
@@ -557,7 +679,7 @@
 	// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 	var map = new kakao.maps.Map(mapContainer, mapOption);
 
-	var clusterer = new kakao.maps.MarkerClusterer({
+	/* var clusterer = new kakao.maps.MarkerClusterer({
 		map : map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
 		averageCenter : true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
 		minLevel : 10
@@ -572,12 +694,13 @@
 
 		var markers = $(data.positions).map(function(i, position) {
 			return new kakao.maps.Marker({
-				position : new kakao.maps.LatLng(position.lat, position.lng)
+				position : new kakao.maps.LatL    ng(position.lat, position.lng)
 			});
 		});
 
 		// 클러스터러에 마커들을 추가합니다
 		clusterer.addMarkers(markers);
-	});
+	}); */
 </script>
+<script src="../assets/js/findRoom.js"></script>
 </html>
