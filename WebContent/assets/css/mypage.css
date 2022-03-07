@@ -350,3 +350,16 @@ div#navigation_wraper {
     margin: 40px auto;
     position: relative;
 }
+
+@media (max-width: 414px){
+	.navigation{
+	width:414px;
+}
+	.content{
+	width:414px;
+	
+	}
+	.column-wrapper{
+	display:block;
+	}
+}

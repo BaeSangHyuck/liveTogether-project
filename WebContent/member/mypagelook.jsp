@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="../assets/css/main.css" />
 <link rel="stylesheet" href="../assets/css/mypagelook.css" />
 </head>
+
 	<!-- Header -->
 
 	<jsp:include page="../fix/header.jsp" />
@@ -67,11 +68,7 @@
 								<div class="column-wrapper">
 									<label class="gender-input">성별</label>
 									<div class="gender-btn-wrapper">
-										<input class="gender-input" type="radio" value="m"	name="user[gender]" id="user_gender_m" checked> 
-										<label	class="gender-btn" for="user_gender_m">남</label> 
-										<input class="gender-input" type="radio" value="f" name="user[gender]" id="user_gender_f" onclick="return false"> 
-										<label class="gender-btn" for="user_gender_f">여</label>
-									</div>
+										남자									</div>
 								</div>
 								
 								<div class="column-wrapper profile">

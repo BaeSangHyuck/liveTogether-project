@@ -37,7 +37,7 @@ background-color: white;
   	font-size: 11px;
 	}
 
-.img{width: 595px; height: 130px; padding-left: 45px;}
+.img{width: 100%;}
 
 .fc-red1 {
   color: #ec5848 !important;
@@ -149,7 +149,7 @@ div.item-caution{
     margin-left: 80px;
     height: 37px;
     line-height: 37px;
-    overflow: hidden;
+/*     overflow: hidden; */
     vertical-align: middle;
 }
 
@@ -249,6 +249,108 @@ padding: 0 10px;
     height: 37px !important;
     vertical-align: middle;
 }
+
+@media (max-width: 414px){
+.content {
+    float: none;
+    width: 100% !important;
+    padding: 0 15px 50px;
+    background: white;
+    border: 1px solid #d9d3c8;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0px 0px 40px #0000001a;
+    margin: 100px 0;
+}
+
+.add-table input {
+    margin-left: 5px !important;
+    border: 1px solid !important;
+    width: 80%;
+}
+.add-table input#fee_none {
+    margin-left: 5px !important;
+    border: 1px solid !important;
+    width:17px;
+    margin-top: 6px;
+}
+.add-table input.text{
+    margin-left: 5px !important;
+    border: 1px solid !important;
+    width: 55%;
+}
+
+.add-table input.room_options {
+    width:17px;
+}
+
+.add-table input.checkBox{
+	width: 17px;
+}
+
+input#address {
+	width:90% !important;
+}
+input#address2 {
+	width:80% !important;
+}
+
+.add-table{
+	font-size: 13px;
+}
+
+.item-photo {
+    width: 414px;
+    overflow: hidden;
+    margin-left: -31px;
+    height: 476px;
+}
+
+.add-table select {
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+td.i1-options {
+    display: flex;
+    flex-direction: column;
+    height: 249px;
+    justify-content: space-evenly;
+}
+
+.add-table textarea {
+    resize: none;
+    width: 100%;
+    height: 300px;
+    font-size: 13px;
+    border: none;
+}
+
+td.floors{
+    padding-left: 5px;
+    height: 71px;
+}
+
+select.floor{
+    margin-bottom: 3px;
+}
+
+td.has-col{
+	display: flex;
+}
+
+input.park {
+	width:17px;
+}
+
+.i-col {
+    margin-left: 0;
+    line-height: 0;
+}
+
+}
+
+
 
 </style>
 </head>
@@ -464,14 +566,14 @@ padding: 0 10px;
                     <th>보증금</th>
                     <td>
                         <input type="text" class="text" name="deposit" onkeydown="return number_validate1(event);"> 만원
-                        <span class="fc-red1">※무보증일 경우, 한 달 월세를 입력하세요</span>
+                        <span class="fc-red1"><br>※무보증일 경우, 한 달 월세를 입력하세요</span>
                     </td>
                 </tr>
                 <tr>
                     <th>월세</th>
                     <td>
                         <input type="text" class="text" name="rent" onkeydown="return number_validate1(event);"> 만원
-                        <span class="fc-red1">※전세일 경우, 0을 입력 하세요</span>
+                        <span class="fc-red1"><br>※전세일 경우, 0을 입력하세요</span>
                     </td>
                 </tr>
                 <tr>
@@ -491,9 +593,9 @@ padding: 0 10px;
                 <tr>
                     <th>성별</th>
                     <td class="i-options">
-                        <label><input type="checkbox" name="room_options" value="01"> 남자</label>
-                        <label><input type="checkbox" name="room_options" value="02"> 여자</label>
-                        <label><input type="checkbox" name="room_options" value="03"> 공용</label>
+                        <label><input type="checkbox" name="room_options" value="01" class="checkBox"> 남자</label>
+                        <label><input type="checkbox" name="room_options" value="02" class="checkBox"> 여자</label>
+                        <label><input type="checkbox" name="room_options" value="03" class="checkBox"> 공용</label>
                     </td>
                 </tr>
                 
@@ -502,15 +604,15 @@ padding: 0 10px;
                     <th>관리비</th>
                     <td>
                         <input type="text" class="text" name="fee" onkeydown="return number_validate2(event);"> 만원
-                        &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" id="fee_none" name="fee_none"> 없음</label>
+                        &nbsp;&nbsp;&nbsp;<br>
+                        <label><input type="checkbox" id="fee_none" name="fee_none">관리비 없음</label>
                         <p class="i-gray">
-                            <strong>관리비 포함 항목</strong>
-                            <label><input name="fee_inc" type="checkbox" value="01"> 전기세</label>
-                            <label><input name="fee_inc" type="checkbox" value="02"> 가스</label>
-                            <label><input name="fee_inc" type="checkbox" value="03"> 수도</label>
-                            <label><input name="fee_inc" type="checkbox" value="04"> 인터넷</label>
-                            <label><input name="fee_inc" type="checkbox" value="05"> TV</label>
+                            <strong style="margin-left: 5px;">관리비 포함 항목</strong>
+                            <label><input name="fee_inc" type="checkbox" value="01" class="checkBox"> 전기세</label>
+                            <label><input name="fee_inc" type="checkbox" value="02" class="checkBox"> 가스</label>
+                            <label><input name="fee_inc" type="checkbox" value="03" class="checkBox"> 수도</label>
+                            <label><input name="fee_inc" type="checkbox" value="04" class="checkBox"> 인터넷</label>
+                            <label><input name="fee_inc" type="checkbox" value="05" class="checkBox"> TV</label>
                         </p>
                     </td>
                 </tr>
@@ -521,19 +623,19 @@ padding: 0 10px;
                         <span class="mb-5" id="contract_size">
                             계약면적 : <input type="text" class="textMin" name="size_contract_m2" onkeydown="return number_validate2(event);"> m<sup>2</sup> = <input type="text" class="textMin" name="size_contract" onkeydown="return number_validate2(event);"> P
                         </span>
-                        <span class="fc-red1">※한 단위만 입력하면 자동으로 전환됩니다</span>
+                        <span class="fc-red1"><br>※한 단위만 입력하면 자동으로 전환됩니다</span>
                     </td>
                 </tr>
                 <tr>
                     <th>층수</th>
-                    <td>
+                    <td class="floors">
                         건물 층 수:
-                        <select name="building_floor" style="height: 24px;">
+                        <select name="building_floor" style="height: 24px;" class="floor">
                             <option value="">선택하세요</option>
                         <option value="1">1층</option><option value="2">2층</option><option value="3">3층</option><option value="4">4층</option><option value="5">5층</option><option value="6">6층</option><option value="7">7층</option><option value="8">8층</option><option value="9">9층</option><option value="10">10층</option><option value="11">11층</option><option value="12">12층</option><option value="13">13층</option><option value="14">14층</option><option value="15">15층</option><option value="16">16층</option><option value="17">17층</option><option value="18">18층</option><option value="19">19층</option><option value="20">20층</option><option value="21">21층</option><option value="22">22층</option><option value="23">23층</option><option value="24">24층</option><option value="25">25층</option><option value="26">26층</option><option value="27">27층</option><option value="28">28층</option><option value="29">29층</option><option value="30">30층</option><option value="31">31층</option><option value="32">32층</option><option value="33">33층</option><option value="34">34층</option><option value="35">35층</option><option value="36">36층</option><option value="37">37층</option><option value="38">38층</option><option value="39">39층</option><option value="40">40층</option><option value="41">41층</option><option value="42">42층</option><option value="43">43층</option><option value="44">44층</option><option value="45">45층</option><option value="46">46층</option><option value="47">47층</option><option value="48">48층</option><option value="49">49층</option><option value="50">50층</option><option value="51">51층</option><option value="52">52층</option><option value="53">53층</option><option value="54">54층</option><option value="55">55층</option><option value="56">56층</option><option value="57">57층</option><option value="58">58층</option><option value="59">59층</option><option value="60">60층</option><option value="61">61층</option><option value="62">62층</option><option value="63">63층</option><option value="64">64층</option><option value="65">65층</option><option value="66">66층</option><option value="67">67층</option><option value="68">68층</option><option value="69">69층</option><option value="70">70층</option><option value="71">71층</option><option value="72">72층</option><option value="73">73층</option><option value="74">74층</option><option value="75">75층</option><option value="76">76층</option><option value="77">77층</option><option value="78">78층</option><option value="79">79층</option><option value="80">80층</option></select>
-                        &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+                        <br>
                         해당 층 :
-                        <select name="room_floor" style="height: 24px;">
+                        <select name="room_floor" style="height: 24px;" class="floor">
                             <option value="">선택하세요</option>
                             <option value="반지하">반지하</option>
                             <option value="옥탑방">옥탑방</option>
@@ -559,47 +661,47 @@ padding: 0 10px;
                 </tr>
                 <tr>
                     <th>옵션</th>
-                    <td class="i1-options">
-                        <label><input type="checkbox" name="room_options" value="01"> 에어컨</label>
-                        <label><input type="checkbox" name="room_options" value="02"> 냉장고</label>
-                        <label><input type="checkbox" name="room_options" value="03"> 세탁기</label>
-                        <label><input type="checkbox" name="room_options" value="04"> 가스레인지</label>
-                        <label><input type="checkbox" name="room_options" value="05"> 인덕션</label>
-                        <label><input type="checkbox" name="room_options" value="06"> 전자레인지</label>
-                        <label><input type="checkbox" name="room_options" value="07"> 책상</label>
-                        <label><input type="checkbox" name="room_options" value="08"> 도어락</label>
-                        <label><input type="checkbox" name="room_options" value="09"> 침대</label>
-                        <label><input type="checkbox" name="room_options" value="10"> 옷장</label>
-                        <label><input type="checkbox" name="room_options" value="11"> 신발장</label>
-                        <label><input type="checkbox" name="room_options" value="12"> 싱크대</label>
+                    <td class="i1-options ">
+                        <label><input type="checkbox" name="room_options" value="01" class="room_options"> 에어컨</label>
+                        <label><input type="checkbox" name="room_options" value="02" class="room_options"> 냉장고</label>
+                        <label><input type="checkbox" name="room_options" value="03" class="room_options"> 세탁기</label>
+                        <label><input type="checkbox" name="room_options" value="04" class="room_options"> 가스레인지</label>
+                        <label><input type="checkbox" name="room_options" value="05" class="room_options"> 인덕션</label>
+                        <label><input type="checkbox" name="room_options" value="06" class="room_options"> 전자레인지</label>
+                        <label><input type="checkbox" name="room_options" value="07" class="room_options"> 책상</label>
+                        <label><input type="checkbox" name="room_options" value="08" class="room_options"> 도어락</label>
+                        <label><input type="checkbox" name="room_options" value="09" class="room_options"> 침대</label>
+                        <label><input type="checkbox" name="room_options" value="10" class="room_options"> 옷장</label>
+                        <label><input type="checkbox" name="room_options" value="11" class="room_options"> 신발장</label>
+                        <label><input type="checkbox" name="room_options" value="12" class="room_options"> 싱크대</label>
                     </td>
                 </tr>
                 <tr>
                     <th>전세 대출</th>
                     <td>
-                        <label> <input type="radio" name="loan" value="true"> 가능</label>
-                        <label><input type="radio" name="loan" value="false"> 불가능</label>
-                        <label><input type="radio" name="loan" value="-"> 확인필요</label>
+                        <label> <input type="radio" name="loan" value="true" class="checkBox"> 가능</label>
+                        <label><input type="radio" name="loan" value="false" class="checkBox"> 불가능</label>
+                        <label><input type="radio" name="loan" value="-"  class="checkBox"> 확인필요</label>
                     </td>
                 </tr>
                 <tr>
                     <th>반려동물</th>
                     <td>
-                        <label><input type="radio" name="pets" value="yes"> 가능</label>
-                        <label><input type="radio" name="pets" value="no"> 불가능</label>
-                        <label><input type="radio" name="pets" value="catonly"> 고양이만</label>
-                        <label><input type="radio" name="pets" value="-"> 확인필요</label>
+                        <label><input type="radio" name="pets" value="yes"  class="checkBox"> 가능</label>
+                        <label><input type="radio" name="pets" value="no"  class="checkBox"> 불가능</label>
+                       <!--  <label><input type="radio" name="pets" value="catonly"  class="checkBox"> 고양이만</label> -->
+                        <label><input type="radio" name="pets" value="-"  class="checkBox"> 확인필요</label>
                     </td>
                 </tr>
                 <tr>
                     <th>주차</th>
                     <td class="has-col">
-                        <label><input type="radio" name="parking" value="가능"> 가능</label>
-                        <label><input type="radio" name="parking" value="불가능"> 없음</label>
+                        <label><input type="radio" name="parking" value="가능"  class="checkBox"> 가능</label>
+                        <label><input type="radio" name="parking" value="불가능"  class="checkBox"> 없음</label>
                         <div class="i-col">
                             <strong>엘리베이터</strong>
-                            <label><input type="radio" name="building_elevator" value="true"> 있음</label>
-                            <label><input type="radio" name="building_elevator" value="false"> 없음</label>
+                            <label><input type="radio" name="building_elevator" value="true" class="park"> 있음</label>
+                            <label><input type="radio" name="building_elevator" value="false" class="park"> 없음</label>
                         </div>
                     </td>
                 </tr>

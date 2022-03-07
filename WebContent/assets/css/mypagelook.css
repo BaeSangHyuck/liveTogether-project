@@ -182,7 +182,7 @@ margin-top: 1rem; background-color: #1187CF;
 }
 
 .column-wrapper{
-/* 	width:50%; */
+	height:80px;
 	display: flex;
 	justify-content: flex-start;
 	margin-top: -1rem;
@@ -190,6 +190,7 @@ margin-top: 1rem; background-color: #1187CF;
 }
 .column-wrapper label{
     line-height: 48px;
+    margin-right: 3rem;
 }
 
 .column-wrapper .col01{
@@ -218,13 +219,13 @@ margin-top: 1rem; background-color: #1187CF;
 } 
 
 .gender-btn-wrapper{
- 	margin-left:3rem;
-	width:70%;
+	margin: 0;
+    line-height: 84px;
+    text-align: left;
 }
  .column-wrapper .col05{
 	margin-right:3rem; 
-	width:25%
-
+	width:20%;
 } 
 .static{
 	line-height:80px;
@@ -261,29 +262,6 @@ div#navigation_wraper {
 	/* border-bottom:0.5px solid; */
 }
 
-/* .column-wrapper.name{
-margin-top:-1.5rem;	
-}
-.column-wrapper.phone{
-margin-top:-0.5rem;	
-}
-.column-wrapper.name{
-margin-top:-1.5rem;	
-}
-.column-wrapper.current-password{
-margin-top:-2rem;	
-margin-bottom:1rem;
-}
-.column-wrapper.gender{
-	margin-top:-0.5rem;	
-}
-.column-wrapper.password{
-	margin-top:-1rem;	
-}
-.column-wrapper.profile{
-	margin-top:-1rem;
-	margin-bottom:2rem;	
-} */
 
 
 #box {
@@ -310,4 +288,14 @@ margin-bottom:1rem;
 
 input[type="radio"]+label:before{
 	content: unset;
+}
+
+@media (max-width: 414px){
+	.navigation{
+	width:414px;
+}
+	.content{
+	width:414px;
+	
+	}
 }

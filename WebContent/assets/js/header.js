@@ -17,3 +17,17 @@ div.addEventListener("mouseout",function(){
         over[i].style.display='none';
     }
 })
+
+const button= document.querySelector("label#icon-label");
+const nav= document.querySelector("nav#nav-mobile");
+
+var check=-1;
+
+button.addEventListener("click",function(){
+	check*=-1;
+	if(check>0){
+		nav.style.display="block";
+	}else {
+		nav.style.display="none";
+	}
+})

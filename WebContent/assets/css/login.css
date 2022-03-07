@@ -239,5 +239,57 @@ a.button.alt.kakao {
 #login_banner {
 	position: absolute;
 	bottom: -9px;
+	left:0;
 }
 
+
+#loginStatus {
+	display: flex;
+    font-size: 13px;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
+    background-color: #1187CF !important;
+    border-color: #1187CF !important;
+    color: #ffffff;
+}
+
+
+
+input[type="checkbox"]+label:before {
+	border-radius: 2px;
+}
+
+input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+	background-color: white;
+	height: 20px;
+	width: 20px;
+	top: 3px;
+	left: 3px;
+}
+
+input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
+    background-color: #1187CF !important;
+    border-color: #1187CF !important;
+    color: #ffffff;
+}
+
+input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
+	{
+	border-color: #e5e5e5;
+	box-shadow: 0 0 0 1px #ffffff;
+}
+
+
+
+@media (max-width: 414px){
+	#box{
+	width: 414px;
+	}
+	#login_banner img{
+	width: 414px;
+	}
+}

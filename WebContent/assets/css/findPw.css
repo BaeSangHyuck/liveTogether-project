@@ -240,4 +240,11 @@ a.button.alt.kakao {
 	position: absolute;
 	bottom: -9px;
 }
-
+@media (max-width: 414px){
+	#box{
+	width: 414px;
+	}
+	#login_banner img{
+	width: 414px;
+	}
+}
