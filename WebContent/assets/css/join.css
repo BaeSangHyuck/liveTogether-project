@@ -2,72 +2,72 @@
 	font-family: 'Noto Sans KR', sans-serif;
 } */
 
-#main {
+section#join-wrap #main {
 	margin-top: 100px;
 	margin-bottom: 195px;
 }
 
-li a.button.alt.kakao {
+section#join-wrap li a.button.alt.kakao {
 	background-color: #ffe500;
 }
 
-ul.actions.fit.kakaochoice li {
+section#join-wrap ul.actions.fit.kakaochoice li {
 	width: 350px;
 }
 
-ul.actions.fit.kakaochoice {
+section#join-wrap ul.actions.fit.kakaochoice {
 	display: flex;
 	flex-direction: column;
 }
 
-ul.kakaochoice li {
+section#join-wrap ul.kakaochoice li {
 	margin: 0 auto;
 }
 
-ul.kakaochoice li img {
+section#join-wrap ul.kakaochoice li img {
 	position: absolute;
 	width: 40px;
 	left: 56px;
 	top: 9px;
 }
 
-ul.kakaochoice li img.tstory {
+section#join-wrap ul.kakaochoice li img.tstory {
 	top: 6px;
 }
 
-a.button.alt.kakao {
+section#join-wrap a.button.alt.kakao {
 	box-shadow: none;
 }
 
-li a.kakao, li a.tstory {
+section#join-wrap li a.kakao, li a.tstory {
 	position: relative;
 }
 
-a#starttsory {
+section#join-wrap a#starttsory {
 	color: #616161;
 	font-size: 14px;
 	margin: 0 auto;
 }
 
-span.ir_wa {
+section#join-wrap span.ir_wa {
 	font-size: 22px;
 	margin-bottom: 10px;
 }
 
-div#starttsory {
+section#join-wrap div#starttsory {
 	text-align: center;
 }
 
-#main {
+section#join-wrap #main {
 	margin: 0 auto;
 }
 
-#kakaoServiceLogo {
+section#join-wrap #kakaoServiceLogo {
 	margin-bottom: 20px;
     text-align: center;
 }
 
-div#mArticle {
+section#join-wrap div#mArticle {
 	display: flex;
 	justify-content: center;
 	width: 320px;
@@ -75,7 +75,7 @@ div#mArticle {
 	padding: 50px 20px 50px 20px;
 }
 
-#box {
+section#join-wrap #box {
 	display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -88,7 +88,7 @@ div#mArticle {
 	position: relative;
 }
 
-#choices {
+section#join-wrap #choices {
 	display: flex;
     justify-content: space-evenly;
     padding-left: 0;
@@ -96,49 +96,49 @@ div#mArticle {
     list-style: none;
 }
 
-.choice{
+section#join-wrap .choice{
 	width: 50%;
     text-align: center;
     padding: 0px;
     line-height: 60px;
 }
 
-.choice a{
+section#join-wrap .choice a{
 	text-decoration: none;
 	color: #888888 !important;
 	font-weight: 500;
 }
 
-#find_join a{
+section#join-wrap #find_join a{
 	color: #888888 !important;
 }
 
-#kakaoServiceLogo img{
+section#join-wrap #kakaoServiceLogo img{
     width:250px;
 }
 
-div.wrap_form {	
+section#join-wrap div.wrap_form {	
 	width: 480px;
 }
 
-span.line_or {
+section#join-wrap span.line_or {
 	font-size: 14px;
 }
 
-form#login-form {
+section#join-wrap form#login-form {
 	margin: 0;
 }
 
-div.item_tf {
+section#join-wrap div.item_tf {
 	position: relative;
 }
 
-label#id_email_2_label, label#id_password_3_label {
+section#join-wrap label#id_email_2_label, label#id_password_3_label {
 	position: absolute;
 	
 }
 
-div.wrap_btn {
+section#join-wrap div.wrap_btn {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -147,32 +147,32 @@ div.wrap_btn {
 	margin-top: 20px;
 }
 
-div.wrap_btn button {
+section#join-wrap div.wrap_btn button {
 	border-radius: 1;
 	font-size: 16px;
 }
 
-div.info_user {
+section#join-wrap div.info_user {
 	display: flex;
 	justify-content: space-between;
 }
 
-ul.list_user {
+section#join-wrap ul.list_user {
 	display: flex;
 	list-style: none;
 }
 
-div.info_user a {
+section#join-wrap div.info_user a {
 	color: black;
 	font-size: 12px;
 	text-decoration: none;
 }
 
-div.login_banner {
+section#join-wrap div.login_banner {
 	margin: auto 0;
 }
 
-.btn_g {
+section#join-wrap .btn_g {
 	display: block;
 	width: 70%;
 	height: 50px;
@@ -190,7 +190,7 @@ div.login_banner {
 	background-color: #e7e7e7;
 } */
 
-input#id_email_2, input#id_password_3, input#nickname, input#tel, input#phoneNum{
+section#join-wrap input#id_email_2, input#id_password_3, input#nickname, input#tel, input#phoneNum, input#memberProfile{
 	border: none;
 	border-bottom: 1px solid #e5e5e5;
 	border-radius: 0;
@@ -200,13 +200,13 @@ input#id_email_2, input#id_password_3, input#nickname, input#tel, input#phoneNum
 	padding: 0;
 }
 
-.ico_qr img {
+section#join-wrap .ico_qr img {
 	width: 20px;
 	height: 20px;
 	margin: 8px 5px -4px -1px;
 }
 
-.btn_confirm{
+section#join-wrap .btn_confirm{
 	background-color: #1187CF;
 	width: 100%;
 	border-radius: none;
@@ -218,26 +218,26 @@ input#id_email_2, input#id_password_3, input#nickname, input#tel, input#phoneNum
 	background-color: #8AAAE5;
 } */
 
-.item_inp.item_check {
+section#join-wrap .item_inp.item_check {
 	margin: 20px 0 40px 0;
 }
 
-div.item_tf {
+section#join-wrap div.item_tf {
 	margin-top: 5px;
 }
 
-#loginEmailField p {
+section#join-wrap #loginEmailField p {
 	font-size: 12px;
 	margin: 0;
 	line-height: 16px;
 	margin-top: 6px;
 }
 
-input[type="checkbox"]+label:before {
+section#join-wrap input[type="checkbox"]+label:before {
 	border-radius: 2px;
 }
 
-input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+section#join-wrap input[type="checkbox"]+label:before, input[type="radio"]+label:before {
 	background-color: white;
 	height: 20px;
 	width: 20px;
@@ -254,35 +254,39 @@ input[type="checkbox"]+label:before, input[type="radio"]+label:before {
 } */
 
 
-input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
+section#join-wrap input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
     background-color: #1187CF !important;
     border-color: #1187CF !important;
     color: #ffffff;
 }
 
-input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
+section#join-wrap input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
 	{
 	border-color: #e5e5e5;
 	box-shadow: 0 0 0 1px #ffffff;
 }
 
-input[type="checkbox"]+label, input[type="radio"]+label {
+section#join-wrap input[type="checkbox"]+label, input[type="radio"]+label {
 	font-size: 13px;
 }
 
-input:focus {
+section#join-wrap input:focus {
 	outline:none;
 }
 
 
-#login-form input[placeholder]{
+section#join-wrap #login-form input[placeholder]{
 	font-size: 15px;
 }
 
 
 
-div#nickname_wrap {
+section#join-wrap div.nickname_wrap {
 	margin-top: 16px;
+}
+
+section#join-wrap div.profile {
+	margin-top: 6px !important;
 }
 
 
@@ -291,30 +295,30 @@ div#nickname_wrap {
 	transform: scale(0.85);
 } */
 
-div#term-wrap{
+section#join-wrap div#term-wrap{
 	font-size: 12px;
 }
 
-div a.showTerm {
+section#join-wrap div a.showTerm {
 	color: #555555;
 	
 }
 
-textarea.term-content{
+section#join-wrap textarea.term-content{
 	resize: none;
 	font-size: 12px;
 }
 
-input#id_password_3{
+section#join-wrap input#id_password_3{
 	margin-top: 20px;
 }
 
-input.checkPw{
+section#join-wrap input.checkPw{
 	margin-top: 36px !important;
 	margin-bottom: 36px !important;
 }
 
-#houseIcon span{
+section#join-wrap #houseIcon span{
 	background-image: url(../../images/houseIcon.png);
     background-repeat: no-repeat;
     position: absolute;
@@ -326,34 +330,47 @@ input.checkPw{
     right: 55px;
 }
 
-#infoMsg {
+section#join-wrap #infoMsg {
 	text-align: center;
 	margin-bottom: 30px;
 }
 
-#infoMsg span{
+section#join-wrap #infoMsg span{
 	font-size: 18px;
 }
 
-#term-wrap label {
+section#join-wrap #term-wrap label {
 	margin: 0 !important;
 }
 
-#memberType {
+section#join-wrap #memberType {
 	text-align: right;
 }
 
-#memberType label{
+section#join-wrap #memberType label{
 	font-size: 12px;
 }
 
 
-input[type="text"], input[type="password"], input[type="email"], select {
+section#join-wrap input[type="text"], input[type="password"], input[type="email"], select {
     height: 20px !important;
 }
 
+section#join-wrap textarea#memberProfile {
+	resize: none;
+	font-size: 15px;
+	background: none;
+}
+
+section#join-wrap div#genderChoice {	
+    margin-top: 20px;
+    display: flex;
+    margin-left: -26px;
+    justify-content: space-evenly;
+}
+
 @media (max-width: 414px){
-	#box{
+	section#join-wrap #box{
 	width: 414px;
 	}
 }

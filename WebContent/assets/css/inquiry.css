@@ -24,64 +24,64 @@
 			margin: 0;
 		}
 		
-		div#second-wrap{
+		div#inquiry-first-wrap div#second-wrap{
 			width: 40%;
 			margin: 0 auto;
 			--shd: 0.00px 1.00px 24px 4px rgba(0,0,0,0.07);
 			--bg: 255,255,255;
 		}
 	
-		div#third-wrap{
+		div#inquiry-first-wrap div#third-wrap{
 			width: 85%;
 			margin: 0 auto;
 			text-align: center;
 		}
 	
-		p#first-p, #question-p1{
+		div#inquiry-first-wrap p#first-p, div#inquiry-first-wrap p#question-p1{
 			color: #393939;
 			font-size: 25px;
 			font-weight: 550;
 			padding-right: 12px;
 		}
 	
-		p#second-p{
+		div#inquiry-first-wrap p#second-p{
 			font-size: 15px;
 			letter-spacing: -0.5px;
 		}
 		
-		p#fourth-p{
+		div#inquiry-first-wrap p#fourth-p{
 			text-align: left;
 		}
 	
-		p#fifth-p{
+		div#inquiry-first-wrap p#fifth-p{
 			font-size: 15px;
 			letter-spacing: -0.5px;
 			color: #757575;
 			text-align: left;
 		}
 		
-		p#third-p{
+		div#inquiry-first-wrap p#third-p{
 			text-align: left;
 		}
 		
 	
-		div#hr-tag{
+		div#inquiry-first-wrap div#hr-tag{
 			border-bottom: 1px solid #f4f4f4;
 			width: 100%;
 		}
 		
-		div#hr-tag2{
+		div#inquiry-first-wrap div#hr-tag2{
 			border-bottom: 1px solid #f4f4f4;
 			width: 605px;
     		margin-left: 83px;
 		}
 
-		div#hr-tag3{
+		div#inquiry-first-wrap div#hr-tag3{
 			border-bottom: 1px solid #f4f4f4;
 			width: 605px;
 		}
 
-		input[type=text]#first-input, input[type=text]#second-input, input[type=text]#third-input, input[type=text]#fourth-input, input[type=text]#bonus-input {
+		div#inquiry-first-wrap input[type=text]#first-input, div#inquiry-first-wrap input[type=text]#second-input, div#inquiry-first-wrap input[type=text]#third-input, div#inquiry-first-wrap input[type=text]#fourth-input, div#inquiry-first-wrap input[type=text]#bonus-input {
 			width: 100%;
 			height: 50px;
 			border: 0;
@@ -89,38 +89,38 @@
 			padding: 3px 3px 3px 14px;
 		}
 	
-		input::placeholder{
+		div#inquiry-first-wrap input::placeholder{
 			font-size: 15px;
 			letter-spacing: -0.5px;
 		}
 	
-		input[type=radio]:checked {
+		div#inquiry-first-wrap input[type=radio]:checked {
 			width: 16px;
 			height: 16px;
 			color: #1187CF;
 		}
 	
-		label.first-label{
+		div#inquiry-first-wrap label.first-label{
 			font-size: 20px;
 		}
 	
-		div.div-wrap{
+		div#inquiry-first-wrap div.div-wrap{
 			display: flex;
 			justify-content: space-between;
 		}
 		
-		textarea#content{
+		div#inquiry-first-wrap textarea#content{
 			width: 100%;
 			resize: none;
 			border: 1px solid #f6f6f6;
 			border-radius: 5px;
 		}
 	
-		div#final-div{
+		div#inquiry-first-wrap div#final-div{
 			text-align: left;
 		}
 	
-		button#button-submit{
+		div#inquiry-first-wrap button#button-submit{
 			height: 3.5rem;
 			background: #1187CF;
 			color: white;
@@ -133,30 +133,30 @@
 			letter-spacing: -0.5px;
 		}
 
-		p#question-p2, p#question-p3, p#question-p4, p#question-p5{
+		div#inquiry-first-wrap p#question-p2, div#inquiry-first-wrap p#question-p3, div#inquiry-first-wrap p#question-p4, div#inquiry-first-wrap p#question-p5{
 			font-size: 17px;
 		}
 		
-		input:focus{
+		div#inquiry-first-wrap input:focus{
 			outline: none;
 		}
 
-		textarea:focus{
+		div#inquiry-first-wrap textarea:focus{
 			outline: none;
 			background: #f6f6f6;
 		}
 
-		div#question-p2-wrap, div#question-p3-wrap, div#question-p4-wrap, div#question-p5-wrap{
+		div#inquiry-first-wrap div#question-p2-wrap, div#inquiry-first-wrap div#question-p3-wrap, div#inquiry-first-wrap div#question-p4-wrap, div#inquiry-first-wrap div#question-p5-wrap{
 			position: relative;
 			width: 580px;
     		padding-left: 83px;
 		}
 
-		div#question-p1-wrap{
+		div#inquiry-first-wrap div#question-p1-wrap{
 			position:relative;
 		}
 
-		button.img2{
+		div#inquiry-first-wrap button.img2{
 			background-image: url("../../images/search.png");
 	    	background-size: cover;
 			background-color: white;
@@ -168,7 +168,7 @@
     		right: 19px;
 		}
 
-		button.img3{
+		div#inquiry-first-wrap button.img3{
 			background-image: url("../../images/inquiryPlus.png");
 	    	background-size: cover;
 			background-color: white;
@@ -180,14 +180,14 @@
     		right: -20px;
 		}
 
-		input[type="checkbox"]:checked + label#second-label:before, input[type="radio"]:checked + label.first-label:before {
+		div#inquiry-first-wrap input[type="checkbox"]:checked + label#second-label:before, div#inquiry-first-wrap input[type="radio"]:checked + label.first-label:before {
     		background-color: #ffffff !important;
     		border-color: #ffffff !important;
     		color: #1187CF !important;
     		border: 0.5px solid !important;
 		}
 
-		div#shadow-wrap{
+		div#inquiry-first-wrap div#shadow-wrap{
 			border: none;
     		padding: 100px;
     		padding-top: 50px;
@@ -196,11 +196,11 @@
     		box-shadow: 0px 0px 50px #0000001a;
 		}
 
-		input[id*="faq-question"] {
-    display:none;
+		div#inquiry-first-wrap input[id*="faq-question"] {
+    		display:none;
 }
 
-		input[id*="faq-question"] + label {
+		div#inquiry-first-wrap input[id*="faq-question"] + label {
 		    display:block;
 		    padding:1.2rem;
 		    font-size:1rem;
@@ -210,11 +210,11 @@
 		    position: relative;
 		}
 		
-		input[type="radio"] + label:before {
+		div#inquiry-first-wrap input[type="radio"] + label:before {
 		    content:none;
 		}
 		
-		input[id*="faq-question"] + label + div{
+		div#inquiry-first-wrap input[id*="faq-question"] + label + div{
 		    max-height:0;
 		    transition:all .35s;
 		    overflow:hidden;
@@ -222,18 +222,18 @@
 			border-bottom: 1px solid #eee;	
 		}
 		
-		input[id*=faq-question] + label + div p{
+		div#inquiry-first-wrap input[id*=faq-question] + label + div p{
 		    display:inline-block;
 			padding: 0 1rem;	
 		}
 		
-		input[id*=faq-question]:checked + label + div {max-height:200px;}
+		div#inquiry-first-wrap input[id*=faq-question]:checked + label + div {max-height:200px;}
 		
-		input[type="radio"]:checked+label:before {
+		div#inquiry-first-wrap input[type="radio"]:checked+label:before {
 		    content:none;
 		}
 
-		input[id*="faq-question"] + label em{
+		div#inquiry-first-wrap input[id*="faq-question"] + label em{
 			position:absolute;
 			top:60%;
 			right:0px;
@@ -242,10 +242,10 @@
 			margin-top:-15px;
 			display:inline-block;
 		}
-		input[id*="faq-question"] + label em img{
+		div#inquiry-first-wrap input[id*="faq-question"] + label em img{
 			width:55%;
 		}
 
-		input[id*="faq-question"]:checked + label em img{
+		div#inquiry-first-wrap input[id*="faq-question"]:checked + label em img{
 			content:url("../../images/inquiryMinus.png");
 		}

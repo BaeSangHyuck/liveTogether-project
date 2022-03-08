@@ -46,7 +46,7 @@
 	</nav>
 
 	<!-- Main -->
-	<section id="main">
+	<section id="join-wrap">
 		<div id="box">
 			<div id="houseIcon">
 				<span></span>
@@ -84,13 +84,24 @@
 									placeholder="비밀번호 확인" data-type="password" class="tf_g checkPw"
 									name="password" type="password" id="id_password_3">
 							</div>
-							<div id="nickname_wrap">
+							<div class="nickname_wrap">
 								<input placeholder="닉네임" class="nickname" name="nickname"
 									type="text" id="nickname" autocomplete="off">
 							</div>
-							<div id="nickname_wrap">
+							<div class="nickname_wrap">
 								<input placeholder="전화번호" class="nickname" name="phoneNum"
 									type="text" id="phoneNum" autocomplete="off">
+							</div>
+							<div id="genderChoice">
+								<input class="member-input" type="radio" value="nomal"
+									name="memberGender" id="memberGenderM"> <label
+									class="member-btn" for="memberGenderM">남자</label> <input
+									class="member-input" type="radio" value="host"
+									name="memberGender" id="memberGenderF"> <label
+									class="member-btn" for="memberGenderF">여자</label>
+							</div>
+							<div class="nickname_wrap profile">
+								<textarea name="memberProfile" id="memberProfile" placeholder="본인을 간략히 소개해주세요."></textarea>
 							</div>
 
 							<div id="term-wrap">
@@ -290,7 +301,7 @@
 ② 회사와 이용자간 발생한 분쟁에 관한 소송은 민사소송법 상의 관할법원에 제소합니다.</textarea>
 								<br>
 								<div class="col-12"
-									style="display: flex; justify-content: space-between; ">
+									style="display: flex; justify-content: space-between;">
 									<div style="margin-top: -20px;">
 										<input type="checkbox" id="term2" name="term2" class="terms">
 										<label for="term2">개인정보 수집 및 이용</label>
@@ -354,7 +365,8 @@
 				return;
 			}
 
-			$.ajax({
+			$
+					.ajax({
 						url : contextPath + "/member/MemberCheckIdOk.me?email="
 								+ email,
 						type : "get",

@@ -7,6 +7,12 @@
 }
 
 /* section-one */
+pre {
+	overflow: auto;
+    white-space: pre-wrap;
+	font-family: unset;
+}
+
 div#second-wrap {
 	width: 70%;
 	margin: 0 auto;
@@ -92,6 +98,8 @@ div.explain {
 
 .explain pre {
 	padding: 2rem;
+	overflow: auto;
+    white-space: pre-wrap;
 }
 
 div.column {
@@ -232,4 +240,152 @@ input[type="radio"]:checked+label:before {
 
 p, label {
 	margin: 0;
+}
+
+@media (max-width:414px) {	
+	.button.primary {
+		height: 35px;
+    	line-height: 35px;
+    	font-size: 10px;
+	}
+	
+	#two-ex legend, #three-ex legend, #four-ex legend, #five-ex legend {
+    font-size: 15px;
+	}
+	
+	.option-wrap p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align:center;
+	}
+	
+	.tab {
+    padding: 0rem;
+	}
+	
+	#two-ex, #three-ex, #four-ex, #five-ex {
+    border-top: 2px solid #e2e2e2;
+	}
+	
+	.option-wrap {
+    padding-bottom: 0rem;
+	}
+	
+	.option-wrap-wrap {
+    display: block;
+	}
+	
+	.option {
+    padding-bottom: 5px;
+    margin: 0px 11px 3px 12px;
+    font-size: x-small;
+    float: left;
+    width: 23%;
+	}
+	
+	.option img {
+    width: 100%;
+	}
+	
+	div.explain {
+    padding-top: 30px;
+	}
+	
+	.explain pre {
+    padding: 0rem;
+    font-size: 10px;
+	}
+	
+	.column-wrap {
+    border-width: 1px 0 0 0px;
+    border-style: solid;
+    border-color: #E9E9E9;
+    height: 130px;
+	}
+	
+	div.column-title {
+    float: left;
+    width: 30%;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #E9E9E9;
+    background-color: #F5F3F1;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.1em;
+    text-align: center;
+    padding: 0px;
+	}
+	
+	div.column-value {
+    float: left;
+    width: 70%;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #E9E9E9;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.1rem;
+    text-align: center;
+    padding: 0px;
+	}
+	
+	section#three img {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+	}
+	
+	article {
+	padding-bottom: 30px;
+	}
+	
+	div#second-wrap {
+    width: 85%;
+    margin: 0 auto;
+}
+table, tbody, thead, tr, th, td {
+    font-size: xx-small;
+}
+table th {
+    padding: 0;
+    text-align: center;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 3px;
+    width: unset;
+}
+
+table td {
+    padding: 0;
+    text-align: center;
+    height: 2rem;
+    line-height: 2rem;
+	}
+	
+	div.pre-wrap pre{
+	font-size: 0.9em;
+    margin: 20px 0 2em 0;
+	}
+	
+	section#four, section#five {
+    padding-top: 30px;
+	}
+	
+	input[id*="faq-question"]+label {
+    display: block;
+    padding: 0.5rem;
+    border: 1px solid #eee;
+    font-size: x-small;
+    font-weight: 900;
+    content: none;
+    cursor: pointer;
+    position: relative;
+	}
+	
+	input[id*=faq-question]+label+div p {
+    display: inline-block;
+    padding: 1rem;
+    font-size: x-small;
+	}
 }

@@ -1,5 +1,4 @@
 #banner {
-	background-image: url("../../images/서울전경4.jpg") !important;
 	margin-top: 0px !important;
 	height: calc(100vh - 0.125em) !important;
 	padding: 0px !important;
@@ -15,33 +14,93 @@ ul {
 	padding: 0 !important;
 }
 
+div.flex_wrap {
+	display: flex;
+}
+
 .inner .content {
 	font-size: 50px;
 	font-weight: bolder;
 }
 
 .filter {
-	width: 90%;
-	height: 70px;
-	background-color: white;
-	border-radius: 5rem;
+	width: 60%;
+	height: 150px;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
-form {
-	display: flex;
-	color: black;
-	margin: 0 !important;
+#filter-container div#input-wrap, #filter-container div#slide-wrap {
 	height: 100%;
 }
 
-form input[type="text"] {
-	background: none;
+div#input-wrap {
+	text-align: center;
+	font-size: 5rem;
+	font-family: 'GmarketSansBold' !important;
 	border: none;
-	border-right: 2px solid #ededed;
-	border-radius: 0;
+	border-radius: 2rem;
+	position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+#hash-tag {
+	width: 20%;
+	display: inline-block;
+}
+
+#filter-input {
+	width: 80%;
+	text-align: left;
+}
+
+#filter-input input[type="text"] {
+	font-family: 'GmarketSansBold' !important;
+	font-size: 5rem !important;
+	display: inline-block !important;
+	background: none;
 	width: 100%;
 	height: 100%;
 	color: black !important;
+	border:none;
+	padding: 0 !important;
+}
+
+
+
+#filter-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255 255 255/ 65%);
+	border-radius: 2rem;
+}
+
+div#slide-wrap div.flex_wrap {
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+	top: 0;
+	left: 120px;
+}
+
+#filter-container div#slide-wrap {
+	height: 150px;
+	line-height: 150px;
+}
+
+#slide-wrap div.flex_wrap div.slide-cell {
+	width: 100%;
+	font-size: 4rem !important;
+	font-family: 'GmarketSansBold' !important;
+}
+
+form {
+	color: black;
+	margin: 0 !important;
+	height: 100%;
+	position: relative;
 }
 
 div.text-wrap {
@@ -304,12 +363,12 @@ section#two #check_img img {
 
 section#banner {
 	margin: 0 auto !important;
-	background-image: url("../../images/banner.png") !important;
+	background-image: url("../../images/bannerClick.png") !important;
+	font-family: 'GmarketSansBold';
 }
 
 section#banner div.inner {
-	margin-top: 100px;
-	margin-left: 130px;
+	margin-top: 150px;
 }
 
 section#three {
@@ -353,7 +412,6 @@ section#three div#border_wrap {
 
 section#three div.flex_wrap {
 	width: 100%;
-	display: flex;
 	justify-content: center;
 	text-align: center;
 }
@@ -409,6 +467,10 @@ article {
 }
 
 @media ( max-width :414px) {
+	section#banner {
+		background-image: url("../../images/mobile_banner.png") !important;
+		background: no-repeat;
+	}
 	section#one {
 		display: none;
 	}
@@ -466,4 +528,3 @@ article {
 		font-size: 0.79rem;
 	}
 }
-

@@ -56,7 +56,7 @@ button.btn_tistory:hover {
 	</nav>
 
 	<!-- Main -->
-	<section id="content">
+	<section id="login-wrap">
 		<div id="box">
 			<div id="houseIcon">
 				<span></span>

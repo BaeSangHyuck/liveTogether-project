@@ -18,10 +18,13 @@
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
 	
-      <article class="first-wrap">
+      <article class="noticeDetail-first-wrap">
         <div class="second-wrap">
           <div class="third-wrap">
+          	<div class="gradation-div-wrap">
             <p id="first-p">가치살자 공지사항</p>
+            <div class="gradation-div"></div>
+            </div>
             <br>
             <p id="second-p">비대면 투어 전환</p>
             <br>

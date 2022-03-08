@@ -61,7 +61,7 @@ button.btn_tistory:hover {
 	</nav>
 
 	<!-- Main -->
-	<section id="content">
+	<section id="finePw-wrap">
 		<div id="box">
 			<div id="houseIcon">
 				<span id="findPw_right"></span>

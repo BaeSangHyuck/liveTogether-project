@@ -11,7 +11,7 @@
 	<body>
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
-		<div id="first-wrap">
+		<div id="inquiry-first-wrap">
 			<div id="second-wrap">
 				<div id="third-wrap">
 					<div id="shadow-wrap">

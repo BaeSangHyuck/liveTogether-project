@@ -15,7 +15,7 @@
 
 
 	<div id="body">
-		<div id="nav">
+		<div id="nav-filter">
 			<div id="open_img"></div>
 			<div id="open_img2"></div>
 			<div class="flex input_wrap">

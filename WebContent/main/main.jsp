@@ -26,62 +26,26 @@
 			<div class="inner-wrap">
 
 				<div class="filter">
-					<form>
-						<div class="text-wrap">
-							<input type="text" name="" id="" placeholder="지역, 지하철역을 입력하시오">
-						</div>
-						<div class="gender-wrap" id="room">
-							<div id="gender-wrap" onclick="change1(this.id)">
-								성별형태 <input type="checkbox" class="arrow" id="gender"> <label
-									for="gender-wrap"> <span> </span> <span> </span>
-								</label>
+					<form id="filter-form">
+						<div id="filter-container">
+							<div id="input-wrap" class="flex_wrap">
+								<div id="hash-tag">
+									<span>#</span>
+								</div>
+								<div id="filter-input">
+									<input type="text">
+								</div>
 							</div>
-							<div class="choice">
-								<ul>
-									<li>선택안함</li>
-									<li>남성전용</li>
-									<li>여성전용</li>
-									<li class="last">남녀전용</li>
-								</ul>
+							<div id="slide-wrap">
+								<div class="flex_wrap">
+									<div class="slide-cell">성신여대쉐어하우스</div>
+									<div class="slide-cell">가양역쉐어하우스</div>
+									<div class="slide-cell">개포동쉐어하우스</div>
+									<div class="slide-cell">강남쉐어하우스</div>
+									<div class="slide-cell">서초쉐어하우스</div>
+									<div class="slide-cell">역삼쉐어하우스</div>
+								</div>
 							</div>
-
-						</div>
-						<div class="gender-wrap" id="room">
-							<div id="room-wrap" onclick="change2(this.id)">
-								룸 형태 <input type="checkbox" class="arrow" id="gender"> <label
-									for="room-wrap"> <span> </span> <span> </span>
-								</label>
-							</div>
-							<div class="choice">
-								<ul>
-									<li>선택안함</li>
-									<li>1인실</li>
-									<li>2인실</li>
-									<li class="last">3인실</li>
-								</ul>
-							</div>
-
-						</div>
-						<div class="gender-wrap" id="house">
-							<div id="house-wrap" onclick="change3(this.id)">
-								주거형태 <input type="checkbox" class="arrow" id="gender"> <label
-									for="house-wrap"> <span> </span> <span> </span>
-								</label>
-							</div>
-							<div class="choice">
-								<ul>
-									<li>선택안함</li>
-									<li>아파트</li>
-									<li>단독주택</li>
-									<li>빌라</li>
-									<li class="last">기타</li>
-								</ul>
-							</div>
-
-						</div>
-
-						<div class="submit-button">
-							<input type="submit" value="">
 						</div>
 					</form>
 				</div>
@@ -214,5 +178,6 @@
 	<!-- footer -->
 	<jsp:include page="../fix/footer.jsp" />
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/mainpage.js"></script>
 </html>
