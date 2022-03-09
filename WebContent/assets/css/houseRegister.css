@@ -99,9 +99,9 @@
 	height: 45px;
 }
 
-#houseRegister .add-table textarea{
-	resize: none;
-	width: 450px;
+#houseRegister .add-table textarea {
+    resize: none;
+    width: 95%;
     height: 300px;
     font-size: 13px;
 }

@@ -28,7 +28,9 @@
 			<span class="my_span01">(지구인)</span>님의 마이페이지 입니다. 
 			</div>
 		</div>
-
+		
+	
+	<div class="mypagelook">
 		<div id="box">	
 		<div id="navigation_wraper">
 			<div class="navigation">
@@ -71,6 +73,13 @@
 										남자									</div>
 								</div>
 								
+								<div class="column-wrapper nickname">
+									<label class="col06">닉네임</label> 
+									<div class="user_nickname">
+									거북도치
+									</div>
+								</div>
+								
 								<div class="column-wrapper profile">
 									<label class="col05">한 줄 소개</label> 
 									<div class="user_pro">
@@ -78,20 +87,12 @@
 									</div>
 								</div>
 
-							<!-- 	<input id="leave-button" type="button" class="update-btn"
-									value="확인"> -->
-
-
-
-
-
-
-
 							</form>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		</div>
 		<!-- </div> -->

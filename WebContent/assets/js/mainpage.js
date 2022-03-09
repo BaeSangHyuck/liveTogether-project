@@ -3,14 +3,23 @@ var check2 = -1;
 var check3 = -1;
 var count=0;
 var count2=0;
+var count3=0;
 const banner = document.querySelector("ul#content-wrap");
 const arrows = document.getElementsByClassName("arrow_btn");
 const slide= document.querySelector("div#slide-wrap div.flex_wrap");
+const slideMobile= document.querySelector("div#slide-wrap-mobile div.flex_wrap-mobile");
 setInterval(function(){
 	count2++;
 	count2=count2==6?0:count2;
 	slide.style.transform = "translateY(-" + count2 * 150 + "px)";
 	slide.style.transition ="transform 0.7s";
+},3000);
+
+setInterval(function(){
+	count3++;
+	count3=count3==6?0:count3;
+	slideMobile.style.transform = "translateY(-" + count3 * 70 + "px)";
+	slideMobile.style.transition ="transform 0.7s";
 },3000);
 /*const inputWrap = document.getElementsById("filter-form");
 const input = document.getElementsById("filter-container");
@@ -18,7 +27,6 @@ const input = document.getElementsById("filter-container");
 inputWrap.addEventListener("click",function(){
 	input.style.background="white"
 })*/
-console.log($('#filter-input input[type="text"]').val()=="");
 
 $('#filter-input input[type="text"]').focus(function(){
 	$('div#input-wrap').css("background-color","white");

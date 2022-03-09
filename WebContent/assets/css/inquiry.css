@@ -16,6 +16,8 @@
 		    font-weight: normal;
 		    font-style: normal;
 		}
+	
+		
 		body, input, select, textarea, button {
 			font-family: 'GmarketSansLight', Helvetica, Arial, sans-serif;
 		}
@@ -29,6 +31,7 @@
 			margin: 0 auto;
 			--shd: 0.00px 1.00px 24px 4px rgba(0,0,0,0.07);
 			--bg: 255,255,255;
+			margin-top: 190px !important;
 		}
 	
 		div#inquiry-first-wrap div#third-wrap{
@@ -248,4 +251,109 @@
 
 		div#inquiry-first-wrap input[id*="faq-question"]:checked + label em img{
 			content:url("../../images/inquiryMinus.png");
+		}
+		
+		@media (max-width: 414px){
+			div#second-wrap{
+				width: 100%;
+			}
+			
+			div#inquiry-first-wrap div#second-wrap{
+				width: 100%;
+				height: 1300px;
+				margin-top: 120px;
+			}
+			
+			div#inquiry-first-wrap p#first-p, div#inquiry-first-wrap p#question-p1{
+				padding-right: 0px;
+			}
+			
+			div#inquiry-first-wrap div#shadow-wrap{
+				border-radius : 6px;
+				height: 775px;
+				padding: 0px;
+				margin-top: 0px;
+				padding-top: 15px;
+			}
+			
+			div#inquiry-first-wrap input[type=text]#first-input, div#inquiry-first-wrap input[type=text]#second-input, div#inquiry-first-wrap input[type=text]#third-input, div#inquiry-first-wrap input[type=text]#fourth-input, div#inquiry-first-wrap input[type=text]#bonus-input{
+				width: 95%;
+				padding: 0px;
+			}
+			
+			div#inquiry-first-wrap textarea#content{
+				width: 95%;
+			}
+			
+			div#final-div{
+				margin-top: -35px;
+			}
+			
+			div#inquiry-first-wrap button#button-submit{
+				margin-top: -20px;
+				width: 40%;
+				font-size: 15px;
+				height: 40px;
+			}
+			
+			div#inquiry-first-wrap div#third-wrap{
+				height: 935px;
+				margin-top: 30px;
+			}
+			
+			div#inquiry-first-wrap label.first-label{
+				font-size: 12px;
+			}
+			
+			div#inquiry-first-wrap p#third-p, div#inquiry-first-wrap p#fourth-p, div#inquiry-first-wrap p#fifth-p {
+				margin-left: 5px;
+				margin-top: 3px;
+				margin-bottom: 3px;
+			}
+			
+			div#inquiry-first-wrap div.div-wrap{
+				justify-content: space-around;
+			}
+			
+			label#second-label{
+				font-size: 14px;
+			}
+			
+			div#inquiry-first-wrap p#second-p{
+				margin-bottom: 0px;
+			}
+			
+			p#fourth-p{
+				margin-bottom: 10px;
+			}
+			
+			div#inquiry-first-wrap input[type=text]#fourth-input{
+				margin-top: -7px;
+				margin-bottom: -18px;
+			}
+			
+			div#final-div{
+				margin-bottom: -42px;
+			}
+			
+			p#first-p{
+				margin-top: 10px
+			}
+			
+			div#hr-tag{
+				display:none;
+			}
+			
+			div#question-p1-wrap{
+				bottom: 120px;
+			}
+			
+			p#question-p1{
+				font-size: 20px !important;
+			}
+			
+			div#inquiry-first-wrap input[id*="faq-question"] + label{
+				font-size: 14px;
+				padding-right: 24px;
+			}
 		}

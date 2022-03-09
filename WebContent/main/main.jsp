@@ -41,9 +41,19 @@
 									<div class="slide-cell">성신여대쉐어하우스</div>
 									<div class="slide-cell">가양역쉐어하우스</div>
 									<div class="slide-cell">개포동쉐어하우스</div>
-									<div class="slide-cell">강남쉐어하우스</div>
-									<div class="slide-cell">서초쉐어하우스</div>
-									<div class="slide-cell">역삼쉐어하우스</div>
+									<div class="slide-cell">상혁쉐어하우스</div>
+									<div class="slide-cell">승근쉐어하우스</div>
+									<div class="slide-cell">현준쉐어하우스</div>
+								</div>
+							</div>
+							<div id="slide-wrap-mobile">
+								<div class="flex_wrap-mobile">
+									<div class="slide-cell-mobile">성신여대쉐어하우스</div>
+									<div class="slide-cell-mobile">가양역쉐어하우스</div>
+									<div class="slide-cell-mobile">개포동쉐어하우스</div>
+									<div class="slide-cell-mobile">상혁쉐어하우스</div>
+									<div class="slide-cell-mobile">승근쉐어하우스</div>
+									<div class="slide-cell-mobile">현준삼쉐어하우스</div>
 								</div>
 							</div>
 						</div>

@@ -29,7 +29,7 @@ body{
 
 div#admin-whole-wrapper div#first-wrapper{
     width: 87%;
-    height: 100vh;
+    height: 91.6vh;
     background-color: white;
 }
 
@@ -37,20 +37,20 @@ div#admin-whole-wrapper div#second-wrapper{
     width: 100%;
     background-color: #edf0f5;
     display: inline-block;
-    height: 100vh;
+    height: 91.6vh;
 }
 
 div#admin-whole-wrapper div.two-wrapper1, div#admin-whole-wrapper div.two-wrapper2, div#admin-whole-wrapper div.two-wrapper3{
     display: flex;
     width: 100%;
-    height: 280px;
+    height: 262px;
     justify-content: space-evenly;
 }
 
 div#admin-whole-wrapper div#two-wrapper-final{
     display: flex;
     width: 100%;
-    height: 98px;
+    height: 80px;
     justify-content: space-evenly;
 }
 
@@ -107,13 +107,15 @@ div#admin-whole-wrapper div#guest-div, div#admin-whole-wrapper div#host-div{
 
 div#admin-whole-wrapper div#navigation{
     width: 13%;
-    height: 100vh;
+    height: 91.6vh;
     background-color: #445163;
+    
 }
 
 div#admin-whole-wrapper{
     display: flex;
     width: 100%;
+    margin-top:80px;
 }
 
 div#admin-whole-wrapper div#padding-div{
@@ -353,14 +355,18 @@ div#admin-whole-wrapper div.smartStore-span-wrapper{
             div#first-wrapper{
                 width: 414px !important;
             }
-
+			
+			div#admin-whole-wrapper div#two-wrapper-first{
+    			margin-top: 20px;
+			}
+				
             div.two-wrapper1, div.two-wrapper2, div.two-wrapper3{
             	font-size: 10px;
                 display: block !important;
             }
             
             div.two-wrapper2{
-            margin-top: 160px;
+            margin-top: 180px;
             }
 
             div#firstBox, div#secondBox, div#thirdBox, div#fourthBox, div#fifthBox{
@@ -376,7 +382,7 @@ div#admin-whole-wrapper div.smartStore-span-wrapper{
             }
             
             div#fifthBox{
-            	margin-top: 160px;
+            	margin-top: 180px;
             }
 			
 			div#admin-whole-wrapper div#second-wrapper{

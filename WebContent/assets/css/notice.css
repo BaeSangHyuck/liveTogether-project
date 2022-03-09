@@ -156,7 +156,9 @@
       
       @media (max-width: 414px){
       	article.notice-first-wrap div.gradation-div{
-      		left: 78px;
+      		top: 20px;
+      		left: 106px;
+      		width: 202px;
       	}
       	
       	article.notice-first-wrap div.second-wrap{
@@ -164,15 +166,19 @@
       	}
       	
       	article.notice-first-wrap p.first-ptag{
+      		font-size: 25px;
       		display:block;
       	}
       	
       	article.notice-first-wrap div.gradation-div-wrap{
-      		margin-left: 79px;
+      		margin-left: 106px;
       	}
       	
       	article.notice-first-wrap input.first-input{
       		margin-top: -8px;
+      		font-size: 12px;
+      		height: 30px;
+      		width: 54%;
       	}
       	
       	article.notice-first-wrap form#search{
@@ -182,4 +188,5 @@
       	article.notice-first-wrap button.img1{
       		top: 0px;
       	}
+      	
       }

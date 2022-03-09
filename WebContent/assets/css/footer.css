@@ -1,8 +1,17 @@
 #footer {
 	width: 100%;
-	height: 300px;
+	height: 320px;
 	background-color: #333;
 	padding: 0 !important;
+}
+
+#footer div#container {
+	height: 100%;
+}
+
+#footer div.content span {
+	display: inline-block;
+	margin-top: 6px;
 }
 
 #footer .right-wrapper #footer .left-wrapper {
@@ -103,10 +112,25 @@
 }
 
 @media ( max-width :414px) {
-	.wrapper.right-wrapper{
-	display: none;
+	.wrapper.right-wrapper {
+		display: none;
 	}
-	#footer{
-	height: 374px;
+	#footer {
+		height: 371px;
+	}
+	#footer .lower-footer .wrapper {
+		padding: 0 0rem;
+	}
+	#footer .container {
+		max-width: 1320px;
+		width: 76%;
+		margin: 0 auto;
+		padding: 0;
+		box-sizing: border-box;
+		height: 100%;
+	}
+	#footer div.content span {
+		display: inline-block;
+		margin-top: 5px;
 	}
 }

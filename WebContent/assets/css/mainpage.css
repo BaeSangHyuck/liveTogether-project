@@ -41,9 +41,9 @@ div#input-wrap {
 	border: none;
 	border-radius: 2rem;
 	position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1000;
+	left: 0;
+	top: 0;
+	z-index: 1000;
 }
 
 #hash-tag {
@@ -64,11 +64,9 @@ div#input-wrap {
 	width: 100%;
 	height: 100%;
 	color: black !important;
-	border:none;
+	border: none;
 	padding: 0 !important;
 }
-
-
 
 #filter-container {
 	width: 100%;
@@ -466,10 +464,60 @@ article {
 	background: #1187cf30;
 }
 
+section#banner div#slide-wrap-mobile {
+	display: none;
+}
+
 @media ( max-width :414px) {
 	section#banner {
 		background-image: url("../../images/mobile_banner.png") !important;
 		background: no-repeat;
+		position: relative;
+		margin: 97px auto !important;
+		margin-bottom: 0px !important;
+		height: 460px !important;
+	}
+	section#banner div.filter {
+		height: 70px;
+	}
+	section#banner div.inner {
+		margin: 0;
+		position: absolute;
+		top: 195px;
+		width: 100%;
+	}
+	section#banner div#input-wrap {
+		font-size: 2rem;
+	}
+	section#banner #filter-input input[type="text"] {
+		font-size: 1.4rem !important;
+	}
+	section#banner div#slide-wrap-mobile {
+		width: 100%;
+		height: 70px;
+		display: block;
+		position: absolute;
+		left: 40px;
+	}
+	section#banner div#hash-tag span {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		line-height: 70px;
+	}
+	section#banner div#slide-wrap {
+		display: none;
+	}
+	section#banner div.slide-cell-mobile {
+		height: 70px;
+		font-size: 1.4rem !important;
+		width: 100%;
+		line-height: 70px;
+	}
+	section#banner #slide-wrap div.flex_wrap-mobile {
+		top: 0;
+		left: 50px;
+		width: 100%;
 	}
 	section#one {
 		display: none;
@@ -484,8 +532,14 @@ article {
 		width: 100%;
 	}
 	section#two {
-		height: 540px;
+		height: 600px;
+		margin-top: 0;
 	}
+	section#two #check_img img {
+		width: 100%;
+		margin-top: 50px;
+	}
+	
 	section#three div#intro_border {
 		display: none;
 	}

@@ -3,6 +3,7 @@ var btn = document.getElementsByClassName("click"); //앵커 후 스타일 주�
 	var $contract = $("#contract-wrap");
 	var headerHeight = $("header").outerHeight(); //헤더길이
 	
+	
 	//헤더길이에 따라 스크롤위치 잡아주기
 	$(function () {
 		$(".button.primary.click").on("click", function(){
@@ -31,18 +32,24 @@ success();
 // 스크롤 위치에 따라 액티브클래스(색변경) 주기
 $(window).scroll(function(){ 
     var scrollValue = $(document).scrollTop();
-    console.log(scrollValue);
-	console.log($("#two-ex").offset().top);
-	console.log($("#three-ex").offset().top);
-	console.log($("#four-ex").offset().top);
-	console.log($("#five-ex").offset().top);
-	if(scrollValue > 830){
-		$("div.intro").addClass("introfix");
-		$("div.tab").css("margin-top","60px");
-	}else{
-		$("div.intro").removeClass("introfix");	
-		$("div.tab").css("margin-top","0");
-	}
+    if (matchMedia("screen and (min-width: 415px)").matches){ 
+    	if(scrollValue > 755){
+    		$("div.intro").addClass("introfix");
+    		$("div.tab").css("margin-top","60px");
+    	}else{
+    		$("div.intro").removeClass("introfix");	
+    		$("div.tab").css("margin-top","0");
+    	}
+    }else { 
+    	if(scrollValue > 280){
+    		$("div.intro").addClass("introfix");
+    		$("div.tab").css("margin-top","60px");
+    	}else{
+    		$("div.intro").removeClass("introfix");	
+    		$("div.tab").css("margin-top","0");
+    	}
+    }
+
 
 	if($("#two-ex").offset().top - 240 < scrollValue){
 		btn[0].classList.add("active");

@@ -5,10 +5,12 @@
 	<html>
 	<head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../assets/css/inquiry.css" />
 	<title>가치살자 문의하기</title>
 	</head>
 	<body>
+	<jsp:include page="../fix/header.jsp" />
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
 		<div id="inquiry-first-wrap">

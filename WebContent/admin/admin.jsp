@@ -9,6 +9,7 @@
 <title>가치살자 관리자 페이지</title>
 </head>
 <body>
+	<jsp:include page="../fix/header.jsp" />
 	<div id="admin-whole-wrapper">
 		<div id="navigation">
 			<div id="padding-div">
