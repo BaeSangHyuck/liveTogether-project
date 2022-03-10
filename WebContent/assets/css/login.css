@@ -176,7 +176,7 @@ section#login-wrap ul.actions.fit.kakaochoice {
 
 section#login-wrap ul.kakaochoice li {
 	margin: 0 auto;
-	width: 330px;
+	width: 100%;
 }
 
 section#login-wrap ul.kakaochoice li a.find {
@@ -283,6 +283,11 @@ section#login-wrap input[type="checkbox"]:focus+label:before, input[type="radio"
 	box-shadow: 0 0 0 1px #ffffff;
 }
 
+section#login-wrap li.choice a{
+	display: block;
+}
+
+
 
 
 @media (max-width: 414px){
@@ -292,4 +297,10 @@ section#login-wrap input[type="checkbox"]:focus+label:before, input[type="radio"
 	section#login-wrap #login_banner img{
 	width: 414px;
 	}
+	
+	section#login-wrap ul.kakaochoice li {
+    margin: 0 auto;
+    width: 100%;
+
+}
 }

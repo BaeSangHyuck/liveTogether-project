@@ -74,23 +74,27 @@
 							<div class="login_kakaomail">
 								<div id="loginEmailField">
 									<input placeholder="이메일(아이디)" class="tf_g tf_email"
-										name="email" id="id_email_2" autocomplete="off">
+										name="memberId" id="memberId" autocomplete="off">
 									<p id="result">가치살다에서 사용하실 이메일을 입력해주세요.</p>
 								</div>
 							</div>
 							<div class="item_tf item_inp">
 								<input placeholder="비밀번호" data-type="password" class="tf_g "
-									name="password" type="password" id="id_password_3"> <input
+									name="memberPw" type="password" id="id_password_3"> <input
 									placeholder="비밀번호 확인" data-type="password" class="tf_g checkPw"
-									name="password" type="password" id="id_password_3">
+									name="memberPwOk" type="password" id="pwCheck">
 							</div>
 							<div class="nickname_wrap">
-								<input placeholder="닉네임" class="nickname" name="nickname"
+								<input placeholder="이름" class="nickname" name="memberName"
+									type="text" id="memberName" autocomplete="off">
+							</div>
+							<div class="nickname_wrap">
+								<input placeholder="닉네임" class="nickname" name="memberNickname"
 									type="text" id="nickname" autocomplete="off">
 							</div>
 							<div class="nickname_wrap">
 								<input placeholder="전화번호" class="nickname" name="phoneNum"
-									type="text" id="phoneNum" autocomplete="off">
+									type="text" id="memberPhone" autocomplete="off">
 							</div>
 							<div id="genderChoice">
 								<input class="member-input" type="radio" value="nomal"
@@ -101,7 +105,8 @@
 									class="member-btn" for="memberGenderF">여자</label>
 							</div>
 							<div class="nickname_wrap profile">
-								<textarea name="memberProfile" id="memberProfile" placeholder="본인을 간략히 소개해주세요."></textarea>
+								<textarea name="memberProfile" id="memberProfile"
+									placeholder="본인을 간략히 소개해주세요."></textarea>
 							</div>
 
 							<div id="term-wrap">
@@ -356,108 +361,6 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script>
-		// 아이디 중복검사
-		function checkId(memberId) {
-			if (!email) {
-				$("#result").text("아이디를 입력해주세요.");
-				$("#result").css("color", "red");
-				return;
-			}
-
-			$
-					.ajax({
-						url : contextPath + "/member/MemberCheckIdOk.me?email="
-								+ email,
-						type : "get",
-						dataType : "json",
-						success : function(result) {
-							if (result.status == "ok") {
-								$("#result").text("사용한 가능한 아이디입니다.");
-								$("#result").css("color", "blue");
-								check = true;
-							} else {
-								$("#result").text("중복된 아이디입니다.");
-								$("#result").css("color", "red");
-								$("input#email").focus();
-							}
-						},
-						error : function() {
-							console.log("중복검사 오류");
-						}
-					});
-		}
-
-		// 회원가입 유효성 검사
-		function send() {
-
-			if (!check) {
-				alert("아이디를 확인해주세요.");
-				return;
-			}
-
-			if (!joinForm.memberPw.value) {
-				alert("패스워드를 확인해주세요.");
-				return;
-			}
-
-			if (!joinForm.memberName.value) {
-				alert("이름을 확인해주세요.");
-				return;
-			}
-
-			if (!joinForm.memberAge.value) {
-				alert("나이를 확인해주세요.");
-				return;
-			}
-
-			joinForm.submit();
-		}
-
-		// 이용 약관
-		const $all = $("#term");
-		const $inputs = $(".terms");
-
-		$all.on('click', function() {
-			if ($(this).is(":checked")) {
-				$inputs.prop('checked', true);
-			} else {
-				$inputs.prop('checked', false);
-			}
-		});
-
-		$inputs.on('click', function() {
-			var check = true;
-			if (!$(this).is(":checked")) {
-				$all.prop('checked', false);
-			}
-
-			if ($inputs.filter(":checked").length == 2) {
-				$all.prop('checked', true);
-			}
-		});
-
-		// 약관 펼쳐보기
-		const aTags = $("a.showTerm");
-		const textAreas = $("textArea.term-content");
-		var check1 = -1;
-		var check2 = -1;
-		aTags.on('click', function(e) {
-			e.preventDefault();
-
-			if ($(this).attr("href") == "term1-content") {
-				$("#term1-content").slideToggle(function() {
-					check1 *= -1;
-					$(aTags[0]).text(check1 > 0 ? "닫기" : "펼쳐보기");
-				});
-
-			} else if ($(this).attr("href") == "term2-content") {
-				$("#term2-content").slideToggle(function() {
-					check2 *= -1;
-					$(aTags[1]).text(check2 > 0 ? "닫기" : "펼쳐보기");
-				});
-			}
-		});
-	</script>
+	<script src="assets/js/join.js"></script>
 </body>
 </html>

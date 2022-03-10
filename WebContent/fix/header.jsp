@@ -12,9 +12,9 @@
 <body>
 	<header id="header">
 		<div id="container">
-			<a href="../main/main.jsp"> <img src="../images/textLogo2.png">
-			</a> <img class="mouseover" id="slogun" src="../images/slogun.png">
-			</a> <img class="mouseover" id="slogun2" src="../images/slogun2.png">
+			<a href="../main/main.jsp"> <img src="../images/textLogo2.png"></a>
+			<img class="mouseover" id="slogun" src="../images/slogun.png">
+			<img class="mouseover" id="slogun2" src="../images/slogun2.png">
 			<ul class="menu-btn-list">
 				<li class="btn p_menu"><a href="../house/findRoom.jsp">방 찾기</a></li>
 				<li class="btn p_menu"><a href="../house/houseregister.jsp">호스팅
@@ -33,16 +33,16 @@
 							<li class="login_status"><a href="../member/mypage.jsp">마이페이지</a></li>
 							<li><a href="../member/join.jsp">회원가입</a></li>
 						</ul>
-
-					</div></li>
+					</div>
+				</li>
 			</ul>
 		</div>
 		<div id="container-mobile">
 			<a href="../main/main.jsp"> <img src="../images/textLogo2.png">
 			</a>
 			<div id="nav-wrap">
-				<input type="checkbox" id="menuicon"> <label id="icon-label" for="menuicon">
-					<span></span> <span></span> <span></span>
+				<input type="checkbox" id="menuicon"> <label id="icon-label"
+					for="menuicon"> <span></span> <span></span> <span></span>
 				</label>
 			</div>
 		</div>
@@ -52,8 +52,10 @@
 		<div id="container">
 			<div id="nav-menu">
 				<div id="button-wrap">
-					<input type="button" name="login" value="로그인" onclick="location.href='../member/login.jsp'">
-					<input type="button" name="join" value="회원가입" onclick="location.href='../member/join.jsp'">
+					<input type="button" name="login" value="로그인"
+						onclick="location.href='../member/login.jsp'"> <input
+						type="button" name="join" value="회원가입"
+						onclick="location.href='../member/join.jsp'">
 				</div>
 				<div id="menu-wrap">
 					<div class="menu">

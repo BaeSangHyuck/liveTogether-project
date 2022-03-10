@@ -190,7 +190,7 @@ section#join-wrap .btn_g {
 	background-color: #e7e7e7;
 } */
 
-section#join-wrap input#id_email_2, input#id_password_3, input#nickname, input#tel, input#phoneNum, input#memberProfile{
+section#join-wrap input#memberId, input#id_password_3, input#pwCheck, input#nickname, input#tel, input#memberPhone, input#memberProfile, input#memberName{
 	border: none;
 	border-bottom: 1px solid #e5e5e5;
 	border-radius: 0;
@@ -309,7 +309,7 @@ section#join-wrap textarea.term-content{
 	font-size: 12px;
 }
 
-section#join-wrap input#id_password_3{
+section#join-wrap input#id_password_3,  input#pwCheck{
 	margin-top: 20px;
 }
 
@@ -367,6 +367,10 @@ section#join-wrap div#genderChoice {
     display: flex;
     margin-left: -26px;
     justify-content: space-evenly;
+}
+
+section#join-wrap li.choice a{
+	display: block;
 }
 
 @media (max-width: 414px){

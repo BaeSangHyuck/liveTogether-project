@@ -1,7 +1,7 @@
-#header {
-	position: unset !important;
-}
-
+header#header {
+	position: unset;
+	}
+	
 .tab {
 	padding: 2rem;
 }

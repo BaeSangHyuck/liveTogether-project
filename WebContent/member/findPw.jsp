@@ -80,10 +80,10 @@ button.btn_tistory:hover {
 
 								<div class="inp_text">
 									<label for="findUrlOrNickname" class="screen_out">아이디와
-										이메일을 입력해주세요.</label> <input type="text" id="findUrlOrNickname"
-										name="url" placeholder="아이디" value="" tabindex="3"> <input
-										type="email" id="findUrlOrNickname" name="url"
-										placeholder="이메일" value="" tabindex="3">
+										전화번호를 입력해주세요.</label> <input type="text" id="findUrlOrNickname"
+										name="memberId" placeholder="아이디" value="" tabindex="3"> <input
+										type="text" id="findUrlOrNickname" name="memberPhone"
+										placeholder="전화번호" value="" tabindex="3">
 								</div>
 							</div>
 							<div id="kakaochoice">

@@ -69,16 +69,16 @@ button.btn_tistory:hover {
 			</ul>
 			<div id="mArticle">
 				<div class="content_account">
-					<form id="findLoginId" method="post" action="/member/find/loginId">
+					<form id="findLoginId" method="post" action="/member/memberFindIdOk.me">
 						<fieldset class="fld_tistory">
 							<div class="cont_data">
 
 								<div class="inp_text">
 									<label for="findUrlOrNickname" class="screen_out">가입시
-										등록한 이름과 이메일을 입력해주세요.</label> <input type="text" id="findUrlOrNickname"
-										name="url" placeholder="이름" value="" tabindex="3"> <input
-										type="email" id="findUrlOrNickname" name="url"
-										placeholder="이메일" value="" tabindex="3">
+										등록한 이름과 전화번호를 입력해주세요.</label> <input type="text" id="findUrlOrNickname"
+										name="memberName" placeholder="이름" value="" tabindex="3"> <input
+										type="text" id="findUrlOrNickname" name="memberPhone"
+										placeholder="전화번호" value="" tabindex="3">
 
 								</div>
 							</div>

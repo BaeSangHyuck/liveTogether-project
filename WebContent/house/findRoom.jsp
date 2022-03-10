@@ -35,8 +35,8 @@
 							<div class="multi-range-slider">
 								<!-- 진짜 슬라이더 -->
 								<input type="range" id="input-left" min="0" max="100" value="25"
-									step="10" /> <input type="range" id="input-right" min="0"
-									max="100" value="75" step="10" />
+									step="10" name="min"/> <input type="range" id="input-right" min="0"
+									max="100" value="75" step="10" name="max"/>
 								<!-- 커스텀 슬라이더 -->
 								<div class="slider">
 									<div class="track"></div>
@@ -52,19 +52,19 @@
 						</span>
 						<div class="filter-flex">
 							<div class="check-wrap">
-								<input type="checkbox" id="check1">
+								<input type="checkbox" id="check1" name="g" value="woman">
 								<label for="check1"> 
 									<div class="check" >여성전용</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								<input type="checkbox" id="check2">
+								<input type="checkbox" id="check2" name="g" value="man">
 								<label for="check2"> 
 									<div class="check" >남성전용</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								 <input type="checkbox" id="check3">
+								 <input type="checkbox" id="check3" name="g" value="public">
 								<label for="check3">
 									<div class="check" >남녀공용</div>
 								</label>
@@ -76,25 +76,25 @@
 						</span>
 						<div class="filter-flex">
 							<div class="check-wrap">
-								<input type="checkbox" id="check4">
+								<input type="checkbox" id="check4" name="h" value="apart">
 								<label for="check4"> 
 									<div class="check" >아파트</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								<input type="checkbox" id="check5">
+								<input type="checkbox" id="check5" name="h" value="single">
 								<label for="check5"> 
 									<div class="check" >단독주택</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								<input type="checkbox" id="check6">
+								<input type="checkbox" id="check6" name="h" value="villa">
 								<label for="check6"> 
 									<div class="check">빌라</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								<input type="checkbox" id="check7">
+								<input type="checkbox" id="check7" name="h" value="other">
 								<label for="check7"> 
 									<div class="check">기타</div>
 								</label>
@@ -106,19 +106,19 @@
 						</span>
 						<div class="filter-flex">
 							<div class="check-wrap">
-								 <input type="checkbox" id="check8">
+								 <input type="checkbox" id="check8" name="r" value="one">
 								<label for="check8">
 									<div class="check">1인실</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								 <input type="checkbox" id="check9">
+								 <input type="checkbox" id="check9" name="r" value="two">
 								<label for="check9">
 									<div class="check">2인실</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								 <input type="checkbox" id="check10">
+								 <input type="checkbox" id="check10" name="r" value="three">
 								<label for="check10">
 									<div class="check">3인실</div>
 								</label>
@@ -130,7 +130,7 @@
 						<span> <strong>입주예정일</strong>
 						</span>
 						<div>
-							<input type="date">
+							<input type="date" name="d"> 
 						</div>
 					</div>
 					<div class="btn">
@@ -145,7 +145,7 @@
 					</div>
 				</div>
 			</div>
-			<div>
+			<div id="table-wrap">
 				<div id="table">
 					<div class="table-row">
 						<div class="table-cell">
@@ -664,6 +664,7 @@
 
 </body>
 
+
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript"
@@ -701,6 +702,7 @@
 		// 클러스터러에 마커들을 추가합니다
 		clusterer.addMarkers(markers);
 	}); */
+	
 </script>
 <script src="../assets/js/findRoom.js"></script>
 </html>

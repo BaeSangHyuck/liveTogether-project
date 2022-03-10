@@ -6,19 +6,36 @@ const filter_wrap = document.getElementById("filter-wrap");
 var check=-1;
 
 open.addEventListener("click", function() {
-    open.style.display = "none";
-	close.style.display = "block";
-	navfilter.style.transform = "translateX(40vw)";
-	navfilter.style.transition = "transform 0.5s";
+	if (matchMedia("screen and (min-width: 415px)").matches) {  	
+		open.style.display = "none";
+		close.style.display = "block";
+		navfilter.style.transform = "translateX(40vw)";
+		navfilter.style.transition = "transform 0.5s";
+	}
+	else{  	
+		open.style.display = "none";
+		close.style.display = "block";
+		navfilter.style.transform = "translateX(81vw)";
+		navfilter.style.transition = "transform 0.5s";
+	}
+
+	
 })
 
 close.addEventListener("click", function() {
-    open.style.display = "block";
-	close.style.display = "none";
-	navfilter.style.transform = "translateX(0)";
-	navfilter.style.transition = "transform 0.5s";
-	check = -1;
-    filter_wrap.style.transform = "translateX(-40vw)";
+	if (matchMedia("screen and (min-width: 415px)").matches) { 	
+		open.style.display = "block";
+		close.style.display = "none";
+		navfilter.style.transform = "translateX(0)";
+		navfilter.style.transition = "transform 0.5s";
+		check = -1;
+		filter_wrap.style.transform = "translateX(-40vw)";
+	}else{
+		open.style.display = "block";
+		close.style.display = "none";
+		navfilter.style.transform = "translateX(0)";
+		navfilter.style.transition = "transform 0.5s";
+	}
 })
 
 mapContainer.addEventListener("click", function() {
@@ -91,16 +108,16 @@ inputRight.addEventListener("input", setRightValue);
 // var checkcount1 = -1;
 
 // check1.parentElement.addEventListener("click",function(){
-//     checkcount1*=-1;
-//     if(checkcount1>0){
-//         check1.checked=true;
-//         check1.parentElement.style.background="#1187CF";
-//         check1.parentElement.lastElementChild.firstElementChild.style.color="white";
-//     }else{
-//         check1.checked=false;
-//         check1.parentElement.style.background="white";
-//         check1.parentElement.lastElementChild.firstElementChild.style.color="black";
-//     }
+// checkcount1*=-1;
+// if(checkcount1>0){
+// check1.checked=true;
+// check1.parentElement.style.background="#1187CF";
+// check1.parentElement.lastElementChild.firstElementChild.style.color="white";
+// }else{
+// check1.checked=false;
+// check1.parentElement.style.background="white";
+// check1.parentElement.lastElementChild.firstElementChild.style.color="black";
+// }
 
 // })
 
