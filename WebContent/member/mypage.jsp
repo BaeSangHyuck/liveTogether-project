@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -20,143 +21,145 @@
 <jsp:include page="../fix/aside.jsp" />
 
 <body class="is-preload">
+<c:set var="member" value="${member}"/>
 	<article id="main">
 
-	<div id="mypageheader">
-		<div class="inner">
-			<div class="inner_ab">
-				<span class="my_span01">(지구인)</span>님의 마이페이지 입니다.
-			</div>
-		</div>
-		</div>
-		
-		
-		
-	<div class ="mypage">	
-		<div id="box">
-			<div id="navigation_wraper">
-				<div class="navigation">
-					<a href="mypage.jsp">
-						<div class="menu-btn">내 정보 수정</div>
-					</a><a href="mypagelook.jsp">
-						<div class="menu-btn2">내 정보 조회</div>
-					</a>
+		<div id="mypageheader">
+			<div class="inner">
+				<div class="inner_ab">
+					<span class="my_span01">(${member.getMemberName()})</span>님의 마이페이지 입니다.
 				</div>
 			</div>
-
-			<div class="wrapper">
-				<div class="container">
-					<div id="change_info">
-						<div class="content-wrapper">
-							<div class="content">
-								<form class="info-form" action="" accept-charset="UTF-8"
-									method="post">
-
-									<div class="column-wrapper email">
-										<label class="col01">이메일</label>
-										<div class="static">tkdgur1996@naver.com</div>
-									</div>
-
-									<div class="column-wrapper name">
-										<label class="col02">이름</label>
-										<div class="user_name user">
-											<input type="text" id="user_name" name="user[name]">
-										</div>
-									</div>
-
-									<div class="column-wrapper phone">
-										<label class="active" for="user_phone">전화번호</label>
-										<div class="user_phone user">
-											<input type="text" id="user_phone" name="user[phone]"
-												value="01040625261">
-										</div>
-									</div>
-
-									<div class="column-wrapper gender">
-										<label for="gender-input" class="gender-input">성별</label>
-										<div class="gender-btn-wrapper ">
-											<input class="gender-input" type="radio" value="m"
-												name="user[gender]" id="user_gender_m"> <label
-												class="gender-btn" for="user_gender_m">남</label> <input
-												class="gender-input" type="radio" value="f"
-												name="user[gender]" id="user_gender_f"> <label
-												class="gender-btn" for="user_gender_f"> 여 </label>
-										</div>
-									</div>
+		</div>
 
 
 
+		<div class="mypage">
+			<div id="box">
+				<div id="navigation_wraper">
+					<div class="navigation">
+						<a href="mypage.jsp">
+							<div class="menu-btn">내 정보 수정</div>
+						</a><a
+							href="${pageContext.request.contextPath}/member/MemberMypageOk.me">
+							<div class="menu-btn2">내 정보 조회</div>
+						</a>
+					</div>
+				</div>
 
-									<div class="column-wrapper current-password">
-										<label class="col03">비밀번호</label>
-										<div class="user_pw user">
-											<input type="password" id="user_current_password"
-												name="user[current_password]">
-										</div>
-									</div>
+				<div class="wrapper">
+					<div class="container">
+						<div id="change_info">
+							<div class="content-wrapper">
+								<div class="content">
+									<form class="info-form" action="${pageContext.request.contextPath}/member/MemberMypageUpdateOk.me" accept-charset="UTF-8"
+										method="post">
 
-									<div class="column-wrapper password">
-										<label class="col04 ">새비밀번호</label>
-										<div class="user_newpw user">
-											<input type="password" id="user_password"
-												name="user[password]">
-										</div>
-									</div>
-									
-									<div class="column-wrapper nickname">
-										<label class="col06">닉네임</label>
-										<div class="user_nickname user">
-											<input type="text" id="user_nickname" name="user[nickname]">
-										</div>
-									</div>
-
-									<div class="column-wrapper profile">
-										<label class="col05">한 줄 소개</label>
-										<div class="user_pro user">
-											<input type="text" id="user_pro" name="user[pro]">
-										</div>
-									</div>
-
-									<div class="agreement-list">
-										<div class="agreement">
-											<input type="checkbox" id="user_allow_newsletter"
-												name="user[allow_newsletter]" class="agreement-input"
-												checked> <label class="agreement-content"
-												for="user_allow_newsletter">
-												<div class="content">
-													<span class="my_check">(선택)</span> 새로운 지점 소식을 뉴스레터로 구독
-												</div>
-											</label>
+										<div class="column-wrapper email">
+											<label class="col01">이메일</label>
+											<div class="static">${member.getMemberId()}</div>
 										</div>
 
-										<div class="agreement">
-											<input type="checkbox" id="user_allow_serve_privacy"
-												name="user[allow_serve_privacy]" class="agreement-input"
-												checked> <label class="agreement-content"
-												for="user_allow_serve_privacy"> <!-- 	<div class="content"> -->
-												<span class="my_check">(선택)</span> <a class="privacy-btn"
-												href="/serve_privacy" target="_blank">개인정보 제3자 제공</a> 에
-												동의합니다. <!-- 	</div> -->
-											</label>
+										<div class="column-wrapper name">
+											<label class="col02">이름</label>
+											<div class="user_name user">
+												<input type="text" id="user_name" name="memberName" value="${member.getMemberName()}">
+											</div>
 										</div>
-									</div>
 
-									<ul class="notice-list">
-										<li class="notice">* 정보 수정 시 기존 비밀번호를 입력하셔야 합니다.</li>
-									</ul>
-									<div class="mypagebt">
-										<div id="bt1">
-											<input type="submit" class="update-btn" name="commit"
-												value="내 정보 수정 완료">
+										<div class="column-wrapper phone">
+											<label class="active" for="user_phone">전화번호</label>
+											<div class="user_phone user">
+												<input type="text" id="user_phone" name="memberPhone"
+													value="${member.getMemberPhone()}">
+											</div>
 										</div>
-										<div id="bt2">
-											<input id="leave-button" type="button" class="update-btn"
-												value="탈퇴하기">
+
+										<div class="column-wrapper gender">
+											<label for="gender-input" class="gender-input">성별</label>
+											<div class="gender-btn-wrapper ">
+												<input class="gender-input" type="radio" value="m"
+													name="memberGender" id="user_gender_m"> <label
+													class="gender-btn" for="user_gender_m">남</label> <input
+													class="gender-input" type="radio" value="f"
+													name="memberGender" id="user_gender_f"> <label
+													class="gender-btn" for="user_gender_f"> 여 </label>
+											</div>
 										</div>
-									</div>
-								</form>
-							</div>
-							<!-- <script type="text/javascript">
+
+
+
+
+										<div class="column-wrapper current-password">
+											<label class="col03">비밀번호</label>
+											<div class="user_pw user">
+												<input type="password" id="user_current_password"
+													name="memberPw">
+											</div>
+										</div>
+
+										<div class="column-wrapper password">
+											<label class="col04 ">비밀번호 확인</label>
+											<div class="user_newpw user">
+												<input type="password" id="user_password"
+													name="memberPwOk">
+											</div>
+										</div>
+
+										<div class="column-wrapper nickname">
+											<label class="col06">닉네임</label>
+											<div class="user_nickname user">
+												<input type="text" id="user_nickname" name="memberNickname" value="${member.getMemberNickname()}">
+											</div>
+										</div>
+
+										<div class="column-wrapper profile">
+											<label class="col05">한 줄 소개</label>
+											<div class="user_pro user">
+												<input type="text" id="user_pro" name="memberProfile" value="${member.getMemberProfile()}">
+											</div>
+										</div>
+
+										<div class="agreement-list">
+											<div class="agreement">
+												<input type="checkbox" id="user_allow_newsletter"
+													name="user[allow_newsletter]" class="agreement-input"
+													checked> <label class="agreement-content"
+													for="user_allow_newsletter">
+													<div class="content">
+														<span class="my_check">(선택)</span> 새로운 지점 소식을 뉴스레터로 구독
+													</div>
+												</label>
+											</div>
+
+											<div class="agreement">
+												<input type="checkbox" id="user_allow_serve_privacy"
+													name="user[allow_serve_privacy]" class="agreement-input"
+													checked> <label class="agreement-content"
+													for="user_allow_serve_privacy"> <!-- 	<div class="content"> -->
+													<span class="my_check">(선택)</span> <a class="privacy-btn"
+													href="/serve_privacy" target="_blank">개인정보 제3자 제공</a> 에
+													동의합니다. <!-- 	</div> -->
+												</label>
+											</div>
+										</div>
+
+										<ul class="notice-list">
+											<li class="notice">* 정보 수정 시 기존 비밀번호를 입력하셔야 합니다.</li>
+										</ul>
+										<div class="mypagebt">
+											<div id="bt1">
+												<input type="submit" class="update-btn" name="commit"
+													value="내 정보 수정 완료">
+											</div>
+											<div id="bt2">
+												<input id="leave-button" type="button" class="update-btn"
+													value="탈퇴하기">
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- <script type="text/javascript">
 
 $('#leave-button').click(function(e) {
   if(confirm('정말로 탈퇴 하시겠습니까?')) {
@@ -178,12 +181,12 @@ $('#leave-button').click(function(e) {
 
 </script> -->
 
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-</div>
 
 	</article>
 

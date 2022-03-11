@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,18 +24,31 @@
 					<div>
 						<ul class="mouseover">
 							<li><a href="../board/info.jsp">가치살자 소개</a></li>
-							<li><a href="../board/notice.jsp">공지사항</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/board/BoardListOk.bo">공지사항</a></li>
 						</ul>
 					</div></li>
-				<li class="btn p_menu"><a href="../member/login.jsp">로그인</a> <a
-					class="login_status" href="/notices">로그아웃</a>
-					<div>
-						<ul class="mouseover">
-							<li class="login_status"><a href="../member/mypage.jsp">마이페이지</a></li>
-							<li><a href="../member/join.jsp">회원가입</a></li>
-						</ul>
-					</div>
-				</li>
+				<c:choose>
+					<c:when test="${memberId eq null}">
+						<li class="btn p_menu"><a href="../member/login.jsp">로그인</a>
+							<div>
+								<ul class="mouseover">
+									<li><a href="../member/join.jsp">회원가입</a></li>
+								</ul>
+							</div>
+						</li>
+					</c:when>
+				<c:otherwise>
+						<li class="btn p_menu" id="memberId">${memberName}님
+							<div>
+								<ul class="mouseover">
+									<li><a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">로그아웃</a></li>
+									<li><a href="${pageContext.request.contextPath}/member/MemberMypageOk.me">마이페이지</a></li>
+								</ul>
+							</div>
+						</li>
+				</c:otherwise>
+				</c:choose>
 			</ul>
 		</div>
 		<div id="container-mobile">

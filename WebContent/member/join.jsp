@@ -14,8 +14,8 @@
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=1" />
-<link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/join.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/join.css" />
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap"
 	rel="stylesheet">
@@ -62,19 +62,19 @@
 					<div id="infoMsg">
 						<span>내 월세를 아껴줄<br>쉐어하우스 <b>'가치살자'</b></span>
 					</div>
+					<form id="joinForm" name="joinForm" action="${pageContext.request.contextPath}/member/MemberJoinOk.me">
 					<div id="memberType">
-						<input class="member-input" type="radio" value="nomal"
+						<input class="member-input" type="radio" value="n"
 							name="memberType" id="nomal"> <label class="member-btn"
 							for="nomal">일반회원</label> <input class="member-input" type="radio"
-							value="host" name="memberType" id="host"> <label
+							value="h" name="memberType" id="host"> <label
 							class="member-btn" for="host">호스트</label>
 					</div>
-					<form id="login-form" name="joinForm" action="#">
 						<div id="trans">
 							<div class="login_kakaomail">
 								<div id="loginEmailField">
 									<input placeholder="이메일(아이디)" class="tf_g tf_email"
-										name="memberId" id="memberId" autocomplete="off">
+										name="memberId" id="memberId" > <!-- autocomplete="off" -->
 									<p id="result">가치살다에서 사용하실 이메일을 입력해주세요.</p>
 								</div>
 							</div>
@@ -93,14 +93,14 @@
 									type="text" id="nickname" autocomplete="off">
 							</div>
 							<div class="nickname_wrap">
-								<input placeholder="전화번호" class="nickname" name="phoneNum"
+								<input placeholder="전화번호" class="nickname" name="memberPhone"
 									type="text" id="memberPhone" autocomplete="off">
 							</div>
 							<div id="genderChoice">
-								<input class="member-input" type="radio" value="nomal"
+								<input class="member-input" type="radio" value="m"
 									name="memberGender" id="memberGenderM"> <label
 									class="member-btn" for="memberGenderM">남자</label> <input
-									class="member-input" type="radio" value="host"
+									class="member-input" type="radio" value="f"
 									name="memberGender" id="memberGenderF"> <label
 									class="member-btn" for="memberGenderF">여자</label>
 							</div>
@@ -342,7 +342,7 @@
 
 						<div class="wrap_btn">
 							<button class="btn_g btn_confirm submit" type="button"
-								aria-disabled="false" onclick="send();">가입 하기</button>
+								aria-disabled="false" onclick="send()">가입 하기</button>
 						</div>
 					</form>
 				</div>
@@ -354,13 +354,12 @@
 	<jsp:include page="../fix/footer.jsp" />
 
 	<!-- Scripts -->
-	<script
-		src="${pageContext.request.contextPath }/assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/join.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/join.js"></script>
 </body>
 </html>

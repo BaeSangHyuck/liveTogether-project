@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import com.liveTogether.action.Action;
 import com.liveTogether.action.ActionForward;
 import com.liveTogether.app.member.dao.MemberDAO;
+import com.liveTogether.app.member.vo.MemberVO;
 
 public class MemberLoginOk implements Action {
 
@@ -18,21 +19,32 @@ public class MemberLoginOk implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		HashMap<String, String> loginMap = new HashMap<>();
 		MemberDAO dao = new MemberDAO();
-		String memberId=null;
+		MemberVO vo= new MemberVO();
+		String memberType=null;
+		String memberId=null; 
+		String memberName=null; 
 		ActionForward af = new ActionForward();
 		HttpSession session = req.getSession();
 
 		loginMap.put("memberId", req.getParameter("memberId"));
 		loginMap.put("memberPw", req.getParameter("memberPw"));
 		
-		memberId = dao.login(loginMap);
+		vo = dao.login(loginMap);
+		System.out.println(vo.getMemberId());
+		System.out.println(vo.getMemberType());
+		memberId = vo.getMemberId();
+		memberType=vo.getMemberType();
+		memberName=vo.getMemberName();
+		
 		if(memberId == null) {//로그인 실패
 			af.setRedirect(false);
 			af.setPath("/member/MemberLogin.me?code=" + memberId);
 		}else {//로그인 성공
 			session.setAttribute("memberId", memberId);
+			session.setAttribute("memberType", memberType);
+			session.setAttribute("memberName", memberName);
 			af.setRedirect(true);
-			af.setPath(req.getContextPath() + "/board/BoardListOk.bo");
+			af.setPath(req.getContextPath() + "/main/main.jsp");
 		}
 		
 		return af;

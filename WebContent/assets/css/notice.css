@@ -39,6 +39,10 @@ article.notice-first-wrap button {
 	padding: 0 !important;
 }
 
+article a{
+	text-decoration: none;	
+}
+
 article.notice-first-wrap table th {
 	padding: 0px !important;
 }

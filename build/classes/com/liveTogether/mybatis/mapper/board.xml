@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
 
-<!-- 게시글 상세보기(전체 정보 조회) -->
 	<select id="selectAll" parameterType="map" resultType="boardVO">
-		select boardNumber, boardTitle, boardContent, memberId, boardDate
+		select boardNumber, boardTitle, boardContent, boardDate
 		from tbl_board
-		order by 1desc limit #{startRow}, #{rowCount};
+		order by 1 desc limit #{startRow}, #{rowCount};
 	</select>
 	
-<!-- 게시물 갯수 가져오기 -->
 	<select id="getTotal" resultType="_int">
 		select count(boardNumber) from tbl_board
 	</select>

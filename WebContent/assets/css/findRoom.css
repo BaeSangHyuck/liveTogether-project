@@ -2,6 +2,29 @@ body {
 	-ms-overflow-style: none;
 }
 
+button#btnh1 {
+	height: 53px;
+	position: absolute;
+	right: 40px;
+	top: 120px;
+	flex-direction: column;
+	display: inline-flex;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+button#btnh1 div {
+	line-height: 20px;
+}
+
+.fa-solid {
+	font-size: 2rem;
+	color:white;
+	margin-left: auto;
+	margin-right: auto;
+	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
 ::-webkit-scrollbar {
 	display: none;
 } /*특정 부분 스크롤바 없애기*/
@@ -140,7 +163,7 @@ span.gu {
 }
 
 div.content {
-	margin-left: 13px;
+	margin-left: 8px;
 }
 
 div.content2 {
@@ -433,13 +456,13 @@ div.btn input[type="button"]:hover {
 	span {
 		margin-right: 5px !important;
 	}
-	div#table-wrap{
+	div#table-wrap {
 		height: 86.5%;
 	}
-	div.img-wrap{
+	div.img-wrap {
 		height: 155px;
 	}
-	div#filter-wrap{
+	div#filter-wrap {
 		display: none;
 	}
 }

@@ -3,7 +3,7 @@ function numberWithCommas(x) {
 }
 
 	$({ val : 0 }).animate({ val : 24 }, {
-  duration: 1200,
+  duration: 1500,
   step: function() {
     var num = numberWithCommas(Math.floor(this.val));
     $(".bedsCount").text(num + "개");
@@ -15,7 +15,7 @@ function numberWithCommas(x) {
 });
 
 	$({ val : 0 }).animate({ val : 24 }, {
-  duration: 1200,
+  duration: 1500,
   step: function() {
     var num = numberWithCommas(Math.floor(this.val));
     $(".residentCount").text(num + "명");
@@ -27,7 +27,7 @@ function numberWithCommas(x) {
 });
 
 	$({ val : 0 }).animate({ val : 116000 }, {
-  duration: 2000,
+  duration: 3000,
   step: function() {
     var num = numberWithCommas(Math.floor(this.val));
     $(".investCount").text(num + "원");

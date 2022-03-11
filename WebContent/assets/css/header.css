@@ -37,8 +37,12 @@ body {
 #header li.p_menu {
 	display: inline-block;
 	line-height: 80px;
-	width: 130px;
+	width: 170px;
 	text-align: center;
+}
+
+#header li#memberId {
+	font-family: 'GmarketSansMedium';
 }
 
 #header a {

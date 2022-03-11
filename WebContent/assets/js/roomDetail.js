@@ -33,7 +33,7 @@ success();
 $(window).scroll(function(){ 
     var scrollValue = $(document).scrollTop();
     if (matchMedia("screen and (min-width: 415px)").matches){ 
-    	if(scrollValue > 755){
+    	if(scrollValue > 565){
     		$("div.intro").addClass("introfix");
     		$("div.tab").css("margin-top","60px");
     	}else{

@@ -15,8 +15,7 @@
 
 	<jsp:include page="../fix/header.jsp" />
 
-	<!-- Aside -->
-	
+	<!-- Aside -->	
 	<jsp:include page="../fix/aside.jsp" />
 
 	<article class="container">

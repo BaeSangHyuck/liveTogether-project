@@ -25,33 +25,55 @@
 							console.log("중복검사 오류");
 						}
 					});
-		}
-
+		}	
+		
 		// 회원가입 유효성 검사
-		function send() {
-
-			if (!check) {
+		function send(){
+			if(!$all.is(":checked")){
+				alert("약관에 동의해주세요.");
+				return;
+			}
+			
+			if(!check){
 				alert("아이디를 확인해주세요.");
 				return;
 			}
-
-			if (!joinForm.memberPw.value) {
+			
+			if(!joinForm.memberPw.value){
 				alert("패스워드를 확인해주세요.");
 				return;
 			}
-
-			if (!joinForm.memberName.value) {
+			
+			//비밀번호 확인
+			      var id_password_3 = document.getElementById('id_password_3').value;
+			      var pwCheck = document.getElementById('pwCheck').value;
+			      
+			      if(id_password_3.length < 6) {
+			              alert('비밀번호는 6글자 이상이어야 합니다.');
+			              return false;
+			          }
+			          
+			          if( id_password_3 != pwCheck ) {
+			            alert("비밀번호가 불일치합니다.");
+			            return false;
+			          } 
+			
+			
+			
+			
+			if(!joinForm.memberName.value){
 				alert("이름을 확인해주세요.");
 				return;
 			}
-
-			if (!joinForm.memberAge.value) {
-				alert("나이를 확인해주세요.");
+			
+			if (!joinForm.memberPhone.value) {
+				alert("전화번호를 확인해주세요.");
 				return;
 			}
-
+			
 			joinForm.submit();
 		}
+
 
 		// 이용 약관
 		const $all = $("#term");

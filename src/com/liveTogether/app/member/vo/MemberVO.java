@@ -1,14 +1,14 @@
 package com.liveTogether.app.member.vo;
 
 public class MemberVO {
-	public String memberId;
-	public String memberPw;
-	public String memberName;
-	public String memberNickname;
-	public String memberPhone;
-	public String memberGender;
-	public String memberProfile;
-	public String memberType;
+	private String memberId;
+	private String memberPw;
+	private String memberName;
+	private String memberNickname;
+	private String memberPhone;
+	private String memberGender;
+	private String memberProfile;
+	private String memberType;
 	
 	public MemberVO(){;}
 

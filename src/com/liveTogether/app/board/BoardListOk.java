@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.liveTogether.app.board.dao.BoardDAO;
 import com.liveTogether.action.Action;
 import com.liveTogether.action.ActionForward;
-import com.liveTogether.app.board.vo.BoardVO;
 
 public class BoardListOk implements Action {
 
@@ -62,7 +61,7 @@ public class BoardListOk implements Action {
 		req.setAttribute("total", total);
 		
 		af.setRedirect(false);
-		af.setPath("/board/boardList.jsp");
+		af.setPath("/board/notice.jsp");
 
 		return af;
 	}

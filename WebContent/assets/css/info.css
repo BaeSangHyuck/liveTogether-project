@@ -1,5 +1,5 @@
 article.container{
-    width:70%;
+    width:50%;
     margin: 0 auto;
     margin-top: 150px;
 }
@@ -12,14 +12,14 @@ article.container{
     background-image: url("https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/subpage_img/intro_img_1.jpg") !important;
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .intro-up {
     margin: 25px 0;
 font-size: 25px;
 font-weight: 300;
-padding-top: 200px;
+padding-top: 135px;
 line-height: 1.6;
 opacity: 1;
 color: #ececec;
@@ -53,9 +53,9 @@ font-size: 27px;
 
 section#two div#under_line1 {
 background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
-width: 37%;
+width: 56%;
 position: absolute;
-left: 31.5%;
+left: 22%;
 top: 82px;
 z-index: -1;
 height: 10px;
@@ -63,9 +63,9 @@ height: 10px;
 
 section#two div#under_line2 {
 background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
-width: 44%;
+width: 67%;
 position: absolute;
-left: 28%;
+left: 16.5%;
 top: 136px;
 z-index: -1;
 height: 10px;
@@ -85,11 +85,10 @@ text-align: center;
 
 section#two div.border_content {
 display: inline-block;
-width: 11%;
+width: 16%;
 border: 0.5px solid;
 border-radius: 1rem;
 margin-right: 15px;
-margin-bottom: 15px;
 color: white;
 background: #1187cfd9;
 margin-bottom: 15px;
@@ -155,9 +154,9 @@ position: relative;
 
 section#three div#under_line1-1 {
 background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
-width: 33%;
+width: 53%;
 position: absolute;
-left: 33.5%;
+left: 23.5%;
 top: 26px;
 z-index: 0;
 height: 10px;
@@ -165,9 +164,9 @@ height: 10px;
 
 section#three div#under_line2-1 {
 background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
-width: 30%;
+width: 48%;
 position: absolute;
-left: 35%;
+left: 26%;
 top: 72px;
 z-index: 0;
 height: 10px;
@@ -185,7 +184,7 @@ font-size: 25px;
 }
 
 div.show p{
-margin: 25px 0 25px 0;
+margin: 10px 0 25px 0;
 font-size: 20px;
 font-weight: 300;
 color: #333;
@@ -207,7 +206,7 @@ div.contents div.content{
 background: #fff;
 flex-direction: column;
 width: 33%;
-padding: 25px 25px 0px 30px;
+padding: 25px 25px 25px 30px;
 margin-top: 30px;
 box-sizing: border-box;
 }
@@ -220,7 +219,7 @@ display: inline-flex;
 span.title {
 font-weight: 600;
 color: #777;
-font-size: 18px;
+font-size: 15px;
 line-height: 40px;
 width: 70%;
 text-align: left;
@@ -235,22 +234,26 @@ width: 2.2vw;
 }
 
 div.contents div.content h1{
-font-size: 28px;
+font-size: 25px;
 line-height: 0;
 margin-bottom: 35px;
 color: #1187CF;
-margin-top: 8px;
 }
 
 div.contents div.content p{
-font-size: 17px;
+font-size: 15px;
 font-weight: 500;
 color: #676767;
 line-height: 1.5;
 opacity: 1;
+margin:0;
 }
 
 @media (max-width:414px){
+	article.container {
+    width: 70%;
+	}
+	
 	#one{   
     height: 40vw;
     margin-bottom: 15px;
@@ -337,7 +340,7 @@ opacity: 1;
 	}
 	
 	section#three {
-    padding: 25px 25px 25px;
+    padding: 25px 25px 1px 25px;
     top: 350px;
     margin-bottom: 400px;
 	}
@@ -389,6 +392,7 @@ opacity: 1;
     font-size: 10px;
     line-height: 15px;
     top: 38px;
+    margin: 20px 0 25px 0;
 	}
 	
 	.contents {
@@ -399,6 +403,7 @@ opacity: 1;
     padding: 5px 10px 0px 10px;
     margin-top: 0px;
     width:100%;
+    margin: 0 0 2em 0;
 	}
 	
 	span.title {

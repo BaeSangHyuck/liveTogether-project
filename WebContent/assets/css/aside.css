@@ -1,6 +1,6 @@
 #aside #room a {
-	width: 90px;
-	height: 90px;
+	width: 80px;
+	height: 80px;
 	background-image: url("../../images/room.png");
 	background-size: cover;
 	display: inline-block;
@@ -10,16 +10,13 @@
 
 #aside #room {
 	width: 100%;
-	height: 90px
-}
-
-#aside div{
-	margin-bottom: 10px;
+	height: 90px;
+	margin: 0 auto;
 }
 
 #aside #top a {
-	width: 90px;
-	height: 50px;
+	width: 86px;
+	height: 45px;
 	background-image: url("../../images/top.png");
 	background-size: cover;
 	display: inline-block;
@@ -33,8 +30,8 @@
 
 #aside {
 	width: 90px;
-	right: 5vw;
-	bottom: 7vw;
+	right: 3vw;
+	bottom: 3vw;
 	position: fixed;
 	z-index: 999;
 }

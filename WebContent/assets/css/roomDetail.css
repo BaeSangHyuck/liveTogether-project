@@ -6,6 +6,9 @@ header#header {
 	padding: 2rem;
 }
 
+article {
+	position:relative;
+}
 /* section-one */
 pre {
 	overflow: auto;
@@ -15,7 +18,7 @@ pre {
 }
 
 div#second-wrap {
-	width: 70%;
+	width: 50%;
 	margin: 0 auto;
 }
 
@@ -56,7 +59,7 @@ section#three img {
 .option {
 	text-align: center;
 	padding-bottom: 15px;
-	margin: 0 0.6em 0.5em;
+	margin: 0 0.5em 0.5em;
 }
 
 .option img {
@@ -70,7 +73,7 @@ section#three img {
 
 .introfix {
 	position: fixed;
-	width: 70%;
+	width: 50%;
 	z-index: 10;
 	top: 0;
 }
@@ -144,8 +147,20 @@ div.column-value {
 }
 
 /* section three */
+.button-profile {
+	margin-top:4px;
+	width:100%;
+}
+
 .table-wrap {
-	text-align: center;
+	text-align: center;	
+}
+
+#profile {
+ 	position: absolute;
+    top: 3760px;
+    right: 120px;
+    box-shadow: 20px 20px 30px 5px #0000001a;
 }
 
 table td {
@@ -232,7 +247,7 @@ input[id*=faq-question]+label+div p {
 }
 
 input[id*=faq-question]:checked+label+div {
-	max-height: 300px;
+	max-height: 400px;
 }
 
 input[type="radio"]:checked+label:before {

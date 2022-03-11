@@ -23,7 +23,6 @@
 	<!-- Header -->
 
 	<jsp:include page="../fix/header.jsp" />
-
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
 
@@ -50,21 +49,21 @@
 						<tr class="first-table-tr">
 							<th class="fisrt-first-th" id="first-th">*</th>
 							<th class="first-second-th" id="second-th">비대면 투어 전환</th>
-							<th class="first-third-th" id="third-th">22/02/04</th>
+							<th class="first-third-th" id="third-th">2022/02/04</th>
 						</tr>
 						<tr class="second-table-tr">
 							<th class="second-first-th" id="first-th">*</th>
 							<th class="second-second-th" id="second-th">[계약] 중도해지 신청 가이드</th>
-							<th class="second-third-th" id="third-th">21/09/02</th>
+							<th class="second-third-th" id="third-th">2021/09/02</th>
 						</tr>
 						<tr class="third-table-tr">
 							<th class="third-first-th" id="first-th">*</th>
 							<th class="third-second-th" id="second-th">[계약] 재계약 신청 안내</th>
-							<th class="third-third-th" id="third-th">21/07/15</th>
+							<th class="third-third-th" id="third-th">2021/07/15</th>
 						</tr>
 						<c:choose>
 							<c:when test="${boardList != null and fn:length(boardList) >0}">
-								<c:forEach var="board" items="${boardList})">
+								<c:forEach var="board" items="${boardList}">
 									<tr>
 										<th class="second-first-th" id="first-th">${board.getBoardNumber()}</th>
 										<th class="second-second-th" id="second-th"><a href="#">${board.getBoardTitle()}</a>
@@ -79,7 +78,7 @@
 
 				<!-- 페이징 처리 -->
 				<table id="paging">
-					<!-- 
+
 						<tr>
 							<td>
 							<c:if test="${startPage > 1}">
@@ -102,10 +101,10 @@
 								</c:if>
 								</td>
 						</tr>
-						 -->
+<!-- 
 					<tr>
 						<td>1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8&nbsp;&nbsp;9&nbsp;&nbsp;10</td>
-					</tr>
+					</tr> -->
 				</table>
 
 			</div>

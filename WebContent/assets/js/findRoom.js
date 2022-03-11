@@ -3,7 +3,23 @@ const open = document.getElementById('open_img');
 const close = document.getElementById('open_img2');
 const filter = document.getElementById("img_wrap");
 const filter_wrap = document.getElementById("filter-wrap");
+const like_btn = document.getElementById("btnh1");
+const heart = document.querySelector("i.fa-heart");
 var check=-1;
+
+function toggle(){
+	//전체보기
+	if(heart.style.color=="white"){
+		heart.style.color="red"
+		//찜목록 불러오는 그걸 쓰고
+	}
+	else{
+		heart.style.color="white"
+		//전체리스트 가져오는걸 쓴다
+	}
+}
+
+
 
 open.addEventListener("click", function() {
 	if (matchMedia("screen and (min-width: 415px)").matches) {  	
