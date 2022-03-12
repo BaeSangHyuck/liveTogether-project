@@ -30,8 +30,6 @@ public class MemberLoginOk implements Action {
 		loginMap.put("memberPw", req.getParameter("memberPw"));
 		
 		vo = dao.login(loginMap);
-		System.out.println(vo.getMemberId());
-		System.out.println(vo.getMemberType());
 		memberId = vo.getMemberId();
 		memberType=vo.getMemberType();
 		memberName=vo.getMemberName();
