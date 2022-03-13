@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE HTML>
 <!--
         Tactile by Pixelarity
@@ -8,13 +10,13 @@
     -->
 <html>
 <head>
-<title>가치살자 - 회원가입</title>
+<title>가치살자 - 방내놓기</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=1" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/houseRegister2.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/houseRegister2.css" />
 </head>
 
 <body>
@@ -28,7 +30,7 @@
 		<div class="register-container">
 			<div id="register">
 				<!-- <h1>방내놓기</h1> -->
-				<img src="../images/roombanner.png">
+				<img src="${pageContext.request.contextPath}/images/roombanner.png">
 				<ul id="register-info">
 					<li>방 등록 시 방 정보와 계정정보(가입된 ID, 이름, 연락처 등)가 노출됩니다.</li>
 					<li>허위(계약 완료, 중복 등록, 허위 정보 기재) 등록 및 중개매물, 원룸텔, 쉐어하우스 등록 시 서비스
@@ -54,7 +56,6 @@
 										<option>기타</option>
 									</select>
 								</div>
-
 							</td>
 						</tr>
 						<tr>
@@ -96,6 +97,7 @@
 				<div class="content-sub-title">
 					<h2>방 정보</h2>
 				</div>
+
 				<table>
 					<tbody>
 						<tr>
@@ -103,6 +105,29 @@
 							<td>
 								<div>
 									<input type="text" value="Room 1" class="input-smallsize">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>성별</th>
+							<td>
+								<div>
+									<input type="radio" id="male" name="g" value="male"> <label
+										for="male">남성전용</label> <input type="radio" id="female"
+										name="g" value="female"> <label for="female">여성전용</label>
+									<input type="radio" id="uni" name="g" value="uni"> <label
+										for="uni">남녀공용</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>타입</th>
+							<td>
+								<div class="flex">
+									<input type="text" class="input-xsmallsize">
+									<div>
+										<span class="span-lineheight">&nbsp;&nbsp;인실</span>
+									</div>
 								</div>
 							</td>
 						</tr>
@@ -133,10 +158,12 @@
 							<td>
 								<div>
 									<div id="roomsize-wrap">
-										<input type="text" class="input-xsmallsize"><span
+										<input type="text" class="input-xsmallsize" id="cal2"
+											onkeyup="calculator(2);"><span
 											class="span-lineheight">&nbsp;&nbsp;m<sup>2</sup>&nbsp;=&nbsp;&nbsp;
-										</span> <input type="text" class="input-xsmallsize"><span
-											class="span-lineheight">&nbsp;&nbsp;P</span>
+										</span> <input type="text" class="input-xsmallsize" id="cal1"
+											onkeyup="calculator(1);"><span
+											class="span-lineheight">&nbsp;&nbsp;평</span>
 									</div>
 								</div>
 							</td>
@@ -146,33 +173,26 @@
 						</tr>
 						<tr>
 							<th>입주가능일</th>
-							<td><input type="date"> <input type="checkbox"
-								id="rightnow"> <label for="rightnow">즉시 입주</label></td>
+							<td><input type="date" id="startDate"> <input
+								type="checkbox" id="rightnow"> <label for="rightnow">즉시
+									입주</label></td>
 						</tr>
-						<tr>
-							<th>추가옵션</th>
-							<td>
-								<div class="flex">
-									<div>
-										<input type="checkbox" id="parking" name="r" value="two">
-										<label for="parking">주차가능</label>
-									</div>
-									<div>
-										<input type="checkbox" id="elevator" name="r" value="two">
-										<label for="elevator">엘리베이터</label>
-									</div>
-									<div class="check-wrap">
-										<input type="checkbox" id="pet" name="r" value="two">
-										<label for="pet">반려동물</label>
-									</div>
-								</div>
-							</td>
-						</tr>
+
 					</tbody>
 				</table>
+
+				<div id="roomDetail2"></div>
+				<div id="roomDetail3"></div>
+				<div id="roomDetail4"></div>
+				<div id="roomDetail5"></div>
+				<div id="roomDetail6"></div>
+				<div id="roomDetail7"></div>
+				<div id="roomDetail8"></div>
+
+
 				<div>
 					<div id="roomPlus">
-						<button type="button">+ 방 추가</button>
+						<button type="button" id="roomPlusBtn">+ 방 추가</button>
 					</div>
 				</div>
 
@@ -290,6 +310,25 @@
 								</div>
 							</td>
 						</tr>
+						<tr>
+							<th>추가옵션</th>
+							<td>
+								<div class="flex">
+									<div>
+										<input type="checkbox" id="parking" name="r" value="parking">
+										<label for="parking">주차가능</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elevator" name="r" value="elevator">
+										<label for="elevator">엘리베이터</label>
+									</div>
+									<div class="check-wrap">
+										<input type="checkbox" id="pet" name="r" value="pet">
+										<label for="pet">반려동물</label>
+									</div>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 
@@ -312,14 +351,17 @@
 						<tr>
 							<td>
 								<div>
-									<div id="files">
-										<div>
-											<label for="board_file1" style="display: inline;"> 
-											<img id="board_file1Img" src="../images/파일첨부.png"	style="width: 70px;">
-											</label>
-										</div>
-										<input id="board_file1" name="board_file1" type="file" style="display: none;">
-										<button type="button" onclick="cancelFile('board_file1')" >-	첨부 삭제</button>
+									<div class="files">
+										<div class="files-wrap">
+											<div id="file">
+												<label for="board_file1" style="display: inline;"> <img
+													id="board_file1Img" class="roomImg"		src="${pageContext.request.contextPath}/images/파일첨부.png">
+												</label>
+											</div>
+											<input id="board_file1" name="board_file1" type="file"
+												style="display: none"> <input type="button"
+												onclick="cancelFile('board_file1')" value="첨부 삭제">
+										</div>									
 									</div>
 								</div>
 							</td>
@@ -353,7 +395,7 @@
 방 정보, 가격협의내용, 교통 등 자세한 내용을 작성하시면 거래가 성사될 가능성이 높아집니다. 
 한글, 영어, 숫자, m2을 제외한 특수문자(괄호포함)등은 임의로 삭제될 수 있습니다.
 (950글자 이내)"
-										mexlength="950"></textarea>
+										maxlength="950"></textarea>
 								</div>
 							</td>
 						</tr>
@@ -373,12 +415,13 @@
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.scrolly.min.js"></script>
-<script src="../assets/js/browser.min.js"></script>
-<script src="../assets/js/breakpoints.min.js"></script>
-<script src="../assets/js/util.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/houseRegister.js"></script>
 
 <!-- 주소찾기 -->
 <script
@@ -386,7 +429,7 @@
 <script>
 	function DaumPostcode() {
 		new daum.Postcode({
-			oncomplete: function (data) {
+			oncomplete : function(data) {
 				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
 				// 각 주소의 노출 규칙에 따라 주소를 조합한다.
@@ -410,7 +453,8 @@
 					}
 					// 건물명이 있고, 공동주택일 경우 추가한다.
 					if (data.buildingName !== '' && data.apartment === 'Y') {
-						extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+						extraAddr += (extraAddr !== '' ? ', '
+								+ data.buildingName : data.buildingName);
 					}
 					// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
 					if (extraAddr !== '') {
@@ -431,33 +475,6 @@
 			}
 		}).open();
 	}
-	
-	
-	
-	
-	
-	//파일업로드 썸네일
-	$(".files").change(function(e){
-         		var file = e.target.files[0];
-         		var img = $(this).find("img");
-         		var reader = new FileReader();
-         		reader.readAsDataURL(file);
-         		
-    	   		reader.onload = function(e){
-    	   			if(e.target.result.indexOf("image") != -1){
-    		   			img.attr("src", e.target.result)
-    	   			}else{
-    	   				img.attr("src", "${pageContext.request.contextPath}/images/no_img.jpg");
-    	   			}
-    	   		}
-    	   	});
-	
-	
-	//파일삭제
-	function cancelFile(fileName){
-         		$("input#" + fileName).val("");
-         		$("img#" + fileName + "Img").attr("src", "../images/파일첨부.png");
-         	}
 </script>
 
 </html>

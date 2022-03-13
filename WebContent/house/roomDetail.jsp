@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -8,10 +7,9 @@
 <meta charset="UTF-8">
 <title>가치 살자</title>
 <meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=1" />
-<link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/roomDetail.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/roomDetail.css" />
 </head>
 <body>
 	<!-- Header -->
@@ -48,40 +46,40 @@
 								<div id="option-wrap">
 									<div class="option-wrap-wrap">
 										<div class="option">
-											<img src="../images/세탁기.png"><span>세탁기</span>
+											<img src="${pageContext.request.contextPath}/images/세탁기.png"><span>세탁기</span>
 										</div>
 										<div class="option">
-											<img src="../images/신발장.png"><span>신발장</span>
+											<img src="${pageContext.request.contextPath}/images/신발장.png"><span>신발장</span>
 										</div>
 										<div class="option">
-											<img src="../images/싱크대.png"><span>싱크대</span>
+											<img src="${pageContext.request.contextPath}/images/싱크대.png"><span>싱크대</span>
 										</div>
 										<div class="option">
-											<img src="../images/에어컨.png"><span>에어컨</span>
+											<img src="${pageContext.request.contextPath}/images/에어컨.png"><span>에어컨</span>
 										</div>
 										<div class="option">
-											<img src="../images/옷장.png"><span>옷장</span>
+											<img src="${pageContext.request.contextPath}/images/옷장.png"><span>옷장</span>
 										</div>
 										<div class="option">
-											<img src="../images/인덕션.png"><span>인덕션</span>
+											<img src="${pageContext.request.contextPath}/images/인덕션.png"><span>인덕션</span>
 										</div>
 										<div class="option">
-											<img src="../images/전자레인지.png"><span>전자레인지</span>
+											<img src="${pageContext.request.contextPath}/images/전자레인지.png"><span>전자레인지</span>
 										</div>
 										<div class="option">
-											<img src="../images/책상.png"><span>책상</span>
+											<img src="${pageContext.request.contextPath}/images/책상.png"><span>책상</span>
 										</div>
 										<div class="option">
-											<img src="../images/책상.png">책상
+											<img src="${pageContext.request.contextPath}/images/책상.png">책상
 										</div>
 										<div class="option">
-											<img src="../images/책상.png">책상
+											<img src="${pageContext.request.contextPath}/images/책상.png">책상
 										</div>
 										<div class="option">
-											<img src="../images/책상.png">책상
+											<img src="${pageContext.request.contextPath}/images/책상.png">책상
 										</div>
 										<div class="option">
-											<img src="../images/책상.png">책상
+											<img src="${pageContext.request.contextPath}/images/책상.png">책상
 										</div>
 									</div>
 								</div>
@@ -174,6 +172,7 @@
 								<th>보증금</th>
 								<th>월세</th>
 								<th>입주가능일</th>
+								<th>투어신청</th>
 								<th>입주자 프로필</th>
 							</tr>
 						</thead>
@@ -186,8 +185,24 @@
 								<td>1,000,000원</td>
 								<td>400,000원</td>
 								<td>2022-03-01</td>
+								<td><button class="button-tour">투어신청</button></td>
 								<td><button class="button-profile">펼쳐보기</button></td>
 							</tr>
+							 <tr class="tr-wrap1">
+								<td colspan="9"><div id="profile">
+									<div class="profile-wrap">
+									<div class="profile">
+										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
+										<div class="profile-intro"><span>"안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요"</span></div>
+									</div>
+									<div class="profile">
+										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
+										<div class="profile-intro"><span>"안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요"</span></div>
+									</div>
+									</div>
+								</div>	
+								</td>
+							</tr> 
 							<tr>
 								<td>Room B</td>
 								<td>여성전용</td>
@@ -196,8 +211,24 @@
 								<td>1,000,000원</td>
 								<td>400,000원</td>
 								<td>2022-03-01</td>
+								<td><button class="button-tour">투어신청</button></td>
 								<td><button class="button-profile">펼쳐보기</button></td>
 							</tr>
+							<tr class="tr-wrap2">
+								<td colspan="9"><div id="profile">
+									<div class="profile-wrap">
+									<div class="profile">
+										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
+										<div class="profile-intro"><span>"안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요"</span></div>
+									</div>
+									<div class="profile">
+										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
+										<div class="profile-intro"><span>"안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요"</span></div>
+									</div>
+									</div>
+								</div>	
+								</td>
+							</tr> 
 							<tr>
 								<td>Room C</td>
 								<td>여성전용</td>
@@ -206,22 +237,27 @@
 								<td>1,000,000원</td>
 								<td>400,000원</td>
 								<td>2022-03-01</td>
-								<td><button class="button-profile">펼쳐보기</button></td>
+								<td><button class="button-tour">투어가능알림</button></td>
+								<td><button class="button-profile">펼쳐보기</button></td>															
 							</tr>
+							<tr class="tr-wrap3">
+								<td colspan="9"><div id="profile">
+									<div class="profile-wrap">
+									<div class="profile">
+										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
+										<div class="profile-intro"><span>"안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요"</span></div>
+									</div>
+									<div class="profile">
+										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
+										<div class="profile-intro"><span>"안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요"</span></div>
+									</div>
+									</div>
+								</div>	
+								</td>
+							</tr> 
 						</tbody>
 					</table>
-					<div id="profile">
-						<div>
-							<p><b>닉네임 : </b>만두</p>
-							<p><b>성별 : </b>남자</p>
-							<pre><b>소개 : </b>안녕하세요 저는 25살 만두입니다.</pre>
-						</div>
-						<div>
-							<p>닉네임 : </p>
-							<p>성별 : </p>
-							<pre>소개입니다.</pre>
-						</div>
-					</div>
+					
 				</div>
 				<div class="pre-wrap">
 					<pre>
@@ -514,11 +550,11 @@
 	</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.scrolly.min.js"></script>
-<script src="../assets/js/browser.min.js"></script>
-<script src="../assets/js/breakpoints.min.js"></script>
-<script src="../assets/js/util.js"></script>
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/roomDetail.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/roomDetail.js"></script>
 </html>

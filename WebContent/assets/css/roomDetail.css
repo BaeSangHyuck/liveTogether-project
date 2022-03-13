@@ -6,9 +6,6 @@ header#header {
 	padding: 2rem;
 }
 
-article {
-	position:relative;
-}
 /* section-one */
 pre {
 	overflow: auto;
@@ -18,7 +15,7 @@ pre {
 }
 
 div#second-wrap {
-	width: 50%;
+	width: 55%;
 	margin: 0 auto;
 }
 
@@ -73,7 +70,7 @@ section#three img {
 
 .introfix {
 	position: fixed;
-	width: 50%;
+	width: 55%;
 	z-index: 10;
 	top: 0;
 }
@@ -148,19 +145,39 @@ div.column-value {
 
 /* section three */
 .button-profile {
-	margin-top:4px;
-	width:100%;
+	margin-top: 5px;
+	font-family: 'GmarketSansLight';
+    font-weight: normal;
+    font-style: normal;
+    padding: 0 0.75em;
+}
+
+.button-tour{
+	font-family: 'GmarketSansLight';
+    font-weight: normal;
+    font-style: normal;
+    padding: 0 0.75em;
+}
+
+tr[class*=tr-wrap] {
+	display:none;
 }
 
 .table-wrap {
 	text-align: center;	
 }
 
-#profile {
- 	position: absolute;
-    top: 3760px;
-    right: 120px;
-    box-shadow: 20px 20px 30px 5px #0000001a;
+.profile{
+	padding:15px 30px 15px 30px;
+}
+
+.profile-name {
+	display: flex;
+}
+
+.profile-intro {
+	letter-spacing:3;
+	text-align:left;
 }
 
 table td {
@@ -168,6 +185,7 @@ table td {
 	text-align: center;
 	height: 3rem;
 	line-height: 3rem;
+	font-size: 15px;
 }
 
 table thead tr th {

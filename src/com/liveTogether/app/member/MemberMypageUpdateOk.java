@@ -33,7 +33,7 @@ public class MemberMypageUpdateOk implements Action {
 		dao.updateInfo(member);
 		
 		af.setRedirect(true);
-		af.setPath(req.getContextPath() + "/member/mypagelook.jsp");
+		af.setPath(req.getContextPath() + "/member/MemberMypageOk.me");
 		
 		return af;
 	}

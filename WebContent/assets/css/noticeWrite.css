@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+body, input, select, textarea, button, pre {
+	font-family: 'GmarketSansLight', Helvetica, Arial, sans-serif;
+}
+
+article {
+	margin-top: 180px;
+}
+
+p {
+	margin: 0;
+}
+
+input[type="file"]{
+	display: none;
+}
+
+div#writer {
+	height: 50px;
+	line-height: 50px;
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+}
+
+div#writer p {
+	margin-left: 20px;
+	text-align: left;
+}
+
+div.file-wrap{
+	display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+
+form div.files {
+	display: flex;
+}
+
+div#fileWrap {
+	margin-right: 30px;
+}
+
+#textArea {
+	width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select,
+	textarea {
+	background-color: white;
+	color: black;
+}
+
+input::placeholder {
+	color: white;
+}
+
+#textAreaWrap {
+	margin-bottom: 30px;
+}
+
+div#button-wrapper {
+	display: inline-block;
+}
+
+form {
+	text-align: center;
+}
+
+article.noticeDetail-first-wrap div.second-wrap {
+	width: 70%;
+	margin: 0 auto;
+}
+
+input#buttonWrite{
+	background: #1187cf;
+    color: white;
+}
+
+article.noticeDetail-first-wrap div.gradation-div {
+	background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
+	width: 265px;
+	position: absolute;
+	top: 38px;
+	left: 0;
+	height: 10px;
+}
+
+article.noticeDetail-first-wrap p#first-p {
+	font-weight: 600;
+	text-align: left;
+	font-size: 32px;
+	margin-bottom: -10px;
+}
+
+div.gradation-div-wrap {
+	position: relative;
+	margin-bottom: 50px;
+}

@@ -86,7 +86,7 @@
 				</span>
 				<div id="under_line1"></div>
 				<div id="under_line2"></div>
-			</div>
+			</div>'
 			<div id="intro_border">
 				<div id="border_wrap">
 					<div class="flex_wrap">

@@ -50,4 +50,11 @@
 		set memberPw=#{memberPw}, memberName=#{memberName}, memberNickname=#{memberNickname}, memberPhone=#{memberPhone}, memberGender=#{memberGender}, memberProfile=#{memberProfile}
 		where memberId=#{memberId}
 	</update>
+	
+		<!-- 최근 게시글 번호 -->
+	<select id="getSeq" resultType="_int">
+		select boardNumber from tbl_board
+		order by 1 desc limit 0, 1;
+	</select>
+	
 </mapper>

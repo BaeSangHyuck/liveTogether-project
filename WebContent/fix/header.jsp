@@ -42,7 +42,7 @@
 						<li class="btn p_menu" id="memberId">${memberName}님
 							<div>
 								<ul class="mouseover">
-									<li><a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">로그아웃</a></li>
+									<li><a href="${pageContext.request.contextPath}/member/MemberLogoutOk.me">로그아웃</a></li>
 									<li><a href="${pageContext.request.contextPath}/member/MemberMypageOk.me">마이페이지</a></li>
 								</ul>
 							</div>

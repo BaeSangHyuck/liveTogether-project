@@ -32,6 +32,7 @@ public class MemberFrontController extends HttpServlet {
 			new MemberCheckIdOk().execute(req, resp);
 			
 		}else if(command.equals("/member/MemberLoginOk.me")) {
+			System.out.println("들어옴");
 			af = new MemberLoginOk().execute(req, resp);
 		}else if(command.equals("/member/MemberJoinOk.me")) {
 			af = new MemberJoinOk().execute(req, resp);

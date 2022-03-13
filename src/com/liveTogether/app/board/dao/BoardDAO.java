@@ -23,7 +23,32 @@ public class BoardDAO {
 	}
 	
 	//게시글 전체 개수
-		public int getTotal() {
-			return sqlSession.selectOne("Board.getTotal");
-		}
+	public int getTotal() {
+		return sqlSession.selectOne("Board.getTotal");
+	}
+		
+	//게시물 작성
+	public void insert(BoardVO board) {
+		sqlSession.insert("Board.insert",board);
+	}
+	
+	//최근 게시글 번호
+	public int getSeq() {
+		return sqlSession.selectOne("Board.getSeq");
+	}
+	
+	//정보조회
+	public BoardVO selectDetail(int boardNumber) {
+		return sqlSession.selectOne("Board.selectDetail",boardNumber);
+	}
+	
+	//게시글 삭제
+	public void delete(int boardNumber) {
+		sqlSession.delete("Board.delete",boardNumber);
+	}
+	
+	//게시글 수정
+	public void update(BoardVO board) {
+		sqlSession.update("Board.update",board );
+	}
 }

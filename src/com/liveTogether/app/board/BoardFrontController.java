@@ -31,6 +31,24 @@ public class BoardFrontController extends HttpServlet {
 		case "/board/BoardListOk.bo":
 			af = new BoardListOk().execute(req, resp);
 			break;
+		case "/board/BoardWrite.bo":
+			af = new BoardWrite().execute(req, resp);
+			break;
+		case "/board/BoardWriteOk.bo":
+			af = new BoardWriteOk().execute(req, resp);
+			break;
+		case "/board/BoardDetailOk.bo":
+			af = new BoardDetailOk().execute(req, resp);
+			break;
+		case "/board/BoardDeleteOk.bo":
+			af = new BoardDeleteOk().execute(req, resp);
+			break;
+		case "/board/BoardUpdateOk.bo":
+			af = new BoardUpdateOk().execute(req, resp);
+			break;
+		case "/board/BoardUpdate.bo":
+			af = new BoardUpdate().execute(req, resp);
+			break;
 		}
 		
 		//분기 별 결과를 af에 담았다면 여기로 내려온다.

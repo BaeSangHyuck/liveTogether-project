@@ -17,6 +17,7 @@ public class MemberLoginOk implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		System.out.println("들어옴2");
 		HashMap<String, String> loginMap = new HashMap<>();
 		MemberDAO dao = new MemberDAO();
 		MemberVO vo= new MemberVO();

@@ -60,7 +60,20 @@ input.input-smallsize{
 }
 
 input.input-xsmallsize{
-    width:80px;
+    width:90px;
+}
+
+img#xMark {
+	background-image: url("${pageContext.request.contextPath}/images/xMark.png");
+    text-align: right;
+    width:40px;
+    height:40px;
+    cursor: pointer;
+}
+
+div.roomPlusMark{
+	display: flex;
+	justify-content: space-between;
 }
 
 
@@ -84,8 +97,14 @@ span.span-lineheight{
     line-height: 43px;
 }
 
-div#files{
-    text-align: center;
+div.files{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+div[id*='file'] {
+	text-align: center;	
 }
 
 div#files img{
@@ -108,7 +127,11 @@ div#roomSubmit{
     text-align: center;
 }
 
-
+img.roomImg{
+	width:80px;
+	height:80px;
+	display: inline;
+}
 
 
 
@@ -162,4 +185,8 @@ button {
 
 button:hover{
     color: #ffffff;
+}
+
+label {
+	margin:0;
 }
