@@ -47,5 +47,18 @@
 		where boardNumber = #{boardNumber}
 	</update>
 	
+	<!-- 게시글 검색 -->
+	<select id="search" parameterType="boardDTO" resultType="boardVO">
+		select boardNumber,boardTitle,boardDate from tbl_board
+		where boardTitle like CONCAT('%',#{boardTitle},'%')
+		order by 1 desc limit #{startRow}, #{rowCount};
+	</select>
+	
+	<!-- 검색 개수 -->
+	<select id="getSearch" parameterType="string" resultType="_int">
+		select count(boardNumber) from tbl_board
+		where boardTitle like CONCAT('%',#{boardTitle},'%')
+
+	</select>
 	
 </mapper>

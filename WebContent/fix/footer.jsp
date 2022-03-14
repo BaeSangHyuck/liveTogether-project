@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../assets/css/footer.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/footer.css" />
 <title>footer</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 			<div class="container">
 				<div class="wrapper left-wrapper">
 					<div class="header">
-						<img class="logo" src="../images/footer_grayLogo.png">
+						<img class="logo" src="${pageContext.request.contextPath}/images/footer_grayLogo.png">
 
 						<div class="menu-btn-list">
 							<a class="menu-btn" href="/about#tab:introduce">회사소개</a> <a

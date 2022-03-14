@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.liveTogether.app.board.vo.BoardDTO;
 import com.liveTogether.app.board.vo.BoardVO;
 import com.liveTogether.mybatis.config.MybatisConfig;
 
@@ -50,5 +51,15 @@ public class BoardDAO {
 	//게시글 수정
 	public void update(BoardVO board) {
 		sqlSession.update("Board.update",board );
+	}
+	
+	//게시글 검색
+	public List<BoardVO> search(BoardDTO board) {
+		return sqlSession.selectList("Board.search",board);
+	}
+	
+	//검색 갯수
+	public int getSearch(String boardTitle) {
+		return sqlSession.selectOne("Board.getSearch",boardTitle);
 	}
 }

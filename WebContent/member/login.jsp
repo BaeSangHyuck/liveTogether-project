@@ -12,8 +12,8 @@
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=1" />
-<link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/login.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/login.css" />
 <link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
@@ -28,8 +28,9 @@
 	<jsp:include page="../fix/aside.jsp" />
 
 
-	<!-- Menu -->
-	<nav id="menu">
+	
+<!-- Menu -->
+<!-- 	<nav id="menu">
 		<ul class="links">
 			<li><a href="index.html">Home</a></li>
 			<li><a href="generic.html">Generic</a></li>
@@ -39,8 +40,9 @@
 			<li><a href="#" class="button fit primary">Sign Up</a></li>
 			<li><a href="#" class="button fit">Log In</a></li>
 		</ul>
-	</nav>
+	</nav>  -->
 
+ 
 	<!-- Main -->
 	<section id="login-wrap">
 		<div id="box">
@@ -58,9 +60,9 @@
 					<div class="content_account">
 						<div class="inp_text">
 							<input type="text" id="findUrlOrNickname" name="memberId"
-								placeholder="이메일(아이디)"> 
+								placeholder="이메일(아이디)"<%--  value="${memberId}" --%>> 
 								<input type="password"
-								id="findUrlOrNickname" name="memberPw" placeholder="비밀번호">
+								id="findUrlOrNickname" name="memberPw" placeholder="비밀번호" <%-- value="${memberPw} --%>">
 						</div>
 						<div id="loginStatus">
 							<input type="checkbox" name="saveId" value="true" id="saveId">
@@ -85,7 +87,7 @@
 				</form>
 			</div>
 			<div id="login_banner">
-				<img src="../images/login_banner.png">
+				<img src="${pageContext.request.contextPath}/images/login_banner.png">
 			</div>
 		</div>
 	</section>

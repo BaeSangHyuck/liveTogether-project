@@ -8,8 +8,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../assets/css/footer.css" />
-<link rel="stylesheet" href="../assets/css/notice.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/footer.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/notice.css" />
 <title>가치살자 공지사항</title>
 </head>
 <body>
@@ -33,10 +35,12 @@
 					<div class="gradation-div"></div>
 					<br>
 				</div>
-				<form action="" id="search">
+				<form
+					action="${pageContext.request.contextPath}/board/BoardSearchOk.bo"
+					method="post" name="searchForm" id="search">
 					<input type="search" maxlength="150" class="first-input"
-						placeholder="검색어를 입력하세요">
-					<button type="button" class="img1"></button>
+						placeholder="검색어를 입력하세요" name="boardTitle">
+					<button type="button" class="img1" onclick="searchForm.submit()"></button>
 				</form>
 				<table class="table" id="first-table">
 					<tbody class="table-tbody">
@@ -65,7 +69,8 @@
 								<c:forEach var="board" items="${boardList}">
 									<tr>
 										<th class="second-first-th" id="first-th">${board.getBoardNumber()}</th>
-										<th class="second-second-th" id="second-th"><a href="${pageContext.request.contextPath}/board/BoardDetailOk.bo?boardNumber=${board.getBoardNumber()}">${board.getBoardTitle()}</a>
+										<th class="second-second-th" id="second-th"><a
+											href="${pageContext.request.contextPath}/board/BoardDetailOk.bo?boardNumber=${board.getBoardNumber()}">${board.getBoardTitle()}</a>
 										</th>
 										<th class="third-third-th" id="third-th">${board.getBoardDate()}</th>
 									</tr>
@@ -76,35 +81,66 @@
 				</table>
 
 				<div id="writeWrap">
-					<button type="button" id="writeBtn" onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo';">글 작성</button>
+					<button type="button" id="writeBtn"
+						onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo';">글
+						작성</button>
 				</div>
 
 				<!-- 페이징 처리 -->
 				<table id="paging">
 
 					<tr>
-						<td><c:if test="${startPage > 1}">
-								<a
-									href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=1">&lt;&lt;&nbsp;&nbsp;</a>
-								<a
-									href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=${startPage -1}">&lt;&nbsp;&nbsp;</a>
-							</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
-								<c:choose>
-									<c:when test="${i eq page}">
-										<c:out value="${i}" />&nbsp;&nbsp;
-								</c:when>
-									<c:otherwise>
+						<c:choose>
+							<c:when test="${search != null}">
+								<td><c:if test="${startPage > 1}">
 										<a
-											href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=${i}"><c:out
-												value="${i}" /></a>&nbsp;&nbsp;
+											href="${pageContext.request.contextPath}/board/BoardSearchOk.bo?page=1&boardTitle=${search}">&lt;&lt;&nbsp;&nbsp;</a>
+										<a
+											href="${pageContext.request.contextPath}/board/BoardSearchOk.bo?page=${startPage -1}&boardTitle=${search}">&lt;&nbsp;&nbsp;</a>
+									</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
+										<c:choose>
+											<c:when test="${i eq page}">
+												<c:out value="${i}" />&nbsp;&nbsp;
+								</c:when>
+											<c:otherwise>
+												<a
+													href="${pageContext.request.contextPath}/board/BoardSearchOk.bo?page=${i}&boardTitle=${search}"><c:out
+														value="${i}" /></a>&nbsp;&nbsp;
 								</c:otherwise>
-								</c:choose>
-							</c:forEach> <c:if test="${endPage < realEndPage}">
-								<a
-									href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=${endPage + 1}">&nbsp;&nbsp;&gt;</a>
-								<a
-									href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=${realEndPage}">&nbsp;&nbsp;&gt;&gt;</a>
-							</c:if></td>
+										</c:choose>
+									</c:forEach> <c:if test="${endPage < realEndPage}">
+										<a
+											href="${pageContext.request.contextPath}/board/BoardSearchOk.bo?page=${endPage + 1}&boardTitle=${search}">&nbsp;&nbsp;&gt;</a>
+										<a
+											href="${pageContext.request.contextPath}/board/BoardSearchOk.bo?page=${realEndPage}&boardTitle=${search}">&nbsp;&nbsp;&gt;&gt;</a>
+									</c:if></td>
+							</c:when>
+							<c:otherwise>
+								<td><c:if test="${startPage > 1}">
+										<a
+											href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=1">&lt;&lt;&nbsp;&nbsp;</a>
+										<a
+											href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=${startPage -1}">&lt;&nbsp;&nbsp;</a>
+									</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
+										<c:choose>
+											<c:when test="${i eq page}">
+												<c:out value="${i}" />&nbsp;&nbsp;
+								</c:when>
+											<c:otherwise>
+												<a
+													href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=${i}"><c:out
+														value="${i}" /></a>&nbsp;&nbsp;
+								</c:otherwise>
+										</c:choose>
+									</c:forEach> <c:if test="${endPage < realEndPage}">
+										<a
+											href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=${endPage + 1}">&nbsp;&nbsp;&gt;</a>
+										<a
+											href="${pageContext.request.contextPath}/board/BoardListOk.bo?page=${realEndPage}">&nbsp;&nbsp;&gt;&gt;</a>
+									</c:if></td>
+							</c:otherwise>
+						</c:choose>
+
 					</tr>
 				</table>
 			</div>

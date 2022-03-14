@@ -21,7 +21,7 @@
 					console.log(error)
 				},
 			})
-		}
+		}*/
 
 		// 쿠키에 아이디 저장이 체크되어 있으면
 		if (document.querySelector("input[name='checkSaveId']").value) {
@@ -37,7 +37,9 @@
 		if (document.querySelector("input[name='checkPw']").value) {
 			//아이디와 비밀번호 모두 쿠키를 사용해서 입력해놨기 때문에 바로 send()를 사용하여 전송한다.
 			send();
-		}*/
+		}
+
+
 
 		function send() {
 			var form = loginForm;

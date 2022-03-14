@@ -7,6 +7,7 @@
 		<typeAlias type="com.liveTogether.app.board.vo.BoardVO" alias="boardVO"/>
 		<typeAlias type="com.liveTogether.app.house.vo.HouseVO" alias="houseVO"/>
 		<typeAlias type="com.liveTogether.app.board.vo.FilesVO" alias="filesVO"/>
+		<typeAlias type="com.liveTogether.app.board.vo.BoardDTO" alias="boardDTO"/>
 	</typeAliases>
 
 	<environments default="development">

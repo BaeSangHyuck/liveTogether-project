@@ -12,8 +12,8 @@
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=1" />
-<link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/findPw.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/findPw.css" />
 
 </head>
 <style>
@@ -108,12 +108,12 @@ button.btn_tistory:hover {
 
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 
 </body>
 </html>

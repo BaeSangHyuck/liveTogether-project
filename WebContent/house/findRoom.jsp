@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>가치살자 - 방 찾기</title>
-<link rel="stylesheet" href="../assets/css/findRoom.css" />
-<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/findRoom.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
 <script src="https://kit.fontawesome.com/cc88e53013.js" crossorigin="anonymous"></script>
 
 </head>
@@ -234,6 +234,6 @@
 	
 </script>
 
-<script src="../assets/js/findRoom.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/findRoom.js"></script>
 
 </html>

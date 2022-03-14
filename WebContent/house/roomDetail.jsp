@@ -7,9 +7,12 @@
 <meta charset="UTF-8">
 <title>가치 살자</title>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/roomDetail.css" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=1" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/main.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/roomDetail.css" />
 </head>
 <body>
 	<!-- Header -->
@@ -64,7 +67,8 @@
 											<img src="${pageContext.request.contextPath}/images/인덕션.png"><span>인덕션</span>
 										</div>
 										<div class="option">
-											<img src="${pageContext.request.contextPath}/images/전자레인지.png"><span>전자레인지</span>
+											<img
+												src="${pageContext.request.contextPath}/images/전자레인지.png"><span>전자레인지</span>
 										</div>
 										<div class="option">
 											<img src="${pageContext.request.contextPath}/images/책상.png"><span>책상</span>
@@ -188,21 +192,39 @@
 								<td><button class="button-tour">투어신청</button></td>
 								<td><button class="button-profile">펼쳐보기</button></td>
 							</tr>
-							 <tr class="tr-wrap1">
+							<tr class="tr-wrap1">
 								<td colspan="9"><div id="profile">
-									<div class="profile-wrap">
-									<div class="profile">
-										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
-										<div class="profile-intro"><span>"안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요"</span></div>
-									</div>
-									<div class="profile">
-										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
-										<div class="profile-intro"><span>"안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요"</span></div>
-									</div>
-									</div>
-								</div>	
-								</td>
-							</tr> 
+										<div class="profile-wrap">
+											<div class="profile">
+												<div class="profile-name">
+													<b>홍만두</b>
+													<p>(남자)</p>
+												</div>
+												<div class="profile-intro">
+													<span>"안녕하세요 저는 착한만두 홍만두입니다. 만찐두빵먹자 친추부탁드립니다."</span>
+												</div>
+											</div>
+											<div class="profile">
+												<div class="profile-name">
+													<b>상냥이</b>
+													<p>(남자)</p>
+												</div>
+												<div class="profile-intro">
+													<span>"안녕하세요 안상냥이 상냥이입니다. 3팀 팀장 배상혁 잘부탁드립니다."</span>
+												</div>
+											</div>
+											<div class="profile">
+												<div class="profile-name">
+													<b>다크준형</b>
+													<p>(남자)</p>
+												</div>
+												<div class="profile-intro">
+													<span>"여러분 코로나 조심하세요. 목이 너무 아파요ㅠㅠ 아프지 마세요 여러분"</span>
+												</div>
+											</div>
+										</div>
+									</div></td>
+							</tr>
 							<tr>
 								<td>Room B</td>
 								<td>여성전용</td>
@@ -216,19 +238,28 @@
 							</tr>
 							<tr class="tr-wrap2">
 								<td colspan="9"><div id="profile">
-									<div class="profile-wrap">
-									<div class="profile">
-										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
-										<div class="profile-intro"><span>"안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요"</span></div>
-									</div>
-									<div class="profile">
-										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
-										<div class="profile-intro"><span>"안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요"</span></div>
-									</div>
-									</div>
-								</div>	
-								</td>
-							</tr> 
+										<div class="profile-wrap">											
+											<div class="profile">
+												<div class="profile-name">
+													<b>상냥이</b>
+													<p>(남자)</p>
+												</div>
+												<div class="profile-intro">
+													<span>"안녕하세요 안상냥이 상냥이입니다. 3팀 팀장 배상혁 잘부탁드립니다."</span>
+												</div>
+											</div>
+											<div class="profile">
+												<div class="profile-name">
+													<b>다크준형</b>
+													<p>(남자)</p>
+												</div>
+												<div class="profile-intro">
+													<span>"여러분 코로나 조심하세요. 목이 너무 아파요ㅠㅠ 아프지 마세요 여러분"</span>
+												</div>
+											</div>
+										</div>
+									</div></td>
+							</tr>
 							<tr>
 								<td>Room C</td>
 								<td>여성전용</td>
@@ -238,26 +269,26 @@
 								<td>400,000원</td>
 								<td>2022-03-01</td>
 								<td><button class="button-tour">투어가능알림</button></td>
-								<td><button class="button-profile">펼쳐보기</button></td>															
+								<td><button class="button-profile">펼쳐보기</button></td>
 							</tr>
 							<tr class="tr-wrap3">
 								<td colspan="9"><div id="profile">
-									<div class="profile-wrap">
-									<div class="profile">
-										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
-										<div class="profile-intro"><span>"안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요"</span></div>
-									</div>
-									<div class="profile">
-										<div class="profile-name"><b>닉네임</b><p>(남자)</p></div>
-										<div class="profile-intro"><span>"안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요"</span></div>
-									</div>
-									</div>
-								</div>	
-								</td>
-							</tr> 
+										<div class="profile-wrap">																					
+											<div class="profile">
+												<div class="profile-name">
+													<b>다크준형</b>
+													<p>(남자)</p>
+												</div>
+												<div class="profile-intro">
+													<span>"여러분 코로나 조심하세요. 목이 너무 아파요ㅠㅠ 아프지 마세요 여러분"</span>
+												</div>
+											</div>
+										</div>
+									</div></td>
+							</tr>
 						</tbody>
 					</table>
-					
+
 				</div>
 				<div class="pre-wrap">
 					<pre>
@@ -456,9 +487,9 @@
 						for="faq-question11">11. 입주 시 꼭 챙겨야 하는 물건이 있나요?</label>
 					<div>
 						<p>
-							기본적인 가전제품과 가구만 준비되어 있으므로 그 외의 물품은 모두 개인적으로 준비하셔야 합니다.<br>
-							<br> 개인식기 (수저, 그릇, 조리기구)<br> 침구 (매트리스 커버, 이불, 베개)<br>
-							개인 스탠드, 멀티탭<br> 빨래건조대는 공용으로 2~4개가 준비되어 있습니다.
+							기본적인 가전제품과 가구만 준비되어 있으므로 그 외의 물품은 모두 개인적으로 준비하셔야 합니다.<br> <br>
+							개인식기 (수저, 그릇, 조리기구)<br> 침구 (매트리스 커버, 이불, 베개)<br> 개인
+							스탠드, 멀티탭<br> 빨래건조대는 공용으로 2~4개가 준비되어 있습니다.
 						</p>
 					</div>
 					<input type="radio" name="live" id="faq-question12"> <label
@@ -472,41 +503,38 @@
 					<input type="radio" name="live" id="faq-question13"> <label
 						for="faq-question13">1. 계약기간은 어떻게 되나요?</label>
 					<div>
-						<p>
-							입주 계약은 6개월 단위로 체결 가능합니다. 가치 하우스는 거주자 커뮤니티 형성과 셰어하우스 문화정착을 위해 6개월 단위로 거주 계약을 진행하고 있습니다.
-다만 프로모션 정책에 따라 지점별로 최소 계약기간이 상이하니(최소 2개월) '지점소개' 란을 참고해 주세요.
-						</p>
+						<p>입주 계약은 6개월 단위로 체결 가능합니다. 가치 하우스는 거주자 커뮤니티 형성과 셰어하우스 문화정착을
+							위해 6개월 단위로 거주 계약을 진행하고 있습니다. 다만 프로모션 정책에 따라 지점별로 최소 계약기간이 상이하니(최소
+							2개월) '지점소개' 란을 참고해 주세요.</p>
 					</div>
 					<input type="radio" name="live" id="faq-question14"> <label
 						for="faq-question14">2. 입주일은 어떻게 정해지나요?</label>
 					<div>
-						<p>
-							입주일은 하우스 매니저와의 일정 조율을 통해 정해지나,
-통상 입주 가능일로부터 7일 이내에 입주 가능하신 분이 희망 지점 입주에 유리합니다.
-계약서를 작성 하고 나면 2일 이내에 보증금을 납부하셔야 하며, 월세는 입주 2일 전까지 납부해야 합니다.
-위 사항을 지키지 못 하실 경우 계약은 통보 없이 자동으로 취소되오니, 이 점 양해 부탁 드립니다.
-						</p>
+						<p>입주일은 하우스 매니저와의 일정 조율을 통해 정해지나, 통상 입주 가능일로부터 7일 이내에 입주 가능하신
+							분이 희망 지점 입주에 유리합니다. 계약서를 작성 하고 나면 2일 이내에 보증금을 납부하셔야 하며, 월세는 입주 2일
+							전까지 납부해야 합니다. 위 사항을 지키지 못 하실 경우 계약은 통보 없이 자동으로 취소되오니, 이 점 양해 부탁
+							드립니다.</p>
 					</div>
 					<input type="radio" name="live" id="faq-question15"> <label
 						for="faq-question15">3. 입주기간을 연장할 수 있나요?</label>
 					<div>
-						<p>입주기간은 초기 계약과 마찬가지로 6개월 단위로 연장하게 됩니다. 재계약을 원하실 경우, 계약 종료일로부터 두 달 전에 하우스 매니저께 재계약 의사를 밝혀주셔야 하며, 재계약은 입주자 간 상호 만족도 조사와 담당자 소견을 바탕으로 결정됩니다.</p>
+						<p>입주기간은 초기 계약과 마찬가지로 6개월 단위로 연장하게 됩니다. 재계약을 원하실 경우, 계약 종료일로부터
+							두 달 전에 하우스 매니저께 재계약 의사를 밝혀주셔야 하며, 재계약은 입주자 간 상호 만족도 조사와 담당자 소견을
+							바탕으로 결정됩니다.</p>
 					</div>
 					<input type="radio" name="live" id="faq-question16"> <label
-						for="faq-question16">4. 보증금은 납부하였으나 아직 입주 전 입니다. 만약 현 상황에서 계약 취소 시 어떻게 되나요?</label>
+						for="faq-question16">4. 보증금은 납부하였으나 아직 입주 전 입니다. 만약 현 상황에서
+						계약 취소 시 어떻게 되나요?</label>
 					<div>
-						<p>
-							입주 전 계약을 해지하는 경우, 계약시작일까지 남은 기간에 따라 다른 액수의 보증금이 차감됩니다. 자세한 사항은 계약서를 참조하시기 바랍니다.
-						</p>
+						<p>입주 전 계약을 해지하는 경우, 계약시작일까지 남은 기간에 따라 다른 액수의 보증금이 차감됩니다. 자세한
+							사항은 계약서를 참조하시기 바랍니다.</p>
 					</div>
 					<input type="radio" name="live" id="faq-question17"> <label
 						for="faq-question17">5. 보증금과 월세는 얼마인가요?</label>
 					<div>
-						<p>
-							임대료는 집에 따라 다르기 때문에, 입주를 희망하시는 집의 상세 소개페이지에서 확인해주시는 것이 가장 정확합니다.
-마찬가지로 보증금도 집에 따라 달라지며, 입주를 희망하시는 방 월세의 2개월 분 금액입니다.
-(예를 들어 월세가 40만원인 방에 입주 하시면, 보증금은 80만원입니다.)
-						</p>
+						<p>임대료는 집에 따라 다르기 때문에, 입주를 희망하시는 집의 상세 소개페이지에서 확인해주시는 것이 가장
+							정확합니다. 마찬가지로 보증금도 집에 따라 달라지며, 입주를 희망하시는 방 월세의 2개월 분 금액입니다. (예를 들어
+							월세가 40만원인 방에 입주 하시면, 보증금은 80만원입니다.)</p>
 					</div>
 					<input type="radio" name="live" id="faq-question18"> <label
 						for="faq-question18">6. 단기 입주가 가능한가요?</label>
@@ -516,22 +544,22 @@
 					<input type="radio" name="live" id="faq-question19"> <label
 						for="faq-question19">7. 입주할 수 있는 나이 제한이 있나요?</label>
 					<div>
-						<p>
-							보다 빠르고 친밀한 커뮤니티 형성을 위해, 입주하시는 분들의 연령은 20세부터 41세까지로 정하고 있습니다.
-						</p>
+						<p>보다 빠르고 친밀한 커뮤니티 형성을 위해, 입주하시는 분들의 연령은 20세부터 41세까지로 정하고
+							있습니다.</p>
 					</div>
 					<input type="radio" name="live" id="faq-question20"> <label
 						for="faq-question20">8. 입주 및 계약 문의는 어디로 해야하나요?</label>
 					<div>
-						<p>
-							입주/계약문의는 전화(02-2018-3718) 및 이메일(eiziong1@gmail.com) 로 영업시간(평일 10:00 ~ 18:00, 점심시간 12:30 ~ 13:30)내에 문의하실 수 있습니다. 입주/계약에 대한 궁금하신 점은 홈페이지의 FAQ를 통해 확인 하실 수 있으니 문의하시기 전에 FAQ를 확인해주세요! 카카오톡 혹은 라인 메신저로는 상담 진행해드리지 않고 있으니 이 점 참고 부탁드립니다.
-						</p>
+						<p>입주/계약문의는 전화(02-2018-3718) 및 이메일(eiziong1@gmail.com) 로
+							영업시간(평일 10:00 ~ 18:00, 점심시간 12:30 ~ 13:30)내에 문의하실 수 있습니다. 입주/계약에
+							대한 궁금하신 점은 홈페이지의 FAQ를 통해 확인 하실 수 있으니 문의하시기 전에 FAQ를 확인해주세요! 카카오톡
+							혹은 라인 메신저로는 상담 진행해드리지 않고 있으니 이 점 참고 부탁드립니다.</p>
 					</div>
 					<input type="radio" name="live" id="faq-question21"> <label
 						for="faq-question21">9. 2인실 가격 기준은 어떻게 되나요?</label>
 					<div>
-						<p>홈페이지에 안내 되어있는 2인실 가격은 1인 가격 기준입니다.
-예를 들어 2인실인데 보증금 96만원/임대료 41만원/관리비3만원/공과금 5만원이라고 명시되어있는 자리는해당 금액 모두 1인이 부담하는 비용입니다.</p>
+						<p>홈페이지에 안내 되어있는 2인실 가격은 1인 가격 기준입니다. 예를 들어 2인실인데 보증금 96만원/임대료
+							41만원/관리비3만원/공과금 5만원이라고 명시되어있는 자리는해당 금액 모두 1인이 부담하는 비용입니다.</p>
 					</div>
 					<input type="radio" name="live" id="faq-question22"> <label
 						for="faq-question22">10. 지점 내 관리 직원이 상주하나요?</label>
@@ -551,9 +579,12 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/roomDetail.js"></script>

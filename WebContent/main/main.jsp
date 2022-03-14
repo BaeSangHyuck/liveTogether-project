@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/mainpage.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mainpage.css" />
 <title>가치살자 - 메인페이지</title>
 </head>
 <body>
@@ -67,11 +67,11 @@
 	<section id="two">
 		<div id="info_wrap">
 			<div id="img_wrap">
-				<img src="../images/poster.png">
+				<img src="${pageContext.request.contextPath}/images/poster.png">
 			</div>
 			<div id="text_wrap">
 				<div id="check_img">
-					<img src="../images/checkList.png">
+					<img src="${pageContext.request.contextPath}/images/checkList.png">
 				</div>
 			</div>
 		</div>
@@ -139,7 +139,7 @@
 			<ul id="content-wrap">
 				<li class="content-wrap">
 					<div class="content">
-						<a href="../house/roomDetail.jsp"> <img
+						<a href="${pageContext.request.contextPath}/house/roomDetail.jsp"> <img
 							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/291/m-1567072647.jpg">
 							<span>180호점</span>
 						</a>
@@ -147,7 +147,7 @@
 				</li>
 				<li class="content-wrap">
 					<div class="content">
-						<a href="../house/roomDetail.jsp"> <img
+						<a href="${pageContext.request.contextPath}/house/roomDetail.jsp"> <img
 							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/390/m-1601018080.jpg">
 							<span>181호점</span>
 						</a>
@@ -155,7 +155,7 @@
 				</li>
 				<li class="content-wrap">
 					<div class="content">
-						<a href="../house/roomDetail.jsp"> <img
+						<a href="${pageContext.request.contextPath}/house/roomDetail.jsp"> <img
 							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/391/m-1601018252.jpg">
 							<span>182호점</span>
 						</a>
@@ -163,7 +163,7 @@
 				</li>
 				<li class="content-wrap">
 					<div class="content">
-						<a href="../house/roomDetail.jsp"> <img
+						<a href="${pageContext.request.contextPath}/house/roomDetail.jsp"> <img
 							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/372/m-1607324588.png">
 							<span>183호점</span>
 						</a>
@@ -171,7 +171,7 @@
 				</li>
 				<li class="content-wrap">
 					<div class="content">
-						<a href="../house/roomDetail.jsp"> <img
+						<a href="${pageContext.request.contextPath}/house/roomDetail.jsp"> <img
 							src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/323/m-1580372741.jpg">
 							<span>184호점</span>
 						</a>
@@ -180,7 +180,7 @@
 			</ul>
 		</div>
 		<div class="arrow_btn next">
-			<img src="../images/next.png">
+			<img src="${pageContext.request.contextPath}/images/next.png">
 		</div>
 	</section>
 
@@ -189,5 +189,5 @@
 	<jsp:include page="../fix/footer.jsp" />
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/mainpage.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/mainpage.js"></script>
 </html>

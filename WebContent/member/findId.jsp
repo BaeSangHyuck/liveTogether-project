@@ -12,8 +12,8 @@
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=1" />
-<link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/login.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/login.css" />
 </head>
 
 <style>
@@ -69,7 +69,7 @@ button.btn_tistory:hover {
 			</ul>
 			<div id="mArticle">
 				<div class="content_account">
-					<form id="findLoginId" method="post" action="/member/memberFindIdOk.me">
+					<form id="findLoginId" method="post" action="${pageContext.request.contextPath}/member/memberFindIdOk.me">
 						<fieldset class="fld_tistory">
 							<div class="cont_data">
 
@@ -105,12 +105,12 @@ button.btn_tistory:hover {
 
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 
 </body>
 </html>

@@ -169,6 +169,17 @@ tr[class*=tr-wrap] {
 
 .profile{
 	padding:15px 30px 15px 30px;
+	border-radius: 15px;
+    border: 1px solid #dddd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: normal;
+    width: 230px;
+}
+
+.profile-wrap{
+	display:flex;
+	justify-content: space-evenly;
 }
 
 .profile-name {

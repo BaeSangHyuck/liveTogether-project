@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>aside</title>
-<link rel="stylesheet" href="../assets/css/aside.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/aside.css" />
 </head>
 <body>
 	<aside id="aside">
