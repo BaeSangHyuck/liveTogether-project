@@ -27,7 +27,7 @@
 		<div id="mypageheader">
 			<div class="inner">
 				<div class="inner_ab">
-					<span class="my_span01">(${member.getMemberName()})</span>님의 마이페이지 입니다.
+					<span class="my_span01">${member.getMemberName()}</span>님의 마이페이지 입니다.
 				</div>
 			</div>
 		</div>
@@ -35,17 +35,25 @@
 
 
 		<div class="mypage">
+				<div class="mypagetool">
+						<ul class="mypagebar">
+							<li class="num1">
+								<a href="${pageContext.request.contextPath}/member/MemberMypageOk.me">내 정보조회</a>
+							</li>
+							<li class="num2">
+								<a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내 정보수정</a>
+							</li>
+							<li class="num3">
+								<a href="${pageContext.request.contextPath}/member/mypagetour.jsp">진행사항</a>
+							</li>
+							<li class="num4">
+								<a href="${pageContext.request.contextPath}/member/mypagelook.jsp">계약서 출력</a>
+							</li>
+						</ul>
+							</div>
 			<div id="box">
-				<div id="navigation_wraper">
-					<div class="navigation">
-						<a href="mypage.jsp">
-							<div class="menu-btn">내 정보 수정</div>
-						</a><a
-							href="${pageContext.request.contextPath}/member/MemberMypageOk.me">
-							<div class="menu-btn2">내 정보 조회</div>
-						</a>
-					</div>
-				</div>
+			
+		
 
 				<div class="wrapper">
 					<div class="container">
@@ -94,7 +102,7 @@
 											<label class="col03">비밀번호</label>
 											<div class="user_pw user">
 												<input type="password" id="user_current_password"
-													name="memberPw">
+													name="memberPw" value="${member.getMemberPw()}">
 											</div>
 										</div>
 
@@ -102,7 +110,7 @@
 											<label class="col04 ">비밀번호 확인</label>
 											<div class="user_newpw user">
 												<input type="password" id="user_password"
-													name="memberPwOk">
+													name="memberPwOk" value="${member.getMemberPw()}">
 											</div>
 										</div>
 
@@ -196,11 +204,11 @@ $('#leave-button').click(function(e) {
 
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 </body>
 </html>

@@ -62,7 +62,7 @@
 					<div id="infoMsg">
 						<span>내 월세를 아껴줄<br>쉐어하우스 <b>'가치살자'</b></span>
 					</div>
-					<form id="joinForm" name="joinForm" action="${pageContext.request.contextPath}/member/MemberJoinOk.me">
+					<form id="joinForm" name="joinForm" method="post" action="${pageContext.request.contextPath}/member/MemberJoinOk.me">
 					<div id="memberType">
 						<input class="member-input" type="radio" value="n"
 							name="memberType" id="nomal"> <label class="member-btn"

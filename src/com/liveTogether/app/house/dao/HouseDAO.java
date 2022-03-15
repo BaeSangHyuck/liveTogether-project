@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.liveTogether.app.house.vo.HouseRoomVO;
 import com.liveTogether.app.house.vo.HouseVO;
 import com.liveTogether.mybatis.config.MybatisConfig;
 
@@ -12,13 +13,17 @@ public class HouseDAO {
 	SqlSessionFactory sqlSessionFactory = MybatisConfig.getSqlsessionFactory();
 	SqlSession sqlSession;
 	
+	public HouseDAO() {
+		sqlSession = sqlSessionFactory.openSession(true);
+	}
+	
 //	방 찾기
 //	public void findroom(뭘까용) {
 //		return sqlSession.select("House.findroom", 뭘까용);
 //	}
 	
 //	방 전체 리스트
-	public List<HouseVO> selectAll(){
+	public List<HouseRoomVO> selectAll(){
 		return sqlSession.selectList("House.selectAll");
 	}
 	
@@ -26,4 +31,13 @@ public class HouseDAO {
 	public List<HouseVO> info(int houseNumber) {
 		return sqlSession.selectList("House.info", houseNumber);
 	}
+//  방 내놓기
+	public void regist(HouseVO house) {
+		sqlSession.insert("House.regist", house);
+	}
+	
+	public void registroom(HouseRoomVO house) {
+		sqlSession.insert("House.registroom", house);
+	}
+
 }

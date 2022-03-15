@@ -97,7 +97,7 @@ span.span-lineheight{
     line-height: 43px;
 }
 
-div.files{
+div[class*='files']{
     display: flex;
     flex-wrap: wrap;
 }
@@ -133,7 +133,13 @@ img.roomImg{
    display: inline;
 }
 
+input.removeImgBtn{
+	padding: 0 1em;
+}
 
+div.file-wrap{
+	margin-right: 5px;
+}
 
 
 

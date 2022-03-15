@@ -24,6 +24,7 @@
 	<!-- Header -->
 	<jsp:include page="../fix/header.jsp" />
 
+
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
 
@@ -38,7 +39,7 @@
 						이용이 제한될 수 있습니다.</li>
 				</ul>
 			</div>
-			<form>
+			<form id="RegistForm" name="RegistForm" method="post" action="${pageContext.request.contextPath}/house/HouseRegisterOk.ho">
 
 				<!-- 위치정보 -->
 				<div class="content-sub-title">
@@ -50,11 +51,11 @@
 							<th>건물형태</th>
 							<td>
 								<div>
-									<select class="typeSelect">
-										<option>아파트</option>
-										<option>단독주택</option>
-										<option>빌라</option>
-										<option>기타</option>
+									<select class="typeSelect" name="houseType">
+										<option value="a">아파트</option>
+										<option value="d">단독주택</option>
+										<option value="v">빌라</option>
+										<option value="o">기타</option>
 									</select>
 								</div>
 							</td>
@@ -64,7 +65,7 @@
 							<td>
 								<div id="address1">
 									<input type="text" id="address" class="address"
-										autocomplete="off">
+										autocomplete="off" name="houseAddress">
 									<button type="button" onclick="DaumPostcode()" id="findAddress">
 										<em class="zbIcon icon-location"></em> <span>주소찾기</span>
 									</button>
@@ -77,7 +78,7 @@
 						</tr>
 						<tr>
 							<th>상세주소</th>
-							<td><input type="text" id="address2" name="address2"
+							<td><input type="text" id="address2" name="houseAddressDetail"
 								class="address">
 								<div class="item-map">
 									<div id="map"></div>
@@ -89,7 +90,7 @@
 						<tr>
 							<th>지역</th>
 							<td><input type="text" id="address3" class="address"
-								name="local4"></td>
+								name="houseLocation"></td>
 						</tr>
 					</tbody>
 				</table>
@@ -105,7 +106,7 @@
 							<th>방이름</th>
 							<td>
 								<div>
-									<input type="text" value="Room 1" class="input-smallsize">
+									<input type="text" name="roomName" value="Room 1" class="input-smallsize" disabled>
 								</div>
 							</td>
 						</tr>
@@ -113,11 +114,11 @@
 							<th>성별</th>
 							<td>
 								<div>
-									<input type="radio" id="male" name="g" value="male"> <label
+									<input type="radio" id="male" name="roomGender" value="m"> <label
 										for="male">남성전용</label> <input type="radio" id="female"
-										name="g" value="female"> <label for="female">여성전용</label>
-									<input type="radio" id="uni" name="g" value="uni"> <label
-										for="uni">남녀공용</label>
+										name="roomGender" value="w"> <label for="female">여성전용</label>
+									<input type="radio" id="uni" name="roomGender" value="o"> <label
+										for="uni">남녀공용</label> 
 								</div>
 							</td>
 						</tr>
@@ -125,7 +126,7 @@
 							<th>타입</th>
 							<td>
 								<div class="flex">
-									<input type="text" class="input-xsmallsize">
+									<input type="text" class="input-xsmallsize" name="roomType">
 									<div>
 										<span class="span-lineheight">&nbsp;&nbsp;인실</span>
 									</div>
@@ -136,7 +137,7 @@
 							<th>보증금</th>
 							<td>
 								<div class="flex">
-									<input type="text" class="input-xsmallsize">
+									<input type="text" class="input-xsmallsize" name="roomDeposit">
 									<div>
 										<span class="span-lineheight">&nbsp;&nbsp;만원</span>
 									</div>
@@ -147,7 +148,7 @@
 							<th>월세</th>
 							<td>
 								<div class="flex">
-									<input type="text" class="input-xsmallsize">
+									<input type="text" class="input-xsmallsize" name="roomMonthly">
 									<div>
 										<span class="span-lineheight">&nbsp;&nbsp;만원</span>
 									</div>
@@ -160,7 +161,7 @@
 								<div>
 									<div id="roomsize-wrap">
 										<input type="text" class="input-xsmallsize" id="cal2"
-											onkeyup="calculator(2);"><span
+											onkeyup="calculator(2);" name="roomArea"><span
 											class="span-lineheight">&nbsp;&nbsp;m<sup>2</sup>&nbsp;=&nbsp;&nbsp;
 										</span> <input type="text" class="input-xsmallsize" id="cal1"
 											onkeyup="calculator(1);"><span
@@ -174,11 +175,28 @@
 						</tr>
 						<tr>
 							<th>입주가능일</th>
-							<td><input type="date" id="startDate"> <input
+							<td><input type="date" id="startDate" name="roomDate"> <input
 								type="checkbox" id="rightnow"> <label for="rightnow">즉시
 									입주</label></td>
 						</tr>
-
+						<tr>
+							<th>사진</th>
+							<td>
+								<div>
+									<div class="files1">
+										<div class="file-wrap">
+											<div id="file">
+												<label for="board_file1" style="display: inline;">
+												 <img id="board_file1Img" class="roomImg" src="${pageContext.request.contextPath}/images/파일첨부.png">
+												</label>
+											</div>
+											<input id="board_file1" name="board_file1" type="file" style="display: none">
+											 <input type="button" class="removeImgBtn" onclick="cancelFile('board_file1')" value="첨부 삭제">
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 
@@ -210,13 +228,13 @@
 							<td>
 								<div class="flex">
 									<div>
-										<input type="checkbox" id="fac1"> <label for="fac1">에어컨</label>
+										<input type="checkbox" id="fac1" name="opAircon" value="a"> <label for="fac1">에어컨</label>
 									</div>
 									<div>
-										<input type="checkbox" id="fac2"> <label for="fac2">중앙난방</label>
+										<input type="checkbox" id="fac2" name="opCentralHeat" value="b"> <label for="fac2">중앙난방</label>
 									</div>
 									<div>
-										<input type="checkbox" id="fac3"> <label for="fac3">지역난방</label>
+										<input type="checkbox" id="fac3" name="opLocalHeat" value="c"> <label for="fac3">지역난방</label>
 									</div>
 								</div>
 
@@ -227,49 +245,49 @@
 							<td>
 								<div class="flex">
 									<div>
-										<input type="checkbox" id="refrigerator"> <label
+										<input type="checkbox" id="refrigerator" name="opRefrigerator" value="d"> <label
 											for="refrigerator">냉장고</label>
 									</div>
 									<div>
-										<input type="checkbox" id="washer"> <label
+										<input type="checkbox" id="washer" name="opWasher" value="e"> <label
 											for="washer">세탁기</label>
 									</div>
 									<div>
-										<input type="checkbox" id="gasrange"> <label
+										<input type="checkbox" id="gasrange" name="opGasrange" value="f"> <label
 											for="gasrange">가스레인지</label>
 									</div>
 									<div>
-										<input type="checkbox" id="induction"> <label
+										<input type="checkbox" id="induction" name="opInduction" value="g"> <label
 											for="induction">인덕션</label>
 									</div>
 								</div>
 								<div class="flex">
 									<div>
-										<input type="checkbox" id="microwave"> <label
+										<input type="checkbox" id="microwave" name="opMicrowave" value="h"> <label
 											for="microwave">전자레인지</label>
 									</div>
 
 									<div>
-										<input type="checkbox" id="desk"> <label for="desk">책상</label>
+										<input type="checkbox" id="desk" name="opDesk" value="i"> <label for="desk">책상</label>
 									</div>
 									<div>
-										<input type="checkbox" id="doorlock"> <label
+										<input type="checkbox" id="doorlock" name="opDoorlock" value="j"> <label
 											for="doorlock">도어락</label>
 									</div>
 									<div>
-										<input type="checkbox" id="bed"> <label for="bed">침대</label>
+										<input type="checkbox" id="bed" name="opBed" value="k"> <label for="bed">침대</label>
 									</div>
 								</div>
 								<div class="flex">
 									<div>
-										<input type="checkbox" id="closet"> <label
+										<input type="checkbox" id="closet" name="opCloset" value="l"> <label
 											for="closet">옷장</label>
 									</div>
 									<div>
-										<input type="checkbox" id="shoes"> <label for="shoes">신발장</label>
+										<input type="checkbox" id="shoes" name="opShoes" value="m"> <label for="shoes">신발장</label>
 									</div>
 									<div>
-										<input type="checkbox" id="sink"> <label for="sink">씽크대</label>
+										<input type="checkbox" id="sink" name="opSink" value="n"> <label for="sink">싱크대</label>
 									</div>
 								</div>
 							</td>
@@ -279,15 +297,15 @@
 							<td>
 								<div class="flex">
 									<div>
-										<input type="checkbox" id="interphone"> <label
+										<input type="checkbox" id="interphone" name="opInterphone" value="o"> <label
 											for="interphone">인터폰</label>
 									</div>
 									<div>
-										<input type="checkbox" id="windowguard"> <label
+										<input type="checkbox" id="windowguard" name="opWindow" value="p"> <label
 											for="windowguard">방범창</label>
 									</div>
 									<div>
-										<input type="checkbox" id="cctv"> <label for="cctv">CCTV</label>
+										<input type="checkbox" id="cctv" name="opCctv" value="q"> <label for="cctv">CCTV</label>
 									</div>
 								</div>
 							</td>
@@ -297,15 +315,15 @@
 							<td>
 								<div class="flex">
 									<div>
-										<input type="checkbox" id="veranda"> <label
+										<input type="checkbox" id="veranda" name="opVeranda" value="r"> <label
 											for="veranda">베란다</label>
 									</div>
 									<div>
-										<input type="checkbox" id="deliverybox"> <label
+										<input type="checkbox" id="deliverybox" name="opDelivery" value="s"> <label
 											for="deliverybox">무인택배함</label>
 									</div>
 									<div>
-										<input type="checkbox" id="firealarm"> <label
+										<input type="checkbox" id="firealarm" name="opFirealarm" value="t"> <label
 											for="firealarm">화재경보기</label>
 									</div>
 								</div>
@@ -316,15 +334,15 @@
 							<td>
 								<div class="flex">
 									<div>
-										<input type="checkbox" id="parking" name="r" value="parking">
+										<input type="checkbox" id="parking" name="houseParking" value="u">
 										<label for="parking">주차가능</label>
 									</div>
 									<div>
-										<input type="checkbox" id="elevator" name="r" value="elevator">
+										<input type="checkbox" id="elevator" name="houseElevator" value="v">
 										<label for="elevator">엘리베이터</label>
 									</div>
 									<div class="check-wrap">
-										<input type="checkbox" id="pet" name="r" value="pet">
+										<input type="checkbox" id="pet" name="housePet" value="w">
 										<label for="pet">반려동물</label>
 									</div>
 								</div>
@@ -353,16 +371,14 @@
 							<td>
 								<div>
 									<div class="files">
-										<div class="files-wrap">
+										<div class="file-wrap">
 											<div id="file">
-												<label for="board_file1" style="display: inline;"> <img
-													id="board_file1Img" class="roomImg"
-													src="${pageContext.request.contextPath}/images/파일첨부.png">
+												<label for="board_file1" style="display: inline;"> 
+												<img id="board_file1Img" class="roomImg" src="${pageContext.request.contextPath}/images/파일첨부.png">
 												</label>
 											</div>
-											<input id="board_file1" name="board_file1" type="file"
-												style="display: none"> <input type="button"
-												onclick="cancelFile('board_file1')" value="첨부 삭제">
+											<input id="board_file1" name="board_file1" type="file" style="display: none">
+											<input type="button" class="removeImgBtn"	onclick="cancelFile('board_file1')" value="첨부 삭제">
 										</div>
 									</div>
 								</div>
@@ -384,7 +400,7 @@
 							<td>
 								<div>
 									<input type="text" maxlength="40"
-										placeholder="쉐어하우스를 소개할 제목을 작성해주세요. (40글자 이내)">
+										placeholder="쉐어하우스를 소개할 제목을 작성해주세요. (40글자 이내)" name="houseContent">
 								</div>
 							</td>
 						</tr>
@@ -397,7 +413,7 @@
 방 정보, 가격협의내용, 교통 등 자세한 내용을 작성하시면 거래가 성사될 가능성이 높아집니다. 
 한글, 영어, 숫자, m2을 제외한 특수문자(괄호포함)등은 임의로 삭제될 수 있습니다.
 (950글자 이내)"
-										maxlength="950"></textarea>
+										maxlength="950" name="houseMessage"></textarea>
 								</div>
 							</td>
 						</tr>
@@ -417,9 +433,7 @@
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-	var contextPath = "${pageContext.request.contextPath}";
-</script>
+<script>	var contextPath = "${pageContext.request.contextPath}";</script>
 <script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>

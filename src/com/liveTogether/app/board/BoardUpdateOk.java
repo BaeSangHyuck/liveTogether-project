@@ -51,7 +51,7 @@ public class BoardUpdateOk implements Action {
 			File f = new File(uploadFolder, file.getFileName());
 			if(f.exists()) {f.delete();}
 		});
-		
+		try {Thread.sleep(3000);} catch (InterruptedException e) {;}
 
 		af.setRedirect(true);
 		af.setPath(req.getContextPath() + "/board/BoardListOk.bo");

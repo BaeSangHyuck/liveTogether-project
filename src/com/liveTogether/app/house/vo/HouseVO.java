@@ -3,26 +3,15 @@ package com.liveTogether.app.house.vo;
 public class HouseVO {
 	
 	private int houseNumber;
+	private int houseMax;
+	private String memberId;
+	private String houseType;
 	private String houseAddress;
-	private String houseMessage;
 	private String houseAddressDetail;
 	private String houseLocation;
-	private String memberId;
-	private int houseDeposit;
-	private int houseMonth;
-	private String houseType;
-	private String houseGender;
-	private int houseManagement;
-	private String houseParking;
-	private String housePet;
-	private String houseElevator;
-	private String houseDate;
-	private String maPowerRates;
-	private String maGas;
-	private String maWater;
-	private String maInternet;
-	private String maTv;
 	private String opAircon;
+	private String opCentralHeat;
+	private String opLocalHeat;
 	private String opRefrigerator;
 	private String opWasher;
 	private String opGasrange;
@@ -34,6 +23,18 @@ public class HouseVO {
 	private String opCloset;
 	private String opShoes;
 	private String opSink;
+	private String opInterphone;
+	private String opWindow;
+	private String opCctv;
+	private String opVeranda;
+	private String opDelivery;
+	private String opFirealarm;
+	private String houseParking;
+	private String houseElevator;
+	private String housePet;
+	private String houseContent;
+	private String houseMessage;
+	private int id;
 	
 	public HouseVO() {;}
 
@@ -45,20 +46,36 @@ public class HouseVO {
 		this.houseNumber = houseNumber;
 	}
 
+	public int getHouseMax() {
+		return houseMax;
+	}
+
+	public void setHouseMax(int houseMax) {
+		this.houseMax = houseMax;
+	}
+
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+
+	public String getHouseType() {
+		return houseType;
+	}
+
+	public void setHouseType(String houseType) {
+		this.houseType = houseType;
+	}
+
 	public String getHouseAddress() {
 		return houseAddress;
 	}
 
 	public void setHouseAddress(String houseAddress) {
 		this.houseAddress = houseAddress;
-	}
-
-	public String getHouseMessage() {
-		return houseMessage;
-	}
-
-	public void setHouseMessage(String houseMessage) {
-		this.houseMessage = houseMessage;
 	}
 
 	public String getHouseAddressDetail() {
@@ -77,132 +94,28 @@ public class HouseVO {
 		this.houseLocation = houseLocation;
 	}
 
-	public String getMemberId() {
-		return memberId;
-	}
-
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-	}
-
-	public int getHouseDeposit() {
-		return houseDeposit;
-	}
-
-	public void setHouseDeposit(int houseDeposit) {
-		this.houseDeposit = houseDeposit;
-	}
-
-	public int getHouseMonth() {
-		return houseMonth;
-	}
-
-	public void setHouseMonth(int houseMonth) {
-		this.houseMonth = houseMonth;
-	}
-
-	public String getHouseType() {
-		return houseType;
-	}
-
-	public void setHouseType(String houseType) {
-		this.houseType = houseType;
-	}
-
-	public String getHouseGender() {
-		return houseGender;
-	}
-
-	public void setHouseGender(String houseGender) {
-		this.houseGender = houseGender;
-	}
-
-	public int getHouseManagement() {
-		return houseManagement;
-	}
-
-	public void setHouseManagement(int houseManagement) {
-		this.houseManagement = houseManagement;
-	}
-
-	public String getHouseParking() {
-		return houseParking;
-	}
-
-	public void setHouseParking(String houseParking) {
-		this.houseParking = houseParking;
-	}
-
-	public String getHousePet() {
-		return housePet;
-	}
-
-	public void setHousePet(String housePet) {
-		this.housePet = housePet;
-	}
-
-	public String getHouseElevator() {
-		return houseElevator;
-	}
-
-	public void setHouseElevator(String houseElevator) {
-		this.houseElevator = houseElevator;
-	}
-
-	public String getHouseDate() {
-		return houseDate;
-	}
-
-	public void setHouseDate(String houseDate) {
-		this.houseDate = houseDate;
-	}
-
-	public String getMaPowerRates() {
-		return maPowerRates;
-	}
-
-	public void setMaPowerRates(String maPowerRates) {
-		this.maPowerRates = maPowerRates;
-	}
-
-	public String getMaGas() {
-		return maGas;
-	}
-
-	public void setMaGas(String maGas) {
-		this.maGas = maGas;
-	}
-
-	public String getMaWater() {
-		return maWater;
-	}
-
-	public void setMaWater(String maWater) {
-		this.maWater = maWater;
-	}
-
-	public String getMaInternet() {
-		return maInternet;
-	}
-
-	public void setMaInternet(String maInternet) {
-		this.maInternet = maInternet;
-	}
-
-	public String getMaTv() {
-		return maTv;
-	}
-
-	public void setMaTv(String maTv) {
-		this.maTv = maTv;
-	}
-
 	public String getOpAircon() {
 		return opAircon;
 	}
 
 	public void setOpAircon(String opAircon) {
 		this.opAircon = opAircon;
+	}
+
+	public String getOpCentralHeat() {
+		return opCentralHeat;
+	}
+
+	public void setOpCentralHeat(String opCentralHeat) {
+		this.opCentralHeat = opCentralHeat;
+	}
+
+	public String getOpLocalHeat() {
+		return opLocalHeat;
+	}
+
+	public void setOpLocalHeat(String opLocalHeat) {
+		this.opLocalHeat = opLocalHeat;
 	}
 
 	public String getOpRefrigerator() {
@@ -292,6 +205,105 @@ public class HouseVO {
 	public void setOpSink(String opSink) {
 		this.opSink = opSink;
 	}
+
+	public String getOpInterphone() {
+		return opInterphone;
+	}
+
+	public void setOpInterphone(String opInterphone) {
+		this.opInterphone = opInterphone;
+	}
+
+	public String getOpWindow() {
+		return opWindow;
+	}
+
+	public void setOpWindow(String opWindow) {
+		this.opWindow = opWindow;
+	}
+
+	public String getOpCctv() {
+		return opCctv;
+	}
+
+	public void setOpCctv(String opCctv) {
+		this.opCctv = opCctv;
+	}
+
+	public String getOpVeranda() {
+		return opVeranda;
+	}
+
+	public void setOpVeranda(String opVeranda) {
+		this.opVeranda = opVeranda;
+	}
+
+	public String getOpDelivery() {
+		return opDelivery;
+	}
+
+	public void setOpDelivery(String opDelivery) {
+		this.opDelivery = opDelivery;
+	}
+
+	public String getOpFirealarm() {
+		return opFirealarm;
+	}
+
+	public void setOpFirealarm(String opFirealarm) {
+		this.opFirealarm = opFirealarm;
+	}
+
+	public String getHouseParking() {
+		return houseParking;
+	}
+
+	public void setHouseParking(String houseParking) {
+		this.houseParking = houseParking;
+	}
+
+	public String getHouseElevator() {
+		return houseElevator;
+	}
+
+	public void setHouseElevator(String houseElevator) {
+		this.houseElevator = houseElevator;
+	}
+
+	public String getHousePet() {
+		return housePet;
+	}
+
+	public void setHousePet(String housePet) {
+		this.housePet = housePet;
+	}
+
+	public String getHouseContent() {
+		return houseContent;
+	}
+
+	public void setHouseContent(String houseContent) {
+		this.houseContent = houseContent;
+	}
+
+	public String getHouseMessage() {
+		return houseMessage;
+	}
+
+	public void setHouseMessage(String houseMessage) {
+		this.houseMessage = houseMessage;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	
+
 	
 	
 

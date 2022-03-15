@@ -32,8 +32,24 @@
 		
 	
 	<div class="mypagelook">
+		<div class="mypagetool">
+						<ul class="mypagebar">
+							<li class="num1">
+								<a href="${pageContext.request.contextPath}/member/MemberMypageOk.me">내 정보조회</a>
+							</li>
+							<li class="num2">
+								<a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내 정보수정</a>
+							</li>
+							<li class="num3">
+								<a href="${pageContext.request.contextPath}/member/mypagetour.jsp">진행사항</a>
+							</li>
+							<li class="num4">
+								<a href="${pageContext.request.contextPath}/member/mypagelook.jsp">계약서 출력</a>
+							</li>
+						</ul>
+							</div>
 		<div id="box">	
-		<div id="navigation_wraper">
+		<%-- <div id="navigation_wraper">
 			<div class="navigation">
 				<a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">
 					<div class="menu-btn">내 정보 수정</div>
@@ -42,7 +58,7 @@
 				</a>
 			</div>
 		</div>
-
+ --%>
 
 		<!-- 	<div class="box"> -->
 		<div class="wrapper">
@@ -114,11 +130,11 @@
 
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 </body>
 </html>

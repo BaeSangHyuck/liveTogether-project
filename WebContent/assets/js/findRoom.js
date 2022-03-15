@@ -7,15 +7,69 @@ const like_btn = document.getElementById("btnh1");
 const heart = document.querySelector("i.fa-heart");
 var check=-1;
 
+
+getList();
+
+// 댓글 목록
+function getList(){
+   $.ajax({
+       url: contextPath + "/house/HouseListOk.ho",
+       type: "get",
+       dataType: "json",
+       contentType: "application/json;charset=utf-8",
+       success: showList,
+       error: function(a, b, c){
+           console.log("오류" + c);
+       }
+   });
+}
+
+// 댓글 목록
+function showList(rooms){
+    var text = "";
+    if(rooms != null && rooms.length != 0){
+        $.each(rooms, function(index, room){
+        	var roomGender;
+        	if(room.roomGender=="m"){
+        		roomGender="남성전용";
+        	}else if(room.roomGender=="f"){
+        		roomGender="여성전용"
+        	}
+			text+='<div class="table-cell">'
+			text+='<a href="roomDetail.jsp" target="_blank">'
+			text+='<div class="cell-wrap">'
+			text+='<div class="img-wrap"></div>'
+			text+='<div class="content-wrapper">'
+			text+='<div class="content">'
+			text+='<span class="name">'+room.houseNumber+'호점</span><span class="gu">(보증금'+room.roomDeposit+'/월'+room.roomMonthly+')</span>'
+			text+='</div>'
+			text+='<div class="content content2">'
+			text+='<span class="gender-division">'+roomGender+'</span>'
+			text+='<span class="concept"> 빌라</span><span class="opened-beds" style="display: inline;">신청가능 '
+			text+='<span class="opened-beds-count ">'+room.roomType+'</span>'
+			text+='</span><span class="opened-beds" style="display: none;">예약가능</span>'
+			text+='</div></div></div></a></div>'
+        });
+    }else{
+        // 댓글 없음
+        text = "<p>게시글이 없습니다.</p>";
+    }
+
+   $(".table-row").html(text);
+}
+
+
+
+
 function toggle(){
-	//전체보기
+	// 전체보기
 	if(heart.style.color=="white"){
 		heart.style.color="red"
-		//찜목록 불러오는 그걸 쓰고
+		// 찜목록 불러오는 그걸 쓰고
 	}
 	else{
 		heart.style.color="white"
-		//전체리스트 가져오는걸 쓴다
+		// 전체리스트 가져오는걸 쓴다
 	}
 }
 

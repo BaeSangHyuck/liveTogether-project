@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>가치살자 - 방 찾기</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/findRoom.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
-<script src="https://kit.fontawesome.com/cc88e53013.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/findRoom.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/main.css" />
+<script src="https://kit.fontawesome.com/cc88e53013.js"
+	crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -36,8 +39,8 @@
 							<div class="multi-range-slider">
 								<!-- 진짜 슬라이더 -->
 								<input type="range" id="input-left" min="0" max="100" value="25"
-									step="10" name="min"/> <input type="range" id="input-right" min="0"
-									max="100" value="75" step="10" name="max"/>
+									step="10" name="min" /> <input type="range" id="input-right"
+									min="0" max="100" value="75" step="10" name="max" />
 								<!-- 커스텀 슬라이더 -->
 								<div class="slider">
 									<div class="track"></div>
@@ -54,20 +57,20 @@
 						<div class="filter-flex">
 							<div class="check-wrap">
 								<input type="checkbox" id="check1" name="g" value="woman">
-								<label for="check1"> 
-									<div class="check" >여성전용</div>
+								<label for="check1">
+									<div class="check">여성전용</div>
 								</label>
 							</div>
 							<div class="check-wrap">
 								<input type="checkbox" id="check2" name="g" value="man">
-								<label for="check2"> 
-									<div class="check" >남성전용</div>
+								<label for="check2">
+									<div class="check">남성전용</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								 <input type="checkbox" id="check3" name="g" value="public">
+								<input type="checkbox" id="check3" name="g" value="public">
 								<label for="check3">
-									<div class="check" >남녀공용</div>
+									<div class="check">남녀공용</div>
 								</label>
 							</div>
 						</div>
@@ -78,25 +81,25 @@
 						<div class="filter-flex">
 							<div class="check-wrap">
 								<input type="checkbox" id="check4" name="h" value="apart">
-								<label for="check4"> 
-									<div class="check" >아파트</div>
+								<label for="check4">
+									<div class="check">아파트</div>
 								</label>
 							</div>
 							<div class="check-wrap">
 								<input type="checkbox" id="check5" name="h" value="single">
-								<label for="check5"> 
-									<div class="check" >단독주택</div>
+								<label for="check5">
+									<div class="check">단독주택</div>
 								</label>
 							</div>
 							<div class="check-wrap">
 								<input type="checkbox" id="check6" name="h" value="villa">
-								<label for="check6"> 
+								<label for="check6">
 									<div class="check">빌라</div>
 								</label>
 							</div>
 							<div class="check-wrap">
 								<input type="checkbox" id="check7" name="h" value="other">
-								<label for="check7"> 
+								<label for="check7">
 									<div class="check">기타</div>
 								</label>
 							</div>
@@ -107,19 +110,19 @@
 						</span>
 						<div class="filter-flex">
 							<div class="check-wrap">
-								 <input type="checkbox" id="check8" name="r" value="one">
+								<input type="checkbox" id="check8" name="r" value="one">
 								<label for="check8">
 									<div class="check">1인실</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								 <input type="checkbox" id="check9" name="r" value="two">
+								<input type="checkbox" id="check9" name="r" value="two">
 								<label for="check9">
 									<div class="check">2인실</div>
 								</label>
 							</div>
 							<div class="check-wrap">
-								 <input type="checkbox" id="check10" name="r" value="three">
+								<input type="checkbox" id="check10" name="r" value="three">
 								<label for="check10">
 									<div class="check">3인실</div>
 								</label>
@@ -131,13 +134,14 @@
 						<span> <strong>입주예정일</strong>
 						</span>
 						<div>
-							<input type="date" name="d"> 
+							<input type="date" name="d">
 						</div>
 					</div>
 					<div class="btn">
 						<div class="filter-flex">
 							<div class="button-wrap">
-								<input type="button" value="초기화"  onClick="window.location.reload()">
+								<input type="button" value="초기화"
+									onClick="window.location.reload()">
 							</div>
 							<div class="button-wrap">
 								<input type="button" value="적용하기">
@@ -156,7 +160,7 @@
 				<div id="table">
 					<div class="table-row">
 						<div class="table-cell">
-							<a href="roomDetail.jsp" target = "_blank" >
+							<a href="roomDetail.jsp" target="_blank">
 								<div class="cell-wrap">
 									<div class="img-wrap"></div>
 									<div class="content-wrapper">
@@ -175,8 +179,8 @@
 								</div>
 							</a>
 						</div>
-						
-						
+
+
 
 					</div>
 				</div>
@@ -231,7 +235,9 @@
 		// 클러스터러에 마커들을 추가합니다
 		clusterer.addMarkers(markers);
 	}); */
-	
+</script>
+<script>
+	var contextPath = "${pageContext.request.contextPath}";
 </script>
 
 <script src="${pageContext.request.contextPath}/assets/js/findRoom.js"></script>

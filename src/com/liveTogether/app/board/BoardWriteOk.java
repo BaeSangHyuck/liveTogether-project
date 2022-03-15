@@ -37,7 +37,7 @@ public class BoardWriteOk implements Action {
 		
 		//파일 추가
 		fDao.insert(multi, bDao.getSeq());
-		
+		try {Thread.sleep(3000);} catch (InterruptedException e) {;}
 		af.setRedirect(true);
 		af.setPath(req.getContextPath() + "/board/BoardListOk.bo");
 		

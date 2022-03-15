@@ -1,6 +1,7 @@
 var imgIndex = 1;
+var checkImg = 1;
 //파일업로드 썸네일
-$(".files").change(function(e) {
+$(".files1").change(function(e) {
    var file = e.target.files[0];
    var img = $(this).children(":last").find("img");
    var reader = new FileReader();
@@ -14,27 +15,35 @@ $(".files").change(function(e) {
       }
    }
    
+   if(checkImg == 5){ return; }
+   
    var imgText="";
    imgIndex++;
-   imgText += "<div class='files-wrap'>"
+   imgText += "<div class='file-wrap'>"
    imgText += "<div id='file'>"
    imgText += "<label for='board_file"+imgIndex+"' style='display: inline;'>"
    imgText += "<img id='board_file"+imgIndex+"Img' class='roomImg' src='"+contextPath+"/images/파일첨부.png'>"
    imgText += "</label>"
    imgText += "</div>"
    imgText += "<input id='board_file"+imgIndex+"' name='board_file"+imgIndex+"' type='file' style='display: none'>" 
-   imgText += "<input type='button' onclick='cancelFile(\"board_file"+imgIndex+"\")' value='첨부 삭제'>"
+   imgText += "<input type='button' class='removeImgBtn' onclick='cancelFile(\"board_file"+imgIndex+"\")' value='첨부 삭제'>"
    imgText += "</div>"
       
 
    $(".files").append(imgText);
-   
+   checkImg++;
 });
+
+$(window).scroll(function(){ 
+    var scrollValue = $(document).scrollTop();
+    console.log($("input[name='roomDate']").val());
+})
+
+
 
 
 // 입주가능일/즉시 입주 둘중 하나 선택
 $("#startDate").focusout(function(){
-   console.log("들어옴");
    if($("#startDate").val() != ""){
 //      $("input:checkbox[id='rightnow']").prop("checked", false); 
       $("#rightnow").attr('disabled','true');      
@@ -70,8 +79,19 @@ function calculator(chk) {
    }
 }
 
-// 방추가
+
+
+
+//방삭제
 var index = 1;
+function removeRoom(){
+      $('#roomDetail'+index).empty();   
+      index--;
+}
+
+
+
+// 방추가
 $("#roomPlusBtn").click(function() {
    roomAdd();
 });
@@ -85,8 +105,8 @@ function roomAdd() {
    text += "<th>방이름</th>"
    text += "<td>"
    text += "<div class='roomPlusMark'>"
-   text += "<input type='text' value='Room&nbsp;" + index   + "' class='input-smallsize'>"
-   text += "<img src='"+contextPath+"/images/xMark.png' id='xMark'>"
+   text += "<input type='text' value='Room&nbsp;" + index   + "' class='input-smallsize' disabled>"
+   text += "<img src='"+contextPath+"/images/xMark.png' id='xMark' onclick='removeRoom()'>"
    text += "</div>"
    text += "</td>"
    text += "</tr>"
@@ -155,13 +175,33 @@ function roomAdd() {
    text += "<th>입주가능일</th>"
    text += "<td><input type='date'> <input type='checkbox'   id='rightnow'> <label for='rightnow'>즉시 입주</label></td>"
    text += "</tr>"
+   text += "<tr>"
+	   
+	   text += "<th>사진</th>"
+		   text += "<td>"
+			   text += "<div>"
+				   text += "<div class='files1'>"
+					   text += "<div class='file-wrap'>"
+						   text += "<div id='file'>"
+							   text += "<label for='board_file1' style='display: inline;'> <img id='board_file1Img' class='roomImg'	src='"+contextPath+"/images/파일첨부.png'>"
+							   text += "</label>"
+								   text += "</div>"
+									   text += "<input id='board_file1' name='board_file1' type='file'	style='display: none' > <input type='button' class='removeImgBtn' onclick='cancelFile('board_file1')' value='첨부 삭제'>"
+										   text += "</div>"
+											   text += "</div>"
+												   text += "</div>"
+													   text += "</td>"
+														   text += "</tr>"
    text += "</tbody>"
    text += "</table>"
-   // text += "<div id='roomDetail" + (index+1)+ "'></div>"
+	   
 
-   $('#roomDetail' + index).html(text);
+   $('#roomDetail' + index).append(text);
    if(index==8){
       $("#roomPlusBtn").css('display','none');
    }
+}
 
+function send(){	
+	RegistForm.submit();
 }

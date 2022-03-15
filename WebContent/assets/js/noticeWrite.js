@@ -10,6 +10,9 @@
          		}
          		
          		writeForm.submit();
+         		setTimeout(function(){
+         			console.log("들어옴");
+         		}, 3000);
          	}
          	
          	$(".file-wrap").change(function(e){

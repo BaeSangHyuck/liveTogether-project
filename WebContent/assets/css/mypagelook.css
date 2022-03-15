@@ -1,4 +1,30 @@
-
+.mypagebar a {
+	text-decoration-line: none !important;
+	color:black;
+}
+.mypagetool{
+	width:100%;
+	height:50px;
+	margin-top: 1rem;
+	margin-bottom: 3em;
+}
+.mypagetool .mypagebar{
+    margin-left: 25%;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    float: left;
+    justify-content: space-evenly;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: left;
+}
+.mypagebar .num1{
+	box-shadow: inset 0 -3px 0 #1187cf;
+    background-color: #FFF;
+    color: #1187CF;
+    font-weight: 600;
+}
 #change_info .content-wrapper .content {
 	width: 100%;
     padding: 60px 70px;

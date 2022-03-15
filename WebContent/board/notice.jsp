@@ -39,7 +39,7 @@
 					action="${pageContext.request.contextPath}/board/BoardSearchOk.bo"
 					method="post" name="searchForm" id="search">
 					<input type="search" maxlength="150" class="first-input"
-						placeholder="검색어를 입력하세요" name="boardTitle">
+						placeholder="검색어를 입력하세요" name="boardTitle" value="${search}">
 					<button type="button" class="img1" onclick="searchForm.submit()"></button>
 				</form>
 				<table class="table" id="first-table">

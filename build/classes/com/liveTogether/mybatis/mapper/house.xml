@@ -2,66 +2,79 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="House">
 	<!-- 방 찾기 -->
-	<!-- <select id="findroom" parameterType="" resultType="_int">
-	select houseNumber from tbl_house
-	<trim prefix="where" prefixOverrides="or"></trim>
-	 <if test="min != null">
-		or houseMonth = #{min}
-	</if>
-	<if test="max != null">
-		or houseMonth = #{max}
-	</if> 
-	<if test="woman != null">
-		or houseGender = #{woman}
-	</if>
-	<if test="man != null">
-		or houseGender = #{man}
-	</if>
-	<if test="public != null">
-		or houseGender = #{public}
-	</if>
-	<if test="apart != null">
-		or houseType = #{apart}
-	</if>
-	<if test="single != null">
-		or houseType = #{single}
-	</if>
-	<if test="villa != null">
-		or houseType = #{villa}
-	</if>
-	<if test="other != null">
-		or houseType = #{other}
-	</if>
-	<if test="one != null">
-		or roomQuantity = #{one}
-	</if>
-	<if test="two != null">
-		or roomQuantity = #{two}
-	</if>
-	<if test="three != null">
-		or roomQuantity = #{three}
-	</if>
-	<if test="three != null">
-		or roomQuantity = #{three}
-	</if>	
-	</select> -->
-	
+	<!-- <select id="findroom" parameterType="" resultType="_int"> select houseNumber 
+		from tbl_house <trim prefix="where" prefixOverrides="or"></trim> <if test="min 
+		!= null"> or houseMonth = #{min} </if> <if test="max != null"> or houseMonth 
+		= #{max} </if> <if test="woman != null"> or houseGender = #{woman} </if> 
+		<if test="man != null"> or houseGender = #{man} </if> <if test="public != 
+		null"> or houseGender = #{public} </if> <if test="apart != null"> or houseType 
+		= #{apart} </if> <if test="single != null"> or houseType = #{single} </if> 
+		<if test="villa != null"> or houseType = #{villa} </if> <if test="other != 
+		null"> or houseType = #{other} </if> <if test="one != null"> or roomQuantity 
+		= #{one} </if> <if test="two != null"> or roomQuantity = #{two} </if> <if 
+		test="three != null"> or roomQuantity = #{three} </if> <if test="three != 
+		null"> or roomQuantity = #{three} </if> </select> -->
+
 	<!-- 방 전체 리스트 -->
-	<select id="selectAll" resultType="houseVO">
-   	select houseNumber, houseLocation, houseType, houseGender, roomQuantity
-   	from tbl_house order by 1 desc;
-   	</select>
-   	
+	<select id="selectAll" resultType="houseRoomVO">
+		select 
+		houseNumber, roomDeposit, roomMonthly, roomGender, roomType
+		<!-- houseMax -->
+		from tbl_houseRoom order by roomNumber desc
+	</select>
+
 	<!-- 방 정보조회 -->
 	<select id="info" parameterType="_int" resultType="houseVO">
-	select houseNumber, houseContent, houseMessage, houseAddress,
-	houseAddressDetail, houseLocation, memberId, houseDeposit, houseMonth,
-	houseType, houseGender, houseManagement, houseTotalFloor, houseFloor,
-	houseWay, houseLoan, houseParking, housePet, houseElevator, houseDate,
-	maPowerRates, maGas, maWater, maInternet, maTv, opAircon,
-	opRefrigerator, opWasher, opGasrange, opInduction, opMicrowave, opDesk,
-	opDoorlock, opBed, opCloset, opShoes, opSink
-	from tbl_house where houseNumber = #{houseNumber};
+		select
+		houseNumber, houseContent, houseMessage, houseAddress,
+		houseAddressDetail, houseLocation, memberId, houseDeposit, houseMonth,
+		houseType, houseGender, houseManagement, houseTotalFloor, houseFloor,
+		houseWay, houseLoan, houseParking, housePet, houseElevator, houseDate,
+		maPowerRates, maGas, maWater, maInternet, maTv, opAircon,
+		opRefrigerator, opWasher, opGasrange, opInduction, opMicrowave,
+		opDesk,
+		opDoorlock, opBed, opCloset, opShoes, opSink
+		from tbl_house
+		where houseNumber = #{houseNumber};
 	</select>
+
+	<!-- 방 내놓기 -->
+	<insert id="regist" parameterType="houseVO">
+		insert into tbl_house
+		(houseMax, memberId, houseType, houseAddress, houseAddressDetail,
+		houseLocation,
+		opAircon, opCentralHeat, opLocalHeat, opRefrigerator,
+		opWasher,
+		opGasrange, opInduction, opMicrowave, opDesk, opDoorlock,
+		opBed,
+		opCloset, opShoes, opSink, opInterphone, opWindow, opCctv,
+		opVeranda,
+		opDelivery, opFirealarm, houseParking, houseElevator,
+		housePet,
+		houseContent, houseMessage)
+		values(#{houseMax}, #{memberId},
+		#{houseType}, #{houseAddress}, #{houseAddressDetail},
+		#{houseLocation}, #{opAircon}, #{opCentralHeat}, #{opLocalHeat},
+		#{opRefrigerator}, #{opWasher}, #{opGasrange}, #{opInduction},
+		#{opMicrowave}, #{opDesk}, #{opDoorlock},
+		#{opBed}, #{opCloset},
+		#{opShoes},
+		#{opSink}, #{opInterphone}, #{opWindow}, #{opCctv},
+		#{opVeranda}, #{opDelivery}, #{opFirealarm}, #{houseParking},
+		#{houseElevator}, #{housePet}, #{houseContent},
+		#{houseMessage});
+		
+		<selectKey keyProperty="id" resultType="_int">
+        SELECT LAST_INSERT_ID()
+    	</selectKey>
+	</insert>
+
+	<insert id="registroom" parameterType="houseRoomVO">
+		insert into tbl_houseroom
+		(roomName, roomType, roomGender, roomDeposit, roomMonthly, roomArea,
+		roomDate, houseNumber)
+		values(#{roomName}, #{roomType}, #{roomGender},
+		#{roomDeposit}, #{roomMonthly}, #{roomArea}, #{roomDate}, #{houseNumber});
+	</insert>
 
 </mapper>
