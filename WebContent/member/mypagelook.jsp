@@ -44,7 +44,7 @@
 								<a href="${pageContext.request.contextPath}/member/mypagetour.jsp">진행사항</a>
 							</li>
 							<li class="num4">
-								<a href="${pageContext.request.contextPath}/member/mypagelook.jsp">계약서 출력</a>
+								<a href="${pageContext.request.contextPath}/member/mypagecontract.jsp">계약서 출력</a>
 							</li>
 						</ul>
 							</div>
