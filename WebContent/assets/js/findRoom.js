@@ -10,7 +10,11 @@ var check=-1;
 
 getList();
 
+<<<<<<< HEAD
 // 하우스 목록
+=======
+// 댓글 목록
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 function getList(){
    $.ajax({
        url: contextPath + "/house/HouseListOk.ho",
@@ -24,11 +28,16 @@ function getList(){
    });
 }
 
+<<<<<<< HEAD
 // 하우스 목록 써주기
+=======
+// 댓글 목록
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 function showList(rooms){
     var text = "";
     if(rooms != null && rooms.length != 0){
         $.each(rooms, function(index, room){
+<<<<<<< HEAD
         	var houseGender;
         	var houseType;
         	console.log(room.houseType);
@@ -47,6 +56,13 @@ function showList(rooms){
         		houseType="단독주택";
         	}else if(room.houseType=="o"){
         		houseType="기타";
+=======
+        	var roomGender;
+        	if(room.roomGender=="m"){
+        		roomGender="남성전용";
+        	}else if(room.roomGender=="f"){
+        		roomGender="여성전용"
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
         	}
 			text+='<div class="table-cell">'
 			text+='<a href="roomDetail.jsp" target="_blank">'
@@ -57,9 +73,15 @@ function showList(rooms){
 			text+='<span class="name">'+room.houseNumber+'호점</span><span class="gu">(보증금'+room.roomDeposit+'/월'+room.roomMonthly+')</span>'
 			text+='</div>'
 			text+='<div class="content content2">'
+<<<<<<< HEAD
 			text+='<span class="gender-division">'+houseGender+'</span>'
 			text+='<span class="concept">'+houseType+'</span><span class="opened-beds" style="display: inline;">신청가능 '
 			text+='<span class="opened-beds-count ">'+room.houseMax+'</span>'
+=======
+			text+='<span class="gender-division">'+roomGender+'</span>'
+			text+='<span class="concept"> 빌라</span><span class="opened-beds" style="display: inline;">신청가능 '
+			text+='<span class="opened-beds-count ">'+room.roomType+'</span>'
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 			text+='</span><span class="opened-beds" style="display: none;">예약가능</span>'
 			text+='</div></div></div></a></div>'
         });

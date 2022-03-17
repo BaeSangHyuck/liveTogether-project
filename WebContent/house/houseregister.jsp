@@ -19,9 +19,13 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/houseRegister.css" />
 </head>
+<<<<<<< HEAD
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd5a829552ba5aafe83249b169e62ba9&libraries=services"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+=======
+
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 <body>
 	<!-- Header -->
 	<jsp:include page="../fix/header.jsp" />
@@ -41,8 +45,12 @@
 						이용이 제한될 수 있습니다.</li>
 				</ul>
 			</div>
+<<<<<<< HEAD
 			<form id="registForm" name="registForm" method="post"
 				action="${pageContext.request.contextPath}/house/HouseRegisterOk.ho">
+=======
+			<form id="RegistForm" name="RegistForm" method="post" action="${pageContext.request.contextPath}/house/HouseRegisterOk.ho">
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 
 				<!-- 위치정보 -->
 				<div class="content-sub-title">
@@ -81,8 +89,13 @@
 						</tr>
 						<tr>
 							<th>상세주소</th>
+<<<<<<< HEAD
 							<td><input type="text" id="address2"
 								name="houseAddressDetail" class="address" autocomplete="off">
+=======
+							<td><input type="text" id="address2" name="houseAddressDetail"
+								class="address">
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 								<div class="item-map">
 									<div id="map"></div>
 									<div class="i-list">
@@ -93,12 +106,19 @@
 						<tr>
 							<th>지역</th>
 							<td><input type="text" id="address3" class="address"
+<<<<<<< HEAD
 								name="houseLocation" autocomplete="off"></td>
 						</tr>
 					</tbody>
 				</table>
 				<input type="hidden" name="latitude"> <input type="hidden"
 					name="longitude">
+=======
+								name="houseLocation"></td>
+						</tr>
+					</tbody>
+				</table>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 
 				<!-- 방정보 -->
 				<div class="content-sub-title">
@@ -111,8 +131,12 @@
 							<th>방이름</th>
 							<td>
 								<div>
+<<<<<<< HEAD
 									<input type="hidden" name="roomName" value="Room1" autocomplete="off">
 									<div class="input-smallsize">Room1</div>
+=======
+									<input type="text" name="roomName" value="Room 1" class="input-smallsize" disabled>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 								</div>
 							</td>
 						</tr>
@@ -120,9 +144,17 @@
 							<th>성별</th>
 							<td>
 								<div>
+<<<<<<< HEAD
 									<input type="radio" id="male" name="roomGender1" value="m">
 									<label for="male">남성전용</label> <input type="radio" id="female"
 										name="roomGender1" value="w"> <label for="female">여성전용</label>
+=======
+									<input type="radio" id="male" name="roomGender" value="m"> <label
+										for="male">남성전용</label> <input type="radio" id="female"
+										name="roomGender" value="w"> <label for="female">여성전용</label>
+									<input type="radio" id="uni" name="roomGender" value="o"> <label
+										for="uni">남녀공용</label> 
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 								</div>
 							</td>
 						</tr>
@@ -130,7 +162,11 @@
 							<th>타입</th>
 							<td>
 								<div class="flex">
+<<<<<<< HEAD
 									<input type="text" class="input-xsmallsize" name="roomType" autocomplete="off">
+=======
+									<input type="text" class="input-xsmallsize" name="roomType">
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									<div>
 										<span class="span-lineheight">&nbsp;&nbsp;인실</span>
 									</div>
@@ -141,7 +177,11 @@
 							<th>보증금</th>
 							<td>
 								<div class="flex">
+<<<<<<< HEAD
 									<input type="text" class="input-xsmallsize" name="roomDeposit" autocomplete="off">
+=======
+									<input type="text" class="input-xsmallsize" name="roomDeposit">
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									<div>
 										<span class="span-lineheight">&nbsp;&nbsp;만원</span>
 									</div>
@@ -152,7 +192,11 @@
 							<th>월세</th>
 							<td>
 								<div class="flex">
+<<<<<<< HEAD
 									<input type="text" class="input-xsmallsize" name="roomMonthly" autocomplete="off">
+=======
+									<input type="text" class="input-xsmallsize" name="roomMonthly">
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									<div>
 										<span class="span-lineheight">&nbsp;&nbsp;만원</span>
 									</div>
@@ -165,10 +209,17 @@
 								<div>
 									<div id="roomsize-wrap">
 										<input type="text" class="input-xsmallsize" id="cal2"
+<<<<<<< HEAD
 											onkeyup="calculator(2);" name="roomArea" autocomplete="off"><span
 											class="span-lineheight">&nbsp;&nbsp;m<sup>2</sup>&nbsp;=&nbsp;&nbsp;
 										</span> <input type="text" class="input-xsmallsize" id="cal1"
 											onkeyup="calculator(1);" autocomplete="off"><span
+=======
+											onkeyup="calculator(2);" name="roomArea"><span
+											class="span-lineheight">&nbsp;&nbsp;m<sup>2</sup>&nbsp;=&nbsp;&nbsp;
+										</span> <input type="text" class="input-xsmallsize" id="cal1"
+											onkeyup="calculator(1);"><span
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 											class="span-lineheight">&nbsp;&nbsp;평</span>
 									</div>
 								</div>
@@ -179,14 +230,21 @@
 						</tr>
 						<tr>
 							<th>입주가능일</th>
+<<<<<<< HEAD
 							<td><input type="date" id="startDate" name="roomDate">
 								<input type="checkbox" id="rightnow"> <label
 								for="rightnow">즉시 입주</label></td>
+=======
+							<td><input type="date" id="startDate" name="roomDate"> <input
+								type="checkbox" id="rightnow"> <label for="rightnow">즉시
+									입주</label></td>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 						</tr>
 						<tr>
 							<th>사진</th>
 							<td>
 								<div>
+<<<<<<< HEAD
 									<div class="filesRooma1">
 										<div class="file-wrap">
 											<div id="file">
@@ -200,6 +258,17 @@
 												onchange="imgThumbnail(event);"> <input
 												type="button" class="removeImgBtn"
 												onclick="cancelFile('room_filea11')" value="첨부 삭제">
+=======
+									<div class="files1">
+										<div class="file-wrap">
+											<div id="file">
+												<label for="board_file1" style="display: inline;">
+												 <img id="board_file1Img" class="roomImg" src="${pageContext.request.contextPath}/images/파일첨부.png">
+												</label>
+											</div>
+											<input id="board_file1" name="board_file1" type="file" style="display: none">
+											 <input type="button" class="removeImgBtn" onclick="cancelFile('board_file1')" value="첨부 삭제">
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 										</div>
 									</div>
 								</div>
@@ -236,6 +305,7 @@
 							<td>
 								<div class="flex">
 									<div>
+<<<<<<< HEAD
 										<input type="checkbox" id="fac1" name="opAircon" value="a">
 										<label for="fac1">에어컨</label>
 									</div>
@@ -246,6 +316,15 @@
 									<div>
 										<input type="checkbox" id="fac3" name="opLocalHeat" value="c">
 										<label for="fac3">지역난방</label>
+=======
+										<input type="checkbox" id="fac1" name="opAircon" value="a"> <label for="fac1">에어컨</label>
+									</div>
+									<div>
+										<input type="checkbox" id="fac2" name="opCentralHeat" value="b"> <label for="fac2">중앙난방</label>
+									</div>
+									<div>
+										<input type="checkbox" id="fac3" name="opLocalHeat" value="c"> <label for="fac3">지역난방</label>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									</div>
 								</div>
 
@@ -256,6 +335,7 @@
 							<td>
 								<div class="flex">
 									<div>
+<<<<<<< HEAD
 										<input type="checkbox" id="refrigerator" name="opRefrigerator"
 											value="d"> <label for="refrigerator">냉장고</label>
 									</div>
@@ -270,10 +350,27 @@
 									<div>
 										<input type="checkbox" id="induction" name="opInduction"
 											value="g"> <label for="induction">인덕션</label>
+=======
+										<input type="checkbox" id="refrigerator" name="opRefrigerator" value="d"> <label
+											for="refrigerator">냉장고</label>
+									</div>
+									<div>
+										<input type="checkbox" id="washer" name="opWasher" value="e"> <label
+											for="washer">세탁기</label>
+									</div>
+									<div>
+										<input type="checkbox" id="gasrange" name="opGasrange" value="f"> <label
+											for="gasrange">가스레인지</label>
+									</div>
+									<div>
+										<input type="checkbox" id="induction" name="opInduction" value="g"> <label
+											for="induction">인덕션</label>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									</div>
 								</div>
 								<div class="flex">
 									<div>
+<<<<<<< HEAD
 										<input type="checkbox" id="microwave" name="opMicrowave"
 											value="h"> <label for="microwave">전자레인지</label>
 									</div>
@@ -289,10 +386,26 @@
 									<div>
 										<input type="checkbox" id="bed" name="opBed" value="k">
 										<label for="bed">침대</label>
+=======
+										<input type="checkbox" id="microwave" name="opMicrowave" value="h"> <label
+											for="microwave">전자레인지</label>
+									</div>
+
+									<div>
+										<input type="checkbox" id="desk" name="opDesk" value="i"> <label for="desk">책상</label>
+									</div>
+									<div>
+										<input type="checkbox" id="doorlock" name="opDoorlock" value="j"> <label
+											for="doorlock">도어락</label>
+									</div>
+									<div>
+										<input type="checkbox" id="bed" name="opBed" value="k"> <label for="bed">침대</label>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									</div>
 								</div>
 								<div class="flex">
 									<div>
+<<<<<<< HEAD
 										<input type="checkbox" id="closet" name="opCloset" value="l">
 										<label for="closet">옷장</label>
 									</div>
@@ -303,6 +416,16 @@
 									<div>
 										<input type="checkbox" id="sink" name="opSink" value="n">
 										<label for="sink">싱크대</label>
+=======
+										<input type="checkbox" id="closet" name="opCloset" value="l"> <label
+											for="closet">옷장</label>
+									</div>
+									<div>
+										<input type="checkbox" id="shoes" name="opShoes" value="m"> <label for="shoes">신발장</label>
+									</div>
+									<div>
+										<input type="checkbox" id="sink" name="opSink" value="n"> <label for="sink">싱크대</label>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									</div>
 								</div>
 							</td>
@@ -312,6 +435,7 @@
 							<td>
 								<div class="flex">
 									<div>
+<<<<<<< HEAD
 										<input type="checkbox" id="interphone" name="opInterphone"
 											value="o"> <label for="interphone">인터폰</label>
 									</div>
@@ -322,6 +446,17 @@
 									<div>
 										<input type="checkbox" id="cctv" name="opCctv" value="q">
 										<label for="cctv">CCTV</label>
+=======
+										<input type="checkbox" id="interphone" name="opInterphone" value="o"> <label
+											for="interphone">인터폰</label>
+									</div>
+									<div>
+										<input type="checkbox" id="windowguard" name="opWindow" value="p"> <label
+											for="windowguard">방범창</label>
+									</div>
+									<div>
+										<input type="checkbox" id="cctv" name="opCctv" value="q"> <label for="cctv">CCTV</label>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									</div>
 								</div>
 							</td>
@@ -331,6 +466,7 @@
 							<td>
 								<div class="flex">
 									<div>
+<<<<<<< HEAD
 										<input type="checkbox" id="veranda" name="opVeranda" value="r">
 										<label for="veranda">베란다</label>
 									</div>
@@ -341,6 +477,18 @@
 									<div>
 										<input type="checkbox" id="firealarm" name="opFirealarm"
 											value="t"> <label for="firealarm">화재경보기</label>
+=======
+										<input type="checkbox" id="veranda" name="opVeranda" value="r"> <label
+											for="veranda">베란다</label>
+									</div>
+									<div>
+										<input type="checkbox" id="deliverybox" name="opDelivery" value="s"> <label
+											for="deliverybox">무인택배함</label>
+									</div>
+									<div>
+										<input type="checkbox" id="firealarm" name="opFirealarm" value="t"> <label
+											for="firealarm">화재경보기</label>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									</div>
 								</div>
 							</td>
@@ -350,12 +498,21 @@
 							<td>
 								<div class="flex">
 									<div>
+<<<<<<< HEAD
 										<input type="checkbox" id="parking" name="houseParking"
 											value="u"> <label for="parking">주차가능</label>
 									</div>
 									<div>
 										<input type="checkbox" id="elevator" name="houseElevator"
 											value="v"> <label for="elevator">엘리베이터</label>
+=======
+										<input type="checkbox" id="parking" name="houseParking" value="u">
+										<label for="parking">주차가능</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elevator" name="houseElevator" value="v">
+										<label for="elevator">엘리베이터</label>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 									</div>
 									<div class="check-wrap">
 										<input type="checkbox" id="pet" name="housePet" value="w">
@@ -386,6 +543,7 @@
 						<tr>
 							<td>
 								<div>
+<<<<<<< HEAD
 									<div class="filesHouse" id="1">
 										<div class="file-wrap">
 											<div id="file">
@@ -398,6 +556,17 @@
 												style="display: none"> <input type="button"
 												class="removeImgBtn" onclick="cancelFile('board_file1')"
 												value="첨부 삭제">
+=======
+									<div class="files">
+										<div class="file-wrap">
+											<div id="file">
+												<label for="board_file1" style="display: inline;"> 
+												<img id="board_file1Img" class="roomImg" src="${pageContext.request.contextPath}/images/파일첨부.png">
+												</label>
+											</div>
+											<input id="board_file1" name="board_file1" type="file" style="display: none">
+											<input type="button" class="removeImgBtn"	onclick="cancelFile('board_file1')" value="첨부 삭제">
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 										</div>
 									</div>
 								</div>
@@ -419,8 +588,12 @@
 							<td>
 								<div>
 									<input type="text" maxlength="40"
+<<<<<<< HEAD
 										placeholder="쉐어하우스를 소개할 제목을 작성해주세요. (40글자 이내)"
 										name="houseContent" autocomplete="off">
+=======
+										placeholder="쉐어하우스를 소개할 제목을 작성해주세요. (40글자 이내)" name="houseContent">
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 								</div>
 							</td>
 						</tr>
@@ -452,6 +625,7 @@
 	<jsp:include page="../fix/footer.jsp" />
 
 </body>
+<<<<<<< HEAD
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -559,5 +733,74 @@
 
 
 
+=======
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>	var contextPath = "${pageContext.request.contextPath}";</script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/houseRegister.js"></script>
+
+<!-- 주소찾기 -->
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	function DaumPostcode() {
+		new daum.Postcode({
+			oncomplete : function(data) {
+				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+				// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+				// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				var addr = ''; // 주소 변수
+				var extraAddr = ''; // 참고항목 변수
+
+				//사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+				if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+					addr = data.roadAddress;
+				} else { // 사용자가 지번 주소를 선택했을 경우(J)
+					addr = data.jibunAddress;
+				}
+
+				// 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+				if (data.userSelectedType === 'R') {
+					// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+					// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+					if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+						extraAddr += data.bname;
+					}
+					// 건물명이 있고, 공동주택일 경우 추가한다.
+					if (data.buildingName !== '' && data.apartment === 'Y') {
+						extraAddr += (extraAddr !== '' ? ', '
+								+ data.buildingName : data.buildingName);
+					}
+					// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+					if (extraAddr !== '') {
+						extraAddr = ' (' + extraAddr + ')';
+					}
+					// 조합된 참고항목을 해당 필드에 넣는다.
+					document.getElementById("address3").value = extraAddr;
+
+				} else {
+					document.getElementById("address3").value = '';
+				}
+
+				// 우편번호와 주소 정보를 해당 필드에 넣는다.
+				/*  document.getElementById('sample6_postcode').value = data.zonecode; */
+				document.getElementById("address").value = addr;
+				// 커서를 상세주소 필드로 이동한다.
+				document.getElementById("address2").focus();
+			}
+		}).open();
+	}
+</script>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 
 </html>

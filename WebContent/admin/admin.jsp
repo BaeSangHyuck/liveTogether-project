@@ -139,7 +139,11 @@
 								<div id="member-second-half">
 									<div id="member-second-first-div">
 										<div id="member-second-first-first-span" class="left-span">
+<<<<<<< HEAD
 											<span>승인 대기중인 방</span>
+=======
+											<span>됩니다.</span>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 										</div>
 										<div class="flex">
 											<div id="member-second-first-second-span">
@@ -153,7 +157,11 @@
 									<div id="hr-tag2"></div>
 									<div id="member-second-second-div">
 										<div id="member-second-second-first-span" class="left-span">
+<<<<<<< HEAD
 											<span>현재 등록된 방</span>
+=======
+											<span>3팀</span>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 										</div>
 										<div class="flex">
 											<div id="member-second-second-second-span">

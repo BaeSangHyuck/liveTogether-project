@@ -11,9 +11,8 @@
 }
 
 ul#register-info{
-   font-size: 14px;
+	font-size: 14px;
 }
-
 
 .register-container input {
     border-radius: 1px;
@@ -65,6 +64,7 @@ input.input-xsmallsize{
 }
 
 img#xMark {
+	background-image: url("${pageContext.request.contextPath}/images/xMark.png");
     text-align: right;
     width:40px;
     height:40px;
@@ -72,8 +72,8 @@ img#xMark {
 }
 
 div.roomPlusMark{
-   display: flex;
-   justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 
@@ -97,22 +97,18 @@ span.span-lineheight{
     line-height: 43px;
 }
 
-<<<<<<< HEAD
-div[class*='filesRoom']{
-=======
-div[class*='files']{
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
+div.files{
     display: flex;
     flex-wrap: wrap;
 }
 
 
 div[id*='file'] {
-   text-align: center;   
+	text-align: center;	
 }
 
 div#files img{
-   cursor: pointer;
+	cursor: pointer;
 }
 
 div#roomPlus {
@@ -132,18 +128,12 @@ div#roomSubmit{
 }
 
 img.roomImg{
-   width:80px;
-   height:80px;
-   display: inline;
+	width:80px;
+	height:80px;
+	display: inline;
 }
 
-input.removeImgBtn{
-	padding: 0 1em;
-}
 
-div.file-wrap{
-	margin-right: 5px;
-}
 
 
 
@@ -153,16 +143,8 @@ div.file-wrap{
 input[type="text"], input[type="password"], input[type="email"], select {
     height: 43.32px !important;
     line-height: 3.1625em;
-
 }
 
-input, select, textarea{
-		background-color: white !important;
-}
-
-input:focus, select:focus, textarea:focus{
-    border: 1px solid #1187cf;
-	}
 
 input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
     background-color: #1187CF !important;
@@ -172,15 +154,15 @@ input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + lab
 
 
 input[type="checkbox"]+label:before {
-   border-radius: 2px;
+	border-radius: 2px;
 }
 
 input[type="checkbox"]+label:before, input[type="radio"]+label:before {
-   background-color: white;
-   height: 25px;
-   width: 25px;
-   top: 3px;
-   left: 3px;
+	background-color: white;
+	height: 25px;
+	width: 25px;
+	top: 3px;
+	left: 3px;
 }
 input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
     background-color: #1187CF !important;
@@ -189,9 +171,9 @@ input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + lab
 }
 
 input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
-   {
-   border-color: #e5e5e5;
-   box-shadow: 0 0 0 1px #ffffff;
+	{
+	border-color: #e5e5e5;
+	box-shadow: 0 0 0 1px #ffffff;
     }
 
 button {
@@ -206,5 +188,5 @@ button:hover{
 }
 
 label {
-   margin:0;
+	margin:0;
 }

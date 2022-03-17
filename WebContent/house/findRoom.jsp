@@ -39,6 +39,7 @@
 						<div class="middle">
 							<div class="multi-range-slider">
 								<!-- 진짜 슬라이더 -->
+<<<<<<< HEAD
 								<select id="input-left" name="min">
 									<option value="110">전체</option>
 									<option value="0">0만원</option>
@@ -68,6 +69,18 @@
 									<option value="100">100만원</option>
 									<option value="101">100만원이상</option>
 								</select>
+=======
+								<input type="range" id="input-left" min="0" max="100" value="25"
+									step="10" name="min" /> <input type="range" id="input-right"
+									min="0" max="100" value="75" step="10" name="max" />
+								<!-- 커스텀 슬라이더 -->
+								<div class="slider">
+									<div class="track"></div>
+									<div class="range"></div>
+									<div class="thumb left"></div>
+									<div class="thumb right"></div>
+								</div>
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 							</div>
 						</div>
 					</div>

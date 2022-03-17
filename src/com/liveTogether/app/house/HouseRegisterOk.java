@@ -12,11 +12,16 @@ import com.liveTogether.app.house.dao.HouseDAO;
 import com.liveTogether.app.house.vo.HouseRoomVO;
 import com.liveTogether.app.house.vo.HouseVO;
 
+<<<<<<< HEAD
 public class HouseRegisterOk implements Action {
+=======
+public class HouseRegisterOk implements Action{
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		req.setCharacterEncoding("UTF-8");
+<<<<<<< HEAD
 
 		ActionForward af = new ActionForward();
 		HouseVO vo = new HouseVO();
@@ -28,12 +33,28 @@ public class HouseRegisterOk implements Action {
 		boolean manCheck = false;
 		boolean womanCheck = false;
 
+=======
+		
+		ActionForward af = new ActionForward();
+		HouseVO vo = new HouseVO();	
+		HouseRoomVO rvo = new HouseRoomVO();
+		HouseDAO dao = new HouseDAO();
+		HttpSession session = req.getSession();
+//		String check = null;
+	
+		
+//		check = req.getParameter("houseType");
+		
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 		session.getAttribute("memberId");
 		vo.setHouseType(req.getParameter("houseType"));
 		vo.setHouseAddress(req.getParameter("houseAddress"));
 		vo.setHouseAddressDetail(req.getParameter("houseAddressDetail"));
+<<<<<<< HEAD
 		vo.setLatitude(Double.parseDouble(req.getParameter("latitude")));
 		vo.setLongitude(Double.parseDouble(req.getParameter("longitude")));
+=======
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 		vo.setHouseLocation(req.getParameter("houseLocation"));
 		vo.setOpAircon(req.getParameter("opAircon"));
 		vo.setOpCentralHeat(req.getParameter("opCentralHeat"));
@@ -60,6 +81,7 @@ public class HouseRegisterOk implements Action {
 		vo.setHousePet(req.getParameter("housePet"));
 		vo.setHouseContent(req.getParameter("houseContent"));
 		vo.setHouseMessage(req.getParameter("houseMessage"));
+<<<<<<< HEAD
 		String[] roomName = req.getParameterValues("roomName");
 		String[] roomType = req.getParameterValues("roomType");
 		String[] roomGender = { req.getParameter("roomGender1"), req.getParameter("roomGender2"),
@@ -112,4 +134,27 @@ public class HouseRegisterOk implements Action {
 
 	}
 
+=======
+		
+		dao.regist(vo);
+
+		rvo.setRoomName(req.getParameter("roomName"));
+		rvo.setRoomGender(req.getParameter("roomGender"));
+		rvo.setRoomType(req.getParameter("roomType"));
+		rvo.setRoomDeposit(Integer.parseInt(req.getParameter("roomDeposit")));
+		rvo.setRoomMonthly(Integer.parseInt(req.getParameter("roomMonthly")));
+		rvo.setRoomArea(req.getParameter("roomArea"));
+		rvo.setRoomDate(req.getParameter("roomDate"));
+		rvo.setHouseNumber(vo.getId());
+		
+		dao.registroom(rvo);
+			
+		af.setRedirect(true);
+		af.setPath(req.getContextPath() + "/house/houseRegister.jsp");
+		
+		return af;
+	
+	}
+	
+>>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 }
