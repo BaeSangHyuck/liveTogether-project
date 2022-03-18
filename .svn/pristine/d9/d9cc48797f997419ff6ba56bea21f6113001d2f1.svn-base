@@ -1,0 +1,31 @@
+$(function(){ 
+
+ $("#open").on("click",function(){
+	$("#modal").show();
+		$.ajax({
+		url: contextPath + "/member/MemberFindPwOk.me",
+		type: "get",
+		data :{"memberId" : $("input[name=memberId]").val(), "memberPhone": $("input[name=memberPhone]").val()},
+		
+		success : showPw
+		,
+
+		error: function(a, b, c){
+			console.log("오류" + c);
+		}
+		
+	});
+})
+$("#m-btn").on("click",function(){
+	$("#modal").hide();
+})
+})
+
+function showPw(memberPw){
+
+if(memberPw==0){
+	$('#m-pw').text("정보를 확인")
+} else{
+	$('#m-pw').text(memberPw);
+}
+}

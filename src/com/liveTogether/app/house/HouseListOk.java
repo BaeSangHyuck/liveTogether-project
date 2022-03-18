@@ -14,11 +14,7 @@ import org.json.simple.JSONObject;
 import com.liveTogether.action.Action;
 import com.liveTogether.action.ActionForward;
 import com.liveTogether.app.house.dao.HouseDAO;
-<<<<<<< HEAD
 import com.liveTogether.app.house.vo.HouseDTO;
-=======
-import com.liveTogether.app.house.vo.HouseRoomVO;
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 
 public class HouseListOk implements Action {
 
@@ -30,29 +26,17 @@ public class HouseListOk implements Action {
 		
 		HouseDAO dao = new HouseDAO();
 		PrintWriter out = resp.getWriter();
-<<<<<<< HEAD
 		List<HouseDTO> replyList = dao.selectAll();
 		JSONArray rooms = new JSONArray();
 
 		for(HouseDTO r : replyList) {
-=======
-		List<HouseRoomVO> replyList = dao.selectAll();
-		JSONArray rooms = new JSONArray();
-
-		for(HouseRoomVO r : replyList) {
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 			JSONObject room = new JSONObject();
 			room.put("houseNumber", r.getHouseNumber());
 			room.put("roomDeposit", r.getRoomDeposit());
 			room.put("roomMonthly", r.getRoomMonthly());
-<<<<<<< HEAD
 			room.put("houseGender", r.getHouseGender());
 			room.put("houseType", r.getHouseType());
 			room.put("houseMax", r.getHouseMax());
-=======
-			room.put("roomGender", r.getRoomGender());
-			room.put("roomType", r.getRoomType());
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 			rooms.add(room);
 		}
 		

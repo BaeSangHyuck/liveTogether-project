@@ -44,6 +44,11 @@
 		select memberPw from tbl_member where memberId= #{memberId} and memberPhone = #{memberPhone}
 	</select>
 	
+	<!-- 비밀번호 변경 -->
+	<update id="updatePw" parameterType="memberVO">
+		update tbl_member set memberPw=#{memberPw} where memberPhone= #{memberPhone}
+	</update>
+	
 	<!-- 정보수정 -->
 	<update id="updateInfo" parameterType="memberVO">
 		update tbl_member

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="houseFiles">
+	<!-- 하우스 파일 추가 -->
+	<insert id="insertHF" parameterType="houseFileVO">
+		insert into tbl_housefile
+		(housefileName, houseNumber, housefileNameOriginal)
+		values(#{housefileName}, #{houseNumber}, #{housefileNameOriginal});		
+	</insert>
+	
+	<!-- 하우스 구조 사진 가져오기  -->
+	<select id="getHouseImg" parameterType="_int" resultType="string">
+		select housefileName from tbl_houseFile where houseNumber = #{houseNumber};
+	</select>
+	
+	<!-- 룸 파일 추가 -->
+	<insert id="insertRF" parameterType="roomFileVO">
+		insert into tbl_roomFile
+		(roomfileName, roomNumber, houseNumber, roomfileNameOriginal)
+		values(#{roomfileName}, #{roomNumber}, #{houseNumber}, #{roomfileNameOriginal});		
+	</insert>
+</mapper>

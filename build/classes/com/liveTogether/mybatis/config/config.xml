@@ -6,11 +6,9 @@
 		<typeAlias type="com.liveTogether.app.member.vo.MemberVO" alias="memberVO"/>
 		<typeAlias type="com.liveTogether.app.board.vo.BoardVO" alias="boardVO"/>
 		<typeAlias type="com.liveTogether.app.house.vo.HouseVO" alias="houseVO"/>
-<<<<<<< HEAD
 		<typeAlias type="com.liveTogether.app.house.vo.HouseDTO" alias="houseDTO"/>
-=======
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 		<typeAlias type="com.liveTogether.app.house.vo.HouseFileVO" alias="houseFileVO"/>
+		<typeAlias type="com.liveTogether.app.house.vo.RoomFileVO" alias="roomFileVO"/>
 		<typeAlias type="com.liveTogether.app.house.vo.HouseRoomVO" alias="houseRoomVO"/>
 		<typeAlias type="com.liveTogether.app.board.vo.FilesVO" alias="filesVO"/>
 		<typeAlias type="com.liveTogether.app.board.vo.BoardDTO" alias="boardDTO"/>
@@ -33,6 +31,7 @@
 		<mapper resource="com/liveTogether/mybatis/mapper/board.xml"/>
 		<mapper resource="com/liveTogether/mybatis/mapper/house.xml"/>
 		<mapper resource="com/liveTogether/mybatis/mapper/files.xml"/>
+		<mapper resource="com/liveTogether/mybatis/mapper/houseFiles.xml"/>
 	</mappers>
 	
 </configuration>

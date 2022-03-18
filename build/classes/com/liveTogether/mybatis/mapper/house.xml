@@ -2,63 +2,52 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="House">
 	<!-- 방 찾기 -->
-	<!-- <select id="findroom" parameterType="" resultType="_int"> select houseNumber 
-		from tbl_house <trim prefix="where" prefixOverrides="or"></trim> <if test="min 
-		!= null"> or houseMonth = #{min} </if> <if test="max != null"> or houseMonth 
-		= #{max} </if> <if test="woman != null"> or houseGender = #{woman} </if> 
-		<if test="man != null"> or houseGender = #{man} </if> <if test="public != 
-		null"> or houseGender = #{public} </if> <if test="apart != null"> or houseType 
-		= #{apart} </if> <if test="single != null"> or houseType = #{single} </if> 
-		<if test="villa != null"> or houseType = #{villa} </if> <if test="other != 
-		null"> or houseType = #{other} </if> <if test="one != null"> or roomQuantity 
-		= #{one} </if> <if test="two != null"> or roomQuantity = #{two} </if> <if 
-		test="three != null"> or roomQuantity = #{three} </if> <if test="three != 
-		null"> or roomQuantity = #{three} </if> </select> -->
+<!-- <select id="findroom" parameterType="houseDTO" resultType="_int">
+      select houseNumber
+      from tbl_house
+      <trim prefix="where" prefixOverrides="or"></trim>
+      <if test="min == 110"> or roomMonthly between 0 and 100000000</if>
+      <if test="min != 110 and max != 110"> or roomMonthly between #{min} and #{max}</if>
+      <if test="houseGender != null"> or houseGender = #{houseGender} </if>
+      <if test="houseType != null"> or houseType = #{houseType} </if>
+      <if test="roomType != null"> or roomType = #{roomType} </if>
+      <if test="roomDate != null"> or roomDate >= #{roomDate} </if>
+   </select>
+      <foreach collection="boardType" item="arr" separator="or">
+         board_type= #{arr}
+      </foreach> -->
 
-<<<<<<< HEAD
 	<!-- 하우스 전체 리스트 -->
 	<select id="selectAll" resultType="houseDTO">
-		select th1.houseNumber, th2.roomDeposit, th2.roomMonthly, th1.HouseGender, th1.HouseType,
-		th1.houseMax 
-		from tbl_house th1 join tbl_houseRoom th2 on th1.houseNumber = th2.houseNumber group by th1.houseNumber order by th1.houseNumber
-=======
-	<!-- 방 전체 리스트 -->
-	<select id="selectAll" resultType="houseRoomVO">
-		select 
-		houseNumber, roomDeposit, roomMonthly, roomGender, roomType
-		<!-- houseMax -->
-		from tbl_houseRoom order by roomNumber desc
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
+		select th1.houseNumber,
+		th2.roomDeposit, th2.roomMonthly, th1.HouseGender, th1.HouseType,
+		th1.houseMax
+		from tbl_house th1 join tbl_houseRoom th2 on
+		th1.houseNumber =
+		th2.houseNumber group by th1.houseNumber order by
+		th1.houseNumber
 	</select>
 
 	<!-- 방 정보조회 -->
-	<select id="info" parameterType="_int" resultType="houseVO">
-		select
-		houseNumber, houseContent, houseMessage, houseAddress,
-<<<<<<< HEAD
-		houseAddressDetail, latitude, longitude, houseLocation, memberId, houseDeposit, houseMonth,
-=======
-		houseAddressDetail, houseLocation, memberId, houseDeposit, houseMonth,
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
-		houseType, houseGender, houseManagement, houseTotalFloor, houseFloor,
-		houseWay, houseLoan, houseParking, housePet, houseElevator, houseDate,
-		maPowerRates, maGas, maWater, maInternet, maTv, opAircon,
-		opRefrigerator, opWasher, opGasrange, opInduction, opMicrowave,
-		opDesk,
-		opDoorlock, opBed, opCloset, opShoes, opSink
-		from tbl_house
-		where houseNumber = #{houseNumber};
-	</select>
+   <select id="info" parameterType="_int" resultType="houseVO">
+      select
+      houseNumber, houseMax, houseStatus, memberId, houseType,
+      houseAddress,houseAddressDetail, latitude, longitude, houseLocation,
+      houseGender,opAircon, opCentralHeat, opLocalHeat,
+      opRefrigerator,opWasher,opGasrange, opInduction, opMicrowave, opDesk,
+      opDoorlock, opBed,opCloset, opShoes, opSink, opInterphone, opWindow,
+      opCctv, opVeranda,opDelivery,opFirealarm, houseParking, houseElevator,
+      housePet,houseContent, houseMessage
+      from tbl_house
+      where houseNumber = #{houseNumber};
+   </select>
 
 	<!-- 방 내놓기 -->
 	<insert id="regist" parameterType="houseVO">
 		insert into tbl_house
-		(houseMax, memberId, houseType, houseAddress, houseAddressDetail,
-<<<<<<< HEAD
+		(houseMax, memberId, houseType, houseAddress,
+		houseAddressDetail,
 		latitude, longitude, houseLocation, houseGender,
-=======
-		houseLocation,
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
 		opAircon, opCentralHeat, opLocalHeat, opRefrigerator,
 		opWasher,
 		opGasrange, opInduction, opMicrowave, opDesk, opDoorlock,
@@ -69,37 +58,88 @@
 		housePet,
 		houseContent, houseMessage)
 		values(#{houseMax}, #{memberId},
-<<<<<<< HEAD
-		#{houseType}, #{houseAddress}, #{houseAddressDetail}, 
-		#{latitude}, #{longitude}, #{houseLocation}, #{houseGender}, #{opAircon}, #{opCentralHeat}, #{opLocalHeat},
-=======
 		#{houseType}, #{houseAddress}, #{houseAddressDetail},
-		#{houseLocation}, #{opAircon}, #{opCentralHeat}, #{opLocalHeat},
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
-		#{opRefrigerator}, #{opWasher}, #{opGasrange}, #{opInduction},
-		#{opMicrowave}, #{opDesk}, #{opDoorlock},
+		#{latitude},
+		#{longitude}, #{houseLocation}, #{houseGender}, #{opAircon},
+		#{opCentralHeat}, #{opLocalHeat},
+		#{opRefrigerator}, #{opWasher},
+		#{opGasrange}, #{opInduction},
+		#{opMicrowave}, #{opDesk},
+		#{opDoorlock},
 		#{opBed}, #{opCloset},
 		#{opShoes},
-		#{opSink}, #{opInterphone}, #{opWindow}, #{opCctv},
-		#{opVeranda}, #{opDelivery}, #{opFirealarm}, #{houseParking},
-		#{houseElevator}, #{housePet}, #{houseContent},
+		#{opSink},
+		#{opInterphone}, #{opWindow}, #{opCctv},
+		#{opVeranda}, #{opDelivery},
+		#{opFirealarm}, #{houseParking},
+		#{houseElevator}, #{housePet},
+		#{houseContent},
 		#{houseMessage});
-		
+
 		<selectKey keyProperty="id" resultType="_int">
-        SELECT LAST_INSERT_ID()
-    	</selectKey>
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
 	</insert>
 
-<<<<<<< HEAD
-	<!-- 방 추가  -->
-=======
->>>>>>> a402fa9fed8941f229c96b24de38b554cdcb3433
+	<!-- 방 추가 -->
 	<insert id="registroom" parameterType="houseRoomVO">
 		insert into tbl_houseroom
 		(roomName, roomType, roomGender, roomDeposit, roomMonthly, roomArea,
 		roomDate, houseNumber)
 		values(#{roomName}, #{roomType}, #{roomGender},
-		#{roomDeposit}, #{roomMonthly}, #{roomArea}, #{roomDate}, #{houseNumber});
+		#{roomDeposit}, #{roomMonthly}, #{roomArea}, #{roomDate},
+		#{houseNumber});
 	</insert>
 
+	<!-- 룸 정보 가져오기 -->
+	<select id="roomInfo" parameterType="_int" resultType="houseRoomVO">
+		select roomNumber, roomName, roomType, roomGender, roomDeposit, roomMonthly, roomArea, roomDate, houseNumber
+		from tbl_houseroom where houseNumber = #{houseNumber}; 
+	</select>
+
+
+
+
+
+
+
+	<!-- admin에 필요한 VO 정보 가져오기 -->
+	<select id="selectRealAll" parameterType="map"
+		resultType="houseRoomVO">
+		select
+		roomName, roomType,
+		roomGender, roomDeposit, roomMonthly, roomArea, roomDate, houseNumber
+		from tbl_houseRoom
+		order by 1 desc limit #{startRow}, #{rowCount};
+	</select>
+
+	<!-- 페이징 처리 위한 게시글 갯수 가져오기 -->
+	<select id="getTotal" resultType="_int">
+		select count(roomName)
+		from tbl_houseRoom
+	</select>
+
+	<!-- 하우스넘버로 방 목록에서 지우기 -->
+	<delete id="roomDelete" parameterType="_int">
+		delete from tbl_houseroom
+		where houseNumber=#{houseNumber};
+	</delete>
+	
+	<delete id="houseDelete" parameterType="_int">
+		delete from tbl_house
+		where houseNumber=#{houseNumber};
+	</delete>
+	
+	<select id="houseCount" resultType="_int">
+	select count(houseNumber)
+	from tbl_house
+	</select>
+	
+	<select id="waitCount" resultType="_int">
+	select count(houseNumber)
+	from tbl_house where status = 0
+	</select>
+	
+	
 </mapper>
