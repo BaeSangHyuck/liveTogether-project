@@ -1,0 +1,88 @@
+package com.liveTogether.app.member;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.liveTogether.action.ActionForward;
+
+
+public class MemberFrontController extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doProcess(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doProcess(req, resp);
+	}
+	
+	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String requestURI = req.getRequestURI();
+		String contextPath = req.getContextPath();
+		String command = requestURI.substring(contextPath.length());
+		ActionForward af = null;
+		
+		if(command.equals("/member/MemberCheckIdOk.me")) {
+			new MemberCheckIdOk().execute(req, resp);
+			
+		}else if(command.equals("/member/MemberLoginOk.me")) {
+			af = new MemberLoginOk().execute(req, resp);
+		}else if(command.equals("/member/MemberJoinOk.me")) {
+			af = new MemberJoinOk().execute(req, resp);
+		}else if(command.equals("/member/MemberFindIdOk.me")) {
+			af = new MemberFindIdOk().execute(req, resp);
+		}else if(command.equals("/member/MemberFindPwOk.me")) {
+			af = new MemberFindPwOk().execute(req, resp);
+		}else if(command.equals("/member/MemberFindPwSMSOk.me")) {
+			af = new MemberFindPwSMSOk().execute(req, resp);
+		}else if(command.equals("/member/MemberLogoutOk.me")) {
+			af = new MemberLogoutOk().execute(req, resp);
+		}else if(command.equals("/member/MemberMypageOk.me")) {
+			af = new MemberMypageOk().execute(req, resp);
+		}else if(command.equals("/member/MemberMypageUpdate.me")) {
+			af = new MemberMypageUpdate().execute(req, resp);
+		}else if(command.equals("/member/MemberMypageUpdateOk.me")) {
+			af = new MemberMypageUpdateOk().execute(req, resp);
+		}else if(command.equals("/member/HostMemberListOk.me")) {
+			af = new HostMemberListOk().execute(req, resp);
+		}else if(command.equals("/member/HostMemberListOk.me")) {
+			af = new HostMemberListOk().execute(req, resp);
+		}else if(command.equals("/member/HostMyPageReadyOk.me")) {
+			af = new HostMyPageReadyOk().execute(req, resp);
+		}else if(command.equals("/member/HostMyPageTourOk.me")) {
+			af = new HostMyPageTourOk().execute(req, resp);
+		}
+		
+		if(af != null) {
+			if(af.isRedirect()) {
+				//redirect
+				resp.sendRedirect(af.getPath());
+			}else {
+				RequestDispatcher dispatcher = req.getRequestDispatcher(af.getPath());
+				dispatcher.forward(req, resp);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

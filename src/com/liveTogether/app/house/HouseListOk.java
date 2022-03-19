@@ -17,7 +17,6 @@ import com.liveTogether.app.house.dao.HouseDAO;
 import com.liveTogether.app.house.vo.HouseDTO;
 
 public class HouseListOk implements Action {
-
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		
@@ -40,13 +39,10 @@ public class HouseListOk implements Action {
 			rooms.add(room);
 		}
 		
-		
 		out.print(rooms.toJSONString());
 		out.close();
 		
 		return null;
 
-		
-		
 	}
 }

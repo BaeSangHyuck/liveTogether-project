@@ -62,4 +62,107 @@
 		order by 1 desc limit 0, 1;
 	</select>
 	
-</mapper>
+	<!-- 호스트페이지에서 투어신청 방 전체 목록 -->
+	<select id="selectRoomAll" parameterType="map"
+		resultType="roomGuestDTO">
+		select h.houseNumber, h.roomName, h.roomType, h.roomGender,
+		r.status
+		from tbl_roomguest r join tbl_houseroom h
+		on r.roomNumber = h.roomNumber and r.status = 0
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- 호스트페이지에서 투어신청 방 전체 목록2 -->
+	<select id="selectGuestAll" parameterType="map"
+		resultType="roomGuestDTO">
+		select m.memberName, m.memberGender, m.memberPhone, r.status
+		from tbl_roomguest r join tbl_member m
+		on r.memberId = m.memberId and r.status = 0  
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+
+	<!-- 호스트페이지에서 페이징처리 위한 총 목록 수 가져오기 -->
+	<select id="getRoomTotal" resultType="_int">
+		select count(houseNumber)
+		from tbl_roomguest
+		where status = 0
+	</select>
+	
+	<!-- 호스트페이지에서 페이징처리 위한 총 목록 수 가져오기 -->
+	<select id="getRoomTotalTwo" resultType="_int">
+		select count(houseNumber)
+		from tbl_roomguest
+		where status = 1
+	</select>
+	
+	<!-- 호스트페이지에서 페이징처리 위한 총 목록 수 가져오기 -->
+	<select id="getRoomTotalThree" resultType="_int">
+		select count(houseNumber)
+		from tbl_roomguest
+		where status = 2
+	</select>
+	
+	<!-- 호스트페이지에서 투어신청 방 전체 목록 -->
+	<select id="selectRoomAllTwo" parameterType="map"
+		resultType="roomGuestDTO">
+		select h.houseNumber, h.roomName, h.roomType, h.roomGender,
+		r.status
+		from tbl_roomguest r join tbl_houseroom h
+		on r.roomNumber = h.roomNumber and r.status = 1
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- 호스트페이지에서 투어신청 방 전체 목록2 -->
+	<select id="selectGuestAllTwo" parameterType="map"
+		resultType="roomGuestDTO">
+		select m.memberName, m.memberGender, m.memberPhone, r.status
+		from tbl_roomguest r join tbl_member m
+		on r.memberId = m.memberId and r.status = 1  
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- 호스트페이지에서 투어신청 방 전체 목록 -->
+	<select id="selectRoomAllThree" parameterType="map"
+		resultType="roomGuestDTO">
+		select h.houseNumber, h.roomName, h.roomType, h.roomGender,
+		r.status
+		from tbl_roomguest r join tbl_houseroom h
+		on r.roomNumber = h.roomNumber and r.status = 2
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- 호스트페이지에서 투어신청 방 전체 목록2 -->
+	<select id="selectGuestAllThree" parameterType="map"
+		resultType="roomGuestDTO">
+		select m.memberName, m.memberGender, m.memberPhone, r.status
+		from tbl_roomguest r join tbl_member m
+		on r.memberId = m.memberId and r.status = 2  
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- 입주민 테이블 스테이터스 0 ->1 변경 -->
+	<update id="updateStatusFirst" parameterType="_int">
+	update tbl_roomguest
+	set status='1'
+	where houseNumber = #{houseNumber}
+	</update>
+	
+	<!-- 입주민 테이블 스테이터스 1 -> 2 변경 -->
+	<update id="updateStatusSecond" parameterType="_int">
+	update tbl_roomguest
+	set status='2'
+	where houseNumber = #{houseNumber}
+	</update>
+	
+	<!-- 입주민 테이블 스테이터스 2 -> 3 변경 -->
+	<update id="updateStatusThird" parameterType="_int">
+	update tbl_roomguest
+	set status='3'
+	where houseNumber = #{houseNumber}
+	</update>
+	
+	<delete id="roomGuestDelete" parameterType="_int">
+	delete from tbl_roomguest
+	where houseNumber= #{houseNumber}
+	</delete>
+	</mapper>

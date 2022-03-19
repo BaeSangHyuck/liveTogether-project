@@ -17,7 +17,7 @@
 			<img class="mouseover" id="slogun" src="${pageContext.request.contextPath}/images/slogun.png">
 			<img class="mouseover" id="slogun2" src="${pageContext.request.contextPath}/images/slogun2.png">
 			<ul class="menu-btn-list">
-				<li class="btn p_menu"><a href="${pageContext.request.contextPath}/house/findRoom.jsp">방 찾기</a>
+				<li class="btn p_menu"><a href="${pageContext.request.contextPath}/house/FindRoom.ho">방 찾기</a>
 				<div>
 								<ul class="mouseover">
 									<li><a href="${pageContext.request.contextPath}/house/AdminOk.ho">관리자페이지</a></li>

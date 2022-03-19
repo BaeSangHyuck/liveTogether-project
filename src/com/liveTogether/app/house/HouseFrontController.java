@@ -35,7 +35,7 @@ public class HouseFrontController extends HttpServlet {
 			af = new HouseListOk().execute(req, resp);
 			break;
 		case "/house/HouseFindRoom.ho":
-			af = new HouseListOk().execute(req, resp);
+			af = new HouseFindRoom().execute(req, resp);
 			break;
 		case "/house/AdminDetailOk.ho":
 			af = new AdminDetailOk().execute(req, resp);
@@ -48,6 +48,14 @@ public class HouseFrontController extends HttpServlet {
 			break;
 		case "/house/HouseDetailOk.ho":
 			af = new HouseDetailOk().execute(req, resp);
+			break;
+		case "/house/HousePositionOk.ho":
+			af = new HousePositionOk().execute(req, resp);
+			break;
+		case "/house/FindRoom.ho":
+			af = new ActionForward();
+			af.setRedirect(false);
+			af.setPath("/house/findRoom.jsp");
 			break;
 		
 		}

@@ -4,14 +4,15 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.liveTogether.app.member.vo.MemberVO" alias="memberVO"/>
+		<typeAlias type="com.liveTogether.app.member.vo.RoomGuestDTO" alias="roomGuestDTO"/>
 		<typeAlias type="com.liveTogether.app.board.vo.BoardVO" alias="boardVO"/>
 		<typeAlias type="com.liveTogether.app.house.vo.HouseVO" alias="houseVO"/>
 		<typeAlias type="com.liveTogether.app.house.vo.HouseDTO" alias="houseDTO"/>
 		<typeAlias type="com.liveTogether.app.house.vo.HouseFileVO" alias="houseFileVO"/>
-		<typeAlias type="com.liveTogether.app.house.vo.RoomFileVO" alias="roomFileVO"/>
 		<typeAlias type="com.liveTogether.app.house.vo.HouseRoomVO" alias="houseRoomVO"/>
 		<typeAlias type="com.liveTogether.app.board.vo.FilesVO" alias="filesVO"/>
 		<typeAlias type="com.liveTogether.app.board.vo.BoardDTO" alias="boardDTO"/>
+		<typeAlias type="com.liveTogether.app.house.vo.HouseFilterDTO" alias="filterDTO"/>
 	</typeAliases>
 
 	<environments default="development">
