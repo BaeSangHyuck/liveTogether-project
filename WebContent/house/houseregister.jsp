@@ -46,7 +46,7 @@
 
 				<!-- 위치정보 -->
 				<div class="content-sub-title">
-					<h2>위치 정보</h2>
+					<h2>위치 정보 </h2>
 				</div>
 				<table>
 					<tbody>
@@ -74,8 +74,7 @@
 									</button>
 								</div>
 								<div>
-									· 주소와 단지명 모두 검색이 가능합니다.<br> · 주소 입력 시에는 동/읍/면 으로 검색해 주세요.
-									예) 자곡동, 동읍면, 신월읍<br>
+									· 정확한 주소를 입력해주세요.<br> · 주소와 단지명 모두 검색이 가능합니다.<br>
 								</div>
 							</td>
 						</tr>
@@ -111,7 +110,7 @@
 							<th>방이름</th>
 							<td>
 								<div>
-									<input type="hidden" name="roomName" value="Room1" autocomplete="off">
+									<input type="hidden" name="roomName" value="Room${houseNumber}-1" autocomplete="off">
 									<div class="input-smallsize">Room1</div>
 								</div>
 							</td>
@@ -377,6 +376,7 @@
 						<tr>
 							<td>
 								<ul class="ul">									
+									<li>방 구조 사진을 등록해주세요.</li>
 									<li>매물과 관련없는 이미지, 홍보성 이미지, 워터마크 이미지는 등록하실 수 없습니다.</li>
 								</ul>
 							</td>
@@ -454,6 +454,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 	var contextPath = "${pageContext.request.contextPath}";
+	var houseNumber = "${houseNumber}";
 </script>
 <script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
 <script

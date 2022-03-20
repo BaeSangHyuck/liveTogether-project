@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML>
 <!--
 		Tactile by Pixelarity
@@ -28,21 +29,6 @@
 	<jsp:include page="../fix/aside.jsp" />
 
 
-	
-<!-- Menu -->
-<!-- 	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="generic.html">Generic</a></li>
-			<li><a href="elements.html">Elements</a></li>
-		</ul>
-		<ul class="actions stacked">
-			<li><a href="#" class="button fit primary">Sign Up</a></li>
-			<li><a href="#" class="button fit">Log In</a></li>
-		</ul>
-	</nav>  -->
-
- 
 	<!-- Main -->
 	<section id="login-wrap">
 		<div id="box">
@@ -56,24 +42,34 @@
 					id="joinTab" href="join.jsp">회원가입</a></li>
 			</ul>
 			<div id="mArticle">
-				<form id="findLoginId" method="post" action="${pageContext.request.contextPath}/member/MemberLoginOk.me" name="loginForm">
+				<form id="findLoginId" method="post" action="${pageContext.request.contextPath}/member/MemberLoginOk.me" name="loginForm"
+				> <!-- onsubmit="return frm_check();" -->
 					<div class="content_account">
 						<div class="inp_text">
 							<input type="text" id="findUrlOrNickname" name="memberId"
-								placeholder="이메일(아이디)"<%--  value="${memberId}" --%>> 
+								placeholder="이메일(아이디)" value=<c:out value="${param.forwardurl}"/> >
 								<input type="password"
-								id="findUrlOrNickname" name="memberPw" placeholder="비밀번호" <%-- value="${memberPw} --%>">
+								id="findUrlOrNickname" name="memberPw" placeholder="비밀번호" 
+								value=<c:out value="${param.forwardurl}"/>>
 						</div>
-						<div id="loginStatus">
+					<!-- 	<div id="loginStatus">
 							<input type="checkbox" name="saveId" value="true" id="saveId">
 							<label for="saveId">아이디 저장</label> <input type="checkbox"
 								name="autoLogin" value="true" id="autoLogin"> <label
 								for="autoLogin" style="margin-left: 12px;">자동 로그인</label>
-						</div>
-
+						</div> -->
+<%-- 		<!-- 쿠키의 객체를 가져온다. -->
+		<!-- 로그인 상태 -->
+		<c:if test="${not empty cookie.memberId}">
+		
+			</c:if>
+			<!-- 로그인 안된상태  -->
+			<c:if test="${empty cookie.memberId}">
+	
+			</c:if> --%>
 						<div id="kakaochoice">
 							<ul class="actions fit kakaochoice">
-								<li><a href="#" class="button alt fit tstory" onclick="loginForm.submit()"><span>로그인</span></a></li>
+								<li><a href="#" class="button alt fit tstory" onclick="loginForm.submit()" id="login"><span>로그인</span></a></li>
 								<li onclick="kakaoLogin();"><a id="kakao_btn" href="#"
 									class="button alt fit kakao"><img src="../images/카카오톡.jpg"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카카오계정
 											로그인</span></a></li>

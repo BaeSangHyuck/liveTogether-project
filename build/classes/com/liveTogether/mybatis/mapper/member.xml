@@ -3,81 +3,100 @@
 <mapper namespace="Member">
 	<!-- 아이디 중복검사 -->
 	<select id="checkId" parameterType="string" resultType="_int">
-		select count(memberId) from tbl_member 
+		select
+		count(memberId) from tbl_member
 		where memberId = #{memberId}
 	</select>
-	
+
 	<!-- 회원 가입 -->
 	<insert id="join" parameterType="memberVO">
 		insert into tbl_member
 		(
-			memberId, memberPw, memberName, memberNickname, memberPhone, memberGender, 
-			memberProfile, memberType
+		memberId, memberPw, memberName, memberNickname, memberPhone,
+		memberGender,
+		memberProfile, memberType
 		)
 		values
 		(
-			#{memberId}, #{memberPw}, #{memberName}, #{memberNickname}, #{memberPhone}, #{memberGender},
-			 #{memberProfile}, #{memberType}
-		 )
+		#{memberId}, #{memberPw}, #{memberName}, #{memberNickname}, #{memberPhone},
+		#{memberGender},
+		#{memberProfile}, #{memberType}
+		)
 	</insert>
-	
+
 	<!-- 로그인 -->
 	<select id="login" parameterType="map" resultType="memberVO">
-		select memberId,memberType,memberName from tbl_member where memberId=#{memberId} and memberPw=#{memberPw}
+		select
+		memberId,memberType,memberName from tbl_member where
+		memberId=#{memberId} and memberPw=#{memberPw}
 	</select>
-	
+
 	<!-- 회원 정보 조회 -->
-	<select id="getInfo" parameterType="string" resultType="memberVO">
-		select 
-			memberId, memberPw, memberName, memberNickname, memberPhone, memberGender, 
-			memberProfile, memberType
-		from tbl_member where memberId = #{memberId}			
+	<select id="getInfo" parameterType="string"
+		resultType="memberVO">
+		select
+		memberId, memberPw, memberName, memberNickname, memberPhone, memberGender,
+		memberProfile, memberType
+		from tbl_member where memberId = #{memberId}
 	</select>
-	
+
 	<!-- 아이디 찾기 -->
 	<select id="findId" parameterType="map" resultType="string">
-		select memberId from tbl_member where memberName= #{memberName} and memberPhone = #{memberPhone}
+		select
+		memberId from tbl_member where memberName= #{memberName} and
+		memberPhone = #{memberPhone}
 	</select>
-	
+
 	<!-- 비밀번호 찾기 -->
 	<select id="findPw" parameterType="map" resultType="string">
-		select memberPw from tbl_member where memberId= #{memberId} and memberPhone = #{memberPhone}
+		select
+		memberPw from tbl_member where memberId= #{memberId} and memberPhone =
+		#{memberPhone}
 	</select>
-	
+
 	<!-- 비밀번호 변경 -->
 	<update id="updatePw" parameterType="memberVO">
-		update tbl_member set memberPw=#{memberPw} where memberPhone= #{memberPhone}
+		update tbl_member set
+		memberPw=#{memberPw} where memberPhone= #{memberPhone}
 	</update>
-	
+
 	<!-- 정보수정 -->
 	<update id="updateInfo" parameterType="memberVO">
 		update tbl_member
-		set memberPw=#{memberPw}, memberName=#{memberName}, memberNickname=#{memberNickname}, memberPhone=#{memberPhone}, memberGender=#{memberGender}, memberProfile=#{memberProfile}
-		where memberId=#{memberId}
+		set
+		memberPw=#{memberPw}, memberName=#{memberName},
+		memberNickname=#{memberNickname}, memberPhone=#{memberPhone},
+		memberGender=#{memberGender}, memberProfile=#{memberProfile}
+		where
+		memberId=#{memberId}
 	</update>
-	
-		<!-- 최근 게시글 번호 -->
+
+	<!-- 최근 게시글 번호 -->
 	<select id="getSeq" resultType="_int">
 		select boardNumber from tbl_board
 		order by 1 desc limit 0, 1;
 	</select>
-	
+
 	<!-- 호스트페이지에서 투어신청 방 전체 목록 -->
 	<select id="selectRoomAll" parameterType="map"
 		resultType="roomGuestDTO">
 		select h.houseNumber, h.roomName, h.roomType, h.roomGender,
 		r.status
 		from tbl_roomguest r join tbl_houseroom h
-		on r.roomNumber = h.roomNumber and r.status = 0
-		order by 1 desc limit #{startRow}, #{rowCount}
+		on r.roomNumber =
+		h.roomNumber and r.status = 0
+		order by 1 desc limit #{startRow},
+		#{rowCount}
 	</select>
-	
+
 	<!-- 호스트페이지에서 투어신청 방 전체 목록2 -->
 	<select id="selectGuestAll" parameterType="map"
 		resultType="roomGuestDTO">
-		select m.memberName, m.memberGender, m.memberPhone, r.status
+		select m.memberName, m.memberGender, m.memberPhone,
+		r.status
 		from tbl_roomguest r join tbl_member m
-		on r.memberId = m.memberId and r.status = 0  
+		on r.memberId =
+		m.memberId and r.status = 0
 		order by 1 desc limit #{startRow}, #{rowCount}
 	</select>
 
@@ -87,82 +106,197 @@
 		from tbl_roomguest
 		where status = 0
 	</select>
-	
+
 	<!-- 호스트페이지에서 페이징처리 위한 총 목록 수 가져오기 -->
 	<select id="getRoomTotalTwo" resultType="_int">
-		select count(houseNumber)
+		select
+		count(houseNumber)
 		from tbl_roomguest
 		where status = 1
 	</select>
-	
+
 	<!-- 호스트페이지에서 페이징처리 위한 총 목록 수 가져오기 -->
 	<select id="getRoomTotalThree" resultType="_int">
-		select count(houseNumber)
+		select
+		count(houseNumber)
 		from tbl_roomguest
 		where status = 2
 	</select>
-	
+
+	<!-- 호스트페이지에서 페이징처리 위한 총 목록 수 가져오기 -->
+	<select id="getRoomTotalFour" resultType="_int">
+		select
+		count(houseNumber)
+		from tbl_roomguest
+		where status = 3
+	</select>
+
+	<!-- 호스트페이지에서 페이징처리 위한 총 목록 수 가져오기 -->
+	<select id="getRoomTotalFifth" resultType="_int">
+		select
+		count(houseNumber)
+		from tbl_roomguest
+		where status = 4
+	</select>
+
 	<!-- 호스트페이지에서 투어신청 방 전체 목록 -->
 	<select id="selectRoomAllTwo" parameterType="map"
 		resultType="roomGuestDTO">
 		select h.houseNumber, h.roomName, h.roomType, h.roomGender,
 		r.status
 		from tbl_roomguest r join tbl_houseroom h
-		on r.roomNumber = h.roomNumber and r.status = 1
-		order by 1 desc limit #{startRow}, #{rowCount}
+		on r.roomNumber =
+		h.roomNumber and r.status = 1
+		order by 1 desc limit #{startRow},
+		#{rowCount}
 	</select>
-	
+
 	<!-- 호스트페이지에서 투어신청 방 전체 목록2 -->
 	<select id="selectGuestAllTwo" parameterType="map"
 		resultType="roomGuestDTO">
-		select m.memberName, m.memberGender, m.memberPhone, r.status
+		select m.memberName, m.memberGender, m.memberPhone,
+		r.status
 		from tbl_roomguest r join tbl_member m
-		on r.memberId = m.memberId and r.status = 1  
+		on r.memberId =
+		m.memberId and r.status = 1
 		order by 1 desc limit #{startRow}, #{rowCount}
 	</select>
-	
+
 	<!-- 호스트페이지에서 투어신청 방 전체 목록 -->
 	<select id="selectRoomAllThree" parameterType="map"
 		resultType="roomGuestDTO">
 		select h.houseNumber, h.roomName, h.roomType, h.roomGender,
 		r.status
 		from tbl_roomguest r join tbl_houseroom h
-		on r.roomNumber = h.roomNumber and r.status = 2
-		order by 1 desc limit #{startRow}, #{rowCount}
+		on r.roomNumber =
+		h.roomNumber and r.status = 2
+		order by 1 desc limit #{startRow},
+		#{rowCount}
 	</select>
-	
+
 	<!-- 호스트페이지에서 투어신청 방 전체 목록2 -->
 	<select id="selectGuestAllThree" parameterType="map"
 		resultType="roomGuestDTO">
-		select m.memberName, m.memberGender, m.memberPhone, r.status
+		select m.memberName, m.memberGender, m.memberPhone,
+		r.status
 		from tbl_roomguest r join tbl_member m
-		on r.memberId = m.memberId and r.status = 2  
+		on r.memberId =
+		m.memberId and r.status = 2
 		order by 1 desc limit #{startRow}, #{rowCount}
 	</select>
-	
+
+	<!-- 호스트페이지에서 투어신청 방 전체 목록 -->
+	<select id="selectRoomAllFour" parameterType="map"
+		resultType="roomGuestDTO">
+		select h.houseNumber, h.roomName, h.roomType, h.roomGender,
+		r.status
+		from tbl_roomguest r join tbl_houseroom h
+		on r.roomNumber =
+		h.roomNumber and r.status = 3
+		order by 1 desc limit #{startRow},
+		#{rowCount}
+	</select>
+
+	<!-- 호스트페이지에서 투어신청 방 전체 목록2 -->
+	<select id="selectGuestAllFour" parameterType="map"
+		resultType="roomGuestDTO">
+		select m.memberName, m.memberGender, m.memberPhone,
+		r.status
+		from tbl_roomguest r join tbl_member m
+		on r.memberId =
+		m.memberId and r.status = 3
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+
+	<!-- 호스트페이지에서 투어신청 방 전체 목록 -->
+	<select id="selectRoomAllFifth" parameterType="map"
+		resultType="roomGuestDTO">
+		select h.houseNumber, h.roomName, h.roomType, h.roomGender,
+		r.status
+		from tbl_roomguest r join tbl_houseroom h
+		on r.roomNumber =
+		h.roomNumber and r.status = 4
+		order by 1 desc limit #{startRow},
+		#{rowCount}
+	</select>
+
+	<!-- 호스트페이지에서 투어신청 방 전체 목록2 -->
+	<select id="selectGuestAllFifth" parameterType="map"
+		resultType="roomGuestDTO">
+		select m.memberName, m.memberGender, m.memberPhone,
+		r.status
+		from tbl_roomguest r join tbl_member m
+		on r.memberId =
+		m.memberId and r.status = 4
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+
 	<!-- 입주민 테이블 스테이터스 0 ->1 변경 -->
 	<update id="updateStatusFirst" parameterType="_int">
-	update tbl_roomguest
-	set status='1'
-	where houseNumber = #{houseNumber}
+		update tbl_roomguest
+		set status='1'
+		where houseNumber = #{houseNumber}
 	</update>
-	
+
 	<!-- 입주민 테이블 스테이터스 1 -> 2 변경 -->
 	<update id="updateStatusSecond" parameterType="_int">
-	update tbl_roomguest
-	set status='2'
-	where houseNumber = #{houseNumber}
+		update tbl_roomguest
+		set status='2'
+		where houseNumber = #{houseNumber}
 	</update>
-	
+
 	<!-- 입주민 테이블 스테이터스 2 -> 3 변경 -->
 	<update id="updateStatusThird" parameterType="_int">
-	update tbl_roomguest
-	set status='3'
-	where houseNumber = #{houseNumber}
+		update tbl_roomguest
+		set status='3'
+		where houseNumber = #{houseNumber}
+	</update>
+
+	<!-- 입주민 테이블 스테이터스 4 -> 0 변경 -->
+	<update id="updateStatusZero" parameterType="_int">
+		update tbl_roomguest
+		set status='0'
+		where houseNumber = #{houseNumber}
+	</update>
+
+	<!-- 투어 거절시 db삭제 x status 4로 보관 -->
+	<update id="roomGuestDelete" parameterType="_int">
+		update tbl_roomguest
+		set status='4'
+		where houseNumber = #{houseNumber}
+	</update>
+
+		<!-- 투어 거절 목록에서 삭제시 진짜 db에서 삭제 -->
+	<delete id="tourRealDelete" parameterType="_int">
+		delete from tbl_roomguest
+		where houseNumber= #{houseNumber}
+	</delete>
+	
+		
+	<!-- 마이페이지 테이블 스테이터스 1 -> 2 변경 -->
+	<update id="updateMypageSecond" parameterType="_int">
+		update tbl_roomguest
+		set status='2'
+		where memberId = #{memberId}
 	</update>
 	
-	<delete id="roomGuestDelete" parameterType="_int">
-	delete from tbl_roomguest
-	where houseNumber= #{houseNumber}
+	<!-- 마이페이지 테이블 스테이터스 삭제  -->
+	<delete id="tourMypageDelete" parameterType="_int">
+		delete from tbl_roomguest
+		where memberId= #{memberId}
 	</delete>
-	</mapper>
+
+	<!-- 마이페이지 투어신청 -->
+	<insert id="insertTour" parameterType="roomGuestDTO">
+	INSERT INTO house.tbl_roomguest
+	(memberId, houseNumber, roomName, status)
+	VALUES(#{memberId}, #{houseNumber}, #{roomName}, 0);
+	</insert>
+	
+	<!-- 투어신청 개수세기 -->
+	<select id="countTour" parameterType="string" resultType="_int">
+	select count(memberId) from tbl_roomGuest
+	where memberId=#{memberId}
+	</select>
+	
+</mapper>

@@ -114,13 +114,14 @@ border-bottom: 1px solid !important;
 }
 
 #main .inner{
-background-image:url('../../images/mypage01.jpg');
+	margin-top:3em;
+background-image:url('../../images/mybanner4.png');
 background-color:#fff;
  background-repeat : no-repeat;
  background-size : cover;
  margin-left:-10em;
  text-align:center;  
- height:400px; 
+ height: 350px; 
  background-color:#ffffff;
  position:relative;
 } 
@@ -175,13 +176,15 @@ margin-top: 1rem; background-color: #1187CF;
     color: #1187CF;
     font-weight: 600;
 }
-.my_span01{
-	font-size:3em;
+/* .my_span01{
+	font-size:2em;
 }
 .inner_ab{
-	position:absolute; bottom:10px; left:208px;
-	color:#fff;
-}
+	position: absolute;
+	bottom: -11.5px;
+	left: 1783px;
+	color: #444;
+} */
 
 #change_info .column-wrapper{
 	height:80px;

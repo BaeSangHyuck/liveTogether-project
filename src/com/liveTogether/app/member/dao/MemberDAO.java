@@ -73,6 +73,11 @@ public class MemberDAO {
 		sqlSession.update("Member.updateInfo", member);
 	}
 	
+	//마이페이지 투어신청  방 정보 가져오기
+	public void selectMypageTour(Map<String, Integer> myMap) {
+		sqlSession.selectList("Member.selectMypageTour",myMap);
+	}
+	
 	// 호스트 페이지에서 투어 신청인 정보 가져오기
 		public List<RoomGuestDTO> selectRoomAll(Map<String, Integer> roomMap) {
 			return sqlSession.selectList("Member.selectRoomAll", roomMap);
@@ -102,6 +107,24 @@ public class MemberDAO {
 			return sqlSession.selectList("Member.selectRoomAllThree", roomMap);
 		}
 		
+		// 호스트 페이지에서 투어 신청인 정보 가져오기4
+		public List<RoomGuestDTO> selectGuestAllFour(Map<String, Integer> roomMap) {
+			return sqlSession.selectList("Member.selectGuestAllFour", roomMap);
+		}
+		
+		public List<RoomGuestDTO> selectRoomAllFour(Map<String, Integer> roomMap) {
+			return sqlSession.selectList("Member.selectRoomAllFour", roomMap);
+		}
+		
+		// 호스트 페이지에서 투어 신청인 정보 가져오기4
+		public List<RoomGuestDTO> selectGuestAllFifth(Map<String, Integer> roomMap) {
+			return sqlSession.selectList("Member.selectGuestAllFifth", roomMap);
+		}
+		
+		public List<RoomGuestDTO> selectRoomAllFifth(Map<String, Integer> roomMap) {
+			return sqlSession.selectList("Member.selectRoomAllFifth", roomMap);
+		}
+		
 		// 호스트 페이지에서 페이징처리 위한 목록 갯수가져오기
 		public int getRoomTotal() {
 			return sqlSession.selectOne("Member.getRoomTotal");
@@ -114,6 +137,14 @@ public class MemberDAO {
 		
 		public int getRoomTotalThree() {
 			return sqlSession.selectOne("Member.getRoomTotalThree");
+		}
+		
+		public int getRoomTotalFour() {
+			return sqlSession.selectOne("Member.getRoomTotalFour");
+		}
+		
+		public int getRoomTotalFifth() {
+			return sqlSession.selectOne("Member.getRoomTotalFifth");
 		}
 		
 		// 입주민 테이블 스테이터스 0 -> 1 변경
@@ -131,7 +162,44 @@ public class MemberDAO {
 			sqlSession.update("Member.updateStatusThird", houseNumber);
 		}
 		
-		public void roomGuestDelete(int houseNumber) {
-			sqlSession.delete("Member.roomGuestDelete", houseNumber);
+		// 입주민 테이블 스테이터스 4 -> 0 변경
+		public void updateStatusZero(int houseNumber) {
+			sqlSession.update("Member.updateStatusZero", houseNumber);
 		}
+		
+		// 입주민 테이블 투어 취소시 db 삭제 대신 status 4로 변경
+		public void roomGuestDelete(int houseNumber) {
+			sqlSession.update("Member.roomGuestDelete", houseNumber);
+		}
+		
+		// 투어 거절 목록에서 삭제시 진짜 db에서 삭제
+		public void tourRealDelete(int houseNumber) {
+			sqlSession.delete("Member.tourRealDelete", houseNumber);
+		}
+		
+		
+	
+		
+		// 마이페이지 테이블 스테이터스 1 -> 2 변경
+		public void updateStMypageSecond(String memberId) {
+			sqlSession.update("Member.updateMypageSecond", memberId);
+		}
+	
+		//마이페이지 테이블 스테이터스 삭제
+		public void tourMypageDelete(String memberId) {
+			sqlSession.delete("Member.tourMypageDelete", memberId);
+		}
+		
+		//마이페이지 투어신청
+		public void insertTour(RoomGuestDTO dto) {
+			sqlSession.insert("Member.insertTour", dto);
+		}
+		
+		//투어 개수세기
+		public int countTour(String memberId) {
+			return sqlSession.selectOne("Member.countTour", memberId);
+		}
+		
+		
+		
 }

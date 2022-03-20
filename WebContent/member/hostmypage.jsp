@@ -44,9 +44,11 @@
 								<a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내 정보수정</a>
 							</li>
 							<li class="num3">
-								<a href="${pageContext.request.contextPath}/member/mypagetour.jsp">진행사항</a>
+								<a href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">진행사항</a>
 							</li>
-							
+							<li class="num4"><a
+						href="${pageContext.request.contextPath}/member/HostMemberListOk.me">입주자목록</a>
+					</li>
 						</ul>
 							</div>
 			<div id="box">

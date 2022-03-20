@@ -33,6 +33,9 @@ public class HouseFindRoom implements Action{
 		String htype = "";
 		String rtype = "";
 		
+		System.out.println(min);
+		System.out.println(max);
+		
 		HouseDAO hdao = new HouseDAO();
 		HouseFilterDTO fdto = new HouseFilterDTO();
 		PrintWriter out = resp.getWriter();		

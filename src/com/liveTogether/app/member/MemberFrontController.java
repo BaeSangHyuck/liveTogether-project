@@ -70,7 +70,17 @@ public class MemberFrontController extends HttpServlet {
 			af = new HostDeleteThirdOk().execute(req, resp);
 		} else if (command.equals("/member/HostStatusThirdOk.me")) {
 			af = new HostStatusThirdOk().execute(req, resp);
-		}
+		} else if (command.equals("/member/HostDeleteFourthOk.me")) {
+			af = new HostDeleteFourthOk().execute(req, resp);
+		} else if (command.equals("/member/HostRejectListOk.me")) {
+			af = new HostRejectListOk().execute(req, resp);
+		} else if (command.equals("/member/HostRestorationOk.me")) {
+			af = new HostRestorationOk().execute(req, resp);
+		} else if (command.equals("/member/HostRealDeleteOk.me")) {
+		af = new HostRealDeleteOk().execute(req, resp);
+	} else if (command.equals("/member/MemberMypageTourOk.me")) {
+		af = new MemberMypageTourOk().execute(req, resp);
+	}
 
 		if (af != null) {
 			if (af.isRedirect()) {

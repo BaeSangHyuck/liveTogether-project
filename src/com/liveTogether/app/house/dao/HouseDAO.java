@@ -84,5 +84,9 @@ public class HouseDAO {
 		return sqlSession.selectList("House.getPosition");
 	}
 	
+	//가장 최근에 등록된 하우스 번호
+	public int getSeq () {
+		return sqlSession.selectOne("House.getSeq");
+	}
 
 }

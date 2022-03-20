@@ -114,13 +114,14 @@ border-bottom: 1px solid !important;
 }
 
 #main .inner{
-background-image:url('../../images/mypage01.jpg');
+	margin-top:3em;
+background-image:url('../../images/mybanner4.png');
 background-color:#fff;
  background-repeat : no-repeat;
  background-size : cover;
  margin-left:-10em;
  text-align:center;  
- height:400px; 
+ height: 350px; 
  background-color:#ffffff;
  position:relative;
 } 

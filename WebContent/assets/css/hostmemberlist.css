@@ -70,15 +70,16 @@
 
 
 #mypageheader .inner {
-    background-image: url(../../images/mypage01.jpg);
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-left: -10em;
-    text-align: center;
-    height: 400px;
-    background-color: #ffffff;
-    position: relative;
+	margin-top:3em;
+background-image:url('../../images/mybanner4.png');
+background-color:#fff;
+ background-repeat : no-repeat;
+ background-size : cover;
+ margin-left:-10em;
+ text-align:center;  
+ height: 350px; 
+ background-color:#ffffff;
+ position:relative;
 }
 
 .mypage .mypagenotice{
@@ -209,3 +210,21 @@ div.column-value {
  div.process{
  	margin-left: 10px;
  }
+ 
+ table#paging {
+	text-align: center;
+}
+
+table#paging a {
+	text-decoration: none;
+	color: #8c8a8c;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+div.active div.process-title a{
+	color: white;	
+}

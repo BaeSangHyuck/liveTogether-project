@@ -75,7 +75,7 @@ function imgThumbnail(event) {
 	imgText += "</label>"
 	imgText += "</div>"
 	imgText += "<input id='room_file" + index + imgIndex + "' name='room_file"
-			+ index + "' type='file' class='" + index
+			+ index + imgIndex + "' type='file' class='" + index
 			+ "' style='display: none' onchange='imgThumbnail(event);'>"
 	imgText += "<input type='button' class='removeImgBtn' onclick='cancelFile(\"room_file"
 			+ index + imgIndex + "\")' value='첨부 삭제'>"
@@ -323,7 +323,7 @@ function roomAdd() {
 	text += "<th>방이름</th>"
 	text += "<td>"
 	text += "<div class='roomPlusMark'>"
-	text += "<input type='hidden' name='roomName' value='Room" + index + "'>"
+	text += "<input type='hidden' name='roomName' value='Room" +houseNumber+"-" +index + "'>"
 	text += "<div class='input-smallsize'>Room" + index + "</div>"
 	text += "<img src='" + contextPath
 			+ "/images/xMark.png' id='xMark' onclick='removeRoom()'>"
@@ -348,7 +348,7 @@ function roomAdd() {
 	text += "<th>타입</th>"
 	text += "<td>"
 	text += "<div class='flex'>"
-	text += "<input type='text' class='input-xsmallsize' name='roomType'>"
+	text += "<input type='text' class='input-xsmallsize' name='roomType' autocomplete='off'>"
 	text += "<div>"
 	text += "<span class='span-lineheight'>&nbsp;&nbsp;인실</span>"
 	text += "</div>"
@@ -358,7 +358,7 @@ function roomAdd() {
 	text += "<th>보증금</th>"
 	text += "<td>"
 	text += "<div class='flex'>"
-	text += "<input type='text' class='input-xsmallsize' name='roomDeposit'>"
+	text += "<input type='text' class='input-xsmallsize' name='roomDeposit' autocomplete='off'>"
 	text += "<div>"
 	text += "<span class='span-lineheight'>&nbsp;&nbsp;만원</span>"
 	text += "</div>"
@@ -369,7 +369,7 @@ function roomAdd() {
 	text += "<th>월세</th>"
 	text += "<td>"
 	text += "<div class='flex'>"
-	text += "<input type='text' class='input-xsmallsize' name='roomMonthly'>"
+	text += "<input type='text' class='input-xsmallsize' name='roomMonthly' autocomplete='off'>"
 	text += "<div>"
 	text += "<span class='span-lineheight'>&nbsp;&nbsp;만원</span>"
 	text += "</div>"
@@ -381,7 +381,7 @@ function roomAdd() {
 	text += "   <td>"
 	text += "   <div>"
 	text += "<div id='roomsize-wrap'>"
-	text += "<input type='text' class='input-xsmallsize' id='cal" + checkCal2 + "' onkeyup='calculator(" + checkCal2 +")' name='roomArea'><span class='span-lineheight'>&nbsp;&nbsp;m<sup>2</sup>&nbsp;=&nbsp;&nbsp;</span> <input type='text' class='input-xsmallsize' id='cal" + checkCal1 + "' onkeyup='calculator(" + checkCal1 + ")'><span class='span-lineheight'>&nbsp;&nbsp;평</span>"
+	text += "<input type='text' class='input-xsmallsize' id='cal" + checkCal2 + "' onkeyup='calculator(" + checkCal2 +")' name='roomArea' autocomplete='off'><span class='span-lineheight'>&nbsp;&nbsp;m<sup>2</sup>&nbsp;=&nbsp;&nbsp;</span> <input type='text' class='input-xsmallsize' id='cal" + checkCal1 + "' onkeyup='calculator(" + checkCal1 + ")' autocomplete='off'><span class='span-lineheight'>&nbsp;&nbsp;평</span>"
 	text += "</div>"
 	text += "   </div>"
 	text += "</td>"
@@ -430,9 +430,42 @@ function roomAdd() {
 	}
 }
 
+
+//하우스 등록하기
 function send() {
 	if(!registForm.house_file.value){
 		alert("방 구조 사진을 첨부해주세요");
+		return;
+	}else if(!registForm.houseAddressDetail.value){
+		alert("상세주소를 입력해주세요");
+		return;
+	}else if(!registForm.houseLocation.value){
+		alert("주소를 정확히 검색해주세요");
+		return;
+//	}else if(!registForm.roomGender1.value){
+//		alert("방의 성별을 선택해주세요");
+//		return;
+//	}
+//	else if(!registForm.roomType.value){
+//		alert("몇인실인지 입력해주세요");
+//		return;
+//	}
+//	else if(!registForm.roomDeposit.value){
+//		alert("보증금을 입력해주세요");
+//		return;
+//	}
+//	else if(!registForm.roomMonthly.value){
+//		alert("월세를 입력해주세요");
+//		return;
+//	}else if(!registForm.roomArea.value){
+//		alert("면적을 입력해주세요");
+//		return;
+	}
+	else if(!registForm.room_file1.value){
+		alert("방 사진을 추가해주세요");
+		return;
+	}else if(!registForm.houseMessage.value){
+		alert("하우스소개를 입력해주세요");
 		return;
 	}
 	

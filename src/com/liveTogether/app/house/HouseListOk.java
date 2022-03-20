@@ -25,21 +25,21 @@ public class HouseListOk implements Action {
 		
 		HouseDAO dao = new HouseDAO();
 		PrintWriter out = resp.getWriter();
-		List<HouseDTO> replyList = dao.selectAll();
-		JSONArray rooms = new JSONArray();
+		List<HouseDTO> houseList = dao.selectAll();
+		JSONArray houses = new JSONArray();
 
-		for(HouseDTO r : replyList) {
-			JSONObject room = new JSONObject();
-			room.put("houseNumber", r.getHouseNumber());
-			room.put("roomDeposit", r.getRoomDeposit());
-			room.put("roomMonthly", r.getRoomMonthly());
-			room.put("houseGender", r.getHouseGender());
-			room.put("houseType", r.getHouseType());
-			room.put("houseMax", r.getHouseMax());
-			rooms.add(room);
+		for(HouseDTO h : houseList) {
+			JSONObject house = new JSONObject();
+			house.put("houseNumber", h.getHouseNumber());
+			house.put("roomDeposit", h.getRoomDeposit());
+			house.put("roomMonthly", h.getRoomMonthly());
+			house.put("houseGender", h.getHouseGender());
+			house.put("houseType", h.getHouseType());
+			house.put("houseMax", h.getHouseMax());
+			houses.add(house);
 		}
 		
-		out.print(rooms.toJSONString());
+		out.print(houses.toJSONString());
 		out.close();
 		
 		return null;

@@ -17,7 +17,8 @@
 <body>
 	<c:set var="house" value="${house}" />
 	<c:set var="room" value="${room}" />
-	<c:set var="houseFileName" value="${houseFileName}" />
+	<c:set var="member" value="${member}" />
+	<c:set var="houseRoomImg" value="${houseRoomImg}" />
 	<c:set var="houseMapImg" value="${houseMapImg}"/>
 
 	<!-- Header -->
@@ -37,42 +38,27 @@
 			<section id="one">
 			<div id="img-total">
 				<div id="main-img">
+				 <c:forEach var="house" items="${houseRoomImg}">
 					<div class="main-wrapper">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
+						<img src="${pageContext.request.contextPath}/upload/${house.getHousefileName()}">
 					</div>
-					<div class="main-wrapper">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>
-					<div class="main-wrapper">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>
-					<div class="main-wrapper">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>				
+				</c:forEach>		
 				</div>
 				<div id="sub-img">
-					<div class="sub-wrapper active">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>
-					<div class="sub-wrapper">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>
-					<div class="sub-wrapper">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>
-					<div class="sub-wrapper" aria-hidden="false">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>
-					<div class="sub-wrapper" aria-hidden="true"> 
-						아
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>
-					<div class="sub-wrapper">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>
-					<div class="sub-wrapper">
-						<img src="https://woozoo.s3.amazonaws.com/uploads/image/data/14623/468-1886-1644303902-1.jpg">
-					</div>					
+				<c:forEach var="house" items="${houseRoomImg}" varStatus="status">
+				 	<c:choose>
+						<c:when test="${status.index eq 0}">
+							<div class="sub-wrapper active">
+								<img src="${pageContext.request.contextPath}/upload/${house.getHousefileName()}">
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="sub-wrapper">
+								<img src="${pageContext.request.contextPath}/upload/${house.getHousefileName()}">
+							</div>
+						</c:otherwise>
+					</c:choose> 				
+				</c:forEach>				
 				</div>
 			</div>
 			<div class="slider prev-btn"></div>
@@ -648,6 +634,10 @@
 	src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script>var contextPath = "${pageContext.request.contextPath}";
+                var houseNumber = "${house.getHouseNumber()}";
+                var room = "${room}";
+            </script>
 <script src="${pageContext.request.contextPath}/assets/js/roomDetail.js"></script>
 <script type="text/javascript"
 					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=50e9a68c5f5c2321311332ee213eaf6e"></script>

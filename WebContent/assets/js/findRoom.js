@@ -10,41 +10,6 @@ var check = -1;
 getList();
 
 
-/*function positions() {
-	$.ajax({
-		url : contextPath + "/house/HousePosition.ho",
-		type : "get",
-		success : jsons,
-		error : function(a, b, c) {
-			console.log("오류" + c);
-		}
-	});
-}
-
-function jsons(positionList) {
-
-	var position = {
-			positions : []
-	};
-	position.positions.push(JSON.parse(positionList));
-
-	console.log(position);
-
-	
-	 * $.each(JSON.parse(positionList),function (position) {
-	 * positions.table.push(positionList); });
-	 
-	var positionJson = JSON.stringify(positions);
-	console.log(positionJson);
-
-	
-	 * const fs = require('fs');
-	 * fs.writeFile(contextPath+'/assets/json/positions.json', positionJson,
-	 * 'utf8');
-	 
-
-}*/
-
 // 하우스 목록
 function getList() {
 	$.ajax({
@@ -59,62 +24,58 @@ function getList() {
 }
 
 // 하우스 목록 써주기
-function showList(rooms) {
+function showList(houses) {
 	var text = "";
-	if (rooms != null && rooms.length != 0) {
-		$
-				.each(
-						rooms,
-						function(index, room) {
-							var houseGender;
-							var houseType;
-							if (room.houseGender == "m") {
-								houseGender = "남성전용";
-							} else if (room.houseGender == "w") {
-								houseGender = "여성전용";
-							} else if (room.houseGender == "o") {
-								houseGender = "남녀공용";
-							}
-							if (room.houseType == "a") {
-								houseType = "아파트";
-							} else if (room.houseType == "v") {
-								houseType = "빌라";
-							} else if (room.houseType == "d") {
-								houseType = "단독주택";
-							} else if (room.houseType == "o") {
-								houseType = "기타";
-							}
-							text += '<div class="table-cell">'
-							text += '<a href=' + contextPath
-									+ '/house/HouseDetailOk.ho?houseNumber='
-									+ room.houseNumber + ' target="_blank">'
-							text += '<div class="cell-wrap">'
-							text += '<div class="img-wrap"></div>'
-							text += '<div class="content-wrapper">'
-							text += '<div class="content">'
-							text += '<span class="name">' + room.houseNumber
-									+ '호점</span><span class="gu">(보증금'
-									+ room.roomDeposit + '/월'
-									+ room.roomMonthly + ')</span>'
-							text += '</div>'
-							text += '<div class="content content2">'
-							text += '<span class="gender-division">'
-									+ houseGender + '</span>'
-							text += '<span class="concept">'
-									+ houseType
-									+ '</span><span class="opened-beds" style="display: inline;">신청가능 '
-							text += '<span class="opened-beds-count ">'
-									+ room.houseMax + '</span>'
-							text += '</span><span class="opened-beds" style="display: none;">예약가능</span>'
-							text += '</div></div></div></a></div>'
-						});
+	if (houses != null && houses.length != 0) {
+		$.each(houses,function(index, house) {
+			var houseGender;
+			var houseType;
+			if (house.houseGender == "m") {
+				houseGender = "남성전용";
+					} else if (house.houseGender == "w") {
+						houseGender = "여성전용";
+					} else if (house.houseGender == "o") {
+						houseGender = "남녀공용";
+					}
+					if (house.houseType == "a") {
+						houseType = "아파트";
+					} else if (house.houseType == "v") {
+						houseType = "빌라";
+					} else if (house.houseType == "d") {
+						houseType = "단독주택";
+					} else if (house.houseType == "o") {
+						houseType = "기타";
+					}
+					text += '<div class="table-cell">'
+					text += '<a href=' + contextPath
+							+ '/house/HouseDetailOk.ho?houseNumber='
+							+ house.houseNumber + ' target="_blank">'
+					text += '<div class="cell-wrap">'
+					text += '<div class="img-wrap"></div>'
+					text += '<div class="content-wrapper">'
+					text += '<div class="content">'
+					text += '<span class="name">' + house.houseNumber
+							+ '호점</span><span class="gu">(보증금'
+							+ house.roomDeposit + '/월'
+							+ house.roomMonthly + ')</span>'
+					text += '</div>'
+					text += '<div class="content content2">'
+					text += '<span class="gender-division">'
+							+ houseGender + '</span>'
+					text += '<span class="concept">'
+							+ houseType
+							+ '</span><span class="opened-beds" style="display: inline;">신청가능 '
+					text += '<span class="opened-beds-count ">'
+							+ house.houseMax + '</span>'
+					text += '</span><span class="opened-beds" style="display: none;">예약가능</span>'
+					text += '</div></div></div></a></div>'
+				});
 	} else {
 		// 댓글 없음
 		text = "<p>게시글이 없습니다.</p>";
 	}
 
 	$(".table-row").html(text);
-	/*positions();*/
 	
 }
 
@@ -172,7 +133,7 @@ filter.addEventListener("click", function() {
 })
 
 // 월세 최댓값이 최솟값보다 작으면 최댓값을 최솟값에 맞춰주기
-$("select[name='max']").focusout(
+$("select[name='max']").change(
 		function() {
 			if (Number($(this).val()) < Number($("select[name='min']").val())) {
 				$(this).val(Number($("select[name='min']").val())).prop(
@@ -181,7 +142,7 @@ $("select[name='max']").focusout(
 		})
 
 // 월세 최솟값이 최댓값보다 커지면 최댓값을 최솟값에 맞춰주기
-$("select[name='min']").focusout(
+$("select[name='min']").change(
 		function() {
 			if (Number($(this).val()) > Number($("select[name='max']").val())) {
 				$("select[name='max']").val(Number($(this).val())).prop(
@@ -292,6 +253,7 @@ $("#findbtn").on("click", function findList() {
 // 조건검색한 후 방들 써주기
 function showRoomList(rooms) {
 	var text = "";
+	console.log(rooms);
 	if (rooms != null && rooms.length != 0) {
 		$
 				.each(
