@@ -9,10 +9,9 @@
 		h.houseType, h.houseMax
 		from tbl_house h join tbl_houseRoom r on
 		h.houseNumber = r.houseNumber
-		<if test="max != 100000001 and min != 100000001">
+		<if test="max!=-1 and min!=-1">
 			<trim prefix="and (" suffix=")">
-				r.roomMonthly between #{min} and
-				#{max}
+				r.roomMonthly between #{min} and #{max}
 			</trim>
 		</if>
 		<if test="houseGender!=null">
@@ -57,26 +56,26 @@
 			</trim>
 		</if>
 		<if test="roomType !=null">
-			<trim prefix="and (" suffix=")" prefixOverrides="OR">
-				<foreach item="rType" collection="roomArr">
-					<trim prefix="OR">
-						<choose>
-							<when test="rType =='1'.toString()">
-								(r.roomType = '1')
-							</when>
-							<when test="rType =='2'.toString()">
-								(r.roomType = '2')
-							</when>
-							<when test="rType =='3'.toString()">
-								(r.roomType = '3')
-							</when>
-							<when test="rType =='4'.toString()">
-								(r.roomType >= '4')
-							</when>
-						</choose>
-					</trim>
-				</foreach>
-			</trim>
+				<trim prefix="and (" suffix=")" prefixOverrides="OR">
+					<foreach item="rType" collection="roomArr">
+						<trim prefix="OR">
+							<choose>
+								<when test="rType =='1'.toString()">
+									(r.roomType = '1')
+								</when>
+								<when test="rType =='2'.toString()">
+									(r.roomType = '2')
+								</when>
+								<when test="rType =='3'.toString()">
+									(r.roomType = '3')
+								</when>
+								<when test="rType =='4'.toString()">
+									(r.roomType >= '4')
+								</when>
+							</choose>
+						</trim>
+					</foreach>
+				</trim>
 		</if>
 		<if test="roomDate != ''">
 			and (r.roomDate >= #{roomDate})
@@ -88,11 +87,11 @@
 	<!-- 하우스 전체 리스트 -->
 	<select id="selectAll" resultType="houseDTO">
 		select th1.houseNumber,
-		th2.roomDeposit, th2.roomMonthly, th1.houseGender, th1.houseType,
+		th2.roomDeposit, th2.roomMonthly, th1.HouseGender, th1.HouseType,
 		th1.houseMax
-		from tbl_house th1 join tbl_houseRoom th2 
-		on th1.houseNumber = th2.houseNumber and houseStatus=1
-		group by th1.houseNumber order by
+		from tbl_house th1 join tbl_houseRoom th2 on
+		th1.houseNumber =
+		th2.houseNumber group by th1.houseNumber order by
 		th1.houseNumber
 	</select>
 
@@ -107,8 +106,7 @@
 		opCctv, opVeranda,opDelivery,opFirealarm, houseParking, houseElevator,
 		housePet,houseContent, houseMessage
 		from tbl_house
-		where houseNumber =
-		#{houseNumber};
+		where houseNumber = #{houseNumber};
 	</select>
 
 	<!-- 방 내놓기 -->
@@ -150,13 +148,6 @@
 			LAST_INSERT_ID()
 		</selectKey>
 	</insert>
-	
-	
-	<!-- 최근 등록 하우스 번호 -->
-	<select id="getSeq" resultType="_int">
-		select houseNumber from tbl_house
-		order by 1 desc limit 0, 1;
-	</select>
 
 	<!-- 방 추가 -->
 	<insert id="registroom" parameterType="houseRoomVO">
@@ -171,7 +162,7 @@
 	<!-- 룸 정보 가져오기 -->
 	<select id="roomInfo" parameterType="_int"
 		resultType="houseRoomVO">
-		select  roomName, roomType, roomGender,
+		select roomNumber, roomName, roomType, roomGender,
 		roomDeposit, roomMonthly, roomArea, roomDate, houseNumber
 		from
 		tbl_houseroom where houseNumber = #{houseNumber};
@@ -179,9 +170,8 @@
 
 	<!-- 위도경도 가져오기 -->
 	<select id="getPosition" resultType="houseVO">
-		select houseNumber, latitude, longitude
-		from tbl_house
-		where houseStatus=1 
+		select houseNumber,
+		latitude, longitude from tbl_house;
 	</select>
 
 
@@ -224,8 +214,7 @@
 
 	<select id="waitCount" resultType="_int">
 		select count(houseNumber)
-		from
-		tbl_house where houseStatus = 0
+		from tbl_house where status = 0
 	</select>
 
 

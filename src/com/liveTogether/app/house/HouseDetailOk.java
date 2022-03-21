@@ -2,7 +2,6 @@ package com.liveTogether.app.house;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,17 +28,17 @@ public class HouseDetailOk implements Action{
 		HouseVO house = hDao.info(houseNumber);
 		List<HouseRoomVO> room = hDao.roomInfo(houseNumber);
 		List<HouseFileVO> houseFileName = fDao.getHouseImg(houseNumber);
-		HashMap<String, Integer> RoomImg = new HashMap<>();
-		RoomImg.put("houseNumber", houseNumber);
-		RoomImg.put("limit",houseFileName.size());
-		
-		List<HouseFileVO> houseRoomImg = fDao.getRoomImg(RoomImg);
- 				
+		ArrayList<String> houseRoomImg = new ArrayList<>();
+				
 		String houseMapImg = houseFileName.get(0).getHousefileName();
-			
+		
+		for (int i = 1; i < houseFileName.size(); i++) {
+			houseRoomImg.add(houseFileName.get(i).getHousefileName());
+		}
+		
 		ActionForward af = new ActionForward();
 		
-		req.setAttribute("houseRoomImg", houseRoomImg);
+		req.setAttribute("houseFileName", houseFileName);
 		req.setAttribute("house", house);
 		req.setAttribute("room", room);
 		req.setAttribute("houseMapImg", houseMapImg);
@@ -47,8 +46,10 @@ public class HouseDetailOk implements Action{
 		
 		
 		af.setRedirect(false);
-		af.setPath("/house/houseDetail.ho");
-
+		af.setPath("/house/houseDetail.jsp");
+		
+		
+	
 		return af;
 	}
 

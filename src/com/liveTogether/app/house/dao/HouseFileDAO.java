@@ -2,7 +2,6 @@ package com.liveTogether.app.house.dao;
 
 import java.util.Enumeration;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -28,9 +27,12 @@ public class HouseFileDAO {
 	public void insertHF(MultipartRequest multi, int houseNumber) {
 		HouseFileVO file = new HouseFileVO();
 		Enumeration<String> files = multi.getFileNames();
+		int index = 0;
 
 		// type="file"인 태그의 개수만큼 반복
-		while (files.hasMoreElements()) {		
+		while (files.hasMoreElements()) {
+			index++;
+			int houseFileNumber = index;
 			// 사용자가 업로드한 파일 태그의 name값(key값)
 			String name = files.nextElement();
 
@@ -41,21 +43,18 @@ public class HouseFileDAO {
 			String housefileName = multi.getFilesystemName(name);
 
 			// 첨부파일이 업로드되지 않았다면
-			if (housefileName == null) {continue;}
+			if (housefileName == null) {	continue;	}
 
+			file.setHouseFileNumber(houseFileNumber);
 			file.setHousefileName(housefileName);
 			file.setHousefileNameOriginal(housefileNameOriginal);
 			file.setHouseNumber(houseNumber);
 
-		
 			insertHF(file);
 		}
 	}
-	//방 사진만
-		public List<HouseFileVO> getRoomImg(Map<String, Integer> house){
-			return sqlSession.selectList("houseFiles.getRoomImg", house);
-		}
 
+	
 	//첨부파일 가져오기
 	public List<HouseFileVO> getHouseImg(int houseNumber){
 		return sqlSession.selectList("houseFiles.getHouseImg", houseNumber);

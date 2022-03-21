@@ -110,11 +110,10 @@ input[type="text"]:focus {
 }
 
 div#table {
-    display: table;
-    width: 100%;
-    height: 76vh;
+	display: table;
+	width: 100%;
+	height: 80vh;
 }
-
 
 div.table-row {
 	height: 94%;

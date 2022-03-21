@@ -39,7 +39,6 @@ section#zero p.first-ptag {
 /* section-one */
 .active {
 	background-color: #1187cf;
-	opacity:0.7;
 }
 
 section#one {
@@ -62,7 +61,6 @@ div#img-total{
 }
 
 div#main-img{
-	transition: transform 0.5s;
 	width:30000px;
 }
 
@@ -77,7 +75,6 @@ div.main-wrapper img{
 
 div#sub-img{
 	width:3000px;
-	transition: transform 0.5s;
 }
 
 div.sub-wrapper{
@@ -131,6 +128,7 @@ section#two{
 }
 
 .option-wrap {
+
 	margin: 0 auto;
 	padding-bottom: 2rem;
 }

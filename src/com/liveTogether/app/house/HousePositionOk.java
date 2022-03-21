@@ -28,6 +28,17 @@ public class HousePositionOk implements Action {
 		ActionForward af = new ActionForward();
 		
 		HouseDAO dao = new HouseDAO();
+		/*ArrayList<HouseVO> positionList = new ArrayList<>();*/
+		
+		
+/*		for (int i = 0; i < dao.getPosition().size(); i++) {
+			HouseVO vo = new HouseVO();
+			vo.setLatitude(dao.getPosition().get(i).getLatitude());
+			vo.setLongitude(dao.getPosition().get(i).getLongitude());
+			positionList.add(vo);
+		}*/
+
+	
 		
 		PrintWriter out = resp.getWriter();
 		List<HouseVO> positionList = dao.getPosition();

@@ -23,7 +23,7 @@
 									<li><a href="${pageContext.request.contextPath}/house/AdminOk.ho">관리자페이지</a></li>
 								</ul>
 							</div></li>
-				<li class="btn p_menu"><a href="${pageContext.request.contextPath}/house/HouseRegister.ho">호스팅
+				<li class="btn p_menu"><a href="${pageContext.request.contextPath}/house/houseRegister.jsp">호스팅
 						하기</a></li>
 				<li class="btn p_menu"><a href="#">서비스 안내</a>
 					<div>

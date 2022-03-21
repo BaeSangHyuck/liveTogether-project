@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -99,46 +98,35 @@
 						<div class="myconheader2">
 							<div class="info-title">신청 지점 정보</div>
 							<div class="house-info-wrapper">
-							<!-- 	<img class="myhouse" src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/426/m-1638259637.png"> -->
-							<div class="column-wrap">
+								<img class="myhouse" src="https://woozoo.s3.amazonaws.com/uploads/house/main_image/426/m-1638259637.png">
+								<div class="column-wrap">
 							<div class="column">
 								<div class="column-title">주소</div>
-								<div class="column-value">${house.getHouseAddress()}</div>
+								<div class="column-value">서울 중구 광희동 2가</div>
 							</div>
 							<div class="column">
 								<div class="column-title">성별</div>
-								<div class="column-value">
-									<c:choose>
-										<c:when test="${house.getHouseGender() eq 'm' }">남성 전용</c:when>
-										<c:when test="${house.getHouseGender() eq 'w'}">여성 전용</c:when>
-										<c:otherwise>
-								남녀 공용
-								</c:otherwise>
-									</c:choose>
-								</div>
+								<div class="column-value">남녀공용</div>
 							</div>
 							<div class="column">
-								<div class="column-title">최대 인원</div>
-								<div class="column-value">${house.getHouseMax()}</div>
+								<div class="column-title">지점계약종료일</div>
+								<div class="column-value">2023-04-30</div>
+							</div>
+							<div class="column">
+								<div class="column-title">최대거주인원</div>
+								<div class="column-value">8명</div>
 							</div>
 							<div class="column">
 								<div class="column-title">주택유형</div>
-								<div class="column-value">
-									<c:choose>
-										<c:when test="${house.getHouseType() eq 'a' }">아파트</c:when>
-										<c:when test="${house.getHouseType() eq 'v'}">빌라</c:when>
-										<c:when test="${house.getHouseType() eq 'd'}">단독 주택</c:when>
-										<c:when test="${house.getHouseType() eq 'o'}">기타</c:when>
-									</c:choose>
-								</div>
+								<div class="column-value">기타</div>
 							</div>
+							<div class="column">
+								<div class="column-title">구조</div>
+								<div class="column-value">-</div>
 							</div>
 						</div>
-						
-						
-						
-						
-						
+							</div>
+						</div>
 						
 						<div class="myconheader3">
 						<div class="info-title">신청 방 정보</div>
@@ -154,69 +142,73 @@
 								<th>월세</th>
 								<th>입주가능일</th>
 
+								<th>입주자 프로필</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:choose>
-								<c:when test="${room != null and fn:length(room) > 0}">
-									<c:forEach var="room" items="${room}">
-										<tr>
-											<td>${room.getRoomName()}</td>
-											<td><c:choose>
-													<c:when test="${room.getRoomGender() eq 'm' }">남성전용	</c:when>
-													<c:when test="${room.getRoomGender() eq 'w'}">여성전용</c:when>
-												</c:choose></td>
-											<td>${room.getRoomType()}인실</td>
-											<td>${room.getRoomArea()}m²</td>
-											<td>${room.getRoomDeposit()}만원</td>
-											<td>${room.getRoomMonthly()}만원</td>
-											<td>${room.getRoomDate()}</td>
-											<!-- <td><button class="button-tour">투어신청</button></td>
-											<td><button class="button-profile">펼쳐보기</button></td> -->
-										</tr>
-									<!-- 프로필 	
-									<tr class="tr-wrap1">
-											<td colspan="9"><div id="profile">
-													<div class="profile-wrap">
-														<div class="profile">
-															<div class="profile-name">
-																<b>홍만두</b>
-																<p>(남자)</p>
-															</div>
-															<div class="profile-intro">
-																<span>"안녕하세요 저는 착한만두 홍만두입니다. 만찐두빵먹자 친추부탁드립니다."</span>
-															</div>
-														</div>
-														<div class="profile">
-															<div class="profile-name">
-																<b>상냥이</b>
-																<p>(남자)</p>
-															</div>
-															<div class="profile-intro">
-																<span>"안녕하세요 안상냥이 상냥이입니다. 3팀 팀장 배상혁 잘부탁드립니다."</span>
-															</div>
-														</div>
-														<div class="profile">
-															<div class="profile-name">
-																<b>다크준형</b>
-																<p>(남자)</p>
-															</div>
-															<div class="profile-intro">
-																<span>"여러분 코로나 조심하세요. 목이 너무 아파요ㅠㅠ 아프지 마세요 여러분"</span>
-															</div>
-														</div>
-													</div>
-												</div></td>
-										</tr> -->
-									</c:forEach>
-								</c:when>
-							</c:choose>
-
-
+							<tr>
+								<td>Room A</td>
+								<td>여성전용</td>
+								<td>1인실</td>
+								<td>9.5m²</td>
+								<td>1,000,000원</td>
+								<td>400,000원</td>
+								<td>2022-03-01</td>
+							
+								<td><button class="button-profile">펼쳐보기</button></td>
+							</tr>
+							<tr class="tr-wrap1">
+								<td colspan="9"><div id="profile">
+										<div class="profile-wrap">
+											<div class="profile">
+												<div class="profile-name">
+													<b>박상아</b>
+													<p>(여자)</p>
+												</div>
+												<div class="profile-intro">
+													<span>"안녕하세요 3팀의 바보 박상아입니다. 바붜양"</span>
+												</div>
+											</div>
+											<div class="profile">
+												<div class="profile-name">
+													<b>한서현</b>
+													<p>(여자)</p>
+												</div>
+												<div class="profile-intro">
+													<span>"안녕하세요 무밍입니다. 3팀의 무밍맘 한서현♥"</span>
+												</div>
+											</div>
+											
+										</div>
+									</div></td>
+							</tr>
+							<tr>
+								<td>Room B</td>
+								<td>여성전용</td>
+								<td>1인실</td>
+								<td>9.5m²</td>
+								<td>1,000,000원</td>
+								<td>400,000원</td>
+								<td>2022-03-01</td>
+								
+								<td><button class="button-profile">펼쳐보기</button></td>
+							</tr>
+							
+							<tr>
+								<td>Room C</td>
+								<td>여성전용</td>
+								<td>1인실</td>
+								<td>9.5m²</td>
+								<td>1,000,000원</td>
+								<td>400,000원</td>
+								<td>2022-03-01</td>
+							
+								<td><button class="button-profile">펼쳐보기</button></td>
+							</tr>
+							
 						</tbody>
 					</table>
-
-				</div>
+</div>
 				</div>
 						</div>
 						

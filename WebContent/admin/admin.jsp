@@ -147,7 +147,7 @@
 										</div>
 										<div class="flex">
 											<div id="member-second-first-second-span">
-												<span class="data"><a href="${pageContext.request.contextPath}/admin/adminStandBy.jsp">${waitCount}</a></span>
+												<span class="data"><a href="#">${waitCount}</a></span>
 											</div>
 											<div id="member-second-first-third-span">
 												<span>건</span><br>

@@ -49,11 +49,6 @@ public class HouseFrontController extends HttpServlet {
 		case "/house/HouseDetailOk.ho":
 			af = new HouseDetailOk().execute(req, resp);
 			break;
-		case "/house/houseDetail.ho":
-			af = new ActionForward();
-			af.setRedirect(false);
-			af.setPath("/house/houseDetail.jsp");
-			break;
 		case "/house/HousePositionOk.ho":
 			af = new HousePositionOk().execute(req, resp);
 			break;
@@ -62,15 +57,7 @@ public class HouseFrontController extends HttpServlet {
 			af.setRedirect(false);
 			af.setPath("/house/findRoom.jsp");
 			break;
-		case "/house/HouseRegister.ho":
-			af = new HouseRegister().execute(req, resp);
-			break;
-		case "/house/HouseRegist.ho":
-			af = new ActionForward();
-			af.setRedirect(false);
-			af.setPath("/house/houseRegister.jsp");
-			break;
-			
+		
 		}
 
 		// 분기 별 결과를 af에 담았다면 여기로 내려온다.

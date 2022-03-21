@@ -8,14 +8,10 @@
 		values(#{housefileName}, #{houseNumber}, #{housefileNameOriginal});		
 	</insert>
 	
-	<!-- 하우스 전체 사진 가져오기  -->
+	<!-- 하우스 구조 사진 가져오기  -->
 	<select id="getHouseImg" parameterType="_int" resultType="HouseFileVO">
 		select housefileName, houseFileNumber from tbl_houseFile where houseNumber = #{houseNumber};
 	</select>
 	
-	<!-- 구조 사진을 뺀 나머지 사진들 -->
-	<select id="getRoomImg" parameterType =	"map" resultType="HouseFileVO">
-		SELECT housefileName, houseFileNumber
-		FROM tbl_houseFile WHERE houseNumber = #{houseNumber} limit 1, #{limit}
-	</select>
+
 </mapper>

@@ -51,7 +51,7 @@
 						href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내
 							정보수정</a></li>
 					<li class="num3"><a
-						href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">진행사항</a>
+						href="${pageContext.request.contextPath}/member/mypagetour.jsp">진행사항</a>
 					</li>
 					<li class="num4"><a
 						href="${pageContext.request.contextPath}/member/HostMemberListOk.me">입주자목록</a>
@@ -85,12 +85,6 @@
 										<a
 											href="${pageContext.request.contextPath}/member/HostMyPageCompleteOk.me">입주예정
 											목록</a>
-									</div>
-								</div>
-								<div class="process ">
-									<div class="process-title">
-										<a
-											href="${pageContext.request.contextPath}/member/HostRejectListOk.me">거절 목록</a>
 									</div>
 								</div>
 							</div>
@@ -130,7 +124,6 @@
 													</tr>
 												</c:forEach>
 											</c:when>
-											<c:otherwise><tr><td>목록이 없습니다.</td></tr></c:otherwise>
 										</c:choose>
 									</tbody>
 								</table>

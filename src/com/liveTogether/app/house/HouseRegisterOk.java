@@ -20,9 +20,8 @@ public class HouseRegisterOk implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		req.setCharacterEncoding("UTF-8");
-
+		
 		String uploadFolder = "C:\\aigb_0900_bsh\\jsp\\workspace\\liveTogether\\WebContent\\upload";
-
 		int fileSize = 1024 * 1024 * 5;//5M
 		HouseFileDAO fDao = new HouseFileDAO();		
 		//요청객체, 업로드폴더 경로, 파일의 크기, 인코딩 방식, 이름변경정책
@@ -38,10 +37,7 @@ public class HouseRegisterOk implements Action {
 		boolean manCheck = false;
 		boolean womanCheck = false;
 
-		
-
-		
-		vo.setMemberId((String)session.getAttribute("memberId"));
+		session.getAttribute("memberId");
 		vo.setHouseType(multi.getParameter("houseType"));
 		vo.setHouseAddress(multi.getParameter("houseAddress"));
 		vo.setHouseAddressDetail(multi.getParameter("houseAddressDetail"));
@@ -85,6 +81,7 @@ public class HouseRegisterOk implements Action {
 
 		for (int i = 0; i < roomName.length; i++) {
 			houseMax += Integer.parseInt(roomType[i]);
+			System.out.println(roomGender[i]);
 			if (roomGender[i].equals("m")) {
 				manCheck = true;
 			}
@@ -120,6 +117,7 @@ public class HouseRegisterOk implements Action {
 
 		//파일추가
 		fDao.insertHF(multi, vo.getId());
+		
 		
 		af.setRedirect(true);
 		af.setPath(req.getContextPath() + "/main/main.jsp");

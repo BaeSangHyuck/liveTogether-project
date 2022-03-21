@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -24,8 +23,6 @@
 <jsp:include page="../fix/aside.jsp" />
 
 <body class="is-preload">
-	<c:set var="roomList" value="${roomList}" />
-	<c:set var="guestList" value="${guestList}" />
 	<c:set var="member" value="${member}" />
 	<article id="main">
 
@@ -51,7 +48,7 @@
 						href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내
 							정보수정</a></li>
 					<li class="num3"><a
-						href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">진행사항</a>
+						href="${pageContext.request.contextPath}/member/mypagetour.jsp">진행사항</a>
 					</li>
 					<li class="num4"><a
 						href="${pageContext.request.contextPath}/member/HostMemberListOk.me">입주자목록</a>
@@ -80,83 +77,38 @@
 										</tr>
 									</thead>
 									<tbody>
-									<tbody>
-										<c:choose>
-											<c:when test="${roomList != null and fn:length(roomList) >0}">
-												<c:forEach var="room" items="${roomList}">
-													<tr>
-														<td>${room.getHouseNumber()}</td>
-														<td>${room.getRoomName()}</td>
-														<td>${room.getRoomType()}</td>
-														<td>${room.getRoomGender()}</td>
-														<td>${room.getMemberName()}</td>
-														<td>${room.getMemberGender()}</td>
-														<td>${room.getMemberPhone()}</td>
-														<td>
-															<button
-																onclick="location.href='${pageContext.request.contextPath}/member/HostDeleteFourthOk.me?houseNumber=${room.getHouseNumber()}'">삭제</button>
-														</td>
-													</tr>
-												</c:forEach>
-											</c:when>
-											<c:otherwise><tr><td>목록이 없습니다.</td></tr></c:otherwise>
-										</c:choose>
+										<tr>
+											<td>HouseNumber</td>
+											<td>RoomA</td>
+											<td>3인실</td>
+											<td>M</td>
+											<td>송준형</td>
+											<td>M</td>
+											<td>010-8958-7712</td>
+											<td>	<button>삭제</button></td>
+										</tr>
+										<tr>
+											<td>HouseNumber</td>
+											<td>RoomB</td>
+											<td>5인실</td>
+											<td>M</td>
+											<td>송준형</td>
+											<td>M</td>
+											<td>010-8958-7712</td>
+											<td>	<button>삭제</button></td>
+										</tr>
+										<tr>
+											<td>HouseNumber</td>
+											<td>RoomC</td>
+											<td>6인실</td>
+											<td>M</td>
+											<td>송준형</td>
+											<td>M</td>
+											<td>010-8958-7712</td>
+											<td>	<button>삭제</button></td>
+										</tr>
+
 									</tbody>
-								</table>
-								<!-- 페이징 처리 -->
-								<table id="paging">
-									<tr>
-										<c:choose>
-											<c:when test="${search != null}">
-												<td><c:if test="${startPage > 1}">
-														<a
-															href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=1">&lt;&lt;&nbsp;&nbsp;</a>
-														<a
-															href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=${startPage -1}">&lt;&nbsp;&nbsp;</a>
-													</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
-														<c:choose>
-															<c:when test="${i eq page}">
-																<c:out value="${i}" />&nbsp;&nbsp;
-								</c:when>
-															<c:otherwise>
-																<a
-																	href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=${i}"><c:out
-																		value="${i}" /></a>&nbsp;&nbsp;
-								</c:otherwise>
-														</c:choose>
-													</c:forEach> <c:if test="${endPage < realEndPage}">
-														<a
-															href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=${endPage + 1}">&nbsp;&nbsp;&gt;</a>
-														<a
-															href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=${realEndPage}">&nbsp;&nbsp;&gt;&gt;</a>
-													</c:if></td>
-											</c:when>
-											<c:otherwise>
-												<td><c:if test="${startPage > 1}">
-														<a
-															href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=1">&lt;&lt;&nbsp;&nbsp;</a>
-														<a
-															href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=${startPage -1}">&lt;&nbsp;&nbsp;</a>
-													</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
-														<c:choose>
-															<c:when test="${i eq page}">
-																<c:out value="${i}" />&nbsp;&nbsp;
-								</c:when>
-															<c:otherwise>
-																<a
-																	href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=${i}"><c:out
-																		value="${i}" /></a>&nbsp;&nbsp;
-								</c:otherwise>
-														</c:choose>
-													</c:forEach> <c:if test="${endPage < realEndPage}">
-														<a
-															href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=${endPage + 1}">&nbsp;&nbsp;&gt;</a>
-														<a
-															href="${pageContext.request.contextPath}/member/HostMemberListOk.me?page=${realEndPage}">&nbsp;&nbsp;&gt;&gt;</a>
-													</c:if></td>
-											</c:otherwise>
-										</c:choose>
-									</tr>
 								</table>
 							</div>
 						</div>

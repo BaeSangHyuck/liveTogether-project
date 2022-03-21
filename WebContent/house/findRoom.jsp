@@ -46,7 +46,7 @@
 									<div class="multi-range-slider">
 										<!-- 진짜 슬라이더 -->
 										<select id="input-left" name="min">
-											<option value="100000001">전체</option>
+											<option value="-1">전체</option>
 											<option value="0">0만원</option>
 											<option value="10">10만원</option>
 											<option value="20">20만원</option>
@@ -60,7 +60,7 @@
 											<option value="100">100만원</option>
 										</select> <span id="important">~</span> <select id="input-right"
 											name="max">
-											<option value="100000001">전체</option>
+											<option value="-1">전체</option>
 											<option value="10">10만원</option>
 											<option value="20">20만원</option>
 											<option value="30">30만원</option>
@@ -209,7 +209,7 @@
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 mapOption = {
-	center : new kakao.maps.LatLng(37.541, 126.986), // 지도의 중심좌표
+	center : new kakao.maps.LatLng(37.522697, 126.973858), // 지도의 중심좌표
 	level : 10
 // 지도의 확대 레벨
 };
@@ -231,8 +231,29 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 $.ajax({
 	url : contextPath + "/house/HousePositionOk.ho",
 	type : "get",
-	success : jsons
-		,
+	success : function jsons(positions) {
+		positionList.positionsArr.push(JSON.parse(positions))
+		
+		console.log(positionList)
+	 
+
+		var clusterer = new kakao.maps.MarkerClusterer({
+			map : map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+			averageCenter : true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+			minLevel : 10
+		// 클러스터 할 최소 지도 레벨 
+		});
+		 var markers = positionList.positionsArr.map(function(i, position) {
+				return new kakao.maps.Marker({
+					position : new kakao.maps.LatLng(position.lat, position.lng)
+				});
+			});
+
+			// 클러스터러에 마커들을 추가합니다
+			clusterer.addMarkers(markers);
+			console.log(markers)
+
+	},
 	error : function(a, b, c) {
 		console.log("오류" + c);
 	},
@@ -242,7 +263,12 @@ $.ajax({
 
 
 function jsons(positions) {
-
+	
+	
+	positionList.positionsArr.push(JSON.parse(positions))
+	
+	console.log(positionList)
+ 
 
 	var clusterer = new kakao.maps.MarkerClusterer({
 		map : map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
@@ -250,20 +276,20 @@ function jsons(positions) {
 		minLevel : 10
 	// 클러스터 할 최소 지도 레벨 
 	});
-	var markers =[];
-	for(var i = 0; i < JSON.parse(positions).length; i++) {
-	   var marker = new kakao.maps.Marker({
-		    position: new kakao.maps.LatLng(JSON.parse(positions)[i].lat,JSON.parse(positions)[i].lng)
-		});
-		console.log(i)
-		console.log(marker)
-		// 클러스터러에 마커들을 추가합니다
-	    markers[i]=marker;
-}
+	for (var i = 0; i < positionList.positionsArr.length; i++) {
+		
+	 var markers =  new kakao.maps.Marker({
+				position : new kakao.maps.LatLng(positionList.positionsArr[i].lat, positionList.positionsArr[i].lng)
+			});
 		clusterer.addMarkers(markers);
+	}
+	
+
+		// 클러스터러에 마커들을 추가합니다
 		console.log(markers)
-		console.log(clusterer)
+
 }
+
 
 	
 
