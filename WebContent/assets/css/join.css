@@ -224,6 +224,7 @@ section#join-wrap .item_inp.item_check {
 
 section#join-wrap div.item_tf {
 	margin-top: 5px;
+	margin-bottom: 30px;
 }
 
 section#join-wrap #loginEmailField p {
@@ -315,7 +316,14 @@ section#join-wrap input#id_password_3,  input#pwCheck{
 
 section#join-wrap input.checkPw{
 	margin-top: 36px !important;
-	margin-bottom: 36px !important;
+    margin-bottom: 8px !important;
+}
+
+p#pwResult{
+	font-size: 12px;
+    margin: 0;
+    line-height: 16px;
+    margin-top: 6px;
 }
 
 section#join-wrap #houseIcon span{

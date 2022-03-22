@@ -77,6 +77,7 @@ public class HouseFindRoom implements Action{
 			room.put("houseGender", r.getHouseGender());
 			room.put("houseType", r.getHouseType());
 			room.put("houseMax", r.getHouseMax());
+			room.put("housefileName",r.getHousefileName());
 			rooms.add(room);
 			
 		}

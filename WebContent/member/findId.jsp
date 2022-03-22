@@ -17,6 +17,10 @@
 </head>
 
 <style>
+body{
+overflow:hidden;
+}
+
 label.screen_out {
 	font-size: 13px;
 }

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.liveTogether.app.board.vo.BoardDTO;
 import com.liveTogether.app.board.vo.BoardVO;
+import com.liveTogether.app.board.vo.InquiryVO;
 import com.liveTogether.mybatis.config.MybatisConfig;
 
 public class BoardDAO {
@@ -61,5 +62,29 @@ public class BoardDAO {
 	//검색 갯수
 	public int getSearch(String boardTitle) {
 		return sqlSession.selectOne("Board.getSearch",boardTitle);
+	}
+	
+	public String inquiryData(String memberId) {
+		return sqlSession.selectOne("Board.inquiryData", memberId);
+	}
+	
+	public void inquiryInsert(InquiryVO inquiry) {
+		sqlSession.insert("Board.inquiryInsert", inquiry);
+	}
+	
+	public List<InquiryVO> inquiryAdminList(Map<String, Integer> inquiryMap) {
+		return sqlSession.selectList("Board.inquiryAdminList", inquiryMap);
+	}
+	
+	public int getInquiryCount() {
+		return sqlSession.selectOne("Board.getInquiryCount");
+	}
+	
+	public void inquiryDelete(int inquiryNumber) {
+		sqlSession.selectOne("Board.inquiryDelete", inquiryNumber);
+	}
+	
+	public InquiryVO inquiryDetail(int inquiryNumber) {
+		return sqlSession.selectOne("Board.inquiryDetail", inquiryNumber);
 	}
 }

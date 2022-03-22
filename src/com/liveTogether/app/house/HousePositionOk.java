@@ -24,23 +24,29 @@ public class HousePositionOk implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
-		
+		HouseDAO hdao = new HouseDAO();
 		ActionForward af = new ActionForward();
-		
+		List<HouseDTO> houseList = hdao.selectAll();
 		HouseDAO dao = new HouseDAO();
 		
 		PrintWriter out = resp.getWriter();
-		List<HouseVO> positionList = dao.getPosition();
 		JSONArray positions = new JSONArray();
 
-		for(HouseVO p : positionList) {
+		for(HouseDTO p : houseList) {
 			JSONObject position = new JSONObject();
 			position.put("lat", p.getLatitude());
 			position.put("lng", p.getLongitude());
+			position.put("houseNumber", p.getHouseNumber());
+			position.put("roomDeposit", p.getRoomDeposit());
+			position.put("roomMonthly", p.getRoomMonthly());
+			position.put("houseGender", p.getHouseGender());
+			position.put("houseType", p.getHouseType());
+			position.put("houseMax", p.getHouseMax());
+			position.put("housefileName", p.getHousefileName());
 
+			System.out.println(position);
 			positions.add(position);
 		}
-		
 //		req.setAttribute("positionList", positionList);
 		
 		out.print(positions);

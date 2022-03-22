@@ -306,4 +306,34 @@ div#navigation_wraper {
 	width:100%;
 	heigth:100%;
 	}
+		.mypagetool {
+    height: 1px;
+	}
+	.mypagetool .mypagebar {
+    margin-left: 0%;
+    width: 100%;
+    font-size: 14px;
+    height: 31px;
+    margin-top: 20px;
+    box-shadow: none;
+}
+ul {
+    padding-left: 0em;
+}
+	.mypagebar .num1 {
+     box-shadow: none;
+    background-color: #FFF;
+    color: #1187CF;
+    border-bottom: 2px solid #1187CF;
+    font-weight: 600;
+}
+
+#main .inner {
+    background-image: none;
+    height: 76px;
+} 
+div.mypagetool{
+	margin-top:0;
+}
+	
 } 

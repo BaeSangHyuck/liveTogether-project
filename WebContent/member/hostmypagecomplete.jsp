@@ -48,13 +48,16 @@
 						href="${pageContext.request.contextPath}/member/MemberMypageOk.me">내
 							정보조회</a></li>
 					<li class="num2"><a
-						href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내
+						href="${pageContext.request.contextPath}/member/HostMyPageOk.me">내
 							정보수정</a></li>
 					<li class="num3"><a
 						href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">진행사항</a>
 					</li>
 					<li class="num4"><a
 						href="${pageContext.request.contextPath}/member/HostMemberListOk.me">입주자목록</a>
+					</li>
+					<li class="num4"><a
+						href="${pageContext.request.contextPath}/house/HostForSaleListOk.ho">하우스 관리</a>
 					</li>
 				</ul>
 			</div>
@@ -101,14 +104,14 @@
 								<table>
 									<thead>
 										<tr>
-											<th>방 번호</th>
-											<th>이름</th>
-											<th>타입</th>
-											<th>방 성별 타입</th>
-											<th>신청인</th>
-											<th>신청인 성별</th>
-											<th>전화번호</th>
-											<th>승인 버튼</th>
+											<th class="th1">방 번호</th>
+											<th class="th2">방 이름</th>
+											<th class="th3">타입</th>
+											<th class="th4">방 성별</th>
+											<th class="th5">신청인</th>
+											<th class="th6">성별</th>
+											<th class="th7">전화번호</th>
+											<th class="th8">승인 버튼</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -116,13 +119,13 @@
 											<c:when test="${roomList != null and fn:length(roomList) >0}">
 												<c:forEach var="room" items="${roomList}">
 													<tr>
-														<td>${room.getHouseNumber()}</td>
-														<td>${room.getRoomName()}</td>
-														<td>${room.getRoomType()}</td>
-														<td>${room.getRoomGender()}</td>
-														<td>${room.getMemberName()}</td>
-														<td>${room.getMemberGender()}</td>
-														<td>${room.getMemberPhone()}</td>
+														<td class="td1">${room.getHouseNumber()}</td>
+														<td class="td2">${room.getRoomName()}</td>
+														<td class="td3">${room.getRoomType()}</td>
+														<td class="td4">${room.getRoomGender()}</td>
+														<td class="td5">${room.getMemberName()}</td>
+														<td class="td6">${room.getMemberGender()}</td>
+														<td class="td7">${room.getMemberPhone()}</td>
 														<td><button
 																onclick="location.href='${pageContext.request.contextPath}/member/HostStatusThirdOk.me?houseNumber=${room.getHouseNumber()}'">수락</button>
 															<button
@@ -130,7 +133,7 @@
 													</tr>
 												</c:forEach>
 											</c:when>
-											<c:otherwise><tr><td>목록이 없습니다.</td></tr></c:otherwise>
+											<c:otherwise><tr class="anotherTr"><td>목록이 없습니다.</td></tr></c:otherwise>
 										</c:choose>
 									</tbody>
 								</table>

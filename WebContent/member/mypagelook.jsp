@@ -32,22 +32,26 @@
 		
 	
 	<div class="mypagelook">
-		<div class="mypagetool">
-						<ul class="mypagebar">
-							<li class="num1">
-								<a href="${pageContext.request.contextPath}/member/MemberMypageOk.me">내 정보조회</a>
-							</li>
-							<li class="num2">
-								<a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내 정보수정</a>
-							</li>
-							<li class="num3">
-								<a href="${pageContext.request.contextPath}/member/mypagetour.jsp">진행사항</a>
-							</li>
-							<li class="num4">
-								<a href="${pageContext.request.contextPath}/member/mypagecontract.jsp">계약서 출력</a>
-							</li>
-						</ul>
-							</div>
+			<div class="mypagetool">
+			<ul class="mypagebar">
+				<li class="num1"><a
+					href="${pageContext.request.contextPath}/member/MemberMypageOk.me">내
+						정보조회</a></li>
+				<li class="num2"><a
+					href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내
+						정보수정</a></li>
+				<li class="num3"><a
+					href="${pageContext.request.contextPath}/member/MemberMypageTour.me">진행사항</a>
+				</li>
+				<li class="num4"><a
+					href="${pageContext.request.contextPath}/member/mypagecontract.jsp">계약서
+						출력 </a></li>
+				<li class="num5"><a
+					href="${pageContext.request.contextPath}/member/MemberQuestionListOk.me">문의사항
+						 </a></li>
+			</ul>
+		</div>
+
 		<div id="box">	
 		<%-- <div id="navigation_wraper">
 			<div class="navigation">

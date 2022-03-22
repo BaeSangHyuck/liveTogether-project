@@ -14,7 +14,9 @@ import org.json.simple.JSONObject;
 import com.liveTogether.action.Action;
 import com.liveTogether.action.ActionForward;
 import com.liveTogether.app.house.dao.HouseDAO;
+import com.liveTogether.app.house.dao.HouseFileDAO;
 import com.liveTogether.app.house.vo.HouseDTO;
+import com.liveTogether.app.house.vo.HouseFileVO;
 
 public class HouseListOk implements Action {
 	@Override
@@ -23,10 +25,14 @@ public class HouseListOk implements Action {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		
-		HouseDAO dao = new HouseDAO();
+		HouseDAO hdao = new HouseDAO();
 		PrintWriter out = resp.getWriter();
-		List<HouseDTO> houseList = dao.selectAll();
+		List<HouseDTO> houseList = hdao.selectAll();
 		JSONArray houses = new JSONArray();
+		HouseFileDAO fdao = new HouseFileDAO();		
+		int roomGuestCount = 0;
+		
+		
 
 		for(HouseDTO h : houseList) {
 			JSONObject house = new JSONObject();
@@ -35,7 +41,9 @@ public class HouseListOk implements Action {
 			house.put("roomMonthly", h.getRoomMonthly());
 			house.put("houseGender", h.getHouseGender());
 			house.put("houseType", h.getHouseType());
-			house.put("houseMax", h.getHouseMax());
+			roomGuestCount = hdao.roomGuestCount(h.getHouseNumber());
+			house.put("houseMax", h.getHouseMax() - roomGuestCount);
+			house.put("housefileName", h.getHousefileName());
 			houses.add(house);
 		}
 		

@@ -19,42 +19,74 @@
 		<div id="second-wrapper">
 			<p class="first-p">가치살자의 좋은방 구하기 매물관리</p>
 			<div class="button-wrapper">
+				<button class="button button-approve"
+					onclick="location.href='${pageContext.request.contextPath}/house/AdminStandByOk.ho'">등록대기</button>
 				<button class="button button-list">등록매물</button>
-				<button class="button button-approve">등록대기</button>
 			</div>
 			<div class="table-wrapper">
-				<table class="table">
-					<tr>
-						<td class="td td1"><input type="checkbox"></td>
-						<td class="td td2">방 번호/방 정보</td>
-						<td class="td td3">성별</td>
-						<td class="td td4">타입</td>
-						<td class="td td5">면적</td>
-						<td class="td td6">보증금</td>
-						<td class="td td7">월세</td>
-						<td class="td td8">입주 가능일</td>
-						<td class="td9">상태변경</td>
-					</tr>
-					<c:choose>
-						<c:when test="${houseList != null and fn:length(houseList) >0}">
-							<c:forEach var="house" items="${houseList}">
-								<tr>
-									<td class="ttd ttd1"><input type="checkbox"></td>
-									<td class="ttd ttd2">${house.getHouseNumber()}</td>
-									<td class="ttd ttd3">${house.getRoomGender()}</td>
-									<td class="ttd ttd4">${house.getRoomType()}룸</td>
-									<td class="ttd ttd5">${house.getRoomArea()}m2</td>
-									<td class="ttd ttd6">${house.getRoomDeposit()}만원</td>
-									<td class="ttd ttd7">${house.getRoomMonthly()}만원</td>
-									<td class="ttd ttd8">${house.getRoomDate()}</td>
-									<td class="ttd ttd9"><div class="button2-wrapper">
-											<button class="button2" onclick="location.href='${pageContext.request.contextPath}/house/AdminDeleteOk.ho?houseNumber=${house.getHouseNumber()}'">삭제</button>
-										</div></td>
-								</tr>
-							</c:forEach>
-						</c:when>
-					</c:choose>
-				</table>
+				<form
+					action="${pageContext.request.contextPath}/house/AdminCheckDeleteOk.ho">
+					<table class="table">
+						<tr>
+							<td class="td td1"><input type="checkbox" id="term"
+								name="term"></td>
+							<td class="td td2">하우스 이름</td>
+							<td class="td td3">성별</td>
+							<td class="td td4">타입</td>
+							<td class="td td5">총 인원수</td>
+							<td class="td td6">보증금</td>
+							<td class="td td7">월세</td>
+							<td class="td td8">입주 가능일</td>
+							<td class="td9">상태변경</td>
+						</tr>
+						<c:choose>
+							<c:when test="${houseList != null and fn:length(houseList) >0}">
+								<c:forEach var="house" items="${houseList}">
+									<tr>
+										<td class="ttd ttd1"><input type="checkbox" id="term1"
+											name="term1" class="terms" value="${house.getHouseNumber()}"></td>
+										<td class="ttd ttd2">${house.getHouseNumber()}호점</td>
+										<c:choose>
+											<c:when test="${house.getHouseGender() eq 'm'}">
+												<td class="ttd ttd3">남성전용</td>
+											</c:when>
+											<c:when test="${house.getHouseGender() eq 'w'}">
+												<td class="ttd ttd3">여성전용</td>
+											</c:when>
+										</c:choose>
+										<c:choose>
+											<c:when test="${house.getHouseType() eq 'a'}">
+												<td class="ttd ttd4">아파트</td>
+											</c:when>
+											<c:when test="${house.getHouseType() eq 'v'}">
+												<td class="ttd ttd4">빌라</td>
+											</c:when>
+											<c:when test="${house.getHouseType() eq 'd'}">
+												<td class="ttd ttd4">단독주택</td>
+											</c:when>
+											<c:when test="${house.getHouseType() eq 'o'}">
+												<td class="ttd ttd4">기타</td>
+											</c:when>
+										</c:choose>
+										<td class="ttd ttd5">${house.getHouseMax()}명</td>
+										<td class="ttd ttd6">${house.getRoomDeposit()}만원</td>
+										<td class="ttd ttd7">${house.getRoomMonthly()}만원</td>
+										<td class="ttd ttd8">${house.getRoomDate()}</td>
+										<td class="ttd ttd9"><div class="button2-wrapper">
+												<button class="button2"
+													onclick="location.href='${pageContext.request.contextPath}/house/AdminDeleteOk.ho?houseNumber=${house.getHouseNumber()}'">거절</button>
+											</div></td>
+									</tr>
+								</c:forEach>
+							</c:when>
+						</c:choose>
+					</table>
+					<div id="width100">
+						<div>
+							<button class="button2 blue">선택 삭제</button>
+						</div>
+					</div>
+				</form>
 				<!-- 페이징 처리 -->
 				<table id="paging">
 					<tr>
@@ -115,4 +147,6 @@
 	</div>
 	<jsp:include page="../fix/footer.jsp" />
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/adminProp.js"></script>
 </html>

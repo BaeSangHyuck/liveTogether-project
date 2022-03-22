@@ -273,3 +273,101 @@
 	font-size: 14px;
 	color: rgba(0, 0, 0, 0.87);
 }
+ @media (max-width: 414px){
+ 		.mypagetool {
+    height: 1px;
+	}
+/* 	.mypagetool .mypagebar {
+    margin-left: 0%;
+    width: 100%;
+    font-size: 14px;
+    height: 31px;
+    margin-top: 20px;
+    box-shadow: none;
+} */
+.mypagetool .mypagebar {
+    margin-left: 0% !important;
+    width: 100% !important;
+    font-size: 14px !important;
+    height: 31px !important;
+    margin-top: 20px !important;
+}
+ul {
+    padding-left: 0em;
+}
+	.mypagebar .num4 {
+     box-shadow: none;
+    background-color: #FFF;
+    color: #1187CF;
+    border-bottom: 2px solid #1187CF;
+    font-weight: 600;
+}
+	
+#main .inner {
+    background-image: none;
+    height: 76px;
+} 
+div.mypagetool{
+	margin-top:0;
+}
+
+.contract-table {
+     border: 0; 
+    /* background-color: #fff; */
+     padding: 0;
+     margin-top: 0; 
+    margin-left: 0;
+    margin-right: 0;
+     display: block;
+     width:100%;
+}
+.tab1 {
+    border: none;
+     padding: 0; 
+    margin: 0 auto;
+    width: 100%;
+}
+.tab2 {
+    padding: 0; 
+     width: 100%; 
+     border: none; 
+    /* margin: 0 auto; */
+}
+.contract-table img{
+	width:100% !important;
+	 margin-top: -2em;
+}
+.mypage .wrapper {
+	padding:0;
+
+	}
+.my{
+	width:100%;
+}
+.contract-table table td {
+    font-size: 12px;
+}
+.tab-pane-title {
+margin-bottom: 10px; 
+}
+
+.contract-download-btn img{
+    width: 45% !important;
+    }
+    .mypage .mypagetool .mypagebar {
+     margin-left: 0;
+    width: 100%;
+    display: flex;
+    float: left;
+    justify-content: space-evenly;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: left;
+}
+ul li {
+    padding-left: 0em;
+}
+.cardwrap{
+	margin-bottom: 3em;
+}
+ }

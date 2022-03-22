@@ -38,10 +38,10 @@
 				<div class="mypagetool">
 						<ul class="mypagebar">
 							<li class="num1">
-								<a href="${pageContext.request.contextPath}/member/MemberMypageOk.me">내 정보조회</a>
+								<a href="${pageContext.request.contextPath}/member/HostMyPageLookOk.me">내 정보조회</a>
 							</li>
 							<li class="num2">
-								<a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내 정보수정</a>
+								<a href="${pageContext.request.contextPath}/member/HostMyPageOk.me">내 정보수정</a>
 							</li>
 							<li class="num3">
 								<a href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">진행사항</a>
@@ -49,7 +49,10 @@
 							<li class="num4"><a
 						href="${pageContext.request.contextPath}/member/HostMemberListOk.me">입주자목록</a>
 					</li>
-						</ul>
+					<li class="num4"><a
+						href="${pageContext.request.contextPath}/member/HostMemberListOk.me">하우스관리</a>
+					</li>
+				</ul>
 							</div>
 			<div id="box">
 			

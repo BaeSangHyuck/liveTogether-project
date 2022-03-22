@@ -1,0 +1,44 @@
+section#terms-contain div#title-wrap {
+	font-family: 'GmarketSansBold';
+	margin-top: 185px;
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 33px;	
+}
+section#policy-contain div#title-wrap {
+	font-family: 'GmarketSansBold';
+	margin-top: 185px;
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 33px;	
+}
+
+h1#title{
+	color: #1187CF;
+}
+
+section#policy-contain div pre {
+	font-family: 'GmarketSansMedium';
+	margin: 0 auto;
+	width: 1000px;
+	margin-bottom: 140px; 
+	padding: 20px;
+	border-radius: 2px;
+	box-shadow: 0px 0px 40px #0000001a;
+	border-width: 0;
+	white-space: pre-wrap;
+}
+
+section#terms-contain div pre {
+	font-family: 'GmarketSansMedium';
+	margin: 0 auto;
+	width: 1000px;
+	margin-bottom: 140px;
+	padding: 20px;
+	border-radius: 2px;
+	box-shadow: 0px 0px 40px #0000001a;
+	border-width: 0;
+	white-space: pre-wrap;
+	
+	
+}
