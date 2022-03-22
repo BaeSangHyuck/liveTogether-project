@@ -1,6 +1,7 @@
 package com.liveTogether.app.house.vo;
 
 public class HouseRoomVO {
+	private int roomNumber;
 //  방 이름
 	private String roomName;
 //  몇인실인지
@@ -20,7 +21,13 @@ public class HouseRoomVO {
 	
 	public HouseRoomVO() {;}
 
+	public int getRoomNumber() {
+		return roomNumber;
+	}
 
+	public void setRoomNumber(int roomNumber) {
+		this.roomNumber = roomNumber;
+	}
 
 	public String getRoomName() {
 		return roomName;

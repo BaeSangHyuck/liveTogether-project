@@ -17,8 +17,6 @@ public class AdminDeleteOk implements Action{
 		HouseDAO dao = new HouseDAO();
 		
 		int houseNumber = Integer.parseInt(req.getParameter("houseNumber"));
-		dao.fileDelete(houseNumber);
-		dao.guestDelete(houseNumber);
 		dao.roomDelete(houseNumber);
 		dao.houseDelete(houseNumber);
 		

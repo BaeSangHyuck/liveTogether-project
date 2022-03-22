@@ -6,12 +6,8 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.liveTogether.app.board.vo.BoardVO;
-import com.liveTogether.app.board.vo.InquiryVO;
 import com.liveTogether.app.member.vo.MemberVO;
-import com.liveTogether.app.member.vo.MyRoomGuestDTO;
 import com.liveTogether.app.member.vo.RoomGuestDTO;
-import com.liveTogether.app.member.vo.RoomGuestVO;
 import com.liveTogether.mybatis.config.MybatisConfig;
 public class MemberDAO {
 	SqlSessionFactory sqlSessionFactory = MybatisConfig.getSqlsessionFactory();
@@ -76,21 +72,6 @@ public class MemberDAO {
 	public void updateInfo(MemberVO member) {
 		sqlSession.update("Member.updateInfo", member);
 	}
-	
-	//탈퇴전 비밀번호
-	public boolean checkPw(Map<String, String> map) {
-		return (Integer)sqlSession.selectOne("Member.checkPw", map) == 1;
-	}
-	
-	//탈퇴 과정 1
-	public void deleteRg(String memberId) {
-		sqlSession.delete("Member.deleteRg", memberId);
-	}
-	
-	//탈퇴 과정 2
-		public void deleteM(String memberId) {
-			sqlSession.delete("Member.deleteM", memberId);
-		}
 	
 	//마이페이지 투어신청  방 정보 가져오기
 	public void selectMypageTour(Map<String, Integer> myMap) {
@@ -195,7 +176,10 @@ public class MemberDAO {
 		public void tourRealDelete(int houseNumber) {
 			sqlSession.delete("Member.tourRealDelete", houseNumber);
 		}
+		
+		
 	
+		
 		// 마이페이지 테이블 스테이터스 1 -> 2 변경
 		public void updateStMypageSecond(String memberId) {
 			sqlSession.update("Member.updateMypageSecond", memberId);
@@ -216,57 +200,6 @@ public class MemberDAO {
 			return sqlSession.selectOne("Member.countTour", memberId);
 		}
 		
-		//마이페이지 투어신청 목록 (하우스정보)가져오기
-		public MyRoomGuestDTO myTourHouse(String memberId) {
-			return sqlSession.selectOne("Member.myTourHouse", memberId);
-		}
-		
-		//마이페이지 투어신청 목록 (룸 정보)가져오기
-		public MyRoomGuestDTO myTourHouseRoom(String memberId) {
-			return sqlSession.selectOne("Member.myTourHouseRoom", memberId);
-		}
-		
-		//마이페이지 리뷰
-		public void reviewUpdate(RoomGuestVO room) {
-			sqlSession.update("Member.reviewUpdate", room);
-		}
-	
-		//일반 회원 가입자수
-		public int nMemberCount() {
-			return sqlSession.selectOne("Member.nMemberCount");
-		}
-		
-		//호스트 회원 가입자수
-		public int hMemberCount() {
-			return sqlSession.selectOne("Member.hMemberCount");
-		}
-
-		//총 리뷰 목록
-		public List<MyRoomGuestDTO> totalReviewList() {
-			return sqlSession.selectList("Member.totalReviewList");
-		}
-		
-		//마이페이지 리뷰리스트 가져오기
-		public RoomGuestVO reviewList(String memberId) {
-			return sqlSession.selectOne("Member.reviewList", memberId);
-		}
-		
-		//마이페이지 문의하기 목록
-		public List<InquiryVO> getQuestion(String memberId ) {
-			return sqlSession.selectList("Member.getQuestion", memberId);
-		}
-		
-		//리뷰삭제
-        public void reviewDelete(String memberId) {
-            sqlSession.update("Member.reviewDelete",memberId);
-        }
-        
-        //비밀번호 찾기 아이디,폰 번호
-        public int findPwCount(MemberVO member) {
-        	return sqlSession.selectOne("Member.findPwCount", member);
-        }
-		
-	
 		
 		
 }

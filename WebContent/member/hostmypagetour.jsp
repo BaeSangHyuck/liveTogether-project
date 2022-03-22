@@ -40,22 +40,20 @@
 
 
 		<div class="mypage">
+
 			<div class="mypagetool">
 				<ul class="mypagebar">
 					<li class="num1"><a
-						href="${pageContext.request.contextPath}/member/HostMyPageLookOk.me">내
+						href="${pageContext.request.contextPath}/member/MemberMypageOk.me">내
 							정보조회</a></li>
 					<li class="num2"><a
-						href="${pageContext.request.contextPath}/member/HostMyPageOk.me">내
+						href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내
 							정보수정</a></li>
 					<li class="num3"><a
 						href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">진행사항</a>
 					</li>
 					<li class="num4"><a
 						href="${pageContext.request.contextPath}/member/HostMemberListOk.me">입주자목록</a>
-					</li>
-					<li class="num5"><a
-						href="${pageContext.request.contextPath}/house/HostForSaleListOk.ho">하우스관리</a>
 					</li>
 				</ul>
 			</div>
@@ -68,32 +66,16 @@
 							<div class="info-title">진행사항</div>
 							<div class="book-list">
 								<div class="process active">
-									<div class="process-title">
-										<a
-											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">투어신청
-											목록</a>
-									</div>
+									<div class="process-title"><a href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">투어신청 목록</a></div>
 								</div>
 								<div class="process ">
-									<div class="process-title">
-										<a
-											href="${pageContext.request.contextPath}/member/HostMyPageReadyOk.me">투어확정
-											목록</a>
-									</div>
+									<div class="process-title"><a href="${pageContext.request.contextPath}/member/HostMyPageReadyOk.me">투어확정 목록</a></div>
 								</div>
 								<div class="process ">
-									<div class="process-title">
-										<a
-											href="${pageContext.request.contextPath}/member/HostMyPageCompleteOk.me">입주예정
-											목록</a>
-									</div>
+									<div class="process-title"><a href="${pageContext.request.contextPath}/member/HostMyPageCompleteOk.me">입주예정 목록</a></div>
 								</div>
 								<div class="process ">
-									<div class="process-title">
-										<a
-											href="${pageContext.request.contextPath}/member/HostRejectListOk.me">거절
-											목록</a>
-									</div>
+									<div class="process-title"><a href="${pageContext.request.contextPath}/member/HostRejectListOk.me">거절 목록</a></div>
 								</div>
 							</div>
 						</div>
@@ -103,112 +85,92 @@
 								<table>
 									<thead>
 										<tr>
-											<th class="th1">방 번호</th>
-											<th class="th2">방 이름</th>
-											<th class="th3">타입</th>
-											<th class="th4">방 성별</th>
-											<th class="th5">신청인</th>
-											<th class="th6">성별</th>
-											<th class="th7">전화번호</th>
-											<th class="th8">승인 버튼</th>
+											<th>방 번호</th>
+											<th>이름</th>
+											<th>타입</th>
+											<th>방 성별 타입</th>
+											<th>신청인</th>
+											<th>신청인 성별</th>
+											<th>전화번호</th>
+											<th>승인 버튼</th>
 										</tr>
 									</thead>
 									<tbody>
 										<c:choose>
 											<c:when test="${roomList != null and fn:length(roomList) >0}">
 												<c:forEach var="room" items="${roomList}">
-													<tr>
-														<td class="td1">${room.getHouseNumber()}</td>
-														<td class="td2">${room.getRoomName()}</td>
-														<td class="td3">${room.getRoomType()}</td>
-														<c:choose>
-															<c:when test="${room.getRoomGender() eq 'm'}">
-																<td class="td4">남성전용</td>
-															</c:when>
-															<c:otherwise>
-																<td class="td4">여성전용</td>
-															</c:otherwise>
-														</c:choose>
-														<td class="td5">${room.getMemberName()}</td>
-														<c:choose>
-															<c:when test="${room.getMemberGender() eq 'm'}">
-																<td class="td6">남</td>
-															</c:when>
-															<c:otherwise>
-																<td class="td6">여</td>
-															</c:otherwise>
-														</c:choose>
-														<td class="td7">${room.getMemberPhone()}</td>
-														<td class="td8"><button
-																onclick="location.href='${pageContext.request.contextPath}/member/HostStatusFirstOk.me?houseNumber=${room.getHouseNumber()}'">수락</button>
-															<button
-																onclick="location.href='${pageContext.request.contextPath}/member/HostDeleteOk.me?houseNumber=${room.getHouseNumber()}'">거절</button></td>
-													</tr>
-												</c:forEach>
+														<tr>
+															<td>${room.getHouseNumber()}</td>
+															<td>${room.getRoomName()}</td>
+															<td>${room.getRoomType()}</td>
+															<td>${room.getRoomGender()}</td>
+															<td>${room.getMemberName()}</td>
+															<td>${room.getMemberGender()}</td>
+															<td>${room.getMemberPhone()}</td>
+															<td><button onclick="location.href='${pageContext.request.contextPath}/member/HostStatusFirstOk.me?houseNumber=${room.getHouseNumber()}'">수락</button>
+																<button onclick="location.href='${pageContext.request.contextPath}/member/HostDeleteOk.me?houseNumber=${room.getHouseNumber()}'">거절</button></td>
+														</tr>
+													</c:forEach>
 											</c:when>
-											<c:otherwise>
-												<tr class="anotherTr">
-													<td>목록이 없습니다.</td>
-												</tr>
-											</c:otherwise>
+											<c:otherwise><tr><td>목록이 없습니다.</td></tr></c:otherwise>
 										</c:choose>
 									</tbody>
 								</table>
 								<!-- 페이징 처리 -->
-								<table id="paging">
-									<tr>
+				<table id="paging">
+					<tr>
+						<c:choose>
+							<c:when test="${search != null}">
+								<td><c:if test="${startPage > 1}">
+										<a
+											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=1">&lt;&lt;&nbsp;&nbsp;</a>
+										<a
+											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${startPage -1}">&lt;&nbsp;&nbsp;</a>
+									</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
 										<c:choose>
-											<c:when test="${search != null}">
-												<td><c:if test="${startPage > 1}">
-														<a
-															href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=1">&lt;&lt;&nbsp;&nbsp;</a>
-														<a
-															href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${startPage -1}">&lt;&nbsp;&nbsp;</a>
-													</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
-														<c:choose>
-															<c:when test="${i eq page}">
-																<c:out value="${i}" />&nbsp;&nbsp;
+											<c:when test="${i eq page}">
+												<c:out value="${i}" />&nbsp;&nbsp;
 								</c:when>
-															<c:otherwise>
-																<a
-																	href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${i}"><c:out
-																		value="${i}" /></a>&nbsp;&nbsp;
-								</c:otherwise>
-														</c:choose>
-													</c:forEach> <c:if test="${endPage < realEndPage}">
-														<a
-															href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${endPage + 1}">&nbsp;&nbsp;&gt;</a>
-														<a
-															href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${realEndPage}">&nbsp;&nbsp;&gt;&gt;</a>
-													</c:if></td>
-											</c:when>
 											<c:otherwise>
-												<td><c:if test="${startPage > 1}">
-														<a
-															href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=1">&lt;&lt;&nbsp;&nbsp;</a>
-														<a
-															href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${startPage -1}">&lt;&nbsp;&nbsp;</a>
-													</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
-														<c:choose>
-															<c:when test="${i eq page}">
-																<c:out value="${i}" />&nbsp;&nbsp;
-								</c:when>
-															<c:otherwise>
-																<a
-																	href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${i}"><c:out
-																		value="${i}" /></a>&nbsp;&nbsp;
+												<a
+													href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${i}"><c:out
+														value="${i}" /></a>&nbsp;&nbsp;
 								</c:otherwise>
-														</c:choose>
-													</c:forEach> <c:if test="${endPage < realEndPage}">
-														<a
-															href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${endPage + 1}">&nbsp;&nbsp;&gt;</a>
-														<a
-															href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${realEndPage}">&nbsp;&nbsp;&gt;&gt;</a>
-													</c:if></td>
-											</c:otherwise>
 										</c:choose>
-									</tr>
-								</table>
+									</c:forEach> <c:if test="${endPage < realEndPage}">
+										<a
+											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${endPage + 1}">&nbsp;&nbsp;&gt;</a>
+										<a
+											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${realEndPage}">&nbsp;&nbsp;&gt;&gt;</a>
+									</c:if></td>
+							</c:when>
+							<c:otherwise>
+								<td><c:if test="${startPage > 1}">
+										<a
+											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=1">&lt;&lt;&nbsp;&nbsp;</a>
+										<a
+											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${startPage -1}">&lt;&nbsp;&nbsp;</a>
+									</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
+										<c:choose>
+											<c:when test="${i eq page}">
+												<c:out value="${i}" />&nbsp;&nbsp;
+								</c:when>
+											<c:otherwise>
+												<a
+													href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${i}"><c:out
+														value="${i}" /></a>&nbsp;&nbsp;
+								</c:otherwise>
+										</c:choose>
+									</c:forEach> <c:if test="${endPage < realEndPage}">
+										<a
+											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${endPage + 1}">&nbsp;&nbsp;&gt;</a>
+										<a
+											href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me?page=${realEndPage}">&nbsp;&nbsp;&gt;&gt;</a>
+									</c:if></td>
+							</c:otherwise>
+						</c:choose>
+					</tr>
+				</table>
 							</div>
 						</div>
 					</div>

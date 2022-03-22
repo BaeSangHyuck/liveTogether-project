@@ -13,11 +13,6 @@
 		<typeAlias type="com.liveTogether.app.board.vo.FilesVO" alias="filesVO"/>
 		<typeAlias type="com.liveTogether.app.board.vo.BoardDTO" alias="boardDTO"/>
 		<typeAlias type="com.liveTogether.app.house.vo.HouseFilterDTO" alias="filterDTO"/>
-		<typeAlias type="com.liveTogether.app.member.vo.MyRoomGuestDTO" alias="myRoomGuestDTO"/>
-		<typeAlias type="com.liveTogether.app.member.vo.RoomGuestVO" alias="roomGuestVO"/>
-		<typeAlias type="com.liveTogether.app.house.vo.HouseMemberDTO" alias="houseMemberDTO"/>
-		<typeAlias type="com.liveTogether.app.board.vo.InquiryVO" alias="inquiryVO"/>
-		
 	</typeAliases>
 
 	<environments default="development">

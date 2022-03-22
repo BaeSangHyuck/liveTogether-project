@@ -7,7 +7,6 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.liveTogether.app.house.vo.HouseDTO;
 import com.liveTogether.app.house.vo.HouseFileVO;
 import com.liveTogether.mybatis.config.MybatisConfig;
 import com.oreilly.servlet.MultipartRequest;
@@ -52,29 +51,24 @@ public class HouseFileDAO {
 			insertHF(file);
 		}
 	}
-	
 	//방 사진만
 		public List<HouseFileVO> getRoomImg(Map<String, Integer> house){
 			return sqlSession.selectList("houseFiles.getRoomImg", house);
 		}
-		
 
-
-	//하우스 전체 사진 가져오기
+	//첨부파일 가져오기
 	public List<HouseFileVO> getHouseImg(int houseNumber){
 		return sqlSession.selectList("houseFiles.getHouseImg", houseNumber);
 	}
-	
-	
-	//하우스 사진 삭제
-	public void delete(int houseNumber) {
-		sqlSession.delete("houseFiles.delete", houseNumber);
-	}
-	
 
 	
 	
 	
+//	//첨부파일 삭제
+//	public void delete(int houseNumber) {
+//		sqlSession.delete("Files.delete", houseNumber);
+//	}
+//	
 	
 	
 }

@@ -21,7 +21,7 @@ public class MemberLoginOk implements Action {
 		MemberDAO dao = new MemberDAO();
 		MemberVO vo= new MemberVO();
 		String memberType=null;
-		String memberId = null; 
+		String memberId=null; 
 		String memberName=null; 
 		ActionForward af = new ActionForward();
 		HttpSession session = req.getSession();
@@ -30,13 +30,14 @@ public class MemberLoginOk implements Action {
 		loginMap.put("memberPw", req.getParameter("memberPw"));
 		
 		vo = dao.login(loginMap);
-		if(vo == null) { //로그인 실패
+		memberId = vo.getMemberId();
+		memberType=vo.getMemberType();
+		memberName=vo.getMemberName();
+		
+		if(memberId == null) {//로그인 실패
 			af.setRedirect(false);
 			af.setPath("/member/MemberLogin.me?code=" + memberId);
 		}else {//로그인 성공
-			memberId = vo.getMemberId();
-			memberType=vo.getMemberType();
-			memberName=vo.getMemberName();
 			session.setAttribute("memberId", memberId);
 			session.setAttribute("memberType", memberType);
 			session.setAttribute("memberName", memberName);

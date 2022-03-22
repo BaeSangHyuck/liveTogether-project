@@ -13,25 +13,7 @@
 <body>
 	<c:set var="houseCount" value="${houseCount}" />
 	<c:set var="waitCount" value="${waitCount}" />
-	<c:set var="nMemberCount" value="${nMemberCount}"/>
-	<c:set var="hMemberCount" value="${hMemberCount}"/>
-	<c:set var="tourCount" value="${tourCount}"/>
-	<c:set var="waitResidentCount" value="${waitResidentCount}"/>
-	<c:set var="residentCount" value="${residentCount}"/>
-	<c:set var="roomCount" value="${roomCount}"/>
-	<c:set var="fiveReviewCount" value="${fiveReviewCount}"/>
-	<c:set var="fourReviewCount" value="${fourReviewCount}"/>
-	<c:set var="threeReviewCount" value="${threeReviewCount}"/>
-	<c:set var="twoReviewCount" value="${twoReviewCount}"/>
-	<c:set var="oneReviewCount" value="${oneReviewCount}"/>
-	<c:set var="reviewCount" value="${reviewCount}"/>
-	
-	
-	
 	<jsp:include page="../fix/header.jsp" />
-	
-	
-	
 	<div id="admin-whole-wrapper">
 		<div id="navigation">
 			<div id="padding-div">
@@ -161,13 +143,11 @@
 								<div id="member-second-half">
 									<div id="member-second-first-div">
 										<div id="member-second-first-first-span" class="left-span">
-											<span><a
-													href="${pageContext.request.contextPath}/house/AdminStandByOk.ho">승인 대기중인 방</a></span>
+											<span>승인 대기중인 방</span>
 										</div>
 										<div class="flex">
 											<div id="member-second-first-second-span">
-												<span class="data"><a
-													href="${pageContext.request.contextPath}/house/AdminStandByOk.ho">${waitCount}</a></span>
+												<span class="data"><a href="${pageContext.request.contextPath}/admin/adminStandBy.jsp">${waitCount}</a></span>
 											</div>
 											<div id="member-second-first-third-span">
 												<span>건</span><br>
@@ -177,13 +157,11 @@
 									<div id="hr-tag2"></div>
 									<div id="member-second-second-div">
 										<div id="member-second-second-first-span" class="left-span">
-											<span><a
-													href="${pageContext.request.contextPath}/house/AdminDetailOk.ho">현재 등록된 방</a></span>
+											<span>현재 등록된 방</span>
 										</div>
 										<div class="flex">
 											<div id="member-second-second-second-span">
-												<span class="data"><a
-													href="${pageContext.request.contextPath}/house/AdminDetailOk.ho">${houseCount}</a></span>
+												<span class="data"><a href="${pageContext.request.contextPath}/house/AdminDetailOk.ho">0</a></span>
 											</div>
 											<div id="member-second-second-third-span">
 												<span>건</span><br>
@@ -197,8 +175,7 @@
 										</div>
 										<div class="flex">
 											<div id="member-second-second-second-span">
-												<span class="data"><a
-													href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">0</a></span>
+												<span class="data"><a href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">0</a></span>
 											</div>
 											<div id="member-second-second-third-span">
 												<span>건</span><br>
@@ -209,40 +186,37 @@
 							</div>
 						</div>
 					</div>
-					
-					
-					
 					<div id="secondBox">
-						<p class="header-p">회원 현황</p>
+						<p class="header-p">회원관리</p>
 						<div id="hr-tag"></div>
 						<div id="guest-host-member-wrapper">
-							<!-- <div id="guest-host-div">
+							<div id="guest-host-div">
 								<div id="guest-p">게스트</div>
 								<div id="host-p">호스트</div>
-							</div> -->
+							</div>
 							<div id="member-wrapper">
 								<div id="member-first-half">
 									<div id="member-first-first-div">
 										<div id="member-first-first-first-span" class="left-span">
-											<span>게스트 가입자</span>
+											<span>예정된 계약 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-first-first-second-span">
-												<span class="data">${nMemberCount}</span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-first-first-third-span">
-												<span>명</span><br>
+												<span>건</span><br>
 											</div>
 										</div>
 									</div>
 									<div id="hr-tag2"></div>
 									<div id="member-first-second-div">
 										<div id="member-first-second-first-span" class="left-span">
-											<span>투어 신청</span>
+											<span>예정된 해지 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-first-second-second-span">
-												<span class="data">${tourCount}</span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-first-second-third-span">
 												<span>건</span><br>
@@ -252,14 +226,14 @@
 									<div id="hr-tag2"></div>
 									<div id="member-first-third-div">
 										<div id="member-first-third-first-span" class="left-span">
-											<span>입주자</span>
+											<span>답변대기 문의 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-first-third-second-span">
-												<span class="data">${residentCount}</span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-first-third-third-span">
-												<span>명</span><br>
+												<span>건</span><br>
 											</div>
 										</div>
 									</div>
@@ -267,42 +241,42 @@
 								<div id="member-second-half">
 									<div id="member-second-first-div">
 										<div id="member-second-first-first-span" class="left-span">
-											<span>호스트 가입자</span>
+											<span>계약 예정 방 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-second-first-second-span">
-												<span class="data">${hMemberCount}</span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-second-first-third-span">
-												<span>명</span><br>
+												<span>건</span><br>
 											</div>
 										</div>
 									</div>
 									<div id="hr-tag2"></div>
 									<div id="member-second-second-div">
 										<div id="member-second-second-first-span" class="left-span">
-											<span>입주 대기자</span>
+											<span>계약 해지 예정 방 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-second-second-second-span">
-												<span class="data">${waitResidentCount}</span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-second-second-third-span">
-												<span>명</span><br>
+												<span>건</span><br>
 											</div>
 										</div>
 									</div>
 									<div id="hr-tag2"></div>
 									<div id="member-second-third-div">
 										<div id="member-second-third-first-span" class="left-span">
-											<span>모든 방 수</span>
+											<span>답변대기 문의 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-second-third-second-span">
-												<span class="data">${roomCount}</span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-second-third-third-span">
-												<span>개</span><br>
+												<span>건</span><br>
 											</div>
 										</div>
 									</div>
@@ -316,17 +290,17 @@
 
 				<div class="two-wrapper2">
 					<div id="thirdBox">
-						<p class="header-p">리뷰 현황</p>
+						<p class="header-p">리뷰 관리</p>
 						<div id="hr-tag"></div>
 						<div class="review-whole-wrapper">
 							<div class="review-wrapper1">
 								<div class="review-span-wrapper">
 									<div id="review-first-first-first-span" class="left-span">
-										<span>★★★★★</span>
+										<span>새로 작성된 리뷰</span>
 									</div>
 									<div class="flex">
 										<div id="review-first-first-second-span">
-											<span class="data">${fiveReviewCount}</span>
+											<span class="data">0</span>
 										</div>
 										<div id="review-first-first-third-span">
 											<span>건</span><br>
@@ -336,11 +310,11 @@
 								<div id="hr-tag4"></div>
 								<div class="review-span-wrapper">
 									<div id="review-first-first-first-span" class="left-span">
-										<span>★★★☆☆</span>
+										<span>평점 낮은 리뷰</span>
 									</div>
 									<div class="flex">
 										<div id="review-first-first-second-span">
-											<span class="data">${threeReviewCount}</span>
+											<span class="data">0</span>
 										</div>
 										<div id="review-first-first-third-span">
 											<span>건</span><br>
@@ -350,11 +324,11 @@
 								<div id="hr-tag4"></div>
 								<div class="review-span-wrapper">
 									<div id="review-first-first-first-span" class="left-span">
-										<span>★☆☆☆☆</span>
+										<span>리뷰 이벤트</span>
 									</div>
 									<div class="flex">
 										<div id="review-first-first-second-span">
-											<span class="data">${oneReviewCount}</span>
+											<span class="data">0</span>
 										</div>
 										<div id="review-first-first-third-span">
 											<span>건</span><br>
@@ -363,56 +337,17 @@
 								</div>
 							</div>
 							<div class="review-wrapper2">
-
-								<div class="review-span-wrapper">
-									<div id="review-first-first-first-span" class="left-span">
-										<span>★★★★☆</span>
-									</div>
-									<div class="flex">
-										<div id="review-first-first-second-span">
-											<span class="data">${fourReviewCount}</span>
-										</div>
-										<div id="review-first-first-third-span">
-											<span>건</span><br>
-										</div>
-									</div>
-								</div>
-								<div id="hr-tag4"></div>
-								<div class="review-span-wrapper">
-									<div id="review-first-first-first-span" class="left-span">
-										<span>★★☆☆☆</span>
-									</div>
-									<div class="flex">
-										<div id="review-first-first-second-span">
-											<span class="data">${twoReviewCount}</span>
-										</div>
-										<div id="review-first-first-third-span">
-											<span>건</span><br>
-										</div>
-									</div>
-								</div>
-								<div id="hr-tag4"></div>
-								<div class="review-span-wrapper">
-									<div id="review-first-first-first-span" class="left-span">
-										<span><a href="${pageContext.request.contextPath}/house/AdminReviewList.ho">전체 리뷰</a></span>
-									</div>
-									<div class="flex">
-										<div id="review-first-first-second-span">
-											<span class="data"><a href="${pageContext.request.contextPath}/house/AdminReviewList.ho">${reviewCount}</a></span>
-										</div>
-										<div id="review-first-first-third-span">
-											<span>건</span><br>
+								<div class="review-half-right">
+									<div class="img">
+										<div class="img-wrap">
+											<img src="../images/exclamationMark.png" alt="">
+											<p id="underMaintenance">리뷰가 없습니다.</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					
-					
-					
-					
-					
 					<div id="fourthBox">
 						<p class="header-p">스태프 관리</p>
 						<div id="hr-tag"></div>
@@ -428,22 +363,20 @@
 						</div>
 					</div>
 				</div>
-				
-				
 				<div class="two-wrapper3">
 					<div id="fifthBox">
-						<p class="header-p">문의 사항</p>
+						<p class="header-p">누적 통계</p>
 						<div id="hr-tag"></div>
 						<div id="guest-host-member-wrapper">
 							<div id="chart-wrapper">
 								<div id="member-first-half">
 									<div id="member-first-first-div">
 										<div id="member-first-first-first-span" class="left-span">
-											<span><a href="${pageContext.request.contextPath}/board/InquiryAdminOk.bo">총 문의 수</a></span>
+											<span>총 가입 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-first-first-second-span">
-												<span class="data"><a href="${pageContext.request.contextPath}/board/InquiryAdminOk.bo">${inquiryCount}</a></span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-first-first-third-span">
 												<span>건</span><br>
@@ -453,13 +386,27 @@
 									<div id="hr-tag2"></div>
 									<div id="member-first-second-div">
 										<div id="member-first-second-first-span" class="left-span">
-											<span><a href="${pageContext.request.contextPath}/board/InquiryAdminOneOk.bo">총 답변 수</a></span>
+											<span>총 계약 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-first-second-second-span">
-												<span class="data"><a href="${pageContext.request.contextPath}/board/InquiryAdminOneOk.bo">${inquiryOneCount}</a></span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-first-second-third-span">
+												<span>건</span><br>
+											</div>
+										</div>
+									</div>
+									<div id="hr-tag2"></div>
+									<div id="member-first-third-div">
+										<div id="member-first-third-first-span" class="left-span">
+											<span>총 셰어하우스 수</span>
+										</div>
+										<div class="flex">
+											<div id="member-first-third-second-span">
+												<span class="data">0</span>
+											</div>
+											<div id="member-first-third-third-span">
 												<span>건</span><br>
 											</div>
 										</div>
@@ -468,11 +415,11 @@
 								<div id="member-second-half">
 									<div id="member-second-first-div">
 										<div id="member-second-first-first-span" class="left-span">
-											<span><a href="${pageContext.request.contextPath}/board/InquiryAdminOneOk.bo">답변 완료</a></span>
+											<span>총 문의 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-second-first-second-span">
-												<span class="data"><a href="${pageContext.request.contextPath}/board/InquiryAdminOneOk.bo">${inquiryOneCount}</a></span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-second-first-third-span">
 												<span>건</span><br>
@@ -482,11 +429,11 @@
 									<div id="hr-tag2"></div>
 									<div id="member-second-second-div">
 										<div id="member-second-second-first-span" class="left-span">
-											<span><a href="${pageContext.request.contextPath}/board/InquiryAdminZeroOk.bo">답변 필요</a></span>
+											<span>총 후기 수</span>
 										</div>
 										<div class="flex">
 											<div id="member-second-second-second-span">
-												<span class="data"><a href="${pageContext.request.contextPath}/board/InquiryAdminZeroOk.bo">${inquiryZeroCount}</a></span>
+												<span class="data">0</span>
 											</div>
 											<div id="member-second-second-third-span">
 												<span>건</span><br>
@@ -497,14 +444,9 @@
 							</div>
 						</div>
 					</div>
-					
-					
-					
-					
-					
 					<div id="sixthBox">
 						<div id="banner-img">
-							<img src="../images/adminBanner.png" alt="">
+							<img src="../images/slogun.png" alt="">
 						</div>
 					</div>
 				</div>

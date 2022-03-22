@@ -226,7 +226,7 @@ section#one ul#content-wrap {
 	justify-content: space-evenly;
 	list-style: none;
 	margin-bottom: 20px;
-	width: 200%;
+	width: 165%;
 }
 
 section#one ul.ul-content.event {
@@ -581,5 +581,4 @@ section#banner div#slide-wrap-mobile {
 		text-align: center;
 		font-size: 0.79rem;
 	}
-	
 }

@@ -21,55 +21,63 @@
 				<p id="second-p">아래 내용으로 문의 주시면 검토하여 답변드립니다.</p>
 				<br>
 				<div id="hr-tag"></div>
-			<form action="${pageContext.request.contextPath}/board/InquiryDeliveryOk.bo" id="inquiryForm">
-				<div class="inquiryIdWrapper">
-					<div class="inquiryId">${memberId}</div>
+			<form action="">
+				<div>
+					<input type="text" id="first-input" placeholder="이름" autocomplete="off">
 				</div>
-				<div class="inquiryPhoneWrapper">
-					<div class="inquiryPhone">${memberPhone}</div>
+				<div>
+					<input type="text" id="second-input" placeholder="연락처" autocomplete="off">
+				</div>
+				<div>
+					<input type="text" id="third-input" placeholder="건물 주소" autocomplete="off">
 				</div>
 				<!-- 번호 참고하도록 함. (강사님 피드백)-->
 				<div>
-					<input type="text" id="bonus-input" placeholder="참고 호점(선택)" autocomplete="off" name="houseNumber">
+					<input type="text" id="bonus-input" placeholder="참고 호점(선택)" autocomplete="off">
 				</div>
 				<br>
 				<p id="third-p">집 유형*</p>
 				<div class="div-wrap">
 				<div>
 				<label class="first-label">
-				<input type="radio" name="houseType" value="a"> 아파트
+				<input type="radio" name="house"> 아파트
 				</label>
 				</div>
 				<div>
 				<label class="first-label">
-				<input type="radio" name="houseType" value="v"> 빌라
+				<input type="radio" name="house"> 단독
 				</label>
 				</div>
 				<div>
 				<label class="first-label">
-				<input type="radio" name="houseType" value="d"> 단독주택
+				<input type="radio" name="house"> 다가구
 				</label>
 				</div>
 				<div>
 				<label class="first-label">
-				<input type="radio" name="houseType" value="o"> 기타
+				<input type="radio" name="house"> 다세대
+				</label>
+				</div>
+				<div>
+				<label class="first-label">
+				<input type="radio" name="house"> 기타
 				</label>
 				</div>
 				</div>
 				<br>
-					<p id="fourth-p">평수 및 구조</p>
-					<input type="text" id="fourth-input" placeholder="ex. 50평, 방3, 화장실2 (선택 사항)" autocomplete="off" name="typeOption">
+					<p id="fourth-p">평수 및 구조*</p>
+					<input type="text" id="fourth-input" placeholder="ex. 50평, 방3, 화장실2" autocomplete="off">
 				<br><br><br>
-				<p id="fifth-p">요청사항*</p>
-				<textarea name="inquiryContent" id="content" rows="7"></textarea>
+				<p id="fifth-p">요청사항</p>
+				<textarea name="" id="content" rows="7"></textarea>
 				<br><br><br>
 				<div id="final-div">
 				<label id="second-label">
-				<input type="checkbox" id="first-checkbox" name="agree"> 개인정보 제공 이용약관에 동의합니다.
+				<input type="checkbox" id="first-checkbox"> 개인정보 제공 이용약관에 동의합니다.
 				</label>
 				</div>
 				<br><br><br>
-				<button type="button" id="button-submit" onclick="send()">문의하기</button>
+				<button id="button-submit">문의하기</button>
 			</form>
 			</div>
 				<br><br><br><br><br><br>

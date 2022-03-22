@@ -54,9 +54,6 @@ public class HouseFrontController extends HttpServlet {
 			af.setRedirect(false);
 			af.setPath("/house/houseDetail.jsp");
 			break;
-		case "/house/AdminReviewList.ho":
-			af = new AdminReviewList().execute(req, resp);
-			break;
 		case "/house/HousePositionOk.ho":
 			af = new HousePositionOk().execute(req, resp);
 			break;
@@ -68,41 +65,12 @@ public class HouseFrontController extends HttpServlet {
 		case "/house/HouseRegister.ho":
 			af = new HouseRegister().execute(req, resp);
 			break;
-		case "/house/FindRoomOk.ho":
-			af = new FindRoomOk().execute(req, resp);
-			break;
 		case "/house/HouseRegist.ho":
 			af = new ActionForward();
 			af.setRedirect(false);
 			af.setPath("/house/houseRegister.jsp");
 			break;
-		case "/house/AdminStandByOk.ho":
-			af = new AdminStandByOk().execute(req, resp);
-			break;
-		case "/house/AdminUpdateStatusOk.ho":
-			af = new AdminUpdateStatusOk().execute(req, resp);
-			break;
-		case "/house/AdminDeleteStandByOk.ho":
-			af = new AdminDeleteStandByOk().execute(req, resp);
-			break;
-		case "/house/HouseRegisterUpdate.ho":
-			af = new HouseRegisterUpdate().execute(req, resp);
-			break;
-		case "/house/HouseRegisterUpdateOk.ho":
-			af = new HouseRegisterUpdateOk().execute(req, resp);
-			break;
-		case "/house/AdminCheckDeleteOk.ho":
-			af = new AdminCheckDeleteOk().execute(req, resp);
-			break;
-		case "/house/AdminCheckStandByDeleteOk.ho":
-			af = new AdminCheckStandByDeleteOk().execute(req, resp);
-			break;
-		case "/house/HostForSaleListOk.ho":
-			af = new HostForSaleListOk().execute(req, resp);
-			break;
-		case "/house/MainBannerOk.ho":
-			af = new MainBannerOk().execute(req, resp);
-			break;
+			
 		}
 
 		// 분기 별 결과를 af에 담았다면 여기로 내려온다.

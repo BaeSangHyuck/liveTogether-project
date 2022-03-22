@@ -1,6 +1,6 @@
-//fd5a829552ba5aafe83249b169e62ba9
+/*//fd5a829552ba5aafe83249b169e62ba9
 
-		/*Kakao.init("fd5a829552ba5aafe83249b169e62ba9");
+		Kakao.init("fd5a829552ba5aafe83249b169e62ba9");
 		Kakao.isInitialized();
 
 		function kakaoLogin() {
@@ -226,11 +226,7 @@
 			return unescape(cookieValue);
 		}
 		});*/
-function enterLogin(){
-		if(window.event.keyCode == 13){
-			loginForm.submit();
-		}
-	}
+
 
 $(document).ready(function() {
     var memberInputId = getCookie("memberInputId");

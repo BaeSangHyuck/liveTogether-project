@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.liveTogether.action.Action;
 import com.liveTogether.action.ActionForward;
@@ -17,8 +16,6 @@ public class HostRejectListOk implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		HttpSession session = req.getSession();
-		String memberId = (String) session.getAttribute("memberId");
 		HashMap<String, Integer> roomMap = new HashMap<>();
 		ActionForward af = new ActionForward();
 		MemberDAO dao = new MemberDAO();
@@ -71,8 +68,7 @@ public class HostRejectListOk implements Action{
 			dto.setMemberPhone(dao.selectGuestAllFifth(roomMap).get(i).getMemberPhone());
 			alDTO.add(dto);
 		}
-		
-		req.setAttribute("member", dao.getInfo(memberId));
+
 		req.setAttribute("roomList", alDTO);
 		req.setAttribute("page", page);
 		req.setAttribute("startPage", startPage);

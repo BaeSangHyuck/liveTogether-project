@@ -15,12 +15,11 @@
 	href="${pageContext.request.contextPath}/assets/css/roomDetail.css" />
 </head>
 <body>
-	<c:set var="member" value="${member}" />
 	<c:set var="house" value="${house}" />
 	<c:set var="room" value="${room}" />
-	<c:set var="roomguest" value="${roomguest}" />
+	<c:set var="member" value="${member}" />
 	<c:set var="houseRoomImg" value="${houseRoomImg}" />
-	<c:set var="houseMapImg" value="${houseMapImg}" />
+	<c:set var="houseMapImg" value="${houseMapImg}"/>
 
 	<!-- Header -->
 	<jsp:include page="../fix/header.jsp" />
@@ -32,113 +31,38 @@
 		<div id="second-wrap">
 			<section id="zero">
 				<div>
-					<div>
-						<p class="first-ptag">가치하우스 ${house.getHouseNumber()}호점</p>
-						<div class="gradation-div"></div>
-					</div>
-					<div class="go-tour">
-						<a href="#table-wrap" class="goingtour">+ 투어신청</a>
-					</div>
-					<img src="${pageContext.request.contextPath}/images/i.jpg" class="tour-img">
-					<div class="tour-guide">희망지점을 방문해보고 간단한 인터뷰를 진행해보세요!</div>
+					<p class="first-ptag">가치하우스 ${house.getHouseNumber()}호점</p>
+					<div class="gradation-div"></div>
 				</div>
 			</section>
 			<section id="one">
-				<div id="img-total">
-					<div id="main-img">
-						<c:forEach var="house" items="${houseRoomImg}">
-							<div class="main-wrapper">
-								<div class="main-image"
-									style='background-image:url("${pageContext.request.contextPath}/upload/${house.getHousefileName()}")'>
-								</div>
+			<div id="img-total">
+				<div id="main-img">
+				 <c:forEach var="house" items="${houseRoomImg}">
+					<div class="main-wrapper">
+						<img src="${pageContext.request.contextPath}/upload/${house.getHousefileName()}">
+					</div>
+				</c:forEach>		
+				</div>
+				<div id="sub-img">
+				<c:forEach var="house" items="${houseRoomImg}" varStatus="status">
+				 	<c:choose>
+						<c:when test="${status.index eq 0}">
+							<div class="sub-wrapper active">
+								<img src="${pageContext.request.contextPath}/upload/${house.getHousefileName()}">
 							</div>
-						</c:forEach>
-					</div>
-					<div id="sub-img">
-						<c:forEach var="house" items="${houseRoomImg}" varStatus="status">
-							<c:choose>
-								<c:when test="${status.index eq 0}">
-									<div class="sub-wrapper active">
-										<div class="sub-image"
-											style='background-image:url("${pageContext.request.contextPath}/upload/${house.getHousefileName()}")'></div>
-									</div>
-								</c:when>
-								<c:otherwise>
-									<div class="sub-wrapper">
-										<div class="sub-image"
-											style='background-image:url("${pageContext.request.contextPath}/upload/${house.getHousefileName()}")'></div>
-									</div>
-								</c:otherwise>
-							</c:choose>
-						</c:forEach>
-					</div>
+						</c:when>
+						<c:otherwise>
+							<div class="sub-wrapper">
+								<img src="${pageContext.request.contextPath}/upload/${house.getHousefileName()}">
+							</div>
+						</c:otherwise>
+					</c:choose> 				
+				</c:forEach>				
 				</div>
-				<div class="slider prev-btn"></div>
-				<div class="slider next-btn"></div>
-				<div class="review">
-					<div class="guest-review">입주자 리뷰</div>
-					<div class="review-wrap">
-						<c:choose>
-							<c:when test="${roomguest != null and fn:length(roomguest) > 0}">
-								<c:forEach var="roomguest" items="${roomguest}">
-									<div class="review-wrapper">
-										<div class="review-flex">
-											<label class="guestinfo">${roomguest.getMemberNickname()}
-												<span class="bar">|</span><c:choose>
-													<c:when test="${roomguest.getMemberGender() eq 'm'}">(남자)</c:when>
-													<c:otherwise>(여자)</c:otherwise>
-												</c:choose>
-											</label>
-											<div class="star-wrap">
-												<c:choose>
-													<c:when test="${roomguest.getStar() eq '5'}">
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-													</c:when>
-													<c:when test="${roomguest.getStar() eq '4'}">
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star">★</label>
-													</c:when>
-													<c:when test="${roomguest.getStar() eq '3'}">
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star">★</label>
-														<label class="star">★</label>
-													</c:when>
-													<c:when test="${roomguest.getStar() eq '2'}">
-														<label class="star active">★</label>
-														<label class="star active">★</label>
-														<label class="star">★</label>
-														<label class="star">★</label>
-														<label class="star">★</label>
-													</c:when>
-													<c:otherwise>
-														<label class="star active">★</label>
-														<label class="star">★</label>
-														<label class="star">★</label>
-														<label class="star">★</label>
-														<label class="star">★</label>
-													</c:otherwise>
-												</c:choose>
-											</div>
-										</div>
-										<p class="real-review">${roomguest.getReview()}</p>
-									</div>
-								</c:forEach>
-							</c:when>
-							<c:otherwise>
-								<div class="noProfile">아직 입주한 사람이 없습니다</div>
-							</c:otherwise>
-						</c:choose>
-					</div>
-				</div>
+			</div>
+			<div class="slider prev-btn"></div>
+			<div class="slider next-btn"></div>
 			</section>
 
 			<section id="two">
@@ -166,13 +90,19 @@
 													<td>
 														<div class="flex">
 															<c:if test="${house.getOpAircon() eq '1'}">
-																<div>에어컨</div>
+																<div>
+																	에어컨
+																</div>
 															</c:if>
 															<c:if test="${house.getOpCentralHeat() eq '1'}">
-																<div>중앙난방</div>
+																<div>
+																	중앙난방
+																</div>
 															</c:if>
 															<c:if test="${house.getOpLocalHeat() eq '1'}">
-																<div>지역난방</div>
+																<div>
+																	지역난방
+																</div>
 															</c:if>
 														</div>
 
@@ -183,41 +113,63 @@
 													<td>
 														<div class="flex">
 															<c:if test="${house.getOpRefrigerator() eq '1'}">
-																<div>냉장고</div>
+																<div>
+																	냉장고
+																</div>
 															</c:if>
 															<c:if test="${house.getOpWasher() eq '1'}">
-																<div>세탁기</div>
+																<div>
+																	세탁기
+																</div>
 															</c:if>
 															<c:if test="${house.getOpGasrange() eq '1'}">
-																<div>가스레인지</div>
+																<div>
+																	가스레인지
+																</div>
 															</c:if>
 															<c:if test="${house.getOpInduction() eq '1'}">
-																<div>인덕션</div>
+																<div>
+																	인덕션
+																</div>
 															</c:if>
 
 
 															<c:if test="${house.getOpMicrowave() eq '1'}">
-																<div>전자레인지</div>
+																<div>
+																	전자레인지
+																</div>
 															</c:if>
 
 															<c:if test="${house.getOpDesk() eq '1'}">
-																<div>책상</div>
+																<div>
+																	책상
+																</div>
 															</c:if>
 															<c:if test="${house.getOpDoorlock() eq '1'}">
-																<div>도어락</div>
+																<div>
+																	도어락
+																</div>
 															</c:if>
 															<c:if test="${house.getOpBed() eq '1'}">
-																<div>침대</div>
+																<div>
+																	침대
+																</div>
 															</c:if>
 
 															<c:if test="${house.getOpCloset() eq '1'}">
-																<div>옷장</div>
+																<div>
+																	옷장
+																</div>
 															</c:if>
 															<c:if test="${house.getOpShoes() eq '1'}">
-																<div>신발장</div>
+																<div>
+																	신발장
+																</div>
 															</c:if>
 															<c:if test="${house.getOpSink() eq '1'}">
-																<div>싱크대</div>
+																<div>
+																	싱크대
+																</div>
 															</c:if>
 														</div>
 													</td>
@@ -227,13 +179,19 @@
 													<td>
 														<div class="flex">
 															<c:if test="${house.getOpInterphone() eq '1'}">
-																<div>인터폰</div>
+																<div>
+																	인터폰
+																</div>
 															</c:if>
 															<c:if test="${house.getOpWindow() eq '1'}">
-																<div>방범창</div>
+																<div>
+																	방범창
+																</div>
 															</c:if>
 															<c:if test="${house.getOpCctv() eq '1'}">
-																<div>CCTV</div>
+																<div>
+																	CCTV
+																</div>
 															</c:if>
 														</div>
 													</td>
@@ -243,13 +201,19 @@
 													<td>
 														<div class="flex">
 															<c:if test="${house.getOpVeranda() eq '1'}">
-																<div>베란다</div>
+																<div>
+																	베란다
+																</div>
 															</c:if>
 															<c:if test="${house.getOpDelivery() eq '1'}">
-																<div>무인택배함</div>
+																<div>
+																	무인택배함
+																</div>
 															</c:if>
 															<c:if test="${house.getOpFirealarm() eq '1'}">
-																<div>화재경보기</div>
+																<div>
+																	화재경보기
+																</div>
 															</c:if>
 														</div>
 													</td>
@@ -259,13 +223,19 @@
 													<td>
 														<div class="flex">
 															<c:if test="${house.getHouseParking() eq '1'}">
-																<div>주차가능</div>
+																<div>
+																	주차가능
+																</div>
 															</c:if>
 															<c:if test="${house.getHouseElevator() eq '1'}">
-																<div>엘리베이터</div>
+																<div>
+																	엘리베이터
+																</div>
 															</c:if>
 															<c:if test="${house.getHousePet() eq '1'}">
-																<div>반려동물</div>
+																<div>
+																	반려동물
+																</div>
 															</c:if>
 														</div>
 													</td>
@@ -293,8 +263,8 @@
 										<c:when test="${house.getHouseGender() eq 'm' }">남성 전용</c:when>
 										<c:when test="${house.getHouseGender() eq 'w'}">여성 전용</c:when>
 										<c:otherwise>
-                        남녀 공용
-                        </c:otherwise>
+								남녀 공용
+								</c:otherwise>
 									</c:choose>
 								</div>
 							</div>
@@ -323,23 +293,25 @@
 					<legend>방 정보</legend>
 				</fieldset>
 				<div>
-					<div class="roomImg">
+					<div>
 						<img
 							src="${pageContext.request.contextPath}/upload/${houseMapImg}">
 					</div>
 				</div>
-				<div id="table-wrap" class="table-wrap">
+				<div class="table-wrap">
 					<table>
 						<thead>
 							<tr>
 								<th>이름</th>
 								<th>성별</th>
 								<th>타입</th>
-								<th class="delete">면적</th>
+								<th>면적</th>
 								<th>보증금</th>
 								<th>월세</th>
 								<th>입주가능일</th>
 								<th>투어신청</th>
+								<th>입주자 프로필</th>
+
 							</tr>
 						</thead>
 						<tbody>
@@ -349,16 +321,50 @@
 										<tr>
 											<td>${room.getRoomName()}</td>
 											<td><c:choose>
-													<c:when test="${room.getRoomGender() eq 'm'}">남성전용</c:when>
+													<c:when test="${room.getRoomGender() eq 'm' }">남성전용	</c:when>
 													<c:when test="${room.getRoomGender() eq 'w'}">여성전용</c:when>
 												</c:choose></td>
 											<td>${room.getRoomType()}인실</td>
-											<td class="delete">${room.getRoomArea()}m²</td>
+											<td>${room.getRoomArea()}m²</td>
 											<td>${room.getRoomDeposit()}만원</td>
 											<td>${room.getRoomMonthly()}만원</td>
 											<td>${room.getRoomDate()}</td>
 											<td><button class="button-tour">투어신청</button></td>
-										</tr>									
+											<td><button class="button-profile">펼쳐보기</button></td>
+										</tr>
+										<tr class="tr-wrap1">
+											<td colspan="9"><div id="profile">
+													<div class="profile-wrap">
+														<div class="profile">
+															<div class="profile-name">
+																<b>홍만두</b>
+																<p>(남자)</p>
+															</div>
+															<div class="profile-intro">
+																<span>"안녕하세요 저는 착한만두 홍만두입니다. 만찐두빵먹자 친추부탁드립니다."</span>
+															</div>
+														</div>
+														<div class="profile">
+															<div class="profile-name">
+																<b>상냥이</b>
+																<p>(남자)</p>
+															</div>
+															<div class="profile-intro">
+																<span>"안녕하세요 안상냥이 상냥이입니다. 3팀 팀장 배상혁 잘부탁드립니다."</span>
+															</div>
+														</div>
+														<div class="profile">
+															<div class="profile-name">
+																<b>다크준형</b>
+																<p>(남자)</p>
+															</div>
+															<div class="profile-intro">
+																<span>"여러분 코로나 조심하세요. 목이 너무 아파요ㅠㅠ 아프지 마세요 여러분"</span>
+															</div>
+														</div>
+													</div>
+												</div></td>
+										</tr>
 									</c:forEach>
 								</c:when>
 							</c:choose>
@@ -431,12 +437,6 @@
 					<legend>세부 정보</legend>
 				</fieldset>
 				<div id="map" style="width: 100%; height: 350px;"></div>
-				<div class="move-wrapper">
-					<a
-						href="https://www.google.co.kr/maps/@${house.getLatitude()},${house.getLongitude()}z"
-						class="move" target="_blank">${house.getHouseAddress()}
-						${house.getHouseAddressDetail()}</a>
-				</div>
 			</section>
 			<section id="five" class="tab">
 				<fieldset id="five-ex" class="height-fix">
@@ -634,52 +634,48 @@
 	src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
-<script>
-   var contextPath = "${pageContext.request.contextPath}";
-   var houseNumber = "${house.getHouseNumber()}";
-   var room = "${room}";
-   var memberId = "${memberId}";
-   var memberGender = "${member.getMemberGender()}";
-   var memberType = "${memberType}";
-</script>
+<script>var contextPath = "${pageContext.request.contextPath}";
+                var houseNumber = "${house.getHouseNumber()}";
+                var room = "${room}";
+            </script>
 <script src="${pageContext.request.contextPath}/assets/js/roomDetail.js"></script>
 <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=50e9a68c5f5c2321311332ee213eaf6e"></script>
-<script>
-   var latitude = "<c:out value='${house.getLatitude()}'/>";
-   var longitude = "<c:out value='${house.getLongitude()}'/>";
-   
-   var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-   mapOption = {
-      center : new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
-      level : 5
-   // 지도의 확대 레벨
-   };
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=50e9a68c5f5c2321311332ee213eaf6e"></script>
+				<script>
+					var latitude = "<c:out value='${house.getLatitude()}'/>";
+					var longitude = "<c:out value='${house.getLongitude()}'/>";
 
-   var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+					mapOption = {
+						center : new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
+						level : 5
+					// 지도의 확대 레벨
+					};
 
-   /* var markerPosition = new kakao.maps.LatLng(37.530547, 126.940617);
-   
-   // 마커를 생성합니다
-   var marker = new kakao.maps.Marker({
-      position : markerPosition
-   });
-   
-   // 마커가 지도 위에 표시되도록 설정합니다
-   marker.setMap(map); */
+					var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-   var circle = new kakao.maps.Circle({
-      center : new kakao.maps.LatLng(latitude, longitude), // 원의 중심좌표 입니다 
-      radius : 300, // 미터 단위의 원의 반지름입니다 
-      strokeWeight : 5, // 선의 두께입니다 
-      strokeColor : '#013DC4', // 선의 색깔입니다
-      strokeOpacity : 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-      strokeStyle : 'solid', // 선의 스타일 입니다
-      fillColor : '#CFE7FF', // 채우기 색깔입니다
-      fillOpacity : 0.9
-   // 채우기 불투명도 입니다   
-   });
+					/* var markerPosition = new kakao.maps.LatLng(37.530547, 126.940617);
+					
+					// 마커를 생성합니다
+					var marker = new kakao.maps.Marker({
+						position : markerPosition
+					});
+					
+					// 마커가 지도 위에 표시되도록 설정합니다
+					marker.setMap(map); */
 
-   circle.setMap(map);
-</script>
+					var circle = new kakao.maps.Circle({
+						center : new kakao.maps.LatLng(latitude, longitude), // 원의 중심좌표 입니다 
+						radius : 300, // 미터 단위의 원의 반지름입니다 
+						strokeWeight : 5, // 선의 두께입니다 
+						strokeColor : '#013DC4', // 선의 색깔입니다
+						strokeOpacity : 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+						strokeStyle : 'solid', // 선의 스타일 입니다
+						fillColor : '#CFE7FF', // 채우기 색깔입니다
+						fillOpacity : 0.9
+					// 채우기 불투명도 입니다   
+					});
+
+					circle.setMap(map);
+				</script>
 </html>

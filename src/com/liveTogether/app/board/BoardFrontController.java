@@ -52,63 +52,6 @@ public class BoardFrontController extends HttpServlet {
 		case "/board/BoardSearchOk.bo":
 			af = new BoardSearchOk().execute(req, resp);
 			break;
-		case "/board/info.bo":
-			af = new ActionForward();
-			af.setRedirect(false);
-			af.setPath("/board/info.jsp");
-			break;
-		case "/board/InquiryOk.bo":
-			af = new InquiryOk().execute(req, resp);
-			break;
-		case "/board/InquiryDeliveryOk.bo":
-			af = new InquiryDeliveryOk().execute(req, resp);
-			break;
-		case "/board/InquiryAdminOk.bo":
-			af = new InquiryAdminOk().execute(req, resp);
-			break;
-		case "/board/InquiryAdminCheckDeleteOk.bo":
-			af = new InquiryAdminCheckDeleteOk().execute(req, resp);
-			break;
-		case "/board/InquiryDeleteOk.bo":
-			af = new InquiryDeleteOk().execute(req, resp);
-			break;
-		case "/board/InquiryDetailOk.bo":
-			af = new InquiryDetailOk().execute(req, resp);
-			break;
-		case "/board/terms.bo":
-			af = new ActionForward();
-			af.setRedirect(false);
-			af.setPath("/board/terms.jsp");
-			break;
-		case "/board/policy.bo":
-			af = new ActionForward();
-			af.setRedirect(false);
-			af.setPath("/board/policy.jsp");
-			break;
-		case "/board/InquiryReplyUpdateOk.bo":
-	         af = new InquiryReplyUpdateOk().execute(req, resp);
-	         break;
-	      case "/board/InquiryAdminZeroOk.bo":
-	         af = new InquiryAdminZeroOk().execute(req, resp);
-	         break;
-	      case "/board/InquiryAdminCheckDeleteZeroOk.bo":
-	         af = new InquiryAdminCheckDeleteZeroOk().execute(req, resp);
-	         break;
-	      case "/board/InquiryDeleteZeroOk.bo":
-	         af = new InquiryDeleteZeroOk().execute(req, resp);
-	         break;
-	      case "/board/InquiryAdminOneOk.bo":
-	         af = new InquiryAdminOneOk().execute(req, resp);
-	         break;
-	      case "/board/InquiryAdminCheckDeleteOneOk.bo":
-	         af = new InquiryAdminCheckDeleteOneOk().execute(req, resp);
-	         break;
-	      case "/board/InquiryDeleteOneOk.bo":
-	         af = new InquiryDeleteOneOk().execute(req, resp);
-	         break;
-	      case "/board/InquiryReplyDeleteOk.bo":
-	         af = new InquiryReplyDeleteOk().execute(req, resp);
-	         break;
 		}
 		
 		//분기 별 결과를 af에 담았다면 여기로 내려온다.

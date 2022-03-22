@@ -19,7 +19,7 @@ public class AdminDetailOk implements Action {
 		HouseDAO dao = new HouseDAO();
 
 		// 게시글의 전체 갯수
-		int total = dao.getTotalTwo();
+		int total = dao.getTotal();
 
 		// 아래의 삼항 연산자를 깔끔하게 하기 위하여 temp 변수에 리퀘스트 값을 받아준다.
 		String temp = req.getParameter("page");
@@ -53,7 +53,7 @@ public class AdminDetailOk implements Action {
 		houseMap.put("startRow", startRow);
 		houseMap.put("rowCount", rowCount);
 		
-		req.setAttribute("houseList", dao.adminSelectAllTwo(houseMap));
+		req.setAttribute("houseList", dao.selectRealAll(houseMap));
 		req.setAttribute("page", page);
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);

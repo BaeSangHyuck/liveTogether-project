@@ -18,16 +18,6 @@ div.addEventListener("mouseout",function(){
     }
 })
 
-//호스트 아닌 사람이 호스팅하기 눌렀을때
-function a(){
-	alert("호스트계정으로 로그인하셔야 사용가능한 기능입니다.");
-}
-
-//비회원이 문의하기 눌렀을 때
-function b(){
-	alert("로그인 후 이용하실 수 있습니다.")
-}
-
 const button= document.querySelector("label#icon-label");
 const nav= document.querySelector("nav#nav-mobile");
 

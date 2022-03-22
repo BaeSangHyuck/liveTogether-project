@@ -14,11 +14,6 @@ const trade = document.getElementById("trade");
 const build = document.getElementById("build");
 const construction = document.getElementById("construction");
 const offer = document.getElementById("offer");
-const down1 = document.getElementById("down1");
-const down2 = document.getElementById("down2");
-const down3 = document.getElementById("down3");
-const down4 = document.getElementById("down4");
-
 
 leaseBtn.addEventListener("click", function() {
 	for (let i = 0; i < btns.length; i++) {
@@ -34,10 +29,6 @@ leaseBtn.addEventListener("click", function() {
 	build.innerHTML = "주택, 상가건물 등 부동산 전반(토지 제외)"
 	construction.innerHTML = "임차주택의 표시, 계약내용, 특약사항"
 	offer.innerHTML = "보급형(부동산 중개사무소에서 자주 써요)"
-	down1.style.display="block";
-	down2.style.display="none";
-	down3.style.display="none";
-	down4.style.display="none";
 })
 bargainBtn.addEventListener("click", function() {
 	for (let i = 0; i < btns.length; i++) {
@@ -53,10 +44,6 @@ bargainBtn.addEventListener("click", function() {
 	build.innerHTML = "주택, 상가건물 등 부동산 전반(토지 제외)"
 	construction.innerHTML = "임차주택의 표시, 계약내용, 특약사항"
 	offer.innerHTML = "보급형(부동산 중개사무소에서 자주 써요)"
-	down2.style.display="block";
-	down1.style.display="none";
-	down3.style.display="none";
-	down4.style.display="none";
 })
 housingBtn.addEventListener("click", function() {
 	for (let i = 0; i < btns.length; i++) {
@@ -72,10 +59,6 @@ housingBtn.addEventListener("click", function() {
 	build.innerHTML = "오피스텔, 아파트, 원룸, 단독주택등"
 	construction.innerHTML = "임차주택의 표시, 계약내용, 특약사항"
 	offer.innerHTML = "법무부 권장 (분쟁방지를 위해 좀 더 꼼꼼해요)"
-	down3.style.display="block";
-	down1.style.display="none";
-	down2.style.display="none";
-	down4.style.display="none";
 })
 storeBtn.addEventListener("click", function() {
 	for (let i = 0; i < btns.length; i++) {
@@ -91,8 +74,4 @@ storeBtn.addEventListener("click", function() {
 	build.innerHTML = "지하상가, 대형상가, 점포 등"
 	construction.innerHTML = "임차상가건물 표시, 계약내용, 특약사항"
 	offer.innerHTML = "법무부 권장 (분쟁방지를 위해 좀 더 꼼꼼해요)"
-	down4.style.display="block";
-	down1.style.display="none";
-	down2.style.display="none";
-	down3.style.display="none";
 })

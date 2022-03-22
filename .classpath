@@ -20,6 +20,5 @@
 	<classpathentry exported="true" kind="lib" path="C:/Users/SANGSANG/Desktop/빌드패스/mybatis-3.5.9.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/SANGSANG/Desktop/빌드패스/mysql-connector-java-8.0.27.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/SANGSANG/Desktop/빌드패스/standard.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/aigb_0900_bsh/Java/resource/java-sdk v2.2/lib/javaSDK-2.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
