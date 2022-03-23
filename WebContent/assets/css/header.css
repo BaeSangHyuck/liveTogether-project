@@ -203,7 +203,7 @@ nav#nav-mobile {
 		width: 45%;
 	}
 	nav#nav-mobile div#button-wrap input[name="login"] {
-		background: #1187CF;
+		background: #1187CF !important;
 		color: white
 	}
 	nav#nav-mobile div#button-wrap input[name="join"] {

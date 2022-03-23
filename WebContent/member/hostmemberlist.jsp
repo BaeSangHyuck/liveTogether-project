@@ -91,9 +91,23 @@
 														<td>${room.getHouseNumber()}</td>
 														<td>${room.getRoomName()}</td>
 														<td>${room.getRoomType()}</td>
-														<td>${room.getRoomGender()}</td>
+														<c:choose>
+															<c:when test="${room.getRoomGender() eq 'm'}">
+																<td>남성전용</td>
+															</c:when>
+															<c:otherwise>
+																<td>여성전용</td>
+															</c:otherwise>
+														</c:choose>
 														<td>${room.getMemberName()}</td>
-														<td>${room.getMemberGender()}</td>
+														<c:choose>
+															<c:when test="${room.getMemberGender() eq 'm'}">
+																<td>남</td>
+															</c:when>
+															<c:otherwise>
+																<td>여</td>
+															</c:otherwise>
+														</c:choose>
 														<td>${room.getMemberPhone()}</td>
 														<td>
 															<button

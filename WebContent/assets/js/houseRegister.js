@@ -368,7 +368,6 @@ function send() {
 	var checkGender = document.getElementsByClassName("b");
 	var checkfile = document.getElementsByClassName("a");
 	var genderCount = 0;
-	console.log(checkDate);
 
 	if(!registForm.houseAddressDetail.value){
 		alert("상세주소를 입력해주세요");
@@ -413,6 +412,7 @@ function send() {
 			alert("입주가능한 날짜를 입력해주세요");
 			return;
 		}
+		console.log(checkfile[i]);
 		if(checkfile[i].value == ""){
 			alert(checkName[i].innerText + "방 사진을 추가해주세요");
 			return;

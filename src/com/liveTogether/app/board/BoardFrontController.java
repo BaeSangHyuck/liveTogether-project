@@ -52,7 +52,7 @@ public class BoardFrontController extends HttpServlet {
 		case "/board/BoardSearchOk.bo":
 			af = new BoardSearchOk().execute(req, resp);
 			break;
-		case "/board/Info.bo":
+		case "/board/info.bo":
 			af = new ActionForward();
 			af.setRedirect(false);
 			af.setPath("/board/info.jsp");
@@ -85,6 +85,30 @@ public class BoardFrontController extends HttpServlet {
 			af.setRedirect(false);
 			af.setPath("/board/policy.jsp");
 			break;
+		case "/board/InquiryReplyUpdateOk.bo":
+	         af = new InquiryReplyUpdateOk().execute(req, resp);
+	         break;
+	      case "/board/InquiryAdminZeroOk.bo":
+	         af = new InquiryAdminZeroOk().execute(req, resp);
+	         break;
+	      case "/board/InquiryAdminCheckDeleteZeroOk.bo":
+	         af = new InquiryAdminCheckDeleteZeroOk().execute(req, resp);
+	         break;
+	      case "/board/InquiryDeleteZeroOk.bo":
+	         af = new InquiryDeleteZeroOk().execute(req, resp);
+	         break;
+	      case "/board/InquiryAdminOneOk.bo":
+	         af = new InquiryAdminOneOk().execute(req, resp);
+	         break;
+	      case "/board/InquiryAdminCheckDeleteOneOk.bo":
+	         af = new InquiryAdminCheckDeleteOneOk().execute(req, resp);
+	         break;
+	      case "/board/InquiryDeleteOneOk.bo":
+	         af = new InquiryDeleteOneOk().execute(req, resp);
+	         break;
+	      case "/board/InquiryReplyDeleteOk.bo":
+	         af = new InquiryReplyDeleteOk().execute(req, resp);
+	         break;
 		}
 		
 		//분기 별 결과를 af에 담았다면 여기로 내려온다.

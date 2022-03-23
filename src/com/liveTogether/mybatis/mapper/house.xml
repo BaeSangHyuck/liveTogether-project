@@ -29,9 +29,9 @@
 			</trim>
 		</if>
 		<if test="houseGender!=null">
-			<trim prefix="and (" suffix=")" prefixOverrides="OR"> 
+			<trim prefix="and (" suffix=")" prefixOverrides="OR">
 				<foreach item="gender" collection="genderArr">
-					<trim prefix="OR"> 
+					<trim prefix="OR">
 						<choose>
 							<when test="gender=='w'.toString()">
 								h.houseGender = 'w'
@@ -98,7 +98,8 @@
 		</if>
 		group by h.houseNumber
 		order by h.houseNumber) hm1 join
-		(select housefileName, houseNumber from (SELECT housefileName,
+		(select
+		housefileName, houseNumber from (SELECT housefileName,
 		houseFileNumber, houseNumber
 		from tbl_houseFile order by 2 desc limit
 		18446744073709551615) m
@@ -242,7 +243,8 @@
 	</insert>
 
 	<!-- 룸 정보 가져오기 -->
-	<select id="roomInfo" parameterType="_int" resultType="houseRoomVO">
+	<select id="roomInfo" parameterType="_int"
+		resultType="houseRoomVO">
 		select roomName, roomType, roomGender,
 		roomDeposit,
 		roomMonthly, roomArea, roomDate, houseNumber
@@ -266,10 +268,16 @@
 		= #{houseNumber} and status = 3;
 	</select>
 	<!-- 프로필 가져오기 -->
-	<select id="getProfile" parameterType="_int" resultType="houseMemberDTO"> 
-		select tm.memberNickname, tm.memberGender, tm.memberProfile, rm.star, rm.review from tbl_member tm join 
-		(select tr.memberId, th.houseNumber, tr.star, tr.review from tbl_houseroom th join tbl_roomguest tr on th.roomName = tr.roomName and status = 3) rm
-		on tm.memberId = rm.memberId and memberType = 'n' and rm.houseNumber = #{houseNumber};
+	<select id="getProfile" parameterType="_int"
+		resultType="houseMemberDTO">
+		select tm.memberNickname, tm.memberGender,
+		tm.memberProfile, rm.star,
+		rm.review from tbl_member tm join
+		(select
+		tr.memberId, th.houseNumber, tr.star, tr.review from tbl_houseroom th
+		join tbl_roomguest tr on th.roomName = tr.roomName and status = 3) rm
+		on tm.memberId = rm.memberId and memberType = 'n' and rm.houseNumber =
+		#{houseNumber};
 	</select>
 
 	<!-- admin에 필요한 VO 정보 가져오기 -->
@@ -401,66 +409,86 @@
 
 	<!-- 투어신청 수 -->
 	<select id="tourCount" resultType="_int">
-		select count(memberId) from tbl_roomguest
+		select count(memberId) from
+		tbl_roomguest
 		where status = '0';
 	</select>
 
 	<!-- 입주대기자 수 -->
 	<select id="waitResidentCount" resultType="_int">
-		select count(memberId) from tbl_roomguest
+		select count(memberId)
+		from tbl_roomguest
 		where status = '2';
 	</select>
 
 	<!-- 입주자 수 -->
 	<select id="residentCount" resultType="_int">
-		select count(memberId) from tbl_roomguest tr
+		select count(memberId)
+		from tbl_roomguest tr
 		where status = 3;
 	</select>
 
 	<!-- 모든 방 수 -->
 	<select id="roomCount" resultType="_int">
-		select count(roomName) from tbl_houseroom;
+		select count(roomName) from
+		tbl_houseroom;
 	</select>
 
 	<!-- 리뷰 별점 5개 -->
 	<select id="fiveReviewCount" resultType="_int">
-		select count(star) from tbl_roomguest
+		select count(star) from
+		tbl_roomguest
 		where star = '5';
 	</select>
 
 	<!-- 리뷰 별점 4개 -->
 	<select id="fourReviewCount" resultType="_int">
-		select count(star) from tbl_roomguest
+		select count(star) from
+		tbl_roomguest
 		where star = '4';
 	</select>
 
 	<!-- 리뷰 별점 3개 -->
 	<select id="threeReviewCount" resultType="_int">
-		select count(star) from tbl_roomguest
+		select count(star) from
+		tbl_roomguest
 		where star = '3';
 	</select>
 
 	<!-- 리뷰 별점 2개 -->
 	<select id="twoReviewCount" resultType="_int">
-		select count(star) from tbl_roomguest
+		select count(star) from
+		tbl_roomguest
 		where star = '2';
 	</select>
 
 	<!-- 리뷰 별점 1개 -->
 	<select id="oneReviewCount" resultType="_int">
-		select count(star) from tbl_roomguest
+		select count(star) from
+		tbl_roomguest
 		where star = '1';
 	</select>
 
 	<!-- 총 리뷰 수 -->
 	<select id="reviewCount" resultType="_int">
-		select count(review) from tbl_roomguest;
+		select count(review) from
+		tbl_roomguest;
 	</select>
-	
+
 	<!-- 관리자페이지 문의 수 가져오기 -->
 	<select id="inquiryTotalCount" resultType="_int">
-		select count(inquiryContent)
+		select
+		count(inquiryContent)
 		from tbl_inquiry;
+	</select>
+
+	<select id="bannerList" resultType="houseDTO">
+		select h.houseNumber,f.housefileName from (select houseFileNumber
+		,housefilename,houseNumber from tbl_housefile order by 2 desc limit
+		0,10) f join tbl_house h
+		on f.houseNumber =h.houseNumber
+		group by 1
+		order by 2 desc;
 	</select>
 
 </mapper>

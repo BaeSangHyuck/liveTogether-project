@@ -15,6 +15,7 @@ $("#memberId").blur(function() {
 		dataType : "json",
 		success : function(result) {
 			if (result.status == "ok") {
+				console.log(result);
 				$("#result").text("사용한 가능한 아이디입니다.");
 				$("#result").css("color", "blue");
 				check = true;

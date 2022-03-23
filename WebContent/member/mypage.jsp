@@ -13,119 +13,182 @@
 	href="${pageContext.request.contextPath}/assets/css/main.css" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/mypage.css" />
-	<style>
-	#modal{
-	display:block;
-    background-color: #0f0f0f99;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    left: 0;
-}
-#modal-inner{
- width: 40%;
-    height: 100vh;
-    margin: 0 auto;
-    left: 30%;
-    top: 0;
-    position: absolute;
-
-    }
-    
-    div.modal-content p {
-    margin-bottom: 10px;
-    }
-    
-    div.modal-content span{
-    color: red;
-    }
-    
-    div.flex {
-    display: flex;
-    justify-content: space-evenly;
-    }
- #modal-box{
- height: 50%;
-    width: 80%;
-    margin-top: 25%;
-    margin-left: 10%;
-    background: #fff;
-    border: 1px solid;
-    border-radius: 5px;
-    }
-    
-    .modal-content{
-        text-align: center;
-        position: relative;
-    }
-    div#m-title.modal-content {
-    margin-top: 10%;
-    margin-bottom: 25px;
+<style>
+#modal {
+	display: none; 
+	background-color: #0f0f0f99;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	left: 0;
 }
 
-div.flex div.modal-content {
-border:1px solid #555;
-width:20%
+#modal-inner {
+	width: 40%;
+	height: 100vh;
+	margin: 0 auto;
+	left: 30%;
+	top: 0;
+	position: absolute;
 }
 
-#pwCheck{
-	text-align:center;
-	width: 60%;
-    margin: 0 auto;
+#modal-inner2 {
+	width: 40%;
+	height: 100vh;
+	margin: 0 auto;
+	left: 30%;
+	top: 0;
+	position: absolute;
 }
-     div#m-id.modal-content{
+
+#modal-box {
+	height: 50%;
+	width: 80%;
+	margin-top: 25%;
+	margin-left: 10%;
+	background: #fff;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#modal-box2 {
+	height: 50%;
+	width: 80%;
+	margin-top: 25%;
+	margin-left: 10%;
+	background: #fff;
+	border: 1px solid;
+}
+
+.modal-content {
+	text-align: center;
+	position: relative;
+}
+
+.modal-content2 {
+	text-align: center;
+	position: relative;
+}
+
+.modal-content3 {
+	text-align: center;
+	position: relative;
+	border-bottom: 1px solid #dddd;
+	margin: 95px auto 0 auto;
+	width: 50%;
+}
+
+div#m-title.modal-content {
+	border-bottom: 1px solid #dddd;
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 95px;
+}
+
+div#m2-title.modal-content2 {
+	margin-top: 10%;
+}
+
+div#m-pw.modal-content {
 	border-top: 2px solid #eee;
-    border-bottom: 2px solid #eee;
-    padding: 2rem;
-    margin: 0 auto;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    width: 50%;
-    }
-    
-/*      div#m-title.modal-content span{
-    width:30%;
-    height:100px;
-    background-image: url(../images/회원정보아이콘-001-2.png);
-    background-repeat: no-repeat;
-    position: absolute;
-	top: -42px;
-    left: 150px;
-} */
-    
-     .modal-content h3{
-	margin:0 0 0.5em 0 !important;
-    }
-    
-    div.input{
-    margin-bottom: 25px;
-    }
-    
-  
-    div#m-id.modal-content{
-   	font-weight: 600;
-    font-family: fangsong;
-    }
-    .modal-content input[type="button"]{
-    border: 1px solid #eee !important;
-    background: #1187CF;
-    color: #fff;
+	border-bottom: 2px solid #eee;
+	padding: 2rem;
+	margin: 3em;
 }
-	span.m-span{
-	font-size:smaller;
-	}
-	
- 	div#m-btn.modal-content{
+
+.modal-content h3 {
+	margin: 0 0 0.5em 0 !important;
+}
+
+.modal-content2 h3 {
+	margin: 0 0 0.5em 0 !important;
+}
+
+#delete-message.modal-content {
+	font-size: 20px;
+	padding-top: 20px;
+}
+
+div#m-btn.modal-content {
 	border: 1px solid #eee;
-    cursor: pointer;
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 4px;
-    box-shadow: 0 1px 10px rgb(0 0 0 / 20%);
-	} 
-	</style>
+	cursor: pointer;
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 4px;
+	background-color: #1187cf;
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+
+div#m-btn1.modal-content {
+	border: 1px solid #eee;
+	cursor: pointer;
+	width: 45%;
+	margin: 0 auto;
+	border-radius: 4px;
+	background-color: #1187cf;
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+
+div#m-btn2.modal-content {
+	border: 1px solid #eee;
+	cursor: pointer;
+	color: #555;
+	width: 45%;
+	margin: 0 auto;
+	border-radius: 4px;
+	background-color: #e2e2e275;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+
+div#m-pw.modal-content {
+	font-weight: 600;
+}
+
+div#delete-choice {
+	display: flex;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 35px;
+}
+
+.modal-content input[type="button"] {
+	border: 1px solid #eee !important;
+	background: #1187CF;
+	color: #fff;
+}
+
+.modal-content input[type="password"] {
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	border: 1px solid #eee !important;
+	background: #eee;
+	color: black;
+}
+
+span.m-span {
+	font-size: smaller;
+}
+
+#result4 {
+	color: #1187CF;
+}
+#delete-confirm{
+	display:none;
+}
+
+</style>
 </head>
 
 <!-- Header -->
@@ -148,25 +211,48 @@ width:20%
 			</div>
 		</div>
 
+
+
+		<!-- 탈퇴하기 -->
 		<div id="modal">
 			<div id="modal-inner">
 				<div id="modal-box">
-					<div id="modal-contents">
+					<div id="modal-contents" >
 						<div class="modal-content" id="m-title">
-							<p>계정 탈퇴 시 모든 정보가 다 지워지고 되돌리실 수 없습니다.</p>
-							<span>그래도 지우시겠습니까?</span>
+							<h3>탈퇴하기</h3>
 						</div>
-						<div class="modal-content input">
-							<input type="text" name="memberPw" placeholder="비밀번호를 입력해주세요." id="pwCheck">
+						<div class="modal-content" style="margin-top: 1em;">
+							<span class="m-span">비밀번호를 입력해주세요.</span><br>
 						</div>
-						<div class="flex">
-							<div class="modal-content" id="m-yes">예</div>
-							<div class="modal-content" id="m-no">아니요</div>
+						<div class="modal-content" id="phone-check2">
+							<input type="password" id="memberCode" name="memberCode"
+								placeholder="비밀번호" value="" tabindex="3" autocomplete="off"
+								class="memberCode">
+							<div id="result4"></div>
+							<div class="modal-content" id="m-btn" onclick="checkPw()">확인</div>
+						</div>
+					</div>
+
+					<div id="delete-confirm">
+						<div class="modal-content3">
+							<h3>탈퇴하기</h3>
+						</div>
+						<div class="modal-content" id="delete-message">
+							<span class="m-span">탈퇴하실 경우, 가치살자에 등록된 모든 정보가 사라집니다.<br>
+								정말 <b>탈퇴</b>하시겠습니까?
+							</span>
+						</div>
+						<div id="delete-choice">
+							<div class="modal-content" id="m-btn1">안할래요!</div>
+							<div class="modal-content" id="m-btn2" onclick="location.href='${pageContext.request.contextPath}/member/MemberDelete.me'">예</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+
+
 
 
 
@@ -190,10 +276,9 @@ width:20%
 			</ul>
 		</div>
 
+
+
 		<div id="box">
-
-
-
 			<div class="wrapper">
 				<div class="container">
 					<div id="change_info">
@@ -322,33 +407,10 @@ width:20%
 									</div>
 								</form>
 							</div>
-							<!-- <script type="text/javascript">
-
-$('#leave-button').click(function(e) {
-  if(confirm('정말로 탈퇴 하시겠습니까?')) {
-    $.ajax({
-      url: '/users/leave',
-      type: 'DELETE',
-      success: function() {
-        $.ajax({
-          url: '/users/sign_out',
-          type: 'DELETE',
-          success: function() {
-            location.href = '/';
-          }
-        });
-      }
-    });
-  }
-});
-
-</script> -->
-
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 
 	</article>
@@ -370,23 +432,43 @@ $('#leave-button').click(function(e) {
 	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 	<script>
-	var memberId = "${memberId}";
+	var contextPath = "${pageContext.request.contextPath}";
+
 	
-	function checkPw(){
-		
+	$("#leave-button").on("click", function(){
+		$(".is-preload").css("overflow","hidden");
+		$("#modal").css("display", "block");
+	});
+	
+		function checkPw() {
+
+	console.log($("#memberCode").val());
 			$.ajax({
-                url : contextPath + "/member/Member.me",                   
-                type : "post",
-                data : {"memberId": memberId,"memberPw": $("#pwCheck").val()},
-                dataType : "json",
-                contentType : "application/json;charset=utf-8",
-                success : alert("투어신청이 완료되었습니다"),
-                error : function(a, b, c) {
-                   console.log("오류" + c);
-                }
-             });
+				url : contextPath + "/member/MemberCheckPwOk.me",
+				type : "post",
+				data : {
+					"memberPw" : $("#memberCode").val()
+				},
+				dataType : "json",
+				success : function(e) {
+					console.log(e);
+					if (e.status == "ok") {
+						$("#modal-contents").css("display", "none");
+						$("#delete-confirm").css("display", "block");
+					} else {
+						alert("비밀번호가 틀립니다.")
+					}
+				},
+				error : function(a, b, c) {
+					console.log("오류" + c);
+				}
+			});
+
+		}
 		
-	}
+		$("#m-btn1").on("click",function(){
+			$("#modal").css("display", "none");
+		})
 	</script>
 </body>
 </html>

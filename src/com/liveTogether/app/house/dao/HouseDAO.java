@@ -204,5 +204,10 @@ public class HouseDAO {
 	public int inquiryTotalCount() {
 		return sqlSession.selectOne("House.inquiryTotalCount");
 	}
+	
+	//메인 베너 가져오기
+	public List<HouseDTO> bannerList() {
+		return sqlSession.selectList("House.bannerList");
+	}
 
 }

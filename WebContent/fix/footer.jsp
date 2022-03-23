@@ -19,7 +19,7 @@
 						<img class="logo" src="${pageContext.request.contextPath}/images/footer_grayLogo.png">
 
 						<div class="menu-btn-list">
-							<a class="menu-btn" href="/about#tab:introduce">회사소개</a> <a
+							<a class="menu-btn" href="${pageContext.request.contextPath}/board/info.bo">회사소개</a> <a
 								class="menu-btn" href="${pageContext.request.contextPath}/board/policy.bo">개인정보정책</a> <a
 								class="menu-btn" href="${pageContext.request.contextPath}/board/terms.bo">이용약관</a>
 						</div>

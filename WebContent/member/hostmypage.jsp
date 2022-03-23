@@ -89,12 +89,24 @@
 										<div class="column-wrapper gender">
 											<label for="gender-input" class="gender-input">성별</label>
 											<div class="gender-btn-wrapper ">
-												<input class="gender-input" type="radio" value="m"
-													name="memberGender" id="user_gender_m"> <label
-													class="gender-btn" for="user_gender_m">남</label> <input
-													class="gender-input" type="radio" value="f"
-													name="memberGender" id="user_gender_f"> <label
-													class="gender-btn" for="user_gender_f"> 여 </label>
+												<c:choose>
+												<c:when test="${member.getMemberGender() eq 'm'}">
+													<input class="gender-input" type="radio" value="m"
+														name="memberGender" id="user_gender_m" checked>
+													<label class="gender-btn" for="user_gender_m">남</label>
+													<input class="gender-input" type="radio" value="f"
+														name="memberGender" id="user_gender_f">
+													<label class="gender-btn" for="user_gender_f"> 여 </label>
+												</c:when>
+												<c:otherwise>
+													<input class="gender-input" type="radio" value="m"
+														name="memberGender" id="user_gender_m" checked>
+													<label class="gender-btn" for="user_gender_m">남</label>
+													<input class="gender-input" type="radio" value="f"
+														name="memberGender" id="user_gender_f" checked>
+													<label class="gender-btn" for="user_gender_f"> 여 </label>
+												</c:otherwise>
+											</c:choose>
 											</div>
 										</div>
 

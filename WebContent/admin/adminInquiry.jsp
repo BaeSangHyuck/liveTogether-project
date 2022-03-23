@@ -51,16 +51,16 @@
 												<td class="ttd ttd3">${inquiry.getMemberPhone()}</td>
 										<td class="ttd ttd4">${inquiry.getHouseNumber()}</td>
 										<c:choose>
-											<c:when test="${house.getHouseType() eq a}">
+											<c:when test="${inquiry.getHouseType() eq 'a'}">
 												<td class="ttd ttd5">아파트</td>
 											</c:when>
-											<c:when test="${house.getHouseType() eq v}">
+											<c:when test="${inquiry.getHouseType() eq 'v'}">
 												<td class="ttd ttd5">빌라</td>
 											</c:when>
-											<c:when test="${house.getHouseType() eq d}">
+											<c:when test="${inquiry.getHouseType() eq 'd'}">
 												<td class="ttd ttd5">단독주택</td>
 											</c:when>
-											<c:when test="${house.getHouseType() eq o}">
+											<c:when test="${inquiry.getHouseType() eq 'o'}">
 												<td class="ttd ttd5">기타</td>
 											</c:when>
 										</c:choose>

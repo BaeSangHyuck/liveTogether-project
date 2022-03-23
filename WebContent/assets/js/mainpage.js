@@ -43,8 +43,8 @@ $('#filter-input input[type="text"]').blur(function(){
 
 setInterval(function(){
 	count++;
-	count=count==3?0:count;
-	banner.style.transform = "translateX(-" + count * 426 + "px)";
+	count=count==4?0:count;
+	banner.style.transform = "translateX(-" + count * 450 + "px)";
 	banner.style.transition ="transform 0.7s";
 },7000);
 
@@ -52,19 +52,19 @@ arrows[0].addEventListener("click",function(){
     if(count>0){
         count--;
     }else{
-    	count=2;
+    	count=3;
     }
-    banner.style.transform = "translateX(-" + count * 426 + "px)";
+    banner.style.transform = "translateX(-" + count * 450 + "px)";
     banner.style.transition ="transform 0.7s";
 })
 
 arrows[1].addEventListener("click",function(){
-	if(count!=2){
+	if(count!=3){
 		count++;
 	}else{
 		count=0;
 	}
-	banner.style.transform = "translateX(-" + count * 426 + "px)";
+	banner.style.transform = "translateX(-" + count * 450 + "px)";
 	banner.style.transition ="transform 0.3s";
 })
 
@@ -114,3 +114,9 @@ if(check3>0){
     show.style.display="none";
 }
 }
+
+$("#searchInput").keydown(function(key) {
+    if (key.keyCode == 13) {
+    	searchForm.submit();
+    }});
+

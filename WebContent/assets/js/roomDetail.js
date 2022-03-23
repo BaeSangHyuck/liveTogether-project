@@ -170,7 +170,11 @@ btns.forEach(function(value, index, ar){
            $(".sub-wrapper").removeClass("active");
            $(this).addClass("active");        
            count = index;
-           banner.style.transform = "translate(-" + count * 952 + "px)";
+           if (matchMedia("screen and (min-width: 415px)").matches){ 
+        	    banner.style.transform = "translate(-" + count * 952 + "px)";
+        	    }else{
+        	    	banner.style.transform = "translate(-" + count * 352 + "px)";
+        	    }
         })
     });
 
@@ -196,6 +200,10 @@ arrows.forEach((arrow) => {
            btns[count].classList.add("active");
         }
     }
+    if (matchMedia("screen and (min-width: 415px)").matches){ 
     banner.style.transform = "translate(-" + count * 952 + "px)";
+    }else{
+    	banner.style.transform = "translate(-" + count * 352 + "px)";
+    }
 });
 });

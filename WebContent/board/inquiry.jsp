@@ -21,7 +21,7 @@
 				<p id="second-p">아래 내용으로 문의 주시면 검토하여 답변드립니다.</p>
 				<br>
 				<div id="hr-tag"></div>
-			<form action="${pageContext.request.contextPath}/board/InquiryDeliveryOk.bo">
+			<form action="${pageContext.request.contextPath}/board/InquiryDeliveryOk.bo" id="inquiryForm">
 				<div class="inquiryIdWrapper">
 					<div class="inquiryId">${memberId}</div>
 				</div>
@@ -65,11 +65,11 @@
 				<br><br><br>
 				<div id="final-div">
 				<label id="second-label">
-				<input type="checkbox" id="first-checkbox"> 개인정보 제공 이용약관에 동의합니다.
+				<input type="checkbox" id="first-checkbox" name="agree"> 개인정보 제공 이용약관에 동의합니다.
 				</label>
 				</div>
 				<br><br><br>
-				<button id="button-submit">문의하기</button>
+				<button type="button" id="button-submit" onclick="send()">문의하기</button>
 			</form>
 			</div>
 				<br><br><br><br><br><br>

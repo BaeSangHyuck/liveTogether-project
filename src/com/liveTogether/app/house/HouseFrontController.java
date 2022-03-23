@@ -68,6 +68,9 @@ public class HouseFrontController extends HttpServlet {
 		case "/house/HouseRegister.ho":
 			af = new HouseRegister().execute(req, resp);
 			break;
+		case "/house/FindRoomOk.ho":
+			af = new FindRoomOk().execute(req, resp);
+			break;
 		case "/house/HouseRegist.ho":
 			af = new ActionForward();
 			af.setRedirect(false);
@@ -96,6 +99,9 @@ public class HouseFrontController extends HttpServlet {
 			break;
 		case "/house/HostForSaleListOk.ho":
 			af = new HostForSaleListOk().execute(req, resp);
+			break;
+		case "/house/MainBannerOk.ho":
+			af = new MainBannerOk().execute(req, resp);
 			break;
 		}
 

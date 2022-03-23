@@ -85,7 +85,7 @@
 												<c:forEach var="inquiry" items="${inquiryList}" varStatus="status">
 													<tr>
 														<td>${status.count}</td>
-														<td>${inquiry.getHouseNumber()}호점</td>
+														<td>${inquiry.getHouseNumber()}</td>
 														<td>
 														<c:choose>
 												<c:when test="${inquiry.getHouseType() eq 'a' }">아파트</c:when>

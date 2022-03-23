@@ -21,7 +21,7 @@ public class HouseRegisterOk implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		req.setCharacterEncoding("UTF-8");
 
-		String uploadFolder = "D:\\aigb_0900_hsk\\jsp\\workspace\\liveTogether\\WebContent\\upload";
+		String uploadFolder = "C:\\aigb_0900_bsh\\jsp\\workspace\\liveTogether\\WebContent\\upload";
 
 		int fileSize = 1024 * 1024 * 5;//5M
 		HouseFileDAO fDao = new HouseFileDAO();		

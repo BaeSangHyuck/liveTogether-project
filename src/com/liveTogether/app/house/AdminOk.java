@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.liveTogether.action.Action;
 import com.liveTogether.action.ActionForward;
+import com.liveTogether.app.board.dao.BoardDAO;
 import com.liveTogether.app.house.dao.HouseDAO;
 import com.liveTogether.app.member.dao.MemberDAO;
 
@@ -17,9 +18,12 @@ public class AdminOk implements Action{
 		ActionForward af = new ActionForward();
 		HouseDAO hDao = new HouseDAO();
 		MemberDAO mDao = new MemberDAO();
+		BoardDAO bDao = new BoardDAO();
 		req.setAttribute("houseCount", hDao.houseCount());
 		req.setAttribute("waitCount", hDao.waitCount());
 		req.setAttribute("inquiryCount", hDao.inquiryTotalCount());
+		req.setAttribute("inquiryZeroCount", bDao.getInquiryCountZero());
+		req.setAttribute("inquiryOneCount", bDao.getInquiryCountOne());
 		
 		req.setAttribute("nMemberCount", mDao.nMemberCount());
 		req.setAttribute("hMemberCount", mDao.hMemberCount());

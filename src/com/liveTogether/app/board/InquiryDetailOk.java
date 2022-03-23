@@ -17,7 +17,9 @@ public class InquiryDetailOk implements Action{
 		ActionForward af = new ActionForward();
 		BoardDAO dao = new BoardDAO();
 		
-		InquiryVO vo = dao.inquiryDetail(Integer.parseInt(req.getParameter("inquiryNumber")));
+		int inquiryNumber = Integer.parseInt(req.getParameter("inquiryNumber"));
+		
+		InquiryVO vo = dao.inquiryDetail(inquiryNumber);
 		req.setAttribute("inquiry", vo);
 		
 		af.setRedirect(false);

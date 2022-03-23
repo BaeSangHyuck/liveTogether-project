@@ -87,4 +87,28 @@ public class BoardDAO {
 	public InquiryVO inquiryDetail(int inquiryNumber) {
 		return sqlSession.selectOne("Board.inquiryDetail", inquiryNumber);
 	}
+	
+	public void updateIRStauts(InquiryVO inquiry) {
+		sqlSession.insert("Board.updateIRStauts", inquiry);
+	}
+	
+	public List<InquiryVO> inquiryAdminListZero(Map<String, Integer> inquiryMap) {
+		return sqlSession.selectList("Board.inquiryAdminListZero", inquiryMap);
+	}
+	
+	public List<InquiryVO> inquiryAdminListOne(Map<String, Integer> inquiryMap) {
+		return sqlSession.selectList("Board.inquiryAdminListOne", inquiryMap);
+	}
+	
+	public int getInquiryCountZero() {
+		return sqlSession.selectOne("Board.getInquiryCountZero");
+	}
+	
+	public int getInquiryCountOne() {
+		return sqlSession.selectOne("Board.getInquiryCountOne");
+	}
+	
+	public void deleteReply(int inquiryNumber) {
+		sqlSession.update("Board.deleteReply", inquiryNumber);
+	}
 }

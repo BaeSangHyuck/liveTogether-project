@@ -78,9 +78,19 @@ public class MemberDAO {
 	}
 	
 	//탈퇴전 비밀번호
-	public int checkPw(Map<String, String> map) {
-		return sqlSession.selectOne("Member.checkPw", map);
+	public boolean checkPw(Map<String, String> map) {
+		return (Integer)sqlSession.selectOne("Member.checkPw", map) == 1;
 	}
+	
+	//탈퇴 과정 1
+	public void deleteRg(String memberId) {
+		sqlSession.delete("Member.deleteRg", memberId);
+	}
+	
+	//탈퇴 과정 2
+		public void deleteM(String memberId) {
+			sqlSession.delete("Member.deleteM", memberId);
+		}
 	
 	//마이페이지 투어신청  방 정보 가져오기
 	public void selectMypageTour(Map<String, Integer> myMap) {
@@ -249,6 +259,11 @@ public class MemberDAO {
 		//리뷰삭제
         public void reviewDelete(String memberId) {
             sqlSession.update("Member.reviewDelete",memberId);
+        }
+        
+        //비밀번호 찾기 아이디,폰 번호
+        public int findPwCount(MemberVO member) {
+        	return sqlSession.selectOne("Member.findPwCount", member);
         }
 		
 	

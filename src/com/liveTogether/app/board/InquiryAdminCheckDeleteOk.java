@@ -28,8 +28,6 @@ public class InquiryAdminCheckDeleteOk implements Action{
 			dao.inquiryDelete(alInquiryNumber.get(i));
 		}
 		
-		System.out.println(alInquiryNumber);
-		
 		af.setRedirect(true);
 		af.setPath(req.getContextPath() + "/board/InquiryAdminOk.bo");
 		

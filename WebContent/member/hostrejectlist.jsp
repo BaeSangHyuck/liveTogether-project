@@ -106,9 +106,23 @@
 															<td class="td1">${room.getHouseNumber()}</td>
 															<td class="td2">${room.getRoomName()}</td>
 															<td class="td3">${room.getRoomType()}</td>
-															<td class="td4">${room.getRoomGender()}</td>
-															<td class="td5">${room.getMemberName()}</td>
-															<td class="td6">${room.getMemberGender()}</td>
+															<c:choose>
+															<c:when test="${room.getRoomGender() eq 'm'}">
+																<td class="td4">남성전용</td>
+															</c:when>
+															<c:otherwise>
+																<td class="td4">여성전용</td>
+															</c:otherwise>
+														</c:choose>
+														<td class="td5">${room.getMemberName()}</td>
+														<c:choose>
+															<c:when test="${room.getMemberGender() eq 'm'}">
+																<td class="td6">남</td>
+															</c:when>
+															<c:otherwise>
+																<td class="td6">여</td>
+															</c:otherwise>
+														</c:choose>
 															<td class="td7">${room.getMemberPhone()}</td>
 															<td class="td8"><button onclick="location.href='${pageContext.request.contextPath}/member/HostRestorationOk.me?houseNumber=${room.getHouseNumber()}'">복원</button>
 																<button onclick="location.href='${pageContext.request.contextPath}/member/HostRealDeleteOk.me?houseNumber=${room.getHouseNumber()}'">거절</button></td>

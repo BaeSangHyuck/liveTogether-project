@@ -129,7 +129,7 @@
 												</c:choose>
 											</div>
 										</div>
-										<p class="real-review">${roomguest.getMemberProfile()}</p>
+										<p class="real-review">${roomguest.getReview()}</p>
 									</div>
 								</c:forEach>
 							</c:when>
@@ -137,43 +137,6 @@
 								<div class="noProfile">아직 입주한 사람이 없습니다</div>
 							</c:otherwise>
 						</c:choose>
-						<div class="review-wrapper">
-							<div class="review-flex">
-								<label class="guestinfo">안녕 <span class="bar">|</span>
-									(안녕)
-								</label>
-								<div class="star-wrap">
-									<label class="star active">★</label> <label class="star">★</label>
-									<label class="star">★</label> <label class="star">★</label> <label
-										class="star">★</label>
-								</div>
-							</div>
-							<p class="real-review">안녕</p>
-						</div>
-						<div class="review-wrapper">
-							<div class="review-flex">
-								<label class="guestinfo">안녕 <span class="bar">|</span>
-									(안녕)
-								</label> <label class="star">★★★★★</label>
-							</div>
-							<p class="real-review">안녕</p>
-						</div>
-						<div class="review-wrapper">
-							<div class="review-flex">
-								<label class="guestinfo">안녕 <span class="bar">|</span>
-									(안녕)
-								</label> <label class="star">★★★★★</label>
-							</div>
-							<p class="real-review">안녕</p>
-						</div>
-						<div class="review-wrapper">
-							<div class="review-flex">
-								<label class="guestinfo">안녕 <span class="bar">|</span>
-									(안녕)
-								</label> <label class="star">★★★★★</label>
-							</div>
-							<p class="real-review">안녕</p>
-						</div>
 					</div>
 				</div>
 			</section>
@@ -372,7 +335,7 @@
 								<th>이름</th>
 								<th>성별</th>
 								<th>타입</th>
-								<th>면적</th>
+								<th class="delete">면적</th>
 								<th>보증금</th>
 								<th>월세</th>
 								<th>입주가능일</th>
@@ -390,45 +353,12 @@
 													<c:when test="${room.getRoomGender() eq 'w'}">여성전용</c:when>
 												</c:choose></td>
 											<td>${room.getRoomType()}인실</td>
-											<td>${room.getRoomArea()}m²</td>
+											<td class="delete">${room.getRoomArea()}m²</td>
 											<td>${room.getRoomDeposit()}만원</td>
 											<td>${room.getRoomMonthly()}만원</td>
 											<td>${room.getRoomDate()}</td>
 											<td><button class="button-tour">투어신청</button></td>
-										</tr>
-										<tr class="tr-wrap1">
-											<td colspan="9"><div id="profile">
-													<div class="profile-wrap">
-														<div class="profile">
-															<div class="profile-name">
-																<b>홍만두</b>
-																<p>(남자)</p>
-															</div>
-															<div class="profile-intro">
-																<span>"안녕하세요 저는 착한만두 홍만두입니다. 만찐두빵먹자 친추부탁드립니다."</span>
-															</div>
-														</div>
-														<div class="profile">
-															<div class="profile-name">
-																<b>상냥이</b>
-																<p>(남자)</p>
-															</div>
-															<div class="profile-intro">
-																<span>"안녕하세요 안상냥이 상냥이입니다. 3팀 팀장 배상혁 잘부탁드립니다."</span>
-															</div>
-														</div>
-														<div class="profile">
-															<div class="profile-name">
-																<b>다크준형</b>
-																<p>(남자)</p>
-															</div>
-															<div class="profile-intro">
-																<span>"여러분 코로나 조심하세요. 목이 너무 아파요ㅠㅠ 아프지 마세요 여러분"</span>
-															</div>
-														</div>
-													</div>
-												</div></td>
-										</tr>
+										</tr>									
 									</c:forEach>
 								</c:when>
 							</c:choose>
@@ -718,8 +648,6 @@
 <script>
    var latitude = "<c:out value='${house.getLatitude()}'/>";
    var longitude = "<c:out value='${house.getLongitude()}'/>";
-   console.log(latitude);
-   console.log(longitude);
    
    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
    mapOption = {

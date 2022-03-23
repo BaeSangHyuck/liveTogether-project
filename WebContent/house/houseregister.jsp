@@ -201,7 +201,7 @@
 												</label>
 											</div>
 											<input id="room_filea11" name="room_file1" type="file"
-												style="display: none" class="a1"
+												style="display: none" class="a"
 												onchange="imgThumbnail(event);"> <input
 												type="button" class="removeImgBtn"
 												onclick="cancelFile('room_filea11')" value="첨부 삭제">
@@ -510,8 +510,6 @@
 				$("input[name='latitude']").val(result[0].y);
 				$("input[name='longitude']").val(result[0].x);
 
-				console.log($("input[name='latitude']").val());
-				console.log($("input[name='longitude']").val());
 
 			}
 		});

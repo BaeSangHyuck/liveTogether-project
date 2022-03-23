@@ -196,6 +196,41 @@ p#open{
 	#result4{
 	color:#1187CF;
 	}
+	section#finePw-wrap #memberId {
+    margin-top: 5px;
+    border-radius: 0;
+    background-color: #fff !important;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 0;
+    background: none;
+    color: #888888;
+    width: 100%;
+    padding: 0;
+}
+	section#finePw-wrap #memberPhone {
+    margin-top: 5px;
+    border-radius: 0;
+    background-color: #fff !important;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 0;
+    background: none;
+    color: #888888;
+    width: 100%;
+    padding: 0;
+}
+div#m-btn4.modal-content {
+     float: right;
+    display: inline-block;
+    padding: 2px 5px;
+    font-weight: 700;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 1.5rem;
+    top: -319px;
+    left: -13px;
+    cursor: pointer;
+}
 	
 </style>
 <body class="is-preload"> <!--  onload="MoveFocus();" -->
@@ -225,11 +260,14 @@ p#open{
 
 				<input type="text" id="memberCode" name="memberCode"
 				placeholder="인증번호" value="" tabindex="3"  autocomplete="off" class="memberCode">
+			
 				<input type="password" id="changePw" name="chanePw" placeholder="변경하실 비밀번호를 입력하세요." autocomplete="off" >
+				
 				<div id="result4"></div>
 				<div class="modal-content" id="m-btn">확인</div>
 				<div class="modal-content" id="m-btn2">비밀번호 변경</div>
 				<div class="modal-content" id="m-btn3">변경하기</div>
+				<div class="modal-content" id="m-btn4">X</div>
 				</div>
 			</div>
 		</div>
@@ -286,10 +324,13 @@ p#open{
 
 								<div class="inp_text">
 									<label for="findUrlOrNickname" class="screen_out">아이디와
-										전화번호를 입력해주세요.</label> <input type="text" id="findUrlOrNickname"
-										name="memberId" class="memberId" placeholder="아이디" value="" tabindex="3"  autocomplete="off"> <input
-										type="text" id="findUrlOrNickname" name="memberPhone"
+										전화번호를 입력해주세요.</label> <input type="text" id="memberId"
+										name="memberId" class="memberId" placeholder="아이디" value="" tabindex="3"  autocomplete="off"> 
+										<p id="result" style="margin:0 !important; font-size: 12px;"></p>
+										<input
+										type="text" id="memberPhone" name="memberPhone"
 										placeholder="전화번호" value="" tabindex="3"  autocomplete="off" class="memberPhone">
+										<p id="result2" style="margin:0 !important; font-size: 12px;"></p>
 								</div>
 							</div>
 							<div id="kakaochoice">

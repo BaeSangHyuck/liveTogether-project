@@ -67,6 +67,16 @@
 	<select id="checkPw" parameterType="map" resultType="_int">
 	select count(memberId) from tbl_member where memberId = #{memberId} and memberPw = #{memberPw};
 	</select>
+	
+	<!-- 탈퇴 과정 1-룸게스트 -->
+	<delete id="deleteRg" parameterType="string">
+		delete from tbl_roomGuest where memberId = #{memberId};
+	</delete>
+	
+	<!-- 탈퇴 과정 2-멤버 -->
+	<delete id="deleteM" parameterType="string">
+		delete from tbl_member where memberId = #{memberId};
+	</delete>
 
 	<!-- 정보수정 -->
 	<update id="updateInfo" parameterType="memberVO">
@@ -388,7 +398,10 @@
 
 	</select>
 
-
-
+	<!-- 비밀번호 찾기할때 아이디,전화번호 확인  -->
+	<select id="findPwCount" parameterType="memberVO" resultType="_int">
+	select count(memberId) from tbl_member
+	where memberId=#{memberId} and memberPhone =#{memberPhone};
+	</select>
 
 </mapper>

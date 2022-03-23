@@ -14,19 +14,19 @@ header#header {
 img.tour-img{
 	width: 35px;
     position: absolute;
-    top: 10px;
-    left: 391px;
+    top: 11px;
+    left: 394px;
 }
 
 div.tour-guide{
-	display:none;
-	width: 180px;
+	display: none;
+    width: 180px;
     padding: 8px;
     border-radius: 10px;
     border: 1px solid #555;
     position: absolute;
-    top: -18px;
-    left: 426px;
+    top: -18px;    
+    left: 430px;
     font-size: 12px;
 }
 div.star-wrap{
@@ -77,7 +77,6 @@ section#zero {
 div.review{
    margin-top: 40px;
     width: 100%;
-    height: 50%;
 }
 
 div.go-tour{
@@ -137,7 +136,7 @@ span.bar {
 
 div.noProfile   {
     margin: 0 auto;
-    padding-top: 130px;
+    padding-top: 50px;
     font-size: 18px;
 } 
    
@@ -559,7 +558,7 @@ p, label {
     font-size: 1.5rem;
    }
    div.go-tour {
-    top: 8px;
+    top: 6px;
     left: 267px;
 }
 section#zero div.gradation-div {
@@ -569,6 +568,23 @@ section#zero div.gradation-div {
     top: 28px;
     left: 0px;
     height: 6px;
+}
+div.column {
+    float: none;
+    width: 100%;
+}
+   section#two {
+    margin-top: 130px;
+    margin-bottom: 30px;
+}
+
+.roomImg {
+    width: 352px;
+    height: 211px;
+}
+.table-wrap {
+    text-align: center;
+    margin-top: 30px;
 }
    
    div.go-tour a {
@@ -582,7 +598,7 @@ section#zero div.gradation-div {
 }
 div.slider {
     position: absolute;
-    top: 14%;
+    top: 22%;
     width: 1rem;
     height: 5rem;
     margin: 0 0.5rem;
@@ -593,7 +609,7 @@ div.slider {
     cursor: pointer;
 }
 div.sub-wrapper {
-    width: 60.5px;
+    width: 59px;
     padding: 3px;
     float: left;
     cursor: pointer;
@@ -799,8 +815,8 @@ table th {
     text-align: center;
     height: 2rem;
     line-height: 2rem;
-    font-size: 3px;
     width: unset;
+    font-size: x-small;
 }
 
 table td {
@@ -808,7 +824,19 @@ table td {
     text-align: center;
     height: 2rem;
     line-height: 2rem;
+    font-size: x-small;
    }
+   .button-tour {
+    font-family: 'GmarketSansLight';
+    font-weight: normal;
+    font-style: normal;
+    background-color: #1187CF;
+    color: #ffffff;
+    height: 20px;
+    line-height: 20px;
+    font-size: x-small;
+    padding: 0;
+}
    
    div.pre-wrap pre{
    font-size: 10px;
@@ -839,4 +867,33 @@ table td {
    .introfix {
        width: 85%;
    }
+   img.tour-img {
+    display: none;
+}
+
+	.delete {
+	display:none;
+	}
+	
+	div.pre-wrap table td{
+	width:35px;
+	}
+	
+	div.review-flex label {
+    font-size: 11px;
+    padding: 0px 5px;
+}
+div.star-wrap {
+    display: flex;
+    padding-right: 5px;
+}
+p.real-review {
+    padding: 0px 5px;
+    font-size: 10px;
+}
+div.noProfile {
+    margin: 0 auto;
+    padding-top: 95px;
+    font-size: 15px;
+}
 }

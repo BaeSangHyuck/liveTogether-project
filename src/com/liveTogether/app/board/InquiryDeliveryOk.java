@@ -23,7 +23,7 @@ public class InquiryDeliveryOk implements Action{
 		String memberType = (String)session.getAttribute("memberType");
 		String memberId = (String)session.getAttribute("memberId");
 		String memberPhone = dao.inquiryData(memberId);
-		int houseNumber = Integer.parseInt(req.getParameter("houseNumber"));
+		String houseNumber = req.getParameter("houseNumber");
 		String houseType = req.getParameter("houseType");
 		String typeOption = req.getParameter("typeOption");
 		String inquiryContent = req.getParameter("inquiryContent");

@@ -87,29 +87,36 @@
 		insert into tbl_inquiry
 		(memberId, memberPhone, houseNumber, houseType, typeOption,
 		inquiryContent, inquiryResponse,memberType)
-		values(#{memberId}, #{memberPhone}, #{houseNumber},
-		#{houseType}, #{typeOption}, #{inquiryContent}, #{inquiryResponse},#{memberType})
+		values(#{memberId},
+		#{memberPhone}, #{houseNumber},
+		#{houseType}, #{typeOption},
+		#{inquiryContent}, #{inquiryResponse},#{memberType})
 	</insert>
 
 	<!-- 관리자페이지에서 문의하기 목록가져오기 -->
 	<select id="inquiryAdminList" resultType="inquiryVO"
 		parameterType="map">
 		select inquiryNumber, memberId,
-		memberPhone, houseNumber, houseType,
+		memberPhone, houseNumber,
+		houseType,
 		typeOption, inquiryContent, memberType, status
-		from tbl_inquiry
+		from
+		tbl_inquiry
 		order by
 		1 desc limit
 		#{startRow}, #{rowCount}
 	</select>
-	
+
 	<!-- 문의하기 디테일 -->
-	<select id="inquiryDetail" resultType="inquiryVO" parameterType="_int">
+	<select id="inquiryDetail" resultType="inquiryVO"
+		parameterType="_int">
 		select inquiryNumber, memberId,
-		memberPhone, houseNumber, houseType,
-		typeOption, inquiryContent
+		memberPhone, houseNumber,
+		houseType,
+		typeOption, inquiryContent, inquiryResponse
 		from tbl_inquiry
-		where inquiryNumber = #{inquiryNumber}
+		where
+		inquiryNumber = #{inquiryNumber}
 	</select>
 
 	<!-- 문의 개수 -->
@@ -123,6 +130,67 @@
 		delete from tbl_inquiry
 		where inquiryNumber=#{inquiryNumber}
 	</delete>
-	
-	
+
+	<update id="updateIRStauts" parameterType="inquiryVO">
+		update tbl_inquiry
+		set
+		inquiryResponse=#{inquiryResponse}, status='1'
+		WHERE
+		inquiryNumber=#{inquiryNumber}
+	</update>
+
+	<!-- 관리자페이지에서 문의하기 목록가져오기 -->
+	<select id="inquiryAdminListZero" resultType="inquiryVO"
+		parameterType="map">
+		select inquiryNumber, memberId,
+		memberPhone, houseNumber,
+		houseType,
+		typeOption, inquiryContent, memberType, status
+		from
+		tbl_inquiry
+		where status= 0
+		order by
+		1 desc limit
+		#{startRow}, #{rowCount}
+	</select>
+
+	<!-- 관리자페이지에서 문의하기 목록가져오기 -->
+	<select id="inquiryAdminListOne" resultType="inquiryVO"
+		parameterType="map">
+		select inquiryNumber, memberId,
+		memberPhone, houseNumber,
+		houseType,
+		typeOption, inquiryContent, memberType, status
+		from
+		tbl_inquiry
+		where status= 1
+		order by
+		1 desc limit
+		#{startRow}, #{rowCount}
+	</select>
+
+	<!-- 문의 개수 -->
+	<select id="getInquiryCountZero" resultType="_int">
+		select
+		count(memberId)
+		from
+		tbl_inquiry
+		where status=0
+	</select>
+
+	<!-- 문의 개수 -->
+	<select id="getInquiryCountOne" resultType="_int">
+		select
+		count(memberId)
+		from
+		tbl_inquiry
+		where status=1
+	</select>
+
+	<update id="deleteReply" parameterType="_int">
+		update tbl_inquiry
+		set inquiryResponse= null,
+		status=0
+		where inquiryNumber=#{inquiryNumber}
+	</update>
 </mapper>

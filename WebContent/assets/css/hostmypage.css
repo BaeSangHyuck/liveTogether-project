@@ -139,6 +139,12 @@
 	width: 100%;
 }
 
+#change_info input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
+	{
+	border-color: none !important;
+	box-shadow: none !important;
+}
+
 #mypageheader .inner {
 	margin-top:3em;
 background-image:url('../../images/mybanner4.png');

@@ -62,6 +62,10 @@ public class MemberFrontController extends HttpServlet {
 			af = new HostStatusSecondOk().execute(req, resp);
 		} else if (command.equals("/member/HostDeleteOk.me")) {
 			af = new HostDeleteOk().execute(req, resp);
+		} else if (command.equals("/member/MemberCheckPwOk.me")) {
+			af = new MemberCheckPwOk().execute(req, resp);
+		} else if (command.equals("/member/MemberDelete.me")) {
+			af = new MemberDelete().execute(req, resp);
 		} else if (command.equals("/member/HostDeleteSecondOk.me")) {
 			af = new HostDeleteSecondOk().execute(req, resp);
 		} else if (command.equals("/member/HostMyPageCompleteOk.me")) {
@@ -112,6 +116,8 @@ public class MemberFrontController extends HttpServlet {
             af = new MemberQuestionListOk().execute(req, resp);
 		} else if (command.equals("/member/MemberReviewDeleteOk.me")) {
 			af = new MemberReviewDeleteOk().execute(req, resp);
+		} else if (command.equals("/member/MemberFindPwCountOk.me")) {
+			af = new MemberFindPwCountOk().execute(req, resp);
 		}else if(command.equals("/member/MemberLogin.me")) {
 			af = new ActionForward();
 			af.setRedirect(false);

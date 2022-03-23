@@ -25,7 +25,17 @@
 			</c:choose>
 		</div>
 		<div id="inquiry">
-			<a href="${pageContext.request.contextPath}/board/InquiryOk.bo"></a>
+		<c:choose>
+				<c:when test="${memberType eq 'h'}">
+					<a href="${pageContext.request.contextPath}/board/InquiryOk.bo"></a>
+				</c:when>
+				<c:when test="${memberType eq 'n'}">
+					<a href="${pageContext.request.contextPath}/board/InquiryOk.bo"></a>
+				</c:when>
+				<c:otherwise>
+					<a onclick="b()"></a>
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<div id="top">
 			<a href="#"></a>

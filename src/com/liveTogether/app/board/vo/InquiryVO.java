@@ -4,7 +4,7 @@ public class InquiryVO {
 	private int inquiryNumber;
 	private String memberId;
 	private String memberPhone;
-	private int houseNumber;
+	private String houseNumber;
 	private String houseType;
 	private String typeOption;
 	private String inquiryContent;
@@ -72,11 +72,11 @@ public class InquiryVO {
 		this.memberPhone = memberPhone;
 	}
 
-	public int getHouseNumber() {
+	public String getHouseNumber() {
 		return houseNumber;
 	}
 
-	public void setHouseNumber(int houseNumber) {
+	public void setHouseNumber(String houseNumber) {
 		this.houseNumber = houseNumber;
 	}
 
