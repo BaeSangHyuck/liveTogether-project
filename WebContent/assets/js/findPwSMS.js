@@ -1,15 +1,61 @@
 var codeNumber;
 var phoneCheck = false;
 
+var check = false;
+
+$("#memberId").blur(function() {
+	if ($(this).val() === "") {
+		$("#result").text("아이디를 입력해주세요.");
+		$("#result").css("color", "red");
+		$("input#memberId").css("border-bottom", "1px solid red");
+		return;
+	}else {
+		$("#result").text("");
+		$("input#memberId").css("border-bottom", "1px solid #e5e5e5");
+	}
+});
+//아이디 중복검사
+$("#memberPhone").blur(function() {
+	if ($(this).val() === "") {
+		$("#result2").text("전화번호를 입력해주세요.");
+		$("#result2").css("color", "red");
+		$("input#memberPhone").css("border-bottom", "1px solid red");
+		return;
+	}else {
+		$("#result2").text("");
+		$("input#memberPhone").css("border-bottom", "1px solid #e5e5e5");
+	}
+	$.ajax({
+		url : contextPath + "/member/MemberFindPwCountOk.me",
+		type : "get",
+		data:{"memberId" : $("input#memberId").val(),"memberPhone" : $("input#memberPhone").val()},
+		dataType : "json",
+		success : function(result) {
+			console.log(result);
+			if (result==1) {	
+				$("#result2").text("");
+				$("input#memberPhone").css("border-bottom", "1px solid #e5e5e5");
+			} else {
+				$("#result2").text("입력하신 정보를 다시 확인해주세요.");
+				$("#result2").css("color", "red");
+				$("input#memberPhone").focus();
+				$("input#memberPhone").css("border-bottom", "1px solid red");
+			}
+		},
+		error : function() {
+			console.log("중복검사 오류");
+		}
+	});
+
+});
+
 $(function(){ 
 
  $("#open").on("click",function(){
-	 if($("input.memberId").val()==""){
-		 alert("아이디를 입력해주세요.");
-	 }else if($("input.memberPhone").val().length!=11){
-		 alert("전화번호를 제대로 입력해주세요.");
-	 }else if($("input.memberPhone").val().length==11 && $("input.memberId").val()!=""){
-		 $("#modal").show();
+	 if($("#result2").text()!=""){
+		 alert("입력하신 정보를 확인해주세요");
+	 }else{
+		 $("#modal").show();}
 		 var $memberPhone=$("input.memberPhone").val();
 		 
 		 $.ajax({
@@ -20,7 +66,7 @@ $(function(){
 			 
 		 });
 		 
-	 }
+	 
 	 
    function codecheck(code){
 	   codeNumber=code;
@@ -74,12 +120,16 @@ $("#m-btn3").on("click", function(){
 			success: function(){
 //				alert("비밀번호가 변경되었습니다.")
 				setTimeout(function(){;},3000);
-				location.href = contextPath+"/main/main.jsp";
+				location.href = contextPath+"/member/login.jsp";
 			}
 			
 		});		
 	}
 })
+$("#m-btn4").on("click", function(){
+	$("#modal").hide();
+}
+)
   function checkCode(){
     
    var $memberCode=$('input[name=memberCode]').val();
@@ -91,11 +141,13 @@ $("#m-btn3").on("click", function(){
       $("#result4").text("인증번호가 일치하지 않습니다.");
          $("#result4").css("color", "red");
          $("input#memberCode").focus();
+         
    }
   
  
        
    
+
  }
 })
 

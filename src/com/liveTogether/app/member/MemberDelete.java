@@ -20,7 +20,7 @@ public class MemberDelete implements Action{
 		String memberId = (String)session.getAttribute("memberId");
 		
 		dao.deleteRg(memberId);
-		dao.deleteM(memberId);
+		dao.updateM(memberId);
 		
 		session.invalidate();
 		

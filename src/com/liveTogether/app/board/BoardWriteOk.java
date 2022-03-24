@@ -18,7 +18,7 @@ public class BoardWriteOk implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		String uploadFolder = "D:\\aigb_0900_hsk\\Jsp\\workspace\\liveTogether\\WebContent\\upload";
+		String uploadFolder = req.getSession().getServletContext().getRealPath("/") + "upload";
 		int fileSize = 1024 * 1024 * 5;//5M
 		HttpSession session = req.getSession();
 		BoardDAO bDao = new BoardDAO();

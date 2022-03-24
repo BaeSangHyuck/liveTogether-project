@@ -12,15 +12,74 @@ public class HouseDTO {
 //  건물형태
 	private String houseType; 
 //	총 인원
-	private int houseMax;
-	
-	
+	private int houseMax;	
 //	몇 인실인지
 	private int roomType;
 //	입주 예정일
 	private String roomDate;
-
+//	대표 사진
+	private String housefileName;
+//	대표 사진
+	private String latitude;
+//	대표 사진
+	private String longitude;
+// 페이징처리 위한 startRow
+	private int startRow;
+// 페이징처리 위한 rowCount
+	private int rowCount;
+// 멤버아이디
+	private String memberId;
 	
+	public String getMemberId() {
+		return memberId;
+	}
+
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+
+
+	public int getStartRow() {
+		return startRow;
+	}
+
+
+	public void setStartRow(int startRow) {
+		this.startRow = startRow;
+	}
+
+
+	public int getRowCount() {
+		return rowCount;
+	}
+
+
+	public void setRowCount(int rowCount) {
+		this.rowCount = rowCount;
+	}
+
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+
 	public HouseDTO() {;}
 
 
@@ -105,6 +164,21 @@ public class HouseDTO {
 	public void setRoomDate(String roomDate) {
 		this.roomDate = roomDate;
 	}
+
+
+	public String getHousefileName() {
+		return housefileName;
+	}
+
+
+	public void setHousefileName(String housefileName) {
+		this.housefileName = housefileName;
+	}
+
+	
+
+	
+	
 	
 
 }

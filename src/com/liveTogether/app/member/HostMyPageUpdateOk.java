@@ -11,28 +11,30 @@ import com.liveTogether.action.ActionForward;
 import com.liveTogether.app.member.dao.MemberDAO;
 import com.liveTogether.app.member.vo.MemberVO;
 
-public class HostMyPageUpdateOk implements Action{
+public class HostMyPageUpdateOk implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
 		ActionForward af = new ActionForward();
 		MemberVO member = new MemberVO();
 		MemberDAO dao = new MemberDAO();
 		HttpSession session = req.getSession();
 		String memberId = (String) session.getAttribute("memberId");
-		
+
 		member.setMemberName(req.getParameter("memberName"));
-		member.setMemberNickname(req.getParameter("memberNickName"));
+		member.setMemberNickname(req.getParameter("memberNickname"));
 		member.setMemberPhone(req.getParameter("memberPhone"));
 		member.setMemberProfile(req.getParameter("memberProfile"));
 		member.setMemberPw(req.getParameter("memberPw"));
 		member.setMemberGender(req.getParameter("memberGender"));
 		member.setMemberId(memberId);
 		dao.updateInfo(member);
-		
+
 		af.setRedirect(true);
 		af.setPath(req.getContextPath() + "/member/HostMyPageLookOk.me");
-		
+
 		return af;
 	}
 

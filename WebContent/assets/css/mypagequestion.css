@@ -1,3 +1,16 @@
+/*  .my_span01{
+   font-size:3em;
+}
+.inner_ab{
+   position: absolute;
+    bottom: 10px;
+    left: 208px;
+    color: black;
+}  */
+.inner_ab {
+	display: none;
+}
+
 .my {
 	width: 70%;
 	margin: 0 auto;
@@ -239,20 +252,9 @@ div.active div.process-title a {
 	color: white;
 }
 
-.inner_ab {
-	position: absolute;
-	bottom: 10px;
-	left: 208px;
-	color: black;
+div.table-wrap {
+	height: 350px;
 }
-
-.my_span01 {
-	font-size: 3em;
-}
-
-div.table-wrap{
-		height: 350px;
-	}
 
 @media ( max-width : 414px) {
 	#navigation_wraper .navigation {
@@ -286,12 +288,12 @@ div.table-wrap{
 		margin-top: 20px !important;
 	}
 	.mypagebar .num5 {
-     box-shadow: none;
-    background-color: #FFF;
-    color: #1187CF;
-    border-bottom: 2px solid #1187CF;
-    font-weight: 600;
-}
+		box-shadow: none;
+		background-color: #FFF;
+		color: #1187CF;
+		border-bottom: 2px solid #1187CF;
+		font-weight: 600;
+	}
 	.mypagetool {
 		height: 1px;
 	}
@@ -303,7 +305,7 @@ div.table-wrap{
 	}
 	table th, table td {
 		font-size: 1px;
-		    text-align: center;
+		text-align: center;
 	}
 	.myconheader3 {
 		margin-top: 2em;
@@ -323,9 +325,9 @@ div.table-wrap{
 	th {
 		font-weight: bold;
 	}
-/* 	th.th3, td.td3 {
-		display: none;
-	} */
+	/*    th.th3, td.td3 {
+      display: none;
+   } */
 	tr.anotherTr {
 		display: none;
 	}
@@ -336,7 +338,25 @@ div.table-wrap{
 		font-size: 12px !important;
 		padding-bottom: 10px !important;
 	}
-	.mypage{
-	    height: 500px;
-	    }
+	.mypage {
+		height: 400px;
+	}
+	.inner_ab {
+		display: block;
+		position: absolute;
+		bottom: -8px;
+		left: 162px;
+	}
+	.my_span01 {
+		font-size: 20px;
+	}
+	#mypageName {
+		display: none !important;
+	}
+	#nonebox {
+		width: 100% !important;
+	}
+	#no {
+		margin-top: 0 !important;
+	}
 }

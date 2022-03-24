@@ -49,21 +49,6 @@
 							<th class="second-th"></th>
 							<th class="third-th"></th>
 						</tr>
-						<tr class="first-table-tr">
-							<th class="fisrt-first-th" id="first-th">*</th>
-							<th class="first-second-th" id="second-th">비대면 투어 전환</th>
-							<th class="first-third-th" id="third-th">2022-02-04</th>
-						</tr>
-						<tr class="second-table-tr">
-							<th class="second-first-th" id="first-th">*</th>
-							<th class="second-second-th" id="second-th">[계약] 중도해지 신청 가이드</th>
-							<th class="second-third-th" id="third-th">2021-09-02</th>
-						</tr>
-						<tr class="third-table-tr">
-							<th class="third-first-th" id="first-th">*</th>
-							<th class="third-second-th" id="second-th">[계약] 재계약 신청 안내</th>
-							<th class="third-third-th" id="third-th">2021-07-15</th>
-						</tr>
 						<c:choose>
 							<c:when test="${boardList != null and fn:length(boardList) >0}">
 								<c:forEach var="board" items="${boardList}">
@@ -79,12 +64,16 @@
 						</c:choose>
 					</tbody>
 				</table>
-
+				
+				<c:choose>
+				<c:when test="${memberType eq 'a'}">
 				<div id="writeWrap">
 					<button type="button" id="writeBtn"
-						onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo';">글
+						onclick="location.href='${pageContext.request.contextPath}/board/BoardWrite.bo'">글
 						작성</button>
 				</div>
+				</c:when>
+				</c:choose>
 
 				<!-- 페이징 처리 -->
 				<table id="paging">

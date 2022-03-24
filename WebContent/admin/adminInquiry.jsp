@@ -20,7 +20,7 @@
 			<p class="first-p">가치살자의 문의관리</p>
 			<div class="table-wrapper">
 				<form
-					action="${pageContext.request.contextPath}/board/InquiryAdminCheckDeleteOk.bo">
+					action="${pageContext.request.contextPath}/board/InquiryAdminCheckDeleteOk.bo" name="clickDelete">
 					<table class="table">
 						<tr>
 							<td class="td td1"><input type="checkbox" id="term"
@@ -88,7 +88,7 @@
 					</table>
 					<div id="width100">
 						<div>
-							<button class="button2 blue">선택 삭제</button>
+							<button class="button2 blue" type="button" onclick="send()">선택 삭제</button>
 						</div>
 					</div>
 				</form>

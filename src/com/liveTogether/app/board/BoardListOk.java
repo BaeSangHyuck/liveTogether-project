@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.liveTogether.app.board.dao.BoardDAO;
 import com.liveTogether.action.Action;
@@ -17,6 +18,8 @@ public class BoardListOk implements Action {
 		HashMap<String, Integer> boardMap = new HashMap<>();
 		ActionForward af = new ActionForward();
 		BoardDAO dao = new BoardDAO();
+		HttpSession session = req.getSession();
+		String memberType = (String)session.getAttribute("memberType");
 		
 		// 게시글의 전체 갯수
 		int total = dao.getTotal();
@@ -53,6 +56,7 @@ public class BoardListOk implements Action {
 		boardMap.put("startRow", startRow);
 		boardMap.put("rowCount", rowCount);
 		
+		req.setAttribute("memberType", memberType);
 		req.setAttribute("boardList", dao.selectAll(boardMap));
 		req.setAttribute("page", page);
 		req.setAttribute("startPage", startPage);

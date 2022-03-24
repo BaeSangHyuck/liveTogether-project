@@ -23,7 +23,6 @@ public class MemberMypageTourOk implements Action {
 		HttpSession session = req.getSession();
 		MemberDAO dao = new MemberDAO();
 		RoomGuestDTO dto = new RoomGuestDTO();
-		System.out.println((String) session.getAttribute("memberId"));
 		
 		//멤버아이디
 		 dto.setMemberId((String) session.getAttribute("memberId"));
@@ -41,8 +40,8 @@ public class MemberMypageTourOk implements Action {
 		
 		return null;
 		
-		//스테이터스 바꿔주는 다오 추가
-		//방의 정보를 가져와야함 --> DTO 만들어야하나 -- 안만들어두댐
+		//스테이터스 바꿔주는 다오 추가 o
+		//방의 정보를 가져와야함 --> DTO 만들어야하나 -- 안만들어두댐 o
 		//투어신청 취소누르면 취소되는 js만들어야댐
 	}
 

@@ -1,17 +1,7 @@
 var imgIndex = 1; // roomFile index
 var imgIndex2 = 1; // houseFile index
 
-// var checkImg = 1
-var checkImga1 = 1;
-var checkImga2 = 2;
-var checkImga3 = 3;
-var checkImga4 = 4;
-var checkImga5 = 5;
-var checkImga6 = 6;
-var checkImga7 = 7;
-var checkImga8 = 8;
 
-var checkImgb1 = 1;
 // Room파일업로드 썸네일
 function imgThumbnail(event) {
 
@@ -28,79 +18,7 @@ function imgThumbnail(event) {
 		} else {
 			img.setAttribute("src", contextPath + "/images/no_img.jpg");
 		}
-	}
-	if (index == "a1") {
-		if (checkImga1 == "1a1a1a1a1") {
-			return;
-		}
-	}
-	if (index == "a2") {
-		if (checkImga2 == "2a2a2a2a2") {
-			return;
-		}
-	} else if (index == "a3") {
-		if (checkImga3 == "3a3a3a3a3") {
-			return;
-		}
-	} else if (index == "a4") {
-		if (checkImga4 == "4a4a4a4a4") {
-			return;
-		}
-	} else if (index == "a5") {
-		if (checkImga5 == "5a5a5a5a5") {
-			return;
-		}
-	} else if (index == "a6") {
-		if (checkImga6 == "6a6a6a6a6") {
-			return;
-		}
-	} else if (index == "a7") {
-		if (checkImga7 == "7a7a7a7a7") {
-			return;
-		}
-	} else if (index == "a8") {
-		if (checkImga8 == "8a8a8a8a8") {
-			return;
-		}
-	}
-
-	var imgText = "";
-	imgIndex++;
-	imgText += "<div class='file-wrap'>"
-	imgText += "<div id='file'>"
-	imgText += "<label for='room_file" + index + imgIndex
-			+ "' style='display: inline;'>"
-	imgText += "<img id='room_file" + index + imgIndex
-			+ "Img' class='roomImg' src='" + contextPath + "/images/파일첨부.png'>"
-	imgText += "</label>"
-	imgText += "</div>"
-	imgText += "<input id='room_file" + index + imgIndex + "' name='room_file"
-			+ index + "' type='file' class='" + index
-			+ "' style='display: none' onchange='imgThumbnail(event);'>"
-	imgText += "<input type='button' class='removeImgBtn' onclick='cancelFile(\"room_file"
-			+ index + imgIndex + "\")' value='첨부 삭제'>"
-	imgText += "</div>"
-
-	$('.filesRoom' + index).append(imgText);
-
-	if (index == "a1") {
-		checkImga1 += index;
-	}
-	if (index == "a2") {
-		checkImga2 += index
-	} else if (index == "a3") {
-		checkImga3 += index
-	} else if (index == "a4") {
-		checkImga4 += index
-	} else if (index == "a5") {
-		checkImga5 += index
-	} else if (index == "a6") {
-		checkImga6 += index
-	} else if (index == "a7") {
-		checkImga7 += index
-	} else if (index == "a8") {
-		checkImga8 += index
-	}
+	}	
 };
 
 // houseFile 썸네일
@@ -323,8 +241,8 @@ function roomAdd() {
 	text += "<th>방이름</th>"
 	text += "<td>"
 	text += "<div class='roomPlusMark'>"
-	text += "<input type='hidden' name='roomName' value='Room" + index + "'>"
-	text += "<div class='input-smallsize'>Room" + index + "</div>"
+	text += "<input type='hidden' name='roomName' value='Room" +houseNumber+"-" +index + "'>"
+	text += "<div class='input-smallsize'>Room" +houseNumber+"-" +index + "</div>"
 	text += "<img src='" + contextPath
 			+ "/images/xMark.png' id='xMark' onclick='removeRoom()'>"
 	text += "</div>"
@@ -336,10 +254,10 @@ function roomAdd() {
 	text += "<td>"
 	text += "<div>"
 	text += "<input type='radio' id='male" + index + "' name='roomGender"
-			+ index + "' value='m'>"
+			+ index + "' value='m' class='b'>"
 	text += "<label for='male" + index + "'>남성전용</label>"
 	text += "<input type='radio' id='female" + index + "' name='roomGender"
-			+ index + "' value='w'>"
+			+ index + "' value='w' class='b'>"
 	text += "<label for='female" + index + "'>여성전용</label>"
 	text += "</div>"
 	text += "</td>"
@@ -348,7 +266,7 @@ function roomAdd() {
 	text += "<th>타입</th>"
 	text += "<td>"
 	text += "<div class='flex'>"
-	text += "<input type='text' class='input-xsmallsize' name='roomType'>"
+	text += "<input type='text' class='input-xsmallsize' name='roomType' autocomplete='off'>"
 	text += "<div>"
 	text += "<span class='span-lineheight'>&nbsp;&nbsp;인실</span>"
 	text += "</div>"
@@ -358,7 +276,7 @@ function roomAdd() {
 	text += "<th>보증금</th>"
 	text += "<td>"
 	text += "<div class='flex'>"
-	text += "<input type='text' class='input-xsmallsize' name='roomDeposit'>"
+	text += "<input type='text' class='input-xsmallsize' name='roomDeposit' autocomplete='off'>"
 	text += "<div>"
 	text += "<span class='span-lineheight'>&nbsp;&nbsp;만원</span>"
 	text += "</div>"
@@ -369,7 +287,7 @@ function roomAdd() {
 	text += "<th>월세</th>"
 	text += "<td>"
 	text += "<div class='flex'>"
-	text += "<input type='text' class='input-xsmallsize' name='roomMonthly'>"
+	text += "<input type='text' class='input-xsmallsize' name='roomMonthly' autocomplete='off'>"
 	text += "<div>"
 	text += "<span class='span-lineheight'>&nbsp;&nbsp;만원</span>"
 	text += "</div>"
@@ -381,7 +299,7 @@ function roomAdd() {
 	text += "   <td>"
 	text += "   <div>"
 	text += "<div id='roomsize-wrap'>"
-	text += "<input type='text' class='input-xsmallsize' id='cal" + checkCal2 + "' onkeyup='calculator(" + checkCal2 +")' name='roomArea'><span class='span-lineheight'>&nbsp;&nbsp;m<sup>2</sup>&nbsp;=&nbsp;&nbsp;</span> <input type='text' class='input-xsmallsize' id='cal" + checkCal1 + "' onkeyup='calculator(" + checkCal1 + ")'><span class='span-lineheight'>&nbsp;&nbsp;평</span>"
+	text += "<input type='text' class='input-xsmallsize' id='cal" + checkCal2 + "' onkeyup='calculator(" + checkCal2 +")' name='roomArea' autocomplete='off'><span class='span-lineheight'>&nbsp;&nbsp;m<sup>2</sup>&nbsp;=&nbsp;&nbsp;</span> <input type='text' class='input-xsmallsize' id='cal" + checkCal1 + "' onkeyup='calculator(" + checkCal1 + ")' autocomplete='off'><span class='span-lineheight'>&nbsp;&nbsp;평</span>"
 	text += "</div>"
 	text += "   </div>"
 	text += "</td>"
@@ -390,7 +308,7 @@ function roomAdd() {
 	text += "</tr>"
 	text += "<tr>"
 	text += "<th>입주가능일</th>"
-	text += "<td><input type='date' name='roomDate'> <input type='checkbox' id='rightnow'> <label for='rightnow'>즉시 입주</label></td>"
+	text += "<td><input type='date' name='roomDate' class='c'> <input type='checkbox' id='rightnow'> <label for='rightnow'>즉시 입주</label></td>"
 	text += "</tr>"
 	text += "<tr>"
 
@@ -408,7 +326,6 @@ function roomAdd() {
 	text += "<input id='room_file"
 			+ index
 			+ "' onchange='imgThumbnail(event)' class='a"
-			+ index
 			+ "' name='room_file"
 			+ index
 			+ "' type='file'	style='display: none' > <input type='button' class='removeImgBtn' onclick='cancelFile(\"room_file"
@@ -425,14 +342,89 @@ function roomAdd() {
 		checkCal2 += 2;
 
 	$('#roomDetail' + index).append(text);	
-	if (index == 8) {
+	if (index == 6) {
 		$("#roomPlusBtn").css('display', 'none');
 	}
 }
 
+var today = new Date();
+var year = today.getFullYear();
+var month = ('0' + (today.getMonth() + 1)).slice(-2);
+var day = ('0' + today.getDate()).slice(-2);
+var dateString = year + '-' + month  + '-' + day;
+
+
+$("#rightnow").val(dateString);
+
+//하우스 등록하기
 function send() {
+	var checkName = document.getElementsByClassName("input-smallsize");
+	var roomLength = $("input[name='roomName']").length
+	var checkType = document.getElementsByName("roomType");
+	var checkDeposit = document.getElementsByName("roomDeposit");
+	var checkMonthly = document.getElementsByName("roomMonthly");
+	var checkArea = document.getElementsByName("roomArea");
+	var checkDate = document.getElementsByClassName("c");
+	var checkGender = document.getElementsByClassName("b");
+	var checkfile = document.getElementsByClassName("a");
+	var genderCount = 0;
+
+	if(!registForm.houseAddressDetail.value){
+		alert("상세주소를 입력해주세요");
+		return;
+	}
+	if(!registForm.houseLocation.value){
+		alert("주소를 정확히 검색해주세요");
+		return;
+	}
+	for (var j=0; j < checkGender.length; j++){
+		if(checkGender[j].checked){
+			genderCount++;
+		}
+	}	
+	if(genderCount != (checkGender.length)/2){
+		alert("방의 성별을 선택해주세요");
+		return;
+	}	
+
+	for (var i = 0; i < roomLength; i++) {		
+		if(!checkType[i].value){
+			alert("몇인실인지 입력해주세요");
+			return;
+		}
+		if(Number(checkType[i].value) > 9){
+			alert("방의 최대인원을 9명까지만 적어주시기 바랍니다")
+			return;
+		}
+		if(!checkDeposit[i].value){
+			alert("보증금을 입력해주세요");
+			return;
+		}
+		if(!checkMonthly[i].value){
+			alert("월세를 입력해주세요");
+			return;
+		}
+		if(!checkArea[i].value){
+			alert("면적을 입력해주세요");
+			return;
+		}
+		if(checkDate[i].value == ""){
+			alert("입주가능한 날짜를 입력해주세요");
+			return;
+		}
+		console.log(checkfile[i]);
+		if(checkfile[i].value == ""){
+			alert(checkName[i].innerText + "방 사진을 추가해주세요");
+			return;
+		}
+	}
+	
 	if(!registForm.house_file.value){
 		alert("방 구조 사진을 첨부해주세요");
+		return;
+	}
+	if(!registForm.houseMessage.value){
+		alert("하우스소개를 입력해주세요");
 		return;
 	}
 	
@@ -440,7 +432,4 @@ function send() {
 
 }
 
-/*
- * $(window).scroll(function() { console.log($("input[name='latitude']").val());
- * console.log($("input[name='longitude']").val()); })
- */
+//오늘 날짜 가져오기

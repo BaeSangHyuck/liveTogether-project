@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE HTML>
@@ -13,128 +13,129 @@
 <title>가치살자 - 회원가입</title>
 <meta charset="utf-8" />
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=1" />
+   content="width=device-width, initial-scale=1, user-scalable=1" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/join.css" />
 <link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap"
-	rel="stylesheet">
+   href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap"
+   rel="stylesheet">
 <link
-	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
-	rel="stylesheet">
+   href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
+   rel="stylesheet">
 </head>
 <body class="is-preload">
 
-	<!-- Header -->
+   <!-- Header -->
 
-	<jsp:include page="../fix/header.jsp" />
+   <jsp:include page="../fix/header.jsp" />
 
-	<!-- Aside -->
-	<jsp:include page="../fix/aside.jsp" />
+   <!-- Aside -->
+   <jsp:include page="../fix/aside.jsp" />
 
-	<!-- Menu -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="generic.html">Generic</a></li>
-			<li><a href="elements.html">Elements</a></li>
-		</ul>
-		<ul class="actions stacked">
-			<li><a href="#" class="button fit primary">Sign Up</a></li>
-			<li><a href="#" class="button fit">Log In</a></li>
-		</ul>
-	</nav>
+   <!-- Menu -->
+   <nav id="menu">
+      <ul class="links">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="generic.html">Generic</a></li>
+         <li><a href="elements.html">Elements</a></li>
+      </ul>
+      <ul class="actions stacked">
+         <li><a href="#" class="button fit primary">Sign Up</a></li>
+         <li><a href="#" class="button fit">Log In</a></li>
+      </ul>
+   </nav>
 
-	<!-- Main -->
-	<section id="join-wrap">
-		<div id="box">
-			<div id="houseIcon">
-				<span></span>
-			</div>
-			<ul id="choices">
-				<li class="choice one"
-					style="background-color: rgba(221, 221, 221, 0.521);"><a
-					id="loginTab" href="login.jsp">로그인</a></li>
-				<li class="choice two"><a id="joinTab" href="join.jsp">회원가입</a></li>
-			</ul>
-			<div id="mArticle">
-				<div class="wrap_form">
-					<div id="infoMsg">
-						<span>내 월세를 아껴줄<br>쉐어하우스 <b>'가치살자'</b></span>
-					</div>
-					<form id="joinForm" name="joinForm" method="post" action="${pageContext.request.contextPath}/member/MemberJoinOk.me">
-					<div id="memberType">
-						<input class="member-input" type="radio" value="n"
-							name="memberType" id="nomal"> <label class="member-btn"
-							for="nomal">일반회원</label> <input class="member-input" type="radio"
-							value="h" name="memberType" id="host"> <label
-							class="member-btn" for="host">호스트</label>
-					</div>
-						<div id="trans">
-							<div class="login_kakaomail">
-								<div id="loginEmailField">
-									<input placeholder="이메일(아이디)" class="tf_g tf_email"
-										name="memberId" id="memberId" > <!-- autocomplete="off" -->
-									<p id="result">가치살다에서 사용하실 이메일을 입력해주세요.</p>
-								</div>
-							</div>
-							<div class="item_tf item_inp">
-								<input placeholder="비밀번호" data-type="password" class="tf_g "
-									name="memberPw" type="password" id="id_password_3"> <input
-									placeholder="비밀번호 확인" data-type="password" class="tf_g checkPw"
-									name="memberPwOk" type="password" id="pwCheck">
-							</div>
-							<div class="nickname_wrap">
-								<input placeholder="이름" class="nickname" name="memberName"
-									type="text" id="memberName" autocomplete="off">
-							</div>
-							<div class="nickname_wrap">
-								<input placeholder="닉네임" class="nickname" name="memberNickname"
-									type="text" id="nickname" autocomplete="off">
-							</div>
-							<div class="nickname_wrap">
-								<input placeholder="전화번호" class="nickname" name="memberPhone"
-									type="text" id="memberPhone" autocomplete="off">
-							</div>
-							<div id="genderChoice">
-								<input class="member-input" type="radio" value="m"
-									name="memberGender" id="memberGenderM"> <label
-									class="member-btn" for="memberGenderM">남자</label> <input
-									class="member-input" type="radio" value="f"
-									name="memberGender" id="memberGenderF"> <label
-									class="member-btn" for="memberGenderF">여자</label>
-							</div>
-							<div class="nickname_wrap profile">
-								<textarea name="memberProfile" id="memberProfile"
-									placeholder="본인을 간략히 소개해주세요."></textarea>
-							</div>
+   <!-- Main -->
+   <section id="join-wrap">
+      <div id="box">
+         <div id="houseIcon">
+            <span></span>
+         </div>
+         <ul id="choices">
+            <li class="choice one"
+               style="background-color: rgba(221, 221, 221, 0.521);"><a
+               id="loginTab" href="${pageContext.request.contextPath}/member/Login.me">로그인</a></li>
+            <li class="choice two"><a id="joinTab" href="${pageContext.request.contextPath}/member/Join.me">회원가입</a></li>
+         </ul>
+         <div id="mArticle">
+            <div class="wrap_form">
+               <div id="infoMsg">
+                  <span>내 월세를 아껴줄<br>쉐어하우스 <b>'가치살자'</b></span>
+               </div>
+               <form id="joinForm" name="joinForm" method="post" action="${pageContext.request.contextPath}/member/MemberJoinOk.me">
+               <div id="memberType">
+                  <input class="member-input" type="radio" value="n"
+                     name="memberType" id="nomal"> <label class="member-btn"
+                     for="nomal">일반회원</label> <input class="member-input" type="radio"
+                     value="h" name="memberType" id="host"> <label
+                     class="member-btn" for="host">호스트</label>
+               </div>
+                  <div id="trans">
+                     <div class="login_kakaomail">
+                        <div id="loginEmailField">
+                           <input placeholder="이메일(아이디)" class="tf_g tf_email"
+                              name="memberId" id="memberId"> <!-- autocomplete="off" -->
+                           <p id="result">가치살다에서 사용하실 이메일을 입력해주세요.</p>
+                        </div>
+                     </div>
+                     <div class="item_tf item_inp">
+                        <input placeholder="비밀번호" data-type="password" class="tf_g "
+                           name="memberPw" type="password" id="id_password_3"> <input
+                           placeholder="비밀번호 확인" data-type="password" class="tf_g checkPw"
+                           name="memberPwOk" type="password" id="pwCheck">
+                           <p id="pwResult"></p>
+                     </div>
+                     <div class="nickname_wrap">
+                        <input placeholder="이름" class="nickname" name="memberName"
+                           type="text" id="memberName" autocomplete="off">
+                     </div>
+                     <div class="nickname_wrap">
+                        <input placeholder="닉네임" class="nickname" name="memberNickname"
+                           type="text" id="nickname" autocomplete="off">
+                     </div>
+                     <div class="nickname_wrap">
+                        <input placeholder="전화번호" class="nickname" name="memberPhone"
+                           type="text" id="memberPhone" autocomplete="off">
+                     </div>
+                     <div id="genderChoice">
+                        <input class="member-input" type="radio" value="m"
+                           name="memberGender" id="memberGenderM"> <label
+                           class="member-btn" for="memberGenderM">남자</label> <input
+                           class="member-input" type="radio" value="w"
+                           name="memberGender" id="memberGenderF"> <label
+                           class="member-btn" for="memberGenderF">여자</label>
+                     </div>
+                     <div class="nickname_wrap profile">
+                        <textarea name="memberProfile" id="memberProfile"
+                           placeholder="본인을 간략히 소개해주세요.(30자이내)"  maxlength='30'></textarea>
+                     </div>
 
-							<div id="term-wrap">
-								<div style="margin-top: 6%;">
-									<input type="checkbox" id="term" name="term"> <label
-										for="term" style="font-size: 1.1em; font-weight: bold;">전체
-										동의합니다.</label>
-								</div>
-								<div class="col-12"
-									style="display: flex; justify-content: space-between; height: 25px;">
-									<div>
-										<input type="checkbox" id="term1" name="term1" class="terms">
-										<label for="term1">서비스 이용약관 </label>
-									</div>
-									<div>
-										<a class="showTerm" href="term1-content">펼쳐보기</a>
-									</div>
-								</div>
-								<textarea class="term-content" name="term1-content"
-									id="term1-content" rows="3" style="display: none;">
+                     <div id="term-wrap">
+                        <div style="margin-top: 6%;">
+                           <input type="checkbox" id="term" name="term"> <label
+                              for="term" style="font-size: 1.1em; font-weight: bold;">전체
+                              동의합니다.</label>
+                        </div>
+                        <div class="col-12"
+                           style="display: flex; justify-content: space-between; height: 25px;">
+                           <div>
+                              <input type="checkbox" id="term1" name="term1" class="terms">
+                              <label for="term1">서비스 이용약관 </label>
+                           </div>
+                           <div>
+                              <a class="showTerm" href="term1-content">펼쳐보기</a>
+                           </div>
+                        </div>
+                        <textarea class="term-content" name="term1-content"
+                           id="term1-content" rows="3" style="display: none;">
 제 1장 총칙
 제 1조 (목적)
-본 약관은 (주)셰어하우스우주(이하 “회사”라 함)이 운영하는 셰어하우스우주 서비스(이하 “서비스”라 함)의 이용과 관련하여 회사와 이용자 및 이용자 간의 권리, 의무 및 책임사항, 서비스의 이용조건 및 절차, 기타 필요한 사항을 규정함을 목적으로 합니다. 셰어하우스우주 서비스라 함은 회사가 제공하는 “셰어하우스우주” 브랜드를 사용하는 서비스를 말합니다. 셰어하우스우주 서비스를 이용하시거나 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영정책을 확인하거나 동의하게 됩니다.
+본 약관은 (주)가치살자(이하 “회사”라 함)이 운영하는 셰어하우스가치살자 서비스(이하 “서비스”라 함)의 이용과 관련하여 회사와 이용자 및 이용자 간의 권리, 의무 및 책임사항, 서비스의 이용조건 및 절차, 기타 필요한 사항을 규정함을 목적으로 합니다. 셰어하우스가치살자 서비스라 함은 회사가 제공하는 “가치살자” 브랜드를 사용하는 서비스를 말합니다. 가치살자 서비스를 이용하시거나 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영정책을 확인하거나 동의하게 됩니다.
 
 제 2조 (정의)
 ① 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
-1. 이용자: 셰어하우스우주에 접속하여 본 약관에 따라 회사가 제공하는 서비스를 이용하는 자를 말하며 회원을 포함합니다.
-2. 서비스: 구현되는 단말기(PC, 모바일, 태블릿 PC등의 각종 유무선 장치를 포함)와 상관없이 이용자가 이용할 수 있는 셰어하우스우주 서비스를 의미합니다.
+1. 이용자: 가치살자에 접속하여 본 약관에 따라 회사가 제공하는 서비스를 이용하는 자를 말하며 회원을 포함합니다.
+2. 서비스: 구현되는 단말기(PC, 모바일, 태블릿 PC등의 각종 유무선 장치를 포함)와 상관없이 이용자가 이용할 수 있는 가치살자 서비스를 의미합니다.
 3. 회원: 회사에 개인정보를 제공하여 회원등록을 한 자로서, 회사의 정보를 지속적으로 제공받으며, 회사가 제공하는 서비스를 계속적으로 이용할 수 있는 자를 말합니다.
 4. 콘텐츠공급자: 서비스에 게재될 수 있도록 회사에 각종 정보 및 콘텐츠 등 내용물 일체를 제공하는 주체로서 사람이나 기관을 의미합니다. 대표적으로 이용자 등이 있습니다.
 5. 자료: 콘텐츠공급자가 제공한 각종 정보, 콘텐츠로써 서비스 상에 게시된 부호, 문자, 음성, 음향, 화상, 동영상 등의 정보 형태의 글, 사진, 동영상 및 각종 파일, 링크, 다운로드, 광고 등을 포함하여 본 서비스에 게시물 형태로 포함되어 있거나, 본 서비스를 통해 배포, 전송되거나, 본 서비스로부터 접근되는 정보를 의미합니다.
@@ -227,7 +228,7 @@
 6. 회사가 정한 정보 이외의 정보(컴퓨터 프로그램 등) 등의 송신 또는 게시
 7. 회사 및 기타 제3자의 저작권 등 지적재산권에 대한 침해
 8. 회사 및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위
-9. 외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 셰어하우스우주에 공개 또는 게시하는 행위
+9. 외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 가치살자에 공개 또는 게시하는 행위
 10. 사기 및 악성 글 등록 등 건전한 거래 문화 활성에 방해되는 행동
 11. 기타 중대한 사유로 인하여 회사가 서비스 제공을 지속하는 것이 부적당하다고 인정하는 경우
 12. 회사로부터 특별한 권리를 부여 받지 않고 서버를 변경하거나, 서버에 다른 프로그램을 추가⋅삽입하거나, 서버를 해킹⋅역설계하거나, 소스 코드나 서버 데이터를 유출⋅변경하거나, 별도의 서버를 구축하거나, 웹사이트의 일부분을 임의로 변경⋅도용하여 회사를 사칭하는 행위
@@ -239,7 +240,7 @@
 18. 타인의 계정을 취득하기 위해 구매, 양수, 교환을 시도하거나, 이를 타인에게 알선하는 활동
 19. 타인을 기망하여 타인의 계정을 탈취하는 행위
 20. 정상적인 서비스 이용으로 볼 수 없는 다량의 계정 생성 및 서비스 가입ㆍ탈퇴, 반복적 유사 활동
-21. 서비스 명칭 또는 셰어하우스우주 임직원이나 서비스와 관련한 운영진을 사칭하여 다른 고객을 속이거나 이득을 취하는 등 피해와 혼란을 주는 행위
+21. 서비스 명칭 또는 가치살자 임직원이나 서비스와 관련한 운영진을 사칭하여 다른 고객을 속이거나 이득을 취하는 등 피해와 혼란을 주는 행위
 22. 욕설, 비속어, 은어 등 통상적인 금기어 사용과 그 외 회사와 고객이 공유하는 상식과 사회 통념에 반하는 비정상적인 활동
 23. 회사나 타인의 지적재산권 또는 초상권을 침해하는 행위, 타인의 명예를 훼손하거나 손해를 가하는 행위
 24. 그 밖에 관련 법령에 위반되거나 선량한 풍속 기타 사회통념에 반하는 행위
@@ -260,7 +261,7 @@
 ④ 회사는 콘텐츠공급자가 제공한 자료가 법령 및 서비스 정책에 위반된다고 판단할 경우, 이를 삭제하거나 게시를 거부할 수 있습니다. 다만, 회사가 모든 자료를 검토할 의무가 있는 것은 아닙니다.
 ⑤ 서비스에서는 회사가 보유하지 않은 일부 자료가 표시될 수 있습니다. 그러한 자료에 대해서는 자료를 제공한 주체인 콘텐츠공급자가 단독으로 모든 책임을 부담하게 됩니다. 이용자가 서비스를 이용하더라도 다른 이용자의 자료에 대해서 어떠한 권리를 가지게 되는 것은 아닙니다.
 ⑥ 본 조는 회사가 서비스를 운영하는 동안 유효하며, 콘텐츠공급자가 서비스 사용을 중단하거나, 해지하거나, 회원 탈퇴 후에도 지속적으로 적용됩니다. 회사는 이 권리를 서비스의 운영, 개선, 홍보 그리고 새로운 서비스를 개발하기 위한 범위 내에서 사용합니다.
-⑦ 그 밖에 서비스 이용 과정에서 서비스의 제공 취지와 부합하지 않는 내용의 자료는 다른 이용자들의 정상적인 서비스 이용에 불편을 초래하고 더 나아가 회사의 원활한 서비스 제공을 방해하므로 게시가 제한될 수 있습니다. 기타 제한되는 자료에 관한 상세한 내용은 셰어하우스우주 정보 및 광고 자료 운영정책 등을 참고해주시기 바랍니다.
+⑦ 그 밖에 서비스 이용 과정에서 서비스의 제공 취지와 부합하지 않는 내용의 자료는 다른 이용자들의 정상적인 서비스 이용에 불편을 초래하고 더 나아가 회사의 원활한 서비스 제공을 방해하므로 게시가 제한될 수 있습니다. 기타 제한되는 자료에 관한 상세한 내용은 가치살자 정보 및 광고 자료 운영정책 등을 참고해주시기 바랍니다.
 
 제 4장 기타
 
@@ -304,19 +305,19 @@
 
 ① 회사와 이용자간 제기된 소송은 대한민국법을 준거법으로 합니다.
 ② 회사와 이용자간 발생한 분쟁에 관한 소송은 민사소송법 상의 관할법원에 제소합니다.</textarea>
-								<br>
-								<div class="col-12"
-									style="display: flex; justify-content: space-between;">
-									<div style="margin-top: -20px;">
-										<input type="checkbox" id="term2" name="term2" class="terms">
-										<label for="term2">개인정보 수집 및 이용</label>
-									</div>
-									<div style="margin-top: -20px;">
-										<a class="showTerm" href="term2-content">펼쳐보기</a>
-									</div>
-								</div>
-								<textarea class="term-content" name="term2-content"
-									id="term2-content" rows="3" style="display: none;">
+                        <br>
+                        <div class="col-12"
+                           style="display: flex; justify-content: space-between;">
+                           <div style="margin-top: -20px;">
+                              <input type="checkbox" id="term2" name="term2" class="terms">
+                              <label for="term2">개인정보 수집 및 이용</label>
+                           </div>
+                           <div style="margin-top: -20px;">
+                              <a class="showTerm" href="term2-content">펼쳐보기</a>
+                           </div>
+                        </div>
+                        <textarea class="term-content" name="term2-content"
+                           id="term2-content" rows="3" style="display: none;">
 쉐어하우스가치살다 주식회사(이하 가치살다)는 모든 회원들의 개인정보 보호를 최우선시하며, 개인정보에 관한 법률 및 내부 기준을 준수하고 있습니다. 가치살다는 본 개인정보취급방침을 통하여 회원이 제공하는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, WOOZOO가 개인정보보호를 위해 어떠한 조치를 취하고 있는지 알려드립니다.
 1. 수집하는 개인정보의 항목, 수집 및 이용 목적, 보유 및 이용 기간
 가치살다는 회원가입 시 아래와 같은 최소한의 개인정보를 수집하고 있습니다.
@@ -336,30 +337,31 @@
 1. 가입일로부터 3년이나, 회원탈퇴를 요청하는 경우 즉시 파기
 2. 동의 거부권 및 거부 시 불이익
 모든 회원가입 신청자는 위 개인정보의 수집, 이용과 관련하여 개인정보 제공 및 보관 동의를 거부할 수 있습니다. 그러나, 상기와 같이 해당 정보의 제공 및 보관은 당사의 업무 진행에 필수불가결한 사항이므로 본 동의를 거부하실 경우 회원가입이 불가함을 알려드립니다.</textarea>
-								<br>
-							</div>
-						</div>
+                        <br>
+                     </div>
+                  </div>
 
-						<div class="wrap_btn">
-							<button class="btn_g btn_confirm submit" type="button"
-								aria-disabled="false" onclick="send()">가입 하기</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
+                  <div class="wrap_btn">
+                     <button class="btn_g btn_confirm submit" type="button"
+                        aria-disabled="false" onclick="send()">가입 하기</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
 
-	<!-- Footer -->
-	<jsp:include page="../fix/footer.jsp" />
+   <!-- Footer -->
+   <jsp:include page="../fix/footer.jsp" />
 
-	<!-- Scripts -->
-	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/join.js"></script>
+   <!-- Scripts -->
+   <script>var contextPath = "${pageContext.request.contextPath}"</script>
+   <script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+   <script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+   <script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
+   <script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
+   <script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+   <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+   <script src="${pageContext.request.contextPath}/assets/js/join.js"></script>
 </body>
 </html>

@@ -38,6 +38,8 @@
 					</div>
 				</div>
 			</div>
+				<c:choose>
+				<c:when test="${memberType eq 'a'}">
 			<div id="reply-wrap">
 				<div class="header">
 					<h2>관리자의 답변</h2>
@@ -64,6 +66,8 @@
 					</c:choose>
 				</div>
 			</div>
+				</c:when>
+				</c:choose>
 		</div>
 	</article>
 

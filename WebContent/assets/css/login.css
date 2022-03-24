@@ -301,6 +301,12 @@ section#login-wrap li.choice a{
 	section#login-wrap ul.kakaochoice li {
     margin: 0 auto;
     width: 100%;
-
+}
+	#modal-inner {
+    width: 100% !important;
+     left: 0 !important;  
+}
+div#mid.modal-content {
+    width: 100%;
 }
 }

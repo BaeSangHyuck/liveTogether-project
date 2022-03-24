@@ -256,4 +256,12 @@ section#finePw-wrap li.choice a{
 	section#finePw-wrap #login_banner img{
 	width: 414px;
 	}
+	#modal-inner {
+    width: 100% !important;
+     left: 0 !important; 
+    
+}
+/* div#m-btn4.modal-content {
+    top: -245px;   
+} */
 }

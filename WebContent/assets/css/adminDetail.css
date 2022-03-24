@@ -71,6 +71,7 @@ button.button {
 	height: 40px;
 	font-size: 12px;
 	line-height: 10px;
+	border-color: #e9e9e9;
 }
 
 div#first-wrapper div.button-wrapper {
@@ -156,4 +157,64 @@ div.ltgt {
 	height: 30px;
 	text-align: center;
 	line-height: 35px;
+}
+
+button.button-list{
+	background-color: #1187CF;
+	color: white;
+	border-color: #e9e9e9;
+}
+
+div#width100 {
+		text-align: right;
+		width: 100%;
+}
+
+div#width100 div{
+	width: 97.5%;
+	margin-top: 10px;
+}
+
+button.blue{
+	display: inline-block;
+	background-color: #1187CF;
+	color: white;
+}
+
+
+
+
+
+
+@media ( max-width :414px) {
+	div#first-wrapper div#second-wrapper {
+		width: 372px;
+		height: 545px;
+		padding: 19px 20px;
+		background-color: white;
+		border: 1px solid #dddddd;
+		margin-top: 100px !important;
+	}
+	div#first-wrapper p.first-p {
+		font-size: 10px;
+		font-weight: bold;
+	}
+	button.button {
+		border: 1px solid black;
+		width: 53px;
+		height: 20px;
+		font-size: 1px;
+		line-height: 10px;
+	}
+	div#first-wrapper div.table-wrapper {
+		width: 371px;
+		font-size: xx-small;
+		margin-top: 20px;
+	}
+	button.blue {
+		display: inline-block;
+		background-color: #1187CF;
+		color: white;
+		font-size: inherit;
+	}
 }

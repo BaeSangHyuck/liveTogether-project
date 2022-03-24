@@ -19,21 +19,19 @@
 						<img class="logo" src="${pageContext.request.contextPath}/images/footer_grayLogo.png">
 
 						<div class="menu-btn-list">
-							<a class="menu-btn" href="/about#tab:introduce">회사소개</a> <a
-								class="menu-btn" href="/about#tab:recruit">채용</a> <a
-								class="menu-btn" href="/privacy" target="_blank">개인정보정책</a> <a
-								class="menu-btn" href="/terms" target="_blank">이용약관</a>
+							<a class="menu-btn" href="${pageContext.request.contextPath}/board/info.bo">회사소개</a> <a
+								class="menu-btn" href="${pageContext.request.contextPath}/board/policy.bo">개인정보정책</a> <a
+								class="menu-btn" href="${pageContext.request.contextPath}/board/terms.bo">이용약관</a>
 						</div>
 					</div>
 					<div class="content">
 						<span>© 2021-2022 · 같이살자(주), All Rights Reserved</span><br> 
-						<span>대표자 : 배상혁 </span>
-						<span>사업자등록번호 : 107 - 87 - 79911</span><br>
-						<span>서울특별시 강남구 테헤란로 146 , 현익빌딩 3층,4층</span><br> 
-						<span>대표번호 : 02-2018-3700</span><br>
-						<span>입주 문의 : 02-2018-3718</span><br> 
-						<span>위탁/투자 문의 : 02-2018-3720</span><br>
-						<span>홍보/제휴 문의 : 02-2018-3728<br> 
+						<span>대표자 : Throws3 </span>
+						<span>사업자등록번호 : 123 - 45 - 67890</span><br>
+						<span>서울특별시 강남구 테헤란로 26길 , Throws 3층, 4층</span><br> 
+						<span>대표번호 : 02-1234-1234</span><br>
+						<span>입주 문의 : 02-1234-1234</span><br> 
+						<span>홍보/제휴 문의 : 02-1234-1234<br></span>
 						<span>상담 가능시간 : 평일 10:00 ~ 18:00 (점심시간12:30~13:30)</span>
 					</div>
 				</div>
@@ -58,7 +56,7 @@
 	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 	// 마커가 표시될 위치입니다 
-	var markerPosition = new kakao.maps.LatLng(37.50002003241857, 127.03560291499817);
+	var markerPosition = new kakao.maps.LatLng(37.49979117511358, 127.03592382743803);
 
 	// 마커를 생성합니다
 	var marker = new kakao.maps.Marker({

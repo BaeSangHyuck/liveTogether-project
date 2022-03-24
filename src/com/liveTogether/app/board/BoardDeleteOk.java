@@ -18,7 +18,7 @@ public class BoardDeleteOk implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		String uploadFolder = "D:\\aigb_0900_hsk\\Jsp\\workspace\\liveTogether\\WebContent\\upload";
+		String uploadFolder = "c:\\aigb_0900_bsh\\Jsp\\workspace\\liveTogether\\WebContent\\upload";
 		int boardNumber = Integer.parseInt(req.getParameter("boardNumber"));
 		BoardDAO bDao = new BoardDAO();
 		FilesDAO fDao = new FilesDAO();

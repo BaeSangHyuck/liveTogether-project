@@ -45,17 +45,22 @@
 			<div class="mypagetool">
 				<ul class="mypagebar">
 					<li class="num1"><a
-						href="${pageContext.request.contextPath}/member/MemberMypageOk.me">내
+						href="${pageContext.request.contextPath}/member/HostMyPageLookOk.me">내
 							정보조회</a></li>
 					<li class="num2"><a
-						href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">내
+						href="${pageContext.request.contextPath}/member/HostMyPageOk.me">내
 							정보수정</a></li>
 					<li class="num3"><a
-						href="${pageContext.request.contextPath}/member/mypagetour.jsp">진행사항</a>
+						href="${pageContext.request.contextPath}/member/HostMyPageTourOk.me">진행사항</a>
 					</li>
 					<li class="num4"><a
-						href="${pageContext.request.contextPath}/member/HostMemberListOk.me">입주자목록</a>
+						href="${pageContext.request.contextPath}/member/HostRejectListOk.me">입주자목록</a>
 					</li>
+					<li class="num4"><a
+						href="${pageContext.request.contextPath}/house/HostForSaleListOk.ho">하우스관리</a>
+					</li>
+					<li class="num4"><a
+						href="${pageContext.request.contextPath}/member/HostQuestionOk.me">문의사항</a></li>
 				</ul>
 			</div>
 
@@ -87,21 +92,42 @@
 											목록</a>
 									</div>
 								</div>
+								<div class="process ">
+									<div class="process-title">
+										<a
+											href="${pageContext.request.contextPath}/member/HostRejectListOk.me">거절 목록</a>
+									</div>
+								</div>
 							</div>
 						</div>
+						<c:choose>
+						<c:when test="${total eq 0}">
+								<!-- 정보가 없을때 기본값 -->
+								<div id=no>
+									<div id="none">
+										<div id="nonebox">
+											<div id="nonehtag">
+												<h4>현재 확정된 투어가 없습니다.</h4>
+												<h6>투어신청 목록에서 올바른 투어신청을 수락해주세요.</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+							</c:when>
+							<c:otherwise>
 						<div class="myconheader3">
 							<div class="info-title">예정된 투어 목록</div>
 							<div class="table-wrap">
 								<table>
 									<thead>
 										<tr>
-											<th>방 번호</th>
-											<th>이름</th>
-											<th>타입</th>
-											<th>방 성별 타입</th>
-											<th>신청인</th>
-											<th>신청인 성별</th>
-											<th>전화번호</th>
+											<th class="th1">방 번호</th>
+											<th class="th2">방 이름</th>
+											<th class="th3">타입</th>
+											<th class="th4">방 성별</th>
+											<th class="th5">신청인</th>
+											<th class="th6">성별</th>
+											<th class="th7">전화번호</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -109,19 +135,31 @@
 											<c:when test="${roomList != null and fn:length(roomList) >0}">
 												<c:forEach var="room" items="${roomList}">
 													<tr>
-														<td>${room.getHouseNumber()}</td>
-														<td>${room.getRoomName()}</td>
-														<td>${room.getRoomType()}</td>
-														<td>${room.getRoomGender()}</td>
-														<td>${room.getMemberName()}</td>
-														<td>${room.getMemberGender()}</td>
-														<td>${room.getMemberPhone()}</td>
-														<td><button
-																onclick="location.href='${pageContext.request.contextPath}/member/HostStatusSecondOk.me?houseNumber=${room.getHouseNumber()}'">수락</button>
-															<button onclick="location.href='${pageContext.request.contextPath}/member/HostDeleteSecondOk?houseNumber=${room.getHouseNumber()}'">거절</button></td>
+														<td class="td1">${room.getHouseNumber()}</td>
+														<td class="td2">${room.getRoomName()}</td>
+														<td class="td3">${room.getRoomType()}</td>
+														<c:choose>
+															<c:when test="${room.getRoomGender() eq 'm'}">
+																<td class="td4">남성전용</td>
+															</c:when>
+															<c:otherwise>
+																<td class="td4">여성전용</td>
+															</c:otherwise>
+														</c:choose>
+														<td class="td5">${room.getMemberName()}</td>
+														<c:choose>
+															<c:when test="${room.getMemberGender() eq 'm'}">
+																<td class="td6">남</td>
+															</c:when>
+															<c:otherwise>
+																<td class="td6">여</td>
+															</c:otherwise>
+														</c:choose>
+														<td class="td7">${room.getMemberPhone()}</td>
 													</tr>
 												</c:forEach>
 											</c:when>
+											<c:otherwise><tr class="anotherTr"><td>목록이 없습니다.</td></tr></c:otherwise>
 										</c:choose>
 									</tbody>
 								</table>
@@ -182,6 +220,8 @@
 								</table>
 							</div>
 						</div>
+						</c:otherwise>
+						</c:choose>
 					</div>
 
 

@@ -15,6 +15,38 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/mypagequestion.css" />
 </head>
+<style>
+#none {
+    height: 500px;
+}
+#nonebox {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #edeff0;
+    border-radius: 1em;
+    box-shadow: 0px 0px 10px #0000001a;
+    border-width: 0;
+    width: 40%;
+    margin: 40px auto;
+    position: relative;
+    height: 200px;
+}
+#nonebox h4 {
+    margin: 0 0 0 0;
+}
+#nonebox h6 {
+    margin: 0 0 0 0;
+    color: #afabab;
+}
+#nonehtag {
+    margin: 0 auto;
+    margin-top: 4em;
+}
+#no {
+    margin-top: 10em;
+}
+</style>
 
 <!-- Header -->
 
@@ -30,8 +62,7 @@
 		<div id="mypageheader">
 			<div class="inner">
 				<div class="inner_ab">
-					<%-- <span class="my_span01">${member.getMemberName()}</span>님의 마이페이지
-					입니다. --%>
+					<span class="my_span01">${memberName}</span>님의 마이페이지 입니다. 
 				</div>
 			</div>
 		</div>
@@ -60,6 +91,8 @@
 			</ul>
 		</div>
 
+<c:choose>
+<c:when test="${inquiryList != null and fn:length(inquiryList) >0}">
 			<div class="my">
 				<div class="wrapper">
 					<div class="mypagecontents">
@@ -75,6 +108,7 @@
 											<th class="th4">옵션</th>
 											<th class="th5">전화번호</th>
 											<th class="th6">문의내용</th>
+											<th class="th7">답변상태</th>
 											
 										</tr>
 									</thead>
@@ -84,9 +118,10 @@
 											<c:when test="${inquiryList != null and fn:length(inquiryList) >0}">
 												<c:forEach var="inquiry" items="${inquiryList}" varStatus="status">
 													<tr>
-														<td>${status.count}</td>
-														<td>${inquiry.getHouseNumber()}</td>
-														<td>
+														
+														<td><a href="${pageContext.request.contextPath}/board/InquiryDetailOk.bo?inquiryNumber=${inquiry.getInquiryNumber()}">${status.count}</a></td>
+														<td><a href="${pageContext.request.contextPath}/board/InquiryDetailOk.bo?inquiryNumber=${inquiry.getInquiryNumber()}">${inquiry.getHouseNumber()}</a></td>
+														<td><a href="${pageContext.request.contextPath}/board/InquiryDetailOk.bo?inquiryNumber=${inquiry.getInquiryNumber()}">
 														<c:choose>
 												<c:when test="${inquiry.getHouseType() eq 'a' }">아파트</c:when>
 												<c:when test="${inquiry.getHouseType() eq 'v'}">빌라</c:when>
@@ -96,18 +131,29 @@
 													선택안함
 												</c:otherwise>
 													</c:choose>
+													</a>
 													</td>
-														<td>${inquiry.getTypeOption()}</td>
-														<td>${inquiry.getMemberPhone()}</td>
-														<td>${inquiry.getInquiryContent()}</td>
+														<td><a href="${pageContext.request.contextPath}/board/InquiryDetailOk.bo?inquiryNumber=${inquiry.getInquiryNumber()}">${inquiry.getTypeOption()}</a></td>
+														<td><a href="${pageContext.request.contextPath}/board/InquiryDetailOk.bo?inquiryNumber=${inquiry.getInquiryNumber()}">${inquiry.getMemberPhone()}</a></td>
+														<td><a href="${pageContext.request.contextPath}/board/InquiryDetailOk.bo?inquiryNumber=${inquiry.getInquiryNumber()}">${inquiry.getInquiryContent()}</a></td>
+														
+														<c:choose>
+											<c:when test="${inquiry.getStatus() eq 0}">
+										<td class="ttd ttd2"><a href="${pageContext.request.contextPath}/board/InquiryDetailOk.bo?inquiryNumber=${inquiry.getInquiryNumber()}">답변대기</a></td>
+											</c:when>
+											<c:when test="${inquiry.getStatus() eq 1}">
+										<td class="ttd ttd2"><a href="${pageContext.request.contextPath}/board/InquiryDetailOk.bo?inquiryNumber=${inquiry.getInquiryNumber()}">답변완료</a></td>
+											</c:when>
+										</c:choose>
+														
 													</tr>
 												</c:forEach>
 											</c:when>
-											<c:otherwise>
+											<%-- <c:otherwise>
 												<tr class="anotherTr">
 													<td>목록이 없습니다.</td>
 												</tr>
-											</c:otherwise>
+											</c:otherwise> --%>
 										</c:choose>
 									</tbody>
 								</table>
@@ -120,6 +166,21 @@
 				</div>
 
 			</div>
+			</c:when>
+			<c:otherwise>
+			<!-- 정보가 없을때 기본값 -->
+				<div id=no>
+					<div id="none">
+						<div id="nonebox">
+							<div id="nonehtag">
+								<h4>등록된 문의사항이 없습니다.</h4>
+								<h6>궁금한 사항은 가치살자에 문의해주세요!</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</c:otherwise>
+			</c:choose>
 		</div>
 
 

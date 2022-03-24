@@ -1,6 +1,7 @@
 package com.liveTogether.app.member;
 
 import java.io.IOException;
+import java.util.Base64;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +24,7 @@ public class MemberJoinOk implements Action {
 		
 		
 		member.setMemberId(req.getParameter("memberId"));
-		member.setMemberPw(req.getParameter("memberPw"));
+		member.setMemberPw(Base64.getEncoder().encodeToString(req.getParameter("memberPw").getBytes()));
 		member.setMemberName(req.getParameter("memberName"));
 		member.setMemberNickname(req.getParameter("memberNickname"));
 		member.setMemberPhone(req.getParameter("memberPhone"));

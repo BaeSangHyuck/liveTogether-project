@@ -84,7 +84,7 @@ p#open{
 
     margin-top: 10%;
     }
-     div#m-id.modal-content{
+     div#mid.modal-content{
 	border-top: 2px solid #eee;
     border-bottom: 2px solid #eee;
     padding: 2rem;
@@ -151,7 +151,7 @@ p#open{
 			<div id="modal-contents">
 				<div class="modal-content" id="m-title"><span></span><h3>아이디 찾기</h3></div>
 				 <div class="modal-content"><span class="m-span">회원님의 정보와 일치하는 아이디 결과입니다.</span><br></div>
-				<div class="modal-content" id="m-id">
+				<div class="modal-content" id="mid">
 				</div>
 				<div class="modal-content" id="m-btn">확인</div>
 			</div>

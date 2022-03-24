@@ -185,12 +185,12 @@ button.blue {
 
 @media ( max-width :414px) {
 	div#first-wrapper div#second-wrapper {
-		width: 372px;
-		height: 545px;
-		padding: 19px 20px;
-		background-color: white;
-		border: 1px solid #dddddd;
-		margin-top: 100px !important;
+	width: 414px;
+    height: 545px;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #dddddd;
+    margin-top: 100px !important;
 	}
 	div#first-wrapper p.first-p {
 		font-size: 10px;
@@ -204,7 +204,7 @@ button.blue {
 		line-height: 10px;
 	}
 	div#first-wrapper div.table-wrapper {
-		width: 342px;
+		width: 414px;
 		font-size: xx-small;
 		margin-top: 20px;
 	}
@@ -213,5 +213,26 @@ button.blue {
 		background-color: #1187CF;
 		color: white;
 		font-size: inherit;
+	}
+	tr{
+	width:100% !important;
+	}
+	td.td2{
+	width:15%;
+	}
+	td.td3{
+	width:14%;
+	}
+	td.td4{
+	width:25%;
+	}
+	td.td5{
+	width:7%;
+	}
+	td.td6{
+	width:39%;
+	}
+	#first-wrapper{
+	width:414px;
 	}
 }
