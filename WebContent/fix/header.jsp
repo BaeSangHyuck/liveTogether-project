@@ -30,21 +30,28 @@
 				</c:choose>
 				<li class="btn p_menu"><a
 					href="${pageContext.request.contextPath}/house/FindRoom.ho">방
-						찾기</a></li>
-				<li class="btn p_menu"><a
-					href="${pageContext.request.contextPath}/board/info.bo">가치살자 소개</a></li>
-				<li class="btn p_menu"><a
-					href="${pageContext.request.contextPath}/board/BoardListOk.bo">공지사항</a></li>
-				<li class="btn p_menu"><a
-					href="${pageContext.request.contextPath}/board/InquiryOk.bo">문의하기</a>
+						찾기</a>
 					<div>
 						<ul class="mouseover">
 							<li></li>
 							<li></li>
 						</ul>
-					</div>	
+					</div></li>
 				</li>
-
+				<li class="btn p_menu"><a
+					href="${pageContext.request.contextPath}/board/info.bo">가치살자 소개</a></li>
+				<li class="btn p_menu"><a
+					href="${pageContext.request.contextPath}/board/BoardListOk.bo">공지사항</a></li>
+				<c:choose>
+					<c:when test="${memberType eq 'h'}">
+						<li class="btn p_menu"><a
+							href="${pageContext.request.contextPath}/board/InquiryOk.bo">문의하기</a>
+					</c:when>
+					<c:when test="${memberType eq 'n'}">
+						<li class="btn p_menu"><a
+							href="${pageContext.request.contextPath}/board/InquiryOk.bo">문의하기</a>
+					</c:when>
+				</c:choose>
 				<c:choose>
 					<c:when test="${memberId eq null}">
 						<li class="btn p_menu"><a
@@ -138,13 +145,13 @@
 							찾기</a>
 					</div>
 
-						<c:if test="${memberType eq 'h'}">
-							<div class="menu">
-								<a
-									href="${pageContext.request.contextPath}/house/HouseRegister.ho">호스팅
-									하기</a>
-							</div>
-						</c:if>
+					<c:if test="${memberType eq 'h'}">
+						<div class="menu">
+							<a
+								href="${pageContext.request.contextPath}/house/HouseRegister.ho">호스팅
+								하기</a>
+						</div>
+					</c:if>
 					<div class="menu">
 						<a href="${pageContext.request.contextPath}/board/info.bo">가치살자
 							소개</a>
@@ -163,11 +170,7 @@
 								<a href="${pageContext.request.contextPath}/board/InquiryOk.bo">문의하기</a>
 							</div>
 						</c:when>
-						<c:otherwise>
-							<div class="menu">
-								<a onclick="b()">문의하기</a>
-							</div>
-						</c:otherwise>
+
 					</c:choose>
 				</div>
 			</div>

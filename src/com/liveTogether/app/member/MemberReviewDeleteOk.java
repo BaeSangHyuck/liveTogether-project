@@ -20,7 +20,6 @@ public class MemberReviewDeleteOk implements Action {
 		
 		dao.reviewDelete(memberId);
 
-		System.out.println("들어옴");
 		return null;
 	}
 

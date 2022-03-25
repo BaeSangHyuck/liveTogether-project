@@ -72,7 +72,7 @@
 
 				<div id="result-wrap">
 					<div id="result-container">
-						<div>
+						<div id="flex-wrap">
 							<div id="result-flex">
 								<span id="result">검색결과가 0건 있습니다.</span>
 								<button onclick="search()">검색하기</button>

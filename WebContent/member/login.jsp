@@ -2,11 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML>
-<!--
-		Tactile by Pixelarity
-		pixelarity.com | hello@pixelarity.com
-		License: pixelarity.com/license
-	-->
 <html>
 <head>
 <title>가치살자 - 로그인</title>
@@ -60,27 +55,10 @@
 								id="findUrlOrNickname" name="memberPw" placeholder="비밀번호" 
 								value=<c:out value="${param.forwardurl}"/>>
 						</div>
-					<!-- 	<div id="loginStatus">
-							<input type="checkbox" name="saveId" value="true" id="saveId">
-							<label for="saveId">아이디 저장</label> <input type="checkbox"
-								name="autoLogin" value="true" id="autoLogin"> <label
-								for="autoLogin" style="margin-left: 12px;">자동 로그인</label>
-						</div> -->
-<%-- 		<!-- 쿠키의 객체를 가져온다. -->
-		<!-- 로그인 상태 -->
-		<c:if test="${not empty cookie.memberId}">
-		
-			</c:if>
-			<!-- 로그인 안된상태  -->
-			<c:if test="${empty cookie.memberId}">
-	
-			</c:if> --%>
+
 						<div id="kakaochoice">
 							<ul class="actions fit kakaochoice">
 								<li><a href="#" class="button alt fit tstory" onclick="loginForm.submit()" id="login"><span>로그인</span></a></li>
-								<li><a id="kakao_btn" href="#"
-									class="button alt fit kakao"><img src="../images/카카오톡.jpg"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카카오계정
-											로그인</span></a></li>
 								<li><a href="findId.jsp" class="button alt fit tstory find"><span>아이디
 											찾기</span></a></li>
 								<li><a href="findPw.jsp" class="button alt fit tstory find"><span>비밀번호
@@ -104,49 +82,10 @@
 	<!-- Scripts -->
 	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
-	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-	<script>
-		/* Kakao.init("3df76abdd7389be0cf0063fa01b6ffb4");
-		
-		$("#kakao_btn").on("click", function(){
-		    //1. 로그인 시도
-		    Kakao.Auth.login({
-				scope : 'profile_nickname, account_email, gender',
-		        success: function(authObj) {
-		         	console.log(authObj);
-		          //2. 로그인 성공시, API 호출
-		         Kakao.API.request({
-		            url: '/v2/user/me',
-		            success: function(res) {
-		            	
-		            	/* $.each({
-		            		
-		            	)}; */
-		            	const kakao_account = res.kakao_account;
-		            	console.log(kakao_account);
-		              var id = res.id;
-		              console.log(id);
-		              console.log(res.profile_nickname);
-		              alert("로그인 성공");
-		              location.href="${pageContext.request.contextPath}/main/main.jsp?code=" + id;
-						         
-		        }
-		          })
-		          console.log(authObj);
-		          var token = authObj.access_token;
-		        },
-		        fail: function(err) {
-		          alert(JSON.stringify(err));
-		        }
-		      });
-		        
-		})  */
-	</script>
 	<script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
-	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/login.js"></script>
 </body>
 </html>

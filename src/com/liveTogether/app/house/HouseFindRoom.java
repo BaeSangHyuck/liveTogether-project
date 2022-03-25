@@ -33,9 +33,6 @@ public class HouseFindRoom implements Action{
 		String htype = "";
 		String rtype = "";
 		
-		System.out.println(min);
-		System.out.println(max);
-		
 		HouseDAO hdao = new HouseDAO();
 		HouseFilterDTO fdto = new HouseFilterDTO();
 		PrintWriter out = resp.getWriter();		
@@ -67,9 +64,9 @@ public class HouseFindRoom implements Action{
 		}
 		fdto.setRoomDate(roomDate);					
 
-		List<HouseDTO> replyList = hdao.findroom(fdto);
+		List<HouseDTO> houseList = hdao.findroom(fdto);
 		JSONArray rooms = new JSONArray();
-		for(HouseDTO r : replyList) {
+		for(HouseDTO r : houseList) {
 			JSONObject room = new JSONObject();
 			room.put("houseNumber", r.getHouseNumber());
 			room.put("roomDeposit", r.getRoomDeposit());
@@ -78,8 +75,9 @@ public class HouseFindRoom implements Action{
 			room.put("houseType", r.getHouseType());
 			room.put("houseMax", r.getHouseMax());
 			room.put("housefileName",r.getHousefileName());
+			room.put("lat",r.getLatitude());
+			room.put("lng",r.getLongitude());
 			rooms.add(room);
-			
 		}
 		
 		out.print(rooms.toJSONString());

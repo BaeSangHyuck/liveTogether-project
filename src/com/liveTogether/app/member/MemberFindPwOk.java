@@ -2,6 +2,7 @@ package com.liveTogether.app.member;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Base64;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +23,7 @@ public class MemberFindPwOk implements Action {
 		
 
 		 member.setMemberPhone(req.getParameter("memberPhone"));
-		 member.setMemberPw(req.getParameter("changePw"));
+		 member.setMemberPw(Base64.getEncoder().encodeToString(req.getParameter("changePw").getBytes()));
 		
 		 dao.updatePw(member);
 		

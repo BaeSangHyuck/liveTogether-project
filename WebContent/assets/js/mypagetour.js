@@ -15,8 +15,6 @@ if (status == '0') {
 	$(".myconheader4").css('display', 'none');
 }
 if (status == '1') {
-	console.log(status);
-	console.log(tourWait[1]);
 	tourWait[0].classList.add('active');
 	tourWait[1].classList.add('active1');
 	tourOk[0].classList.remove('active')
@@ -47,51 +45,7 @@ if (status == '3') {
 	$(".myconheader4").css('display', 'block');
 }
 
-// $('#reviewbtn').on('click', function(){
-// $.ajax({
-// url : contextPath + "/member/MemberMypageReviewOk.me",
-// type: "get",
-// data: {"star" : $('input[name=rating]:checked').val(), "review" :
-// $('input[name=reviewText]').val()},
-// success : alert("성공"),
-//
-// error: function(a, b, c){
-// console.log("오류" + c);
-// }
-// })
-//
-// });
 
-// <div class="myconheader4">
-// <div class="info-title">후기 작성하기</div>
-// <div id="review-form">
-// <div class="star-rating auto">
-// <input type="radio" id="5-stars" name="rating" value="5" />
-// <label for="5-stars" class="star pr-4">★</label>
-// <input type="radio" id="4-stars" name="rating" value="4" />
-// <label
-// for="4-stars" class="star">★</label>
-// <input type="radio"
-// id="3-stars" name="rating" value="3" />
-// <label
-// for="3-stars" class="star">★</label>
-// <input type="radio"
-// id="2-stars" name="rating" value="2" />
-// <label
-// for="2-stars" class="star">★</label>
-// <input type="radio"
-// id="1-star" name="rating" value="1" /> <label for="1-star"
-// class="star">★</label>
-//
-// </div>
-
-// <div id="review">
-// <input type="text" id="reviewText" name="reviewText"
-// placeholder="후기를 등록해주세요.(최대 30자이내)" maxlength='30' value="">
-// </div>
-// <button id="reviewbtn">완료</button>
-// </div>
-// </div>
 // 리스트 가져오기
 function getList() {
 	$.ajax({
@@ -106,20 +60,6 @@ function getList() {
 	});
 }
 
-// <div class="myconheader4">
-// <div class="info-title">후기</div>
-// <div id="review-form">
-// <div class="star-rating auto">
-// <label id="getstar"><c:forEach begin="1"
-// end="${myTourHouseRoom.getStar()}">★</c:forEach></label>
-// </div>
-// <div id="review">
-// <div id="review-1">${myTourHouseRoom.getReview()}</div>
-// </div>
-// <a id="reviewbtn1">수정</a>
-// <a id="reviewbtn2">삭제</a>
-// </div>
-// </div>
 
 // 가져온데이터를 통해 div에 넣어준다
 function showReview(review) {
@@ -223,26 +163,3 @@ $('#reviewbtn').on('click', function() {
 		}
 	})
 });
-/*
- * text+="<c:choose>" text+="<c:when test='${myTourHouseRoom.getStar() eq
- * null}'>" text+='<div class="info-title">후기 작성하기</div>' text+='<div
- * id="review-form">' text+='<div class="star-rating auto">' text+='<input
- * type="radio" id="5-stars" name="rating" value="5" />' text+='<label
- * for="5-stars" class="star pr-4">★</label> <input' text+='type="radio"
- * id="4-stars" name="rating" value="4" /> <label' text+='for="4-stars"
- * class="star">★</label> <input type="radio"' text+='id="3-stars"
- * name="rating" value="3" /> <label' text+='for="3-stars" class="star">★</label>
- * <input type="radio"' text+='id="2-stars" name="rating" value="2" /> <label'
- * text+='for="2-stars" class="star">★</label> <input type="radio"'
- * text+='id="1-star" name="rating" value="1" /> <label' text+='for="1-star"
- * class="star">★</label></div>' text+='<div id="review">' text+='<input
- * type="text" id="reviewText" name="reviewText"' text+='placeholder="후기를
- * 등록해주세요.(최대 30자이내)" maxlength="30"></div>' text+='<input type="button"
- * id="reviewbtn" value="완료"></div></c:when>' text+='<c:otherwise>' text += "<div
- * class='info-title'>후기</div>" text += "<div id='review-form'>" text += "<div
- * class='star-rating auto'>" text += "<label id='getstar'><c:forEach
- * begin='1' end='" + review.star + "'>★</c:forEach></label>" text += "</div>"
- * text += "<div id='review'>" text += "<div id='review-1'>" + review.review+ "</div>"
- * text += "</div>" text += "<a id='reviewbtn1'>수정</a>" text += "<a
- * id='reviewbtn2' onclick='deleteReview()'>삭제</a>" text += "</div></c:otherwise></c:choose>"
- */

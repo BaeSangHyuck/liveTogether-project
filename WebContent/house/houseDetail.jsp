@@ -93,178 +93,69 @@
 						</fieldset>
 						<div class="guest-review">입주자 리뷰</div>
 						<div class="review-wrap">
-							<%-- <c:choose>
-                     <c:when test="${roomguest != null and fn:length(roomguest) > 0}">
-                        <c:forEach var="roomguest" items="${roomguest}">
-                           <div class="review-wrapper">
-                              <div class="review-flex">
-                                 <label class="guestinfo">${roomguest.getMemberNickname()}
-                                    <span class="bar">|</span><c:choose>
-                                       <c:when test="${roomguest.getMemberGender() eq 'm'}"> (남자)</c:when>
-                                       <c:otherwise> (여자)</c:otherwise>
-                                    </c:choose>
-                                 </label>
-                                 <div class="star-wrap">
-                                    <c:choose>
-                                       <c:when test="${roomguest.getStar() eq '5'}">
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                       </c:when>
-                                       <c:when test="${roomguest.getStar() eq '4'}">
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star">★</label>
-                                       </c:when>
-                                       <c:when test="${roomguest.getStar() eq '3'}">
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star">★</label>
-                                          <label class="star">★</label>
-                                       </c:when>
-                                       <c:when test="${roomguest.getStar() eq '2'}">
-                                          <label class="star active">★</label>
-                                          <label class="star active">★</label>
-                                          <label class="star">★</label>
-                                          <label class="star">★</label>
-                                          <label class="star">★</label>
-                                       </c:when>
-                                       <c:otherwise>
-                                          <label class="star active">★</label>
-                                          <label class="star">★</label>
-                                          <label class="star">★</label>
-                                          <label class="star">★</label>
-                                          <label class="star">★</label>
-                                       </c:otherwise>
-                                    </c:choose>
-                                 </div>
-                              </div>
-                              <p class="real-review">${roomguest.getReview()}</p>
-                              <div class="profiles-wrap">
-                              <p class="guest-profile">${rooguest.getmemberProfile()}</p>
-                              </div>
-                           </div>
-                        </c:forEach>
-                     </c:when>
-                     <c:otherwise>
-                        <div class="noProfile">아직 입주한 사람이 없습니다</div>
-                     </c:otherwise>
-                  </c:choose>    --%>
-							<div class="review-wrapper">
-								<div class="review-flex">
-									<label class="guestinfo"><b class="showProfile">닉네임</b>
-										<span class="bar">|</span> (남자) </label>
-									<div class="star-wrap">
-										<label class="star active">★</label> <label
-											class="star active">★</label> <label class="star active">★</label>
-										<label class="star active">★</label> <label
-											class="star active">★</label>
-									</div>
-								</div>
-								<p class="real-review">안녕하세요 정말 멋진 방이 아니네요</p>
-								<div class="profiles-wrap">
-									<p class="guest-profile">안녕하세요 한무밍입니다</p>
-								</div>
-							</div>
-							<div class="review-wrapper">
-								<div class="review-flex">
-									<label class="guestinfo"><b class="showProfile">닉네임</b>
-										<span class="bar">|</span>(남자) </label>
-									<div class="star-wrap">
-										<label class="star active">★</label> <label
-											class="star active">★</label> <label class="star active">★</label>
-										<label class="star active">★</label> <label
-											class="star active">★</label>
-									</div>
-								</div>
-								<p class="real-review">안녕하세요 정말 멋진 방이 아니네요</p>
-								<div class="profiles-wrap">
-									<p class="guest-profile">안녕하세요 한무밍입니다</p>
-								</div>
-							</div>
-							<div class="review-wrapper">
-								<div class="review-flex">
-									<label class="guestinfo">닉네임 <span class="bar">|</span>(남자)
-									</label>
-									<div class="star-wrap">
-										<label class="star active">★</label> <label
-											class="star active">★</label> <label class="star active">★</label>
-										<label class="star active">★</label> <label
-											class="star active">★</label>
-									</div>
-								</div>
-								<p class="real-review">안녕하세요 정말 멋진 방이 아니네요</p>
-							</div>
-							<div class="review-wrapper">
-								<div class="review-flex">
-									<label class="guestinfo">닉네임 <span class="bar">|</span>(남자)
-									</label>
-									<div class="star-wrap">
-										<label class="star active">★</label> <label
-											class="star active">★</label> <label class="star active">★</label>
-										<label class="star active">★</label> <label
-											class="star active">★</label>
-									</div>
-								</div>
-								<p class="real-review">안녕하세요 정말 멋진 방이 아니네요</p>
-							</div>
-							<div class="review-wrapper">
-								<div class="review-flex">
-									<label class="guestinfo">닉네임 <span class="bar">|</span>(남자)
-									</label>
-									<div class="star-wrap">
-										<label class="star active">★</label> <label
-											class="star active">★</label> <label class="star active">★</label>
-										<label class="star active">★</label> <label
-											class="star active">★</label>
-									</div>
-								</div>
-								<p class="real-review">안녕하세요 정말 멋진 방이 아니네요</p>
-							</div>
-							<div class="review-wrapper">
-								<div class="review-flex">
-									<label class="guestinfo">닉네임 <span class="bar">|</span>(남자)
-									</label>
-									<div class="star-wrap">
-										<label class="star active">★</label> <label
-											class="star active">★</label> <label class="star active">★</label>
-										<label class="star active">★</label> <label
-											class="star active">★</label>
-									</div>
-								</div>
-								<p class="real-review">안녕하세요 정말 멋진 방이 아니네요</p>
-							</div>
-							<div class="review-wrapper">
-								<div class="review-flex">
-									<label class="guestinfo">닉네임 <span class="bar">|</span>(남자)
-									</label>
-									<div class="star-wrap">
-										<label class="star active">★</label> <label
-											class="star active">★</label> <label class="star active">★</label>
-										<label class="star active">★</label> <label
-											class="star active">★</label>
-									</div>
-								</div>
-								<p class="real-review">안녕하세요 정말 멋진 방이 아니네요</p>
-							</div>
-							<div class="review-wrapper">
-								<div class="review-flex">
-									<label class="guestinfo">닉네임 <span class="bar">|</span>(남자)
-									</label>
-									<div class="star-wrap">
-										<label class="star active">★</label> <label
-											class="star active">★</label> <label class="star active">★</label>
-										<label class="star active">★</label> <label
-											class="star active">★</label>
-									</div>
-								</div>
-								<p class="real-review">안녕하세요 정말 멋진 방이 아니네요</p>
-							</div>
+							<c:choose>
+								<c:when test="${roomguest != null and fn:length(roomguest) > 0}">
+									<c:forEach var="roomguest" items="${roomguest}">
+										<div class="review-wrapper">
+											<div class="review-flex">
+												<label class="guestinfo"><b class="showProfile">${roomguest.getMemberNickname()}</b>
+													<span class="bar">|</span>
+												<c:choose>
+														<c:when test="${roomguest.getMemberGender() eq 'm'}"> (남자)</c:when>
+														<c:otherwise> (여자)</c:otherwise>
+													</c:choose>
+												</label>
+												<div class="star-wrap">
+													<c:choose>
+														<c:when test="${roomguest.getStar() eq '5'}">
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+														</c:when>
+														<c:when test="${roomguest.getStar() eq '4'}">
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star">★</label>
+														</c:when>
+														<c:when test="${roomguest.getStar() eq '3'}">
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star">★</label>
+															<label class="star">★</label>
+														</c:when>
+														<c:when test="${roomguest.getStar() eq '2'}">
+															<label class="star active">★</label>
+															<label class="star active">★</label>
+															<label class="star">★</label>
+															<label class="star">★</label>
+															<label class="star">★</label>
+														</c:when>
+														<c:otherwise>
+															<label class="star active">★</label>
+															<label class="star">★</label>
+															<label class="star">★</label>
+															<label class="star">★</label>
+															<label class="star">★</label>
+														</c:otherwise>
+													</c:choose>
+												</div>
+											</div>
+											<p class="real-review">${roomguest.getReview()}</p>
+											<div class="profiles-wrap">
+												<p class="guest-profile">${roomguest.getMemberProfile()}</p>
+											</div>
+										</div>
+									</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<div class="noProfile">아직 입주한 사람이 없습니다</div>
+								</c:otherwise>
+							</c:choose>
 						</div>
 					</div>
 
@@ -551,8 +442,7 @@
 				</fieldset>
 				<div id="map" style="width: 100%; height: 350px;"></div>
 				<div class="move-wrapper">
-					<a
-						href="https://map.kakao.com/?q=${house.getHouseAddress()}"
+					<a href="https://map.kakao.com/?q=${house.getHouseAddress()}"
 						class="move" target="_blank">${house.getHouseAddress()}
 						${house.getHouseAddressDetail()}</a>
 				</div>

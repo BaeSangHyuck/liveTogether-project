@@ -94,15 +94,6 @@ p#open{
     width: 50%;
     }
     
-/*      div#m-title.modal-content span{
-    width:30%;
-    height:100px;
-    background-image: url(../images/회원정보아이콘-001-2.png);
-    background-repeat: no-repeat;
-    position: absolute;
-	top: -42px;
-    left: 150px;
-} */
     
      .modal-content h3{
 	margin:0 0 0.5em 0 !important;

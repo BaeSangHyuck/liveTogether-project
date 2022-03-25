@@ -93,12 +93,12 @@
 <input type="radio" name="live" id="faq-question3">
 <label for="faq-question3" class="check">임대인인 제가 실거주하면서, 임차인들을 받아서 실제 동거 형태로 위탁도 가능한가요?<em><img src="${pageContext.request.contextPath}/images/inquiryPlus.png"></em></label>
 <div><p>
-불가능 합니다. 우주는 원칙 적으로 동성 관계에서 셰어하우스 운영이 가능하며  입주자에게는 임대인의 위탁을 위임 받은 ‘우주’ 라는 브랜드 만을 노출하게 되며, 실제로  접촉하는 것도 우주와의 접촉만 가능합니다.
+불가능 합니다. 가치살자는 원칙 적으로 동성 관계에서 쉐어하우스 운영이 가능하며  입주자에게는 임대인의 위탁을 위임 받은 ‘가치살자’ 라는 브랜드 만을 노출하게 되며, 실제로  접촉하는 것도 가치살자와의 접촉만 가능합니다.
 </p></div>
 <input type="radio" name="live" id="faq-question4">
-<label for="faq-question4" class="check">근생 건물에서 셰어하우스는 불가능 한가요?<em><img src="${pageContext.request.contextPath}/images/inquiryPlus.png"></em></label>
+<label for="faq-question4" class="check">근생 건물에서 쉐어하우스는 불가능 한가요?<em><img src="${pageContext.request.contextPath}/images/inquiryPlus.png"></em></label>
 <div><p>
-건축물 대장상 2종근린생활시설 중 고시원(다중주택)의 경우 셰어하우스로 검토 가능합니다.
+건축물 대장상 2종근린생활시설 중 고시원(다중주택)의 경우 쉐어하우스로 검토 가능합니다.
 </p></div>
 			</div>
 			<br><br><br><br><br><br><br><br><br>

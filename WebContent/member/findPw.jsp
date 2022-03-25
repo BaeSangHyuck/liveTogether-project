@@ -22,11 +22,6 @@ label.screen_out {
 	font-size: 13px;
 }
 
-
-
-/* button.btn_tistory:hover {
-	background-color: #8AAAE5;
-} */
 button.btn_tistory {
 	background-color: #1187CF;
 	color: #fff;
@@ -242,12 +237,6 @@ div#m-btn4.modal-content {
 	<!-- Aside -->
 	<jsp:include page="../fix/aside.jsp" />
 
-
-<!--
-	확인 -> 모달켜짐 -> 인증번호 입력 -> 입력하면 모달이너 none, 이너2 block -> 비밀번호 새로만드는 창
- 	새로 입력하는 컨트롤러 (모달이너넘어갈때 인증번호 보내주는게 첫번째(핸드폰), 
-  -->
-
 <div id="modal">
 	 <div id="modal-inner">
 		<div id="modal-box">
@@ -272,38 +261,9 @@ div#m-btn4.modal-content {
 			</div>
 		</div>
 	</div>
-	 
-	 <!-- 새로운 비밀번호 -->
-	<%-- <div id="modal-inner2">
-		<div id="modal-box2">
-			<div id="modal-contents2" id="m2-title">	
-				<h2>비밀번호 변경하기</h2>
-				<span class="m-span">새로운 비밀번호를 입력해주세요.</span>
-				<form action="${pageContext.request.contextPath}/member/MemberFindPwOk.me" accept-charset="UTF-8" method="post">
-				<input type="text" id="memberPw" name="memberPw"
-				placeholder="새로운 비밀번호" value="${member.getMemberPw()}" tabindex="3"  autocomplete="off" class="memberPw">
-				</form>
-			</div>
-				<div class="modal-content2" id="m-btn"><button>확인</button></div>
-		</div>
-	</div>  --%>
 	
 </div>
 
-
-<!-- <div id="modal2">
-	<div id="modal-inner2">
-		<div id="modal-box2">
-			<div id="modal-contents2" id="m2-title">	
-				<span>인증번호를 입력해 주세요.</span>
-				<input type="text" id="memberCode" name="memberCode"
-				placeholder="인증번호" value="" tabindex="3"  autocomplete="off" class="memberCode">
-			</div>
-				<div class="modal-content2" id="m-btn"><button>확인</button></div>
-		</div>
-	</div>
-</div>
-	 -->
 	<!-- Main -->
 	<section id="finePw-wrap">
 		<div id="box">
@@ -362,7 +322,6 @@ div#m-btn4.modal-content {
 	<script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
-<%-- 	<script src="${pageContext.request.contextPath}/assets/js/findPw.js"></script> --%>
 	<script src="${pageContext.request.contextPath}/assets/js/findPwSMS.js"></script>
 	<script>var contextPath = "${pageContext.request.contextPath }";</script>
 

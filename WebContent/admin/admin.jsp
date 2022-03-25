@@ -34,78 +34,7 @@
 
 	<div id="admin-whole-wrapper">
 		<div id="navigation">
-			<div id="padding-div">
-				<div id="first-a-wrapper">
-					<div class="a-wrapper">
-						<a href="" class="admin-a">구매자 관리</a>
-					</div>
-					<div id="hr-tag3"></div>
-					<div class="a-wrapper">
-						<a href="" class="admin-a">판매자 관리</a>
-					</div>
-					<div id="hr-tag3"></div>
-					<div class="a-wrapper">
-						<a href="" class="admin-a">전체 방 관리</a>
-					</div>
-					<div id="hr-tag3"></div>
-					<div class="a-wrapper">
-						<a href="" class="admin-a">매물 관리</a>
-					</div>
-					<div id="hr-tag3"></div>
-					<div class="a-wrapper">
-						<a href="" class="admin-a">문의/후기 관리</a>
-					</div>
-					<div id="hr-tag3"></div>
-					<div class="a-wrapper">
-						<a href="" class="admin-a">공지 사항</a>
-					</div>
-					<div id="hr-tag3"></div>
-					<div class="a-wrapper">
-						<a href="" class="admin-a">통계</a>
-					</div>
-				</div>
-				<div id="second-a-wrapper">
-					<div class="no-navigation1">
-						<div class="a-wrapper2">
-							<a href="">교육 프로그램 바로가기</a>
-						</div>
-						<div class="a-wrapper3">
-							<a href="" class="admin-a">온라인 교육</a>
-						</div>
-						<div class="a-wrapper3">
-							<a href="" class="admin-a">방 계약 라이브 교육</a>
-						</div>
-					</div>
-					<div class="no-navigation2">
-						<div class="a-wrapper2">
-							<a href="">판매자 금융지원</a>
-						</div>
-						<div class="a-wrapper3">
-							<a href="" class="admin-a">빠른정산</a>
-						</div>
-						<div class="a-wrapper3">
-							<a href="" class="admin-a">사업자 대출</a>
-						</div>
-						<div class="a-wrapper3">
-							<a href="" class="admin-a">사업자 보험</a>
-						</div>
-						<div class="a-wrapper3">
-							<a href="" class="admin-a">정책지원금</a>
-						</div>
-					</div>
-					<div class="no-navigation1">
-						<div class="a-wrapper2">
-							<a href="">공식 블로그 바로가기</a>
-						</div>
-						<div class="a-wrapper3">
-							<a href="" class="admin-a">네이버쇼핑 파트너</a>
-						</div>
-						<div class="a-wrapper3">
-							<a href="" class="admin-a">쇼핑윈도</a>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div></div><div class="ready"></div><div class="ready">준비중</div><div class="ready"></div><div></div>
 		</div>
 		<div id="first-wrapper">
 			<div id="second-wrapper">
@@ -134,7 +63,7 @@
 									</div>
 										<div id="hr-tag2"></div>
 									<div id="member-first-first-div">
-										<div id="member-first-first-first-span" class="left-span">
+										<div id="member-first-first-first-span notice" class="left-span">
 											<span><a href="${pageContext.request.contextPath}/board/BoardWrite.bo">공지 작성하기</a></span>
 										</div>
 										<div class="flex write">
@@ -506,7 +435,7 @@
 									<img src="../images/adminBook.png" alt="">
 								</div>
 								<div class="smartStore-span-wrapper">
-									<span class="smartStore-span">가치살자 메뉴얼</span>
+									<span class="smartStore-span"></span>
 								</div>
 							</div>
 							<div class="smartStore">
@@ -514,7 +443,7 @@
 									<img src="../images/handShake.png" alt="">
 								</div>
 								<div class="smartStore-span-wrapper">
-									<span class="smartStore-span">가치살자 파트너</span>
+									<span class="smartStore-span"></span>
 								</div>
 							</div>
 							<div class="smartStore">
@@ -522,7 +451,7 @@
 									<img src="../images/adminHouse.png" alt="">
 								</div>
 								<div class="smartStore-span-wrapper">
-									<span class="smartStore-span">톡톡 파트너센터</span>
+									<span class="smartStore-span"></span>
 								</div>
 							</div>
 							<div class="smartStore">
@@ -530,7 +459,7 @@
 									<img src="../images/adminChart.png" alt="">
 								</div>
 								<div class="smartStore-span-wrapper">
-									<span class="smartStore-span">D-커머스 프로그램</span>
+									<span class="smartStore-span"></span>
 								</div>
 							</div>
 							<div class="smartStore">
@@ -538,7 +467,7 @@
 									<img src="../images/adminTv.png" alt="">
 								</div>
 								<div class="smartStore-span-wrapper">
-									<span class="smartStore-span">가치살자 애널리틱스</span>
+									<span class="smartStore-span"></span>
 								</div>
 							</div>
 							<div class="smartStore">
@@ -546,7 +475,7 @@
 									<img src="../images/adminWheel.png" alt="">
 								</div>
 								<div class="smartStore-span-wrapper">
-									<span class="smartStore-span">SME 풀케어 시스템</span>
+									<span class="smartStore-span"></span>
 								</div>
 							</div>
 							<div class="smartStore-dummy"></div>

@@ -74,39 +74,9 @@
 	</delete>
 	
 	<!-- 탈퇴 과정 2-멤버 -->
-	<update id="updateM" parameterType="string">
-		update tbl_member
-		set status = 1 
-		where memberId = #{memberId}
-	</update>
-	
-	<!-- 호스트 탈퇴과정 0-호스트의 하우스 가져오기   -->
-	<select id="hostDeleteZero" parameterType="string" resultType="_int">
-		select houseNumber from tbl_house
-		where memberId = #{memberId}	
-	</select>
-	<!-- 호스트 탈퇴과정 1-룸게스트  --> 
-	<delete id="hostDeleteOne" parameterType="_int">
-		delete from tbl_roomGuest where houseNumber = #{houseNumber}
+	<delete id="deleteM" parameterType="string">
+		delete from tbl_member where memberId = #{memberId};
 	</delete>
-	<!-- 호스트 탈퇴과정 2-하우스파일  --> 
-	<delete id="hostDeleteTwo" parameterType="_int">
-		delete from tbl_housefile where houseNumber = #{houseNumber}
-	</delete>
-	<!-- 호스트 탈퇴과정 3-하우스룸  --> 
-	<delete id="hostDeleteThree" parameterType="_int">
-		delete from tbl_houseroom where houseNumber = #{houseNumber}
-	</delete>
-	<!-- 호스트 탈퇴과정 4-하우스  --> 
-	<delete id="hostDeleteFour" parameterType="_int">
-		delete from tbl_house where houseNumber = #{houseNumber}
-	</delete>
-	<!-- 호스트 탈퇴과정 5-멤버 : 탈퇴 과정 2-멤버와 동일  --> 
-	
-	<!-- 로그인 스테이터스 검사 -->
-	<select id="findStatus" parameterType="string" resultType="_int">
-		select status from tbl_member where memberId = #{memberId};
-	</select>
 
 	<!-- 정보수정 -->
 	<update id="updateInfo" parameterType="memberVO">
@@ -362,7 +332,7 @@
 	<select id="myTourHouse" parameterType="string"
 		resultType="myRoomGuestDTO">
 		select h.houseNumber, houseMax, houseType, houseAddress, r.status
-		from tbl_house h join tbl_roomGuest r
+		from tbl_house h join tbl_roomguest r
 		on r.memberId = #{memberId} and r.houseNumber = h.houseNumber;
 	</select>
 
@@ -372,14 +342,14 @@
 		select h.roomName, h.roomType, h.roomGender, h.roomDeposit,
 		h.roomMonthly,
 		h.roomArea, h.roomDate, h.houseNumber, r.star, r.review
-		from tbl_houseRoom h join
-		tbl_roomGuest r
+		from tbl_houseroom h join
+		tbl_roomguest r
 		on r.memberId = #{memberId} and r.roomName = h.roomName;
 	</select>
 
 	<!-- 리뷰 -->
 	<update id="reviewUpdate" parameterType="roomGuestVO">
-		UPDATE tbl_roomGuest
+		UPDATE tbl_roomguest
 		SET star=#{star}, review=#{review}
 		where memberId=#{memberId}
 	</update>
@@ -398,7 +368,7 @@
 
 	<!-- 총 리뷰 목록 -->
 	<select id="totalReviewList" resultType="myRoomGuestDTO">
-		select houseNumber, roomName, memberId, star, review from tbl_roomGuest
+		select houseNumber, roomName, memberId, star, review from tbl_roomguest
 		WHERE NOT review is NULL;
 	</select>
 
@@ -407,7 +377,7 @@
 	<select id="reviewList" parameterType="string"
 		resultType="roomGuestVO">
 		SELECT memberId, status, star, review, houseNumber, roomName
-		FROM tbl_roomGuest where memberId =#{memberId};
+		FROM tbl_roomguest where memberId =#{memberId};
 	</select>
 
 
@@ -422,10 +392,10 @@
 	<select id="getQuestion" parameterType="string"
 		resultType="inquiryVO">
 		SELECT inquiryNumber, memberId, memberPhone, houseNumber,
-		houseType, typeOption, inquiryContent, inquiryResponse, memberType, status
+		houseType, typeOption, inquiryContent, inquiryResponse, memberType
 		FROM tbl_inquiry
-		where memberId = #{memberId}
-		order by 1 desc;
+		where memberId = #{memberId};
+
 	</select>
 
 	<!-- 비밀번호 찾기할때 아이디,전화번호 확인  -->

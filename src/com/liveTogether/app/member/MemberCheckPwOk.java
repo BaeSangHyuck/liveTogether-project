@@ -2,6 +2,7 @@ package com.liveTogether.app.member;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Base64;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ public class MemberCheckPwOk implements Action{
 		HttpSession session = req.getSession();
 		
 		String memberId = (String)session.getAttribute("memberId");
-		String memberPw = req.getParameter("memberPw");
+		String memberPw = Base64.getEncoder().encodeToString(req.getParameter("memberPw").getBytes());
 		MemberDAO dao = new MemberDAO();
 		
 		HashMap<String, String> member = new HashMap<>();

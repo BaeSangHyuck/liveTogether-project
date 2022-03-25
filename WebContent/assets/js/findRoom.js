@@ -25,7 +25,6 @@ function getList() {
 
 // 하우스 목록 써주기
 function showList(houses) {
-	console.log(houses);
 	var text = "";
 	if (houses != null && houses.length != 0) {
 		$.each(houses, function(index, house) {
@@ -73,7 +72,7 @@ function showList(houses) {
 					+ '">' + house.houseMax + '</span>'
 			text += '</span><span class="opened-beds" data-index="' + index
 					+ '" style="display: none;">예약가능</span>'
-			text += '</div></div></div></a></div>'
+			text += '</div></div></div></div>'
 		});
 	} else {
 		// 댓글 없음
@@ -196,70 +195,6 @@ $("select[name='min']").change(
 			}
 		})
 
-// const inputLeft = document.getElementById("input-left");
-// const inputRight = document.getElementById("input-right");
-//
-// const thumbLeft = document.querySelector(".slider > .thumb.left");
-// const thumbRight = document.querySelector(".slider > .thumb.right");
-// const range = document.querySelector(".slider > .range");
-//
-// const setLeftValue = () =>
-// { const _this = inputLeft;
-// const [min, max] = [parseInt(_this.min), parseInt(_this.max)];
-// _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) -
-// 1);
-//
-// const percent = ((_this.value - min) / (max - min)) * 100;
-// thumbLeft.style.left = percent + "%";
-// range.style.left = percent + "%";
-// }
-//
-// const setRightValue = () => {
-// const _this = inputRight;
-// const [min, max] = [parseInt(_this.min), parseInt(_this.max)];
-//    
-// _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
-//    
-// const percent = ((_this.value - min) / (max - min)) * 100;
-// thumbRight.style.right = 100 - percent + "%";
-// range.style.right = 100 - percent + "%";
-// };
-// inputLeft.addEventListener("input", setLeftValue);
-// inputRight.addEventListener("input", setRightValue);
-
-// const check1 =document.getElementById("check1");
-// const check2 =document.getElementById("check2");
-// const check3 =document.getElementById("check3");
-// const check4 =document.getElementById("check4");
-// const check5 =document.getElementById("check5");
-// const check6 =document.getElementById("check6");
-// const check7 =document.getElementById("check7");
-// const check8 =document.getElementById("check8");
-// const check9 =document.getElementById("check9");
-// const check10 =document.getElementById("check10");
-
-// const test = document.getElementById("test");
-// console.log(check1.parentElement);
-// console.log(check1);
-// console.log(check1.parentElement.lastElementChild.firstElementChild);
-
-// var checkcount1 = -1;
-
-// check1.parentElement.addEventListener("click",function(){
-// checkcount1*=-1;
-// if(checkcount1>0){
-// check1.checked=true;
-// check1.parentElement.style.background="#1187CF";
-// check1.parentElement.lastElementChild.firstElementChild.style.color="white";
-// }else{
-// check1.checked=false;
-// check1.parentElement.style.background="white";
-// check1.parentElement.lastElementChild.firstElementChild.style.color="black";
-// }
-
-// })
-// console.log($("select[name=min]").val());
-// 조건검색 실행 목록
 
 $("#findbtn").on("click", function findList() {
 	$.ajax({
@@ -274,26 +209,7 @@ $("#findbtn").on("click", function findList() {
 		}
 	});
 })
-// $("#findbtn").on("click", function findList() {
-// $.ajax({
-// url : contextPath + "/house/HouseFindRoom.ho",
-// type : "get",
-// data : {
-// "min" : $("select[name=min]").val(),
-// "max" : $("select[name=max]").val(),
-// "houseGender" : $("input[name=houseGender]").val(),
-// "houseType" : $("input[name=houseType]").val(),
-// "roomType" : $("input[name=roomType]").val(),
-// "roomDate" : $("input[name=roomDate]").val(),
-// },
-// dataType : "json",
-// contentType : "application/json;charset=utf-8",
-// success : showRoomList,
-// error : function(a, b, c) {
-// console.log("오류" + c);
-// }
-// });
-// })
+
 
 // 조건검색한 후 방들 써주기
 function showRoomList(rooms) {
@@ -321,33 +237,30 @@ function showRoomList(rooms) {
 							} else if (room.houseType == "o") {
 								houseType = "기타";
 							}
-							text += '<div class="table-cell">'
-							text += '<a href=' + contextPath
-									+ '/house/HouseDetailOk.ho?houseNumber='
-									+ room.houseNumber + ' target="_blank">'
-							text += '<div class="cell-wrap">'
+							text += '<div class="table-cell" data-index="' + index + '">'
+							text += '<div class="cell-wrap" data-index="' + index + '">'
 							text += '<div class="img-wrap" style="background:url(\''
 									+ contextPath
 									+ '/upload/'
 									+ room.housefileName
-									+ '\'); background-size:cover"></div>'
-							text += '<div class="content-wrapper">'
-							text += '<div class="content">'
-							text += '<span class="name">' + room.houseNumber
-									+ '호점</span><span class="gu">(보증금'
+									+ '\'); background-size:cover" data-index="' + index + '"></div>'
+							text += '<div class="content-wrapper" data-index="' + index + '">'
+							text += '<div class="content" data-index="' + index + '">'
+							text += '<span class="name" data-index="' + index + '">' + room.houseNumber
+									+ '호점</span><span class="gu" data-index="' + index + '">(보증금'
 									+ room.roomDeposit + '/월'
 									+ room.roomMonthly + ')</span>'
 							text += '</div>'
-							text += '<div class="content content2">'
-							text += '<span class="gender-division">'
+							text += '<div class="content content2" data-index="' + index + '">'
+							text += '<span class="gender-division" data-index="' + index + '">'
 									+ houseGender + '</span>'
-							text += '<span class="concept">'
+							text += '<span class="concept" data-index="' + index + '">'
 									+ houseType
-									+ '</span><span class="opened-beds" style="display: inline;">신청가능 '
-							text += '<span class="opened-beds-count ">'
+									+ '</span><span class="opened-beds" style="display: inline;" data-index="' + index + '">신청가능 '
+							text += '<span class="opened-beds-count " data-index="' + index + '">'
 									+ room.houseMax + '</span>'
-							text += '</span><span class="opened-beds" style="display: none;">예약가능</span>'
-							text += '</div></div></div></a></div>'
+							text += '</span><span class="opened-beds" style="display: none;" data-index="' + index + '">예약가능</span>'
+							text += '</div></div></div></div>'
 						});
 	} else {
 		// 댓글 없음
@@ -355,6 +268,123 @@ function showRoomList(rooms) {
 	}
 
 	$(".table-row").html(text);
+
+	filter_wrap.style.transform = "translateX(-40vw)";
+	filter_wrap.style.transition = "transform 0.5s";
+	check=-1;
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	mapOption = {
+		center : new kakao.maps.LatLng(37.541, 126.986), // 지도의 중심좌표
+		level : 7
+	// 지도의 확대 레벨
+	};
+
+	// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+	var map = new kakao.maps.Map(mapContainer, mapOption);
+		var clusterer = new kakao.maps.MarkerClusterer({
+			map : map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+			averageCenter : true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+			minLevel : 10
+		// 클러스터 할 최소 지도 레벨 
+		});
+		var infos = [];
+		var markers = [];
+		for (var i = 0; i < rooms.length; i++) {
+			var marker = new kakao.maps.Marker({
+				position : new kakao.maps.LatLng(rooms[i].lat,
+						rooms[i].lng)
+			});
+
+			// 클러스터러에 마커들을 추가합니다
+			markers[i] = marker;
+			var text = "";
+			var houseGender;
+			var houseType;
+			if (rooms[i].houseGender == "m") {
+				houseGender = "남성전용";
+			} else if (rooms[i].houseGender == "w") {
+				houseGender = "여성전용";
+			} else if (rooms[i].houseGender == "o") {
+				houseGender = "남녀공용";
+			}
+			if (rooms[i].houseType == "a") {
+				houseType = "아파트";
+			} else if (rooms[i].houseType == "v") {
+				houseType = "빌라";
+			} else if (rooms[i].houseType == "d") {
+				houseType = "단독주택";
+			} else if (rooms[i].houseType == "o") {
+				houseType = "기타";
+			}
+			text += '<div class="table-cells">'
+			text += '<a href=' + contextPath
+					+ '/house/HouseDetailOk.ho?houseNumber='
+					+ rooms[i].houseNumber
+					+ ' target="_blank">'
+			text += '<div class="cell-wrap2">'
+			text += '<div class="img-wrap1" style="background:url(\''
+					+ contextPath + '/upload/'
+					+ rooms[i].housefileName
+					+ '\'); background-size:cover"></div>'
+			text += '<div class="content-wrapper1">'
+			text += '<div class="content1">'
+			text += '<span class="name">'
+					+ rooms[i].houseNumber
+					+ '호점</span><span class="gu">(보증금'
+					+ rooms[i].roomDeposit + '/월'
+					+ rooms[i].roomMonthly + ')</span>'
+			text += '</div>'
+			text += '<div class="content content2">'
+			text += '<span class="gender-division">' + houseGender + '</span>'
+			text += '<span class="concept">'
+					+ houseType
+					+ '</span><span class="opened-beds" style="display: inline;">신청가능 '
+			text += '<span class="opened-beds-count ">'
+					+ rooms[i].houseMax + '</span>'
+			text += '</span><span class="opened-beds" style="display: none;">예약가능</span>'
+			text += '</div></div></div></a></div>'
+			var infowindow = new kakao.maps.InfoWindow({
+				content : text
+			// 인포윈도우에 표시할 내용 
+			});
+			infos.push(infowindow);
+			clusterer.addMarkers(markers);
+		}
+		var checks = new Array();
+		$.each(markers, function(index, item) {
+			kakao.maps.event.addListener(item, "click", function() {
+				
+				infos.forEach(function(each) {
+					each.close();
+				}); // 생성한 인포윈도우를 모두 닫아줍니다.
+				if (checks[index]) {
+					infos[index].close(map, item);
+					checks[index] = false;
+					return;
+				}
+				infos[index].open(map, item); // 마커에 맞는 인포윈도우를 열어줍니다.
+				checks[index] = true;
+				map.panTo(new kakao.maps.LatLng(rooms[index].lat,
+						rooms[index].lng));
+			});
+		});
+		
+		$(".table-row").click(".table-cell", function(e){
+			var index = $(e.target).data("index");
+			 infos.forEach(function(each) {
+				each.close();
+			}); // 생성한 인포윈도우를 모두 닫아줍니다.
+			if (checks[index]) {
+				infos[index].close(map, markers[index]);
+				checks[index] = false;
+				return;
+			}
+			infos[index].open(map, markers[index]); // 마커에 맞는 인포윈도우를 열어줍니다.
+			map.panTo(new kakao.maps.LatLng(rooms[index].lat,rooms[index].lng));
+			
+			checks[index] = true; 
+		});
+	
 }
 
 function send() {

@@ -6,10 +6,10 @@
 	<select id="findroom" parameterType="filterDTO"
 		resultType="houseDTO">
 		select hm1.houseNumber, hm1.roomdeposit, hm1.roomMonthly,
-		hm1.houseGender, hm1.houseType, hm1.houseMax, hm2.housefileName
+		hm1.houseGender, hm1.houseType, hm1.houseMax, hm2.housefileName,hm1.latitude,hm1.longitude
 		from
 		(select h.houseNumber, r.roomDeposit, r.roomMonthly, h.houseGender,
-		h.houseType, h.houseMax
+		h.houseType, h.houseMax,h.latitude, h.longitude
 		from tbl_house h join tbl_houseRoom r on
 		h.houseNumber = r.houseNumber and houseStatus=1
 		<if test="min != 100000001">
@@ -218,7 +218,7 @@
 
 	<!-- 룸 정보 수정 -->
 	<update id="updateRoomInfo" parameterType="houseRoomVO">
-		update tbl_houseRoom
+		update tbl_houseroom
 		set roomType=#{roomType}, roomGender=#{roomGender},
 		roomDeposit=#{roomDeposit}, roomMonthly=#{roomMonthly},
 		roomArea=#{roomArea}, roomDate=#{roomDate}
@@ -234,7 +234,7 @@
 
 	<!-- 방 추가 -->
 	<insert id="registroom" parameterType="houseRoomVO">
-		insert into tbl_houseRoom
+		insert into tbl_houseroom
 		(roomName, roomType, roomGender, roomDeposit, roomMonthly, roomArea,
 		roomDate, houseNumber)
 		values(#{roomName}, #{roomType}, #{roomGender},
@@ -249,7 +249,7 @@
 		roomDeposit,
 		roomMonthly, roomArea, roomDate, houseNumber
 		from
-		tbl_houseRoom where
+		tbl_houseroom where
 		houseNumber = #{houseNumber};
 	</select>
 
@@ -264,7 +264,7 @@
 	<!-- 몇명이 살고있는지 -->
 	<select id="roomGuestCount" parameterType="_int"
 		resultType="_int">
-		select count(memberId) from tbl_roomGuest where houseNumber
+		select count(memberId) from tbl_roomguest where houseNumber
 		= #{houseNumber} and status = 3;
 	</select>
 	<!-- 프로필 가져오기 -->
@@ -274,8 +274,8 @@
 		tm.memberProfile, rm.star,
 		rm.review from tbl_member tm join
 		(select
-		tr.memberId, th.houseNumber, tr.star, tr.review from tbl_houseRoom th
-		join tbl_roomGuest tr on th.roomName = tr.roomName and status = 3) rm
+		tr.memberId, th.houseNumber, tr.star, tr.review from tbl_houseroom th
+		join tbl_roomguest tr on th.roomName = tr.roomName and status = 3) rm
 		on tm.memberId = rm.memberId and memberType = 'n' and rm.houseNumber =
 		#{houseNumber};
 	</select>
@@ -333,9 +333,7 @@
 		on
 		th1.houseNumber = th2.houseNumber and houseStatus=0
 		group by
-		th1.houseNumber, th2.roomDeposit, th2.roomMonthly, th1.houseGender, th1.houseType,
-		th2.roomDate,
-		th1.houseMax order by
+		th1.houseNumber order by
 		th1.houseNumber
 	</select>
 
@@ -350,9 +348,7 @@
 		tbl_houseRoom th2
 		on th1.houseNumber = th2.houseNumber and
 		houseStatus=1
-		group by th1.houseNumber, th2.roomDeposit, th2.roomMonthly, th1.houseGender,
-		th1.houseType, th2.roomDate,
-		th1.houseMax order by
+		group by th1.houseNumber order by
 		th1.houseNumber
 	</select>
 
@@ -372,7 +368,7 @@
 	</update>
 
 	<delete id="guestDelete" parameterType="_int">
-		delete from tbl_roomGuest
+		delete from tbl_roomguest
 		where houseNumber=#{houseNumber}
 	</delete>
 
@@ -390,9 +386,9 @@
 		r.roomDate
 		from
 		tbl_house h
-		join tbl_houseRoom r
-		on memberId = #{memberId}
-		group by houseNumber
+		join tbl_houseroom r
+		on h.houseNumber = r.houseNumber and memberId = #{memberId}
+		group by 1
 	</select>
 
 	<!-- 페이징 처리 위한 게시글 갯수 가져오기 -->
@@ -414,69 +410,69 @@
 	<!-- 투어신청 수 -->
 	<select id="tourCount" resultType="_int">
 		select count(memberId) from
-		tbl_roomGuest
+		tbl_roomguest
 		where status = '0';
 	</select>
 
 	<!-- 입주대기자 수 -->
 	<select id="waitResidentCount" resultType="_int">
 		select count(memberId)
-		from tbl_roomGuest
+		from tbl_roomguest
 		where status = '2';
 	</select>
 
 	<!-- 입주자 수 -->
 	<select id="residentCount" resultType="_int">
 		select count(memberId)
-		from tbl_roomGuest tr
+		from tbl_roomguest tr
 		where status = 3;
 	</select>
 
 	<!-- 모든 방 수 -->
 	<select id="roomCount" resultType="_int">
 		select count(roomName) from
-		tbl_houseRoom;
+		tbl_houseroom;
 	</select>
 
 	<!-- 리뷰 별점 5개 -->
 	<select id="fiveReviewCount" resultType="_int">
 		select count(star) from
-		tbl_roomGuest
+		tbl_roomguest
 		where star = '5';
 	</select>
 
 	<!-- 리뷰 별점 4개 -->
 	<select id="fourReviewCount" resultType="_int">
 		select count(star) from
-		tbl_roomGuest
+		tbl_roomguest
 		where star = '4';
 	</select>
 
 	<!-- 리뷰 별점 3개 -->
 	<select id="threeReviewCount" resultType="_int">
 		select count(star) from
-		tbl_roomGuest
+		tbl_roomguest
 		where star = '3';
 	</select>
 
 	<!-- 리뷰 별점 2개 -->
 	<select id="twoReviewCount" resultType="_int">
 		select count(star) from
-		tbl_roomGuest
+		tbl_roomguest
 		where star = '2';
 	</select>
 
 	<!-- 리뷰 별점 1개 -->
 	<select id="oneReviewCount" resultType="_int">
 		select count(star) from
-		tbl_roomGuest
+		tbl_roomguest
 		where star = '1';
 	</select>
 
 	<!-- 총 리뷰 수 -->
 	<select id="reviewCount" resultType="_int">
 		select count(review) from
-		tbl_roomGuest;
+		tbl_roomguest;
 	</select>
 
 	<!-- 관리자페이지 문의 수 가져오기 -->
@@ -488,11 +484,11 @@
 
 	<select id="bannerList" resultType="houseDTO">
 		select h.houseNumber,f.housefileName from (select houseFileNumber
-		,housefileName,houseNumber from tbl_houseFile order by housefileName desc limit
+		,housefilename,houseNumber from tbl_housefile order by 2 desc limit
 		0,10) f join tbl_house h
 		on f.houseNumber =h.houseNumber
-		group by h.houseNumber, f.housefileName
-		order by f.housefileName desc;
+		group by 1
+		order by 2 desc;
 	</select>
 
 </mapper>

@@ -56,16 +56,6 @@
 				</ul>
 			</div>
 			<div id="box">
-				<%-- <div id="navigation_wraper">
-			<div class="navigation">
-				<a href="${pageContext.request.contextPath}/member/MemberMypageUpdate.me">
-					<div class="menu-btn">내 정보 수정</div>
-				</a> <a href="mypagelook.jsp">
-					<div class="menu-btn2">내 정보 조회</div>
-				</a>
-			</div>
-		</div>
- --%>
 
 				<!-- 	<div class="box"> -->
 				<div class="wrapper">

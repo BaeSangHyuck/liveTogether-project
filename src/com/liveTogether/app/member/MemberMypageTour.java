@@ -24,9 +24,9 @@ public class MemberMypageTour implements Action {
 		MemberDAO dao = new MemberDAO();		
 		HttpSession session = req.getSession();
 		String memberId= ((String)session.getAttribute("memberId"));
-	/*	MyRoomGuestDTO dto = dao.myTourHouse(memberId);*/
 		
 		
+		req.setAttribute("total", dao.countTour(memberId));
 		req.setAttribute("myTourHouse", dao.myTourHouse(memberId));
 		req.setAttribute("myTourHouseRoom", dao.myTourHouseRoom(memberId));
 		

@@ -83,7 +83,6 @@
 			<div class="my" id="target">
 				<div class="wrapper">
 					<div class="mypagecontract">
-						<!--       <div class="contract-title"><h1>계약서 출력</h1></div> -->
 						<div class="contract-table">
 							<div class="tab1">
 								<div class="b1 active a1" role="tabpanel" id="lease">

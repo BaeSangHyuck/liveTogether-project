@@ -616,4 +616,24 @@ section#banner div#slide-wrap-mobile {
       text-align: center;
       font-size: 0.79rem;
    }
+   section#banner div#result-wrap{
+    height: 45px;
+   }
+   section#banner div#result-container{
+   	height: 100%;
+   }
+   section#banner div#flex-wrap{
+   	height: 100%;
+   }
+   section#banner div#result-flex{
+    height: 100%;
+    line-height: 44px;
+    font-size: 0.7rem;
+   }
+   section#banner div#result-wrap button{
+    font-size: 0.8rem;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 7px;
+   }
 } 

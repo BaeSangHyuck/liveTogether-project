@@ -32,11 +32,6 @@
 					<a href="${pageContext.request.contextPath}/board/InquiryOk.bo"></a>
 				</div>
 			</c:when>
-			<c:otherwise>
-				<div id="inquiry">
-					<a onclick="b()"></a>
-				</div>
-			</c:otherwise>
 		</c:choose>
 		<div id="top">
 			<a href="#"></a>

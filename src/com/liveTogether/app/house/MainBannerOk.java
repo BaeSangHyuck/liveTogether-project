@@ -21,11 +21,6 @@ public class MainBannerOk implements Action {
 		
 		req.setAttribute("bannerList", bannerList);
 		
-		for (int i = 0; i <6; i++) {
-			System.out.println(bannerList.get(i).getHouseNumber());
-			System.out.println(bannerList.get(i).getHousefileName());
-		}
-		
 		af.setRedirect(false);
 		af.setPath("/member/Main.me");
 		return af;

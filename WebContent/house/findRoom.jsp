@@ -202,7 +202,7 @@
 <script>
 	var contextPath = "${pageContext.request.contextPath}";
 	var keyword = "${keyword}";
-	
+
 </script>
 <script>
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -227,7 +227,9 @@
 		contentType: "application/json;charset=utf-8",
 		success : jsons,
 		error : function(a, b, c) {
-			console.log("오류" + c);
+			console.log("오류" +c);
+			console.log("오류" +a);
+			console.log("오류" +b);
 		},
 		async : false
 	});
@@ -321,18 +323,12 @@
 			});
 		});
 		
-		/* $(".table-cell").each(function(index, item){
-			$(".table-row").click(".table-cell", function(){
-				console.log($(".table-cell").data("index"));
-			});
-		}); */
 		$(".table-row").click(".table-cell", function(e){
 			var index = $(e.target).data("index");
 			 infos.forEach(function(each) {
 				each.close();
 			}); // 생성한 인포윈도우를 모두 닫아줍니다.
 			if (checks[index]) {
-				console.log("들어옴if")
 				infos[index].close(map, markers[index]);
 				checks[index] = false;
 				return;
@@ -378,8 +374,4 @@
 	}
 	}
 </script>
-
-
-
-
 </html>

@@ -59,6 +59,14 @@ article.noticeDetail-first-wrap p#second-p {
 	border-bottom: 1px solid #dddd;
 }
 
+.replyContent pre{
+	height: 100px;
+}
+
+.replyContentButton{
+	top: 60px;
+}
+
 pre#inquiryContent {
 	font-size: 1.1rem;
 	width: 90%;

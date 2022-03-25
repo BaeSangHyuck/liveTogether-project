@@ -44,7 +44,6 @@ public class HousePositionOk implements Action {
 			position.put("houseMax", p.getHouseMax());
 			position.put("housefileName", p.getHousefileName());
 
-			System.out.println(position);
 			positions.add(position);
 		}
 //		req.setAttribute("positionList", positionList);

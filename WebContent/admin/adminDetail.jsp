@@ -53,6 +53,9 @@
 											<c:when test="${house.getHouseGender() eq 'w'}">
 												<td class="ttd ttd3">여성전용</td>
 											</c:when>
+											<c:otherwise>
+												<td class="ttd ttd3">남녀공용</td>
+											</c:otherwise>
 										</c:choose>
 										<c:choose>
 											<c:when test="${house.getHouseType() eq 'a'}">

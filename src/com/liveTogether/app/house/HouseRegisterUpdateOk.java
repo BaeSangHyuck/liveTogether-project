@@ -135,8 +135,8 @@ public class HouseRegisterUpdateOk implements Action {
 		// 파일추가
 		fDao.insertHF(multi, houseNumber);
 
-		af.setRedirect(true);
-		af.setPath(req.getContextPath() + "/main/main.jsp");
+		af.setRedirect(false);
+		af.setPath("/house/HostForSaleListOk.ho");
 
 		return af;
 	}

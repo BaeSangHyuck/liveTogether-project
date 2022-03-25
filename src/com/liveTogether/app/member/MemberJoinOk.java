@@ -32,7 +32,6 @@ public class MemberJoinOk implements Action {
 		member.setMemberProfile(req.getParameter("memberProfile"));
 		member.setMemberType(req.getParameter("memberType"));
 		
-		System.out.println(req.getParameter("memberType"));
 		
 		
 		dao.join(member);

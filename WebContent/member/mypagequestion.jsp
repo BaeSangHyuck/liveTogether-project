@@ -149,11 +149,6 @@
 													</tr>
 												</c:forEach>
 											</c:when>
-											<%-- <c:otherwise>
-												<tr class="anotherTr">
-													<td>목록이 없습니다.</td>
-												</tr>
-											</c:otherwise> --%>
 										</c:choose>
 									</tbody>
 								</table>

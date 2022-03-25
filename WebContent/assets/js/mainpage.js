@@ -121,9 +121,11 @@ function searchCount() {
 					continue;
 				}
 			}
-			if (results.length != 0) {
+			if (results.length == 15) {
+				$("#result").text("검색결과가 15건 이상 있습니다.");
+			}else if(results.length != 0){
 				$("#result").text("검색결과가 " + results.length + "건 있습니다.");
-			} else {
+			}else {
 				$("#result").text("검색결과가 없습니다.");
 			}
 		}

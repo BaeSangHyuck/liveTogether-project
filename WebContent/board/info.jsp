@@ -89,21 +89,21 @@
 				<div class="content-title"><span class="title">누적 베드수</span>
 					<span class="content-img"><img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/subpage_img/intro_2_ico_1.png"></span></div>
 				<h1 class="bedsCount">24개</h1>
-				<p>국내 최대 운영사의 노하우!<br>우주는 국내에서 가장 많은 쉐어하우스를<br>개설, 운영해왔습니다.</p>
+				<p>국내 최대 운영사의 노하우!<br>가치살자는 국내에서 가장 많은 쉐어하우스를<br>개설, 운영해왔습니다.</p>
 			</div>
 			<div class="content">
 				<div class="content-title"><span class="title">누적 입주민</span>
 					<span class="content-img"><img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/subpage_img/intro_2_ico_2.png"></span></div>
 				<h1 class="residentCount">24명</h1>
 				<p>
-					대한민국에서 가장 많이 선택받은 셰어하우스, 우주는 안전한 계약/철저한 관리로 입주민과의 신뢰를 쌓아왔습니다.
+					대한민국에서 가장 많이 선택받은 셰어하우스, 가치살자는 안전한 계약/철저한 관리로 입주민과의 신뢰를 쌓아왔습니다.
 				 </p>
 			</div>
 			<div class="content">
 				<div class="content-title"><span class="title">누적 투자 금액</span>
 					<span class="content-img"><img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/subpage_img/intro_2_ico_3.png"></span></div>
 				<h1 class="investCount">116000원</h1>
-				<p>국내 최대 운영사의 노하우!<br>우주는 국내에서 가장 많은 쉐어하우스를<br>개설, 운영해왔습니다.</p>
+				<p>국내 최대 운영사의 노하우!<br>가치살자는 국내에서 가장 많은 쉐어하우스를<br>개설, 운영해왔습니다.</p>
 			</div>
 		</div>
 	</section>

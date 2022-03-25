@@ -50,9 +50,7 @@ input::-webkit-input-placeholder {
 
 .star-rating label {
 	-webkit-text-fill-color: transparent;
-	/* Will override color (regardless of order) */
 	-webkit-text-stroke-width: 2.3px;
-	/* stroke-color -> 별 모양 테두리 컬러 */
 	-webkit-text-stroke-color: #555;
 	cursor: pointer;
 }
@@ -134,7 +132,7 @@ input[type="radio"]+label:before {
 
 
 		<c:choose>
-			<c:when test="${total eq 0}">
+			<c:when test="${total eq 1}">
 
 				<div class="mypage">
 
@@ -377,8 +375,6 @@ input[type="radio"]+label:before {
 
 
 	<jsp:include page="../fix/footer.jsp" />
-
-	<%-- var reviewfrm ="${myTourHouseRoom.getReview()}";  --%>
 
 	<!-- Scripts -->
 	<script>

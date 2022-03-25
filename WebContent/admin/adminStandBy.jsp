@@ -25,7 +25,8 @@
 			</div>
 			<div class="table-wrapper">
 				<form
-					action="${pageContext.request.contextPath}/house/AdminCheckStandByDeleteOk.ho" name="clickDelete">
+					action="${pageContext.request.contextPath}/house/AdminCheckStandByDeleteOk.ho"
+					name="clickDelete">
 					<table class="table">
 						<tr>
 							<td class="td td1"><input type="checkbox" id="term"
@@ -53,6 +54,9 @@
 											<c:when test="${house.getHouseGender() eq 'w'}">
 												<td class="ttd ttd3">여성전용</td>
 											</c:when>
+											<c:otherwise>
+												<td class="ttd ttd3">남녀공용</td>
+											</c:otherwise>
 										</c:choose>
 										<c:choose>
 											<c:when test="${house.getHouseType() eq 'a'}">
@@ -85,7 +89,8 @@
 					</table>
 					<div id="width100">
 						<div>
-							<button class="button2 blue" type="button" onclick="send()">선택 삭제</button>
+							<button class="button2 blue" type="button" onclick="send()">선택
+								삭제</button>
 						</div>
 					</div>
 				</form>
