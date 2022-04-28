@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="House">
+
+	<!-- 방 찾기(필터) -->
+	<select id="findroom" parameterType="filterDTO"
+		resultType="houseDTO">
+		select hm1.houseNumber, hm1.roomdeposit, hm1.roomMonthly,
+		hm1.houseGender, hm1.houseType, hm1.houseMax, hm2.housefileName,hm1.latitude,hm1.longitude
+		from
+		(select h.houseNumber, r.roomDeposit, r.roomMonthly, h.houseGender,
+		h.houseType, h.houseMax,h.latitude, h.longitude
+		from tbl_house h join tbl_houseRoom r on
+		h.houseNumber = r.houseNumber and houseStatus=1
+		<if test="min != 100000001">
+			<trim prefix="and">
+				<trim>
+               <![CDATA[
+               r.roomMonthly >= #{min}   
+                ]]>
+				</trim>
+			</trim>
+		</if>
+		<if test="max != 100000001">
+			<trim prefix="and">
+               <![CDATA[
+               r.roomMonthly <= #{max} 
+                ]]>
+			</trim>
+		</if>
+		<if test="houseGender!=null">
+			<trim prefix="and (" suffix=")" prefixOverrides="OR">
+				<foreach item="gender" collection="genderArr">
+					<trim prefix="OR">
+						<choose>
+							<when test="gender=='w'.toString()">
+								h.houseGender = 'w'
+							</when>
+							<when test="gender=='m'.toString()">
+								h.houseGender = 'm'
+							</when>
+							<when test="gender=='o'.toString()">
+								h.houseGender = 'o'
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</if>
+		<if test="houseType!=null">
+			<trim prefix="and (" suffix=")" prefixOverrides="OR">
+				<foreach item="hType" collection="houseArr">
+					<trim prefix="OR">
+						<choose>
+							<when test="hType =='a'.toString()">
+								h.houseType = 'a'
+							</when>
+							<when test="hType == 'd'.toString()">
+								h.houseType = 'd'
+							</when>
+							<when test="hType == 'v'.toString()">
+								h.houseType = 'v'
+							</when>
+							<when test="hType == 'o'.toString()">
+								h.houseType = 'o'
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</if>
+		<if test="roomType !=null">
+			<trim prefix="and (" suffix=")" prefixOverrides="OR">
+				<foreach item="rType" collection="roomArr">
+					<trim prefix="OR">
+						<choose>
+							<when test="rType =='1'.toString()">
+								(r.roomType = '1')
+							</when>
+							<when test="rType =='2'.toString()">
+								(r.roomType = '2')
+							</when>
+							<when test="rType =='3'.toString()">
+								(r.roomType = '3')
+							</when>
+							<when test="rType =='4'.toString()">
+								(r.roomType >= '4')
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</if>
+		<if test="roomDate != ''">      
+         <![CDATA[
+         and (r.roomDate >= #{roomDate})
+         ]]>
+		</if>
+		group by h.houseNumber
+		order by h.houseNumber) hm1 join
+		(select
+		housefileName, houseNumber from (SELECT housefileName,
+		houseFileNumber, houseNumber
+		from tbl_houseFile order by 2 desc limit
+		18446744073709551615) m
+		group by 2) hm2
+		on hm1.houseNumber =
+		hm2.houseNumber;
+	</select>
+
+	<!-- 하우스 전체 리스트 -->
+	<select id="selectAll" resultType="houseDTO">
+		select
+		hm1.houseNumber,hm1.latitude,hm1.longitude, hm1.roomdeposit,
+		hm1.roomMonthly, hm1.houseGender, hm1.houseType, hm1.houseMax,
+		hm2.housefileName
+		from (select
+		th1.houseNumber,th1.latitude,th1.longitude,th2.roomDeposit,
+		th2.roomMonthly, th1.houseGender, th1.houseType, th1.houseMax
+		from
+		tbl_house th1 join tbl_houseRoom th2
+		on th1.houseNumber =
+		th2.houseNumber and houseStatus=1
+		group by
+		th1.houseNumber order by
+		th1.houseNumber) hm1 join
+		(select housefileName, houseNumber from
+		(SELECT housefileName,
+		houseFileNumber, houseNumber
+		from tbl_houseFile
+		order by 2 desc limit
+		18446744073709551615) m
+		group by 2) hm2
+		on
+		hm1.houseNumber =
+		hm2.houseNumber;
+	</select>
+
+	<!-- 방 정보조회 -->
+	<select id="info" parameterType="_int" resultType="houseVO">
+		select
+		houseNumber, houseMax, houseStatus, memberId, houseType,
+		houseAddress,houseAddressDetail, latitude, longitude, houseLocation,
+		houseGender,opAircon, opCentralHeat, opLocalHeat,
+		opRefrigerator,opWasher,opGasrange, opInduction, opMicrowave, opDesk,
+		opDoorlock, opBed,opCloset, opShoes, opSink, opInterphone, opWindow,
+		opCctv, opVeranda,opDelivery,opFirealarm, houseParking, houseElevator,
+		housePet,houseContent, houseMessage
+		from tbl_house
+		where houseNumber =
+		#{houseNumber};
+	</select>
+
+	<!-- 방 내놓기 -->
+	<insert id="regist" parameterType="houseVO">
+		insert into tbl_house
+		(houseMax, memberId, houseType, houseAddress,
+		houseAddressDetail,
+		latitude, longitude, houseLocation, houseGender,
+		opAircon, opCentralHeat, opLocalHeat, opRefrigerator,
+		opWasher,
+		opGasrange, opInduction, opMicrowave, opDesk, opDoorlock,
+		opBed,
+		opCloset, opShoes, opSink, opInterphone, opWindow, opCctv,
+		opVeranda,
+		opDelivery, opFirealarm, houseParking, houseElevator,
+		housePet,
+		houseContent, houseMessage)
+		values(#{houseMax}, #{memberId},
+		#{houseType}, #{houseAddress}, #{houseAddressDetail},
+		#{latitude},
+		#{longitude}, #{houseLocation}, #{houseGender}, #{opAircon},
+		#{opCentralHeat}, #{opLocalHeat},
+		#{opRefrigerator}, #{opWasher},
+		#{opGasrange}, #{opInduction},
+		#{opMicrowave}, #{opDesk},
+		#{opDoorlock},
+		#{opBed}, #{opCloset},
+		#{opShoes},
+		#{opSink},
+		#{opInterphone}, #{opWindow}, #{opCctv},
+		#{opVeranda}, #{opDelivery},
+		#{opFirealarm}, #{houseParking},
+		#{houseElevator}, #{housePet},
+		#{houseContent},
+		#{houseMessage});
+
+		<selectKey keyProperty="id" resultType="_int">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- 하우스 수정하기 -->
+	<update id="updateInfo" parameterType="houseVO">
+		update tbl_house
+		set
+		houseMax=#{houseMax}, houseType=#{houseType},
+		houseAddress=#{houseAddress},
+		houseAddressDetail=#{houseAddressDetail}, latitude=#{latitude},
+		longitude=#{longitude}, houseLocation=#{houseLocation},
+		houseGender=#{houseGender}, opAircon=#{opAircon},
+		opCentralHeat=#{opCentralHeat}, opLocalHeat=#{opLocalHeat},
+		opRefrigerator=#{opRefrigerator}, opWasher=#{opWasher},
+		opGasrange=#{opGasrange}, opInduction=#{opInduction},
+		opMicrowave=#{opMicrowave}, opDesk=#{opDesk},
+		opDoorlock=#{opDoorlock}, opBed=#{opBed}, opCloset=#{opCloset},
+		opShoes=#{opShoes}, opSink=#{opSink}, opInterphone=#{opInterphone},
+		opWindow=#{opWindow}, opCctv=#{opCctv},
+		opVeranda=#{opVeranda},
+		opDelivery=#{opDelivery}, opFirealarm=#{opFirealarm},
+		houseParking=#{houseParking},
+		houseElevator=#{houseElevator},
+		housePet=#{housePet}, houseContent=#{houseContent},
+		houseMessage=#{houseMessage}
+		where houseNumber=#{houseNumber};
+	</update>
+
+	<!-- 룸 정보 수정 -->
+	<update id="updateRoomInfo" parameterType="houseRoomVO">
+		update tbl_houseroom
+		set roomType=#{roomType}, roomGender=#{roomGender},
+		roomDeposit=#{roomDeposit}, roomMonthly=#{roomMonthly},
+		roomArea=#{roomArea}, roomDate=#{roomDate}
+		where
+		houseNumber=#{houseNumber};
+	</update>
+
+	<!-- 최근 등록 하우스 번호 -->
+	<select id="getSeq" resultType="_int">
+		select houseNumber from tbl_house
+		order by 1 desc limit 0, 1;
+	</select>
+
+	<!-- 방 추가 -->
+	<insert id="registroom" parameterType="houseRoomVO">
+		insert into tbl_houseroom
+		(roomName, roomType, roomGender, roomDeposit, roomMonthly, roomArea,
+		roomDate, houseNumber)
+		values(#{roomName}, #{roomType}, #{roomGender},
+		#{roomDeposit}, #{roomMonthly}, #{roomArea}, #{roomDate},
+		#{houseNumber});
+	</insert>
+
+	<!-- 룸 정보 가져오기 -->
+	<select id="roomInfo" parameterType="_int"
+		resultType="houseRoomVO">
+		select roomName, roomType, roomGender,
+		roomDeposit,
+		roomMonthly, roomArea, roomDate, houseNumber
+		from
+		tbl_houseroom where
+		houseNumber = #{houseNumber};
+	</select>
+
+	<!-- 위도경도 가져오기 -->
+	<select id="getPosition" resultType="houseDTO">
+		select houseNumber,
+		latitude, longitude
+		from tbl_house
+		where houseStatus=1
+	</select>
+
+	<!-- 몇명이 살고있는지 -->
+	<select id="roomGuestCount" parameterType="_int"
+		resultType="_int">
+		select count(memberId) from tbl_roomguest where houseNumber
+		= #{houseNumber} and status = 3;
+	</select>
+	<!-- 프로필 가져오기 -->
+	<select id="getProfile" parameterType="_int"
+		resultType="houseMemberDTO">
+		select tm.memberNickname, tm.memberGender,
+		tm.memberProfile, rm.star,
+		rm.review from tbl_member tm join
+		(select
+		tr.memberId, th.houseNumber, tr.star, tr.review from tbl_houseroom th
+		join tbl_roomguest tr on th.roomName = tr.roomName and status = 3) rm
+		on tm.memberId = rm.memberId and memberType = 'n' and rm.houseNumber =
+		#{houseNumber};
+	</select>
+
+	<!-- admin에 필요한 VO 정보 가져오기 -->
+	<select id="selectRealAll" parameterType="map"
+		resultType="houseRoomVO">
+		select
+		roomName, roomType,
+		roomGender, roomDeposit,
+		roomMonthly, roomArea, roomDate, houseNumber
+		from tbl_houseRoom
+		order by
+		1 desc limit #{startRow}, #{rowCount};
+	</select>
+
+	<!-- 페이징 처리 위한 게시글 갯수 가져오기 -->
+	<select id="getTotal" resultType="_int">
+		select count(roomName)
+		from
+		tbl_houseRoom
+	</select>
+
+
+	<!-- 하우스넘버로 방 목록에서 지우기 -->
+	<delete id="roomDelete" parameterType="_int">
+		delete from tbl_houseroom
+		where houseNumber=#{houseNumber};
+	</delete>
+
+	<delete id="houseDelete" parameterType="_int">
+		delete from tbl_house
+		where houseNumber=#{houseNumber};
+	</delete>
+
+	<select id="houseCount" resultType="_int">
+		select count(houseNumber)
+		from tbl_house
+		where houseStatus = 1
+	</select>
+
+	<select id="waitCount" resultType="_int">
+		select count(houseNumber)
+		from
+		tbl_house where houseStatus = 0
+	</select>
+
+	<!-- 관리자 페이지 하우스 전체 리스트 -->
+	<select id="adminSelectAll" resultType="houseDTO">
+		select th1.houseNumber,
+		th2.roomDeposit, th2.roomMonthly, th1.houseGender, th1.houseType,
+		th2.roomDate,
+		th1.houseMax
+		from tbl_house th1 join tbl_houseRoom th2
+		on
+		th1.houseNumber = th2.houseNumber and houseStatus=0
+		group by
+		th1.houseNumber order by
+		th1.houseNumber
+	</select>
+
+	<!-- 관리자 페이지 하우스 전체 리스트 -->
+	<select id="adminSelectAllTwo" resultType="houseDTO">
+		select
+		th1.houseNumber,
+		th2.roomDeposit, th2.roomMonthly, th1.houseGender,
+		th1.houseType, th2.roomDate,
+		th1.houseMax
+		from tbl_house th1 join
+		tbl_houseRoom th2
+		on th1.houseNumber = th2.houseNumber and
+		houseStatus=1
+		group by th1.houseNumber order by
+		th1.houseNumber
+	</select>
+
+	<!-- 페이징 처리 위한 게시글 갯수 가져오기 -->
+	<select id="getTotalTwo" resultType="_int">
+		select count(houseNumber)
+		from
+		tbl_house
+		where houseStatus = 1
+	</select>
+
+	<update id="updateStatus" parameterType="_int">
+		update tbl_house
+		set
+		houseStatus='1'
+		where houseNumber=#{houseNumber}
+	</update>
+
+	<delete id="guestDelete" parameterType="_int">
+		delete from tbl_roomguest
+		where houseNumber=#{houseNumber}
+	</delete>
+
+	<delete id="fileDelete" parameterType="_int">
+		delete from tbl_houseFile
+		where houseNumber=#{houseNumber}
+	</delete>
+
+	<!-- 매물관리 -->
+	<select id="getForSaleList" parameterType="string"
+		resultType="houseDTO">
+		select h.houseNumber,
+		h.houseGender, h.houseType,
+		h.houseMax, r.roomDeposit, r.roomMonthly,
+		r.roomDate
+		from
+		tbl_house h
+		join tbl_houseroom r
+		on h.houseNumber = r.houseNumber and memberId = #{memberId}
+		group by 1
+	</select>
+
+	<!-- 페이징 처리 위한 게시글 갯수 가져오기 -->
+	<select id="getForSaleTotal" parameterType="houseDTO"
+		resultType="_int">
+		select count(houseNumber)
+		from
+		tbl_house
+		where memberId =
+		#{memberId}
+		order by 1 desc limit #{startRow},
+		#{rowCount}
+	</select>
+
+
+
+
+
+	<!-- 투어신청 수 -->
+	<select id="tourCount" resultType="_int">
+		select count(memberId) from
+		tbl_roomguest
+		where status = '0';
+	</select>
+
+	<!-- 입주대기자 수 -->
+	<select id="waitResidentCount" resultType="_int">
+		select count(memberId)
+		from tbl_roomguest
+		where status = '2';
+	</select>
+
+	<!-- 입주자 수 -->
+	<select id="residentCount" resultType="_int">
+		select count(memberId)
+		from tbl_roomguest tr
+		where status = 3;
+	</select>
+
+	<!-- 모든 방 수 -->
+	<select id="roomCount" resultType="_int">
+		select count(roomName) from
+		tbl_houseroom;
+	</select>
+
+	<!-- 리뷰 별점 5개 -->
+	<select id="fiveReviewCount" resultType="_int">
+		select count(star) from
+		tbl_roomguest
+		where star = '5';
+	</select>
+
+	<!-- 리뷰 별점 4개 -->
+	<select id="fourReviewCount" resultType="_int">
+		select count(star) from
+		tbl_roomguest
+		where star = '4';
+	</select>
+
+	<!-- 리뷰 별점 3개 -->
+	<select id="threeReviewCount" resultType="_int">
+		select count(star) from
+		tbl_roomguest
+		where star = '3';
+	</select>
+
+	<!-- 리뷰 별점 2개 -->
+	<select id="twoReviewCount" resultType="_int">
+		select count(star) from
+		tbl_roomguest
+		where star = '2';
+	</select>
+
+	<!-- 리뷰 별점 1개 -->
+	<select id="oneReviewCount" resultType="_int">
+		select count(star) from
+		tbl_roomguest
+		where star = '1';
+	</select>
+
+	<!-- 총 리뷰 수 -->
+	<select id="reviewCount" resultType="_int">
+		select count(review) from
+		tbl_roomguest;
+	</select>
+
+	<!-- 관리자페이지 문의 수 가져오기 -->
+	<select id="inquiryTotalCount" resultType="_int">
+		select
+		count(inquiryContent)
+		from tbl_inquiry;
+	</select>
+
+	<select id="bannerList" resultType="houseDTO">
+		select h.houseNumber,f.housefileName from (select houseFileNumber
+		,housefilename,houseNumber from tbl_housefile order by 2 desc limit
+		0,10) f join tbl_house h
+		on f.houseNumber =h.houseNumber
+		group by 1
+		order by 2 desc;
+	</select>
+
+</mapper>

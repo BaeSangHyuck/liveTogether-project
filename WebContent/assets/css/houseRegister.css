@@ -1,0 +1,256 @@
+#register h1 {
+	font-size: 30px;
+}
+
+#register {
+	position: relative;
+}
+
+div.gradation-div {
+	background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
+	width: 309px;
+	position: absolute;
+	top: 34px;
+	left: 0px;
+	height: 10px;
+}
+
+.register-container table th {
+	width: 135px;
+}
+
+.register-container select {
+	appearance: auto;
+}
+
+.register-container table {
+	border-top: 2px solid #444;
+}
+
+ul#register-info {
+	font-size: 14px;
+}
+
+.register-container input {
+	border-radius: 1px;
+	border: 1px solid rgba(144, 144, 144, 0.3);
+}
+
+.register-container textarea {
+	border-radius: 1px;
+	height: 300px;
+	resize: none;;
+}
+
+.register-container button {
+	border-radius: 2px;
+}
+
+.register-container {
+	width: 800px;
+	margin: 181px auto;
+}
+
+#register img {
+	inline-size: -webkit-fill-available;
+}
+
+select.typeSelect {
+	width: 32%;
+	border-radius: 1px;
+}
+
+input.address {
+	width: 60%;
+}
+
+div#address1 {
+	display: flex;
+}
+
+button#findAddress {
+	margin-left: 10px;
+}
+
+input.input-smallsize {
+	width: 205px;
+}
+
+input.input-xsmallsize {
+	width: 90px;
+}
+
+img#xMark {
+	text-align: right;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+
+div.roomPlusMark {
+	display: flex;
+	justify-content: space-between;
+}
+
+div#roomsize-wrap {
+	display: flex;
+}
+
+div#roomplus {
+	text-align: right;
+}
+
+div.flex {
+	display: flex;
+}
+
+th#image-th {
+	display: none;
+}
+
+span.span-lineheight {
+	line-height: 43px;
+}
+
+div[class*='filesRoom'] {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+div.filesHouse {
+	margin: 0 auto;
+}
+
+div[id*='file'] {
+	text-align: center;
+}
+
+div#files img {
+	cursor: pointer;
+}
+
+div#roomPlus {
+	margin: -15px 0 20px 86%;
+}
+
+button#submit-button {
+	width: 270px !important;
+	height: 53px;
+	font-size: 19px;
+	line-height: 21px;
+}
+
+div#roomSubmit {
+	text-align: center;
+}
+
+img.roomImg {
+	width: 80px;
+	height: 80px;
+	display: inline;
+}
+
+input.removeImgBtn {
+	padding: 0 1em;
+}
+
+div.file-wrap {
+	margin-right: 5px;
+	text-align: center;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select
+	{
+	height: 43.32px !important;
+	line-height: 3.1625em;
+}
+
+input, select, textarea {
+	background-color: white !important;
+}
+
+input:focus, select:focus, textarea:focus {
+	border: 1px solid #1187cf;
+}
+
+input[type="checkbox"]:checked+label:before, input[type="radio"]:checked+label:before
+	{
+	background-color: #1187CF !important;
+	border-color: #1187CF !important;
+	color: #ffffff;
+}
+
+input[type="checkbox"]+label:before {
+	border-radius: 2px;
+}
+
+input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+	background-color: white;
+	height: 25px;
+	width: 25px;
+	top: 3px;
+	left: 3px;
+}
+
+input[type="checkbox"]:checked+label:before, input[type="radio"]:checked+label:before
+	{
+	background-color: #1187CF !important;
+	border-color: #1187CF !important;
+	color: #ffffff;
+}
+
+input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
+	{
+	border-color: #e5e5e5;
+	box-shadow: 0 0 0 1px #ffffff;
+}
+
+button {
+	background-color: #1187CF;
+	color: #ffffff;
+	border-radius: 1px;
+	font-family: 'GmarketSansMedium';
+}
+
+button:hover {
+	color: #ffffff;
+}
+
+label {
+	margin: 0;
+}
+
+div#media {
+	display: none;
+}
+
+@media ( max-width : 414px) {
+	div#register {
+		position: relative;
+		margin-left: 22px;
+	}	
+	div#media {
+		display: block;
+		margin-top: -75px;
+		padding-bottom: 96px;
+	}
+	div.gradation-div {
+		width: 235px;
+	}
+	.register-container {
+		width: 414px;
+		margin: 181px auto;
+	}
+	form#registForm {
+		display: none;
+	}
+	ul#register-info {
+		display: none;
+	}
+	a {
+		color: #555;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+}

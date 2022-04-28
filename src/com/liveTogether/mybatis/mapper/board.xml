@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+
+	<!-- 정보조회 -->
+	<select id="selectAll" parameterType="map" resultType="boardVO">
+		select
+		boardNumber, boardTitle, boardContent, boardDate
+		from tbl_board
+		order by
+		1 desc limit #{startRow}, #{rowCount};
+	</select>
+
+	<!-- 게시물 개수 -->
+	<select id="getTotal" resultType="_int">
+		select count(boardNumber) from
+		tbl_board
+	</select>
+
+	<!-- 게시물 작성 -->
+	<insert id="insert" parameterType="boardVO">
+		insert into tbl_board
+		(boardTitle, boardContent, boardDate)
+		values(#{boardTitle},
+		#{boardContent}, curdate());
+	</insert>
+
+	<!-- 최근 게시물 -->
+	<select id="getSeq" resultType="_int">
+		select boardNumber from tbl_board
+		order by 1 desc limit 0, 1;
+	</select>
+
+	<!-- 정보조회(디테일) -->
+	<select id="selectDetail" parameterType="_int"
+		resultType="boardVO">
+		select boardNumber, boardTitle, boardContent, boardDate
+		from tbl_board
+		where boardNumber = #{boardNumber}
+	</select>
+
+	<!-- 게시물 삭제 -->
+	<delete id="delete" parameterType="_int">
+		delete From tbl_board
+		where
+		boardNumber=#{boardNumber};
+	</delete>
+
+	<!-- 게시물 수정 -->
+	<update id="update" parameterType="boardVO">
+		update tbl_board
+		set
+		boardTitle=#{boardTitle}, boardContent=#{boardContent}
+		where
+		boardNumber = #{boardNumber}
+	</update>
+
+	<!-- 게시글 검색 -->
+	<select id="search" parameterType="boardDTO"
+		resultType="boardVO">
+		select boardNumber,boardTitle,boardDate from tbl_board
+		where boardTitle like CONCAT('%',#{boardTitle},'%')
+		order by 1 desc
+		limit #{startRow}, #{rowCount};
+	</select>
+
+	<!-- 검색 개수 -->
+	<select id="getSearch" parameterType="string" resultType="_int">
+		select
+		count(boardNumber) from tbl_board
+		where boardTitle like
+		CONCAT('%',#{boardTitle},'%')
+
+	</select>
+
+	<!-- 인쿼리에서 쓸 회원전화번호 받기 -->
+	<select id="inquiryData" parameterType="string"
+		resultType="string">
+		select memberPhone
+		from tbl_member
+		where memberId
+		=#{memberId}
+	</select>
+
+	<!-- 인쿼리테이블에 문의사항 내용넣기 -->
+	<insert id="inquiryInsert" parameterType="inquiryVO">
+		insert into tbl_inquiry
+		(memberId, memberPhone, houseNumber, houseType, typeOption,
+		inquiryContent, inquiryResponse,memberType)
+		values(#{memberId},
+		#{memberPhone}, #{houseNumber},
+		#{houseType}, #{typeOption},
+		#{inquiryContent}, #{inquiryResponse},#{memberType})
+	</insert>
+
+	<!-- 관리자페이지에서 문의하기 목록가져오기 -->
+	<select id="inquiryAdminList" resultType="inquiryVO"
+		parameterType="map">
+		select inquiryNumber, memberId,
+		memberPhone, houseNumber,
+		houseType,
+		typeOption, inquiryContent, memberType, status
+		from
+		tbl_inquiry
+		order by
+		1 desc limit
+		#{startRow}, #{rowCount}
+	</select>
+
+	<!-- 문의하기 디테일 -->
+	<select id="inquiryDetail" resultType="inquiryVO"
+		parameterType="_int">
+		select inquiryNumber, memberId,
+		memberPhone, houseNumber,
+		houseType,
+		typeOption, inquiryContent, inquiryResponse
+		from tbl_inquiry
+		where
+		inquiryNumber = #{inquiryNumber}
+	</select>
+
+	<!-- 문의 개수 -->
+	<select id="getInquiryCount" resultType="_int">
+		select count(memberId)
+		from
+		tbl_inquiry
+	</select>
+
+	<delete id="inquiryDelete" parameterType="_int">
+		delete from tbl_inquiry
+		where inquiryNumber=#{inquiryNumber}
+	</delete>
+
+	<update id="updateIRStauts" parameterType="inquiryVO">
+		update tbl_inquiry
+		set
+		inquiryResponse=#{inquiryResponse}, status='1'
+		WHERE
+		inquiryNumber=#{inquiryNumber}
+	</update>
+
+	<!-- 관리자페이지에서 문의하기 목록가져오기 -->
+	<select id="inquiryAdminListZero" resultType="inquiryVO"
+		parameterType="map">
+		select inquiryNumber, memberId,
+		memberPhone, houseNumber,
+		houseType,
+		typeOption, inquiryContent, memberType, status
+		from
+		tbl_inquiry
+		where status= 0
+		order by
+		1 desc limit
+		#{startRow}, #{rowCount}
+	</select>
+
+	<!-- 관리자페이지에서 문의하기 목록가져오기 -->
+	<select id="inquiryAdminListOne" resultType="inquiryVO"
+		parameterType="map">
+		select inquiryNumber, memberId,
+		memberPhone, houseNumber,
+		houseType,
+		typeOption, inquiryContent, memberType, status
+		from
+		tbl_inquiry
+		where status= 1
+		order by
+		1 desc limit
+		#{startRow}, #{rowCount}
+	</select>
+
+	<!-- 문의 개수 -->
+	<select id="getInquiryCountZero" resultType="_int">
+		select
+		count(memberId)
+		from
+		tbl_inquiry
+		where status=0
+	</select>
+
+	<!-- 문의 개수 -->
+	<select id="getInquiryCountOne" resultType="_int">
+		select
+		count(memberId)
+		from
+		tbl_inquiry
+		where status=1
+	</select>
+
+	<update id="deleteReply" parameterType="_int">
+		update tbl_inquiry
+		set
+		inquiryResponse= null,
+		status=0
+		where inquiryNumber=#{inquiryNumber}
+	</update>
+
+	<select id="boardCount" resultType="_int">
+		select count(boardNumber)
+		from tbl_board
+	</select>
+</mapper>

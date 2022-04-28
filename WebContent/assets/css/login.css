@@ -1,0 +1,312 @@
+/* body {
+	font-family: 'NanumSquareAcr';
+} */
+
+
+section#login-wrap input#title {
+	position: relative;
+}
+
+section#login-wrap div.form_data {
+	position: absolute;
+}
+
+section#login-wrap  div#forumkind {
+	display: flex;
+}
+
+section#login-wrap textarea#content {
+	height: 170px;
+	resize: none;
+}
+
+section#login-wrap div.send {
+	width: 100px;
+	margin: 0 auto;
+}
+
+section#login-wrap div.table-wrapper {
+	width: 670px;
+	margin: 0 auto;
+}
+
+section#login-wrap #main header.major {
+	text-align: left;
+}
+
+section#login-wrap #forumtable {
+	margin-bottom: 30px;
+}
+
+section#login-wrap #main {
+	padding: 3em 0 6em 0 !important;
+}
+
+/* #nav ul li a.menu:hover {
+	text-decoration: underline;
+} */
+
+section#login-wrap #mArticle {
+	width: 320px;
+	margin: 0 auto;
+	padding: 50px 20px 50px 20px;
+}
+
+section#login-wrap #box {
+	display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #edeff0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 40px #0000001a;
+    border-width: 0;
+    width: 440px;
+	height: 720px;
+    margin: 200px auto;
+	position: relative;
+}
+
+section#login-wrap #choices {
+	display: flex;
+    justify-content: space-evenly;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+section#login-wrap .choice{
+	width: 50%;
+    text-align: center;
+    padding: 0px;
+    line-height: 60px;
+}
+
+section#login-wrap .choice a{
+	text-decoration: none;
+	color: #888888 !important;
+	font-weight: 500;
+}
+
+/* .choice.one {
+
+} */
+
+
+section#login-wrap #findUrlOrNickname {
+	margin-top: 5px;
+	border-radius: 0;
+	background-color: #fff !important;
+	border: none;
+	border-bottom: 1px solid #e5e5e5;
+	border-radius: 0;
+	background: none;
+	color: #888888;
+	width: 100%;
+	padding: 0;
+}
+
+section#login-wrap .wrap_btn {
+	margin-top: 24px;
+	text-align: center;
+}
+
+section#login-wrap div.find_another {
+	font-size: 11px;
+	width: 50%;
+}
+
+section#login-wrap div.find_another a{
+	text-decoration: none;
+	color: #888888 !important;
+}
+/* div.find_another a:hover{
+	text-decoration: underline;
+} */
+
+
+section#login-wrap div#find_join {
+    display: flex;
+}
+
+section#login-wrap div.join {
+    text-align: right;
+    width:50%;
+}
+
+
+
+section#login-wrap button.btn_tistory.btn_tistory_type5 {
+	border-radius: 0;
+	width: 100%;
+	
+}
+
+section#login-wrap div.inp_text a#logo_img {
+	text-align: center;
+	font-size: 34px;
+	font-weight: 700;
+	color: #000000;
+	margin-bottom: 29px;
+}
+
+section#login-wrap div.inp_text {
+    text-align: center;
+}
+
+section#login-wrap a#logo_img img{
+    width: 200px;
+    margin-top: 12px;
+}
+
+
+section#login-wrap li a.button.alt.kakao {
+	background-color: #ffe500;
+    position: relative;
+	border:none;
+}
+
+/* ul.actions.fit.kakaochoice li {
+	width: 350px;
+} */
+
+section#login-wrap ul.actions.fit.kakaochoice {
+	display: flex;
+	flex-direction: column;
+}
+
+section#login-wrap ul.kakaochoice li {
+	margin: 0 auto;
+	width: 100%;
+}
+
+section#login-wrap ul.kakaochoice li a.find {
+	background-color: #1187CF;
+}
+
+section#login-wrap ul.kakaochoice li a{
+	border-radius: 1;
+	border: none !important ;
+	background-color: #1187CF;
+	color: #fff;
+	height: 50px;
+}
+
+section#login-wrap a#kakao_btn{
+	border-color: none !important;
+	color: #000 !important;
+}
+
+/* ul.kakaochoice li a:hover{
+
+	border: none !important ;
+	background-color: #e7e7e7;
+} */
+
+section#login-wrap div#kakaochoice {
+    margin-top: 55px;
+}
+
+section#login-wrap ul.kakaochoice li img {
+    position: absolute;
+    width: 40px;
+    left: 30px;
+    top: 9px;
+}
+
+section#login-wrap ul.kakaochoice li img#tstory-logo {
+	width: 27px;
+    top: 14px;
+    left: 66px;
+}
+
+section#login-wrap a.button.alt.kakao {
+	box-shadow: none;
+}
+
+
+section#login-wrap #houseIcon span{
+	background-image: url(../../images/houseIcon.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 94px;
+    height: 76px;
+    z-index: 50;
+    background-size: contain;
+	top: -61px;
+    left: 72px;
+}
+
+section#login-wrap #login_banner {
+	position: absolute;
+	bottom: -9px;
+	left:0;
+}
+
+
+section#login-wrap #loginStatus {
+	display: flex;
+    font-size: 13px;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+section#login-wrap input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
+    background-color: #1187CF !important;
+    border-color: #1187CF !important;
+    color: #ffffff;
+}
+
+
+
+section#login-wrap input[type="checkbox"]+label:before {
+	border-radius: 2px;
+}
+
+section#login-wrap input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+	background-color: white;
+	height: 20px;
+	width: 20px;
+	top: 3px;
+	left: 3px;
+}
+
+section#login-wrap input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
+    background-color: #1187CF !important;
+    border-color: #1187CF !important;
+    color: #ffffff;
+}
+
+section#login-wrap input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
+	{
+	border-color: #e5e5e5;
+	box-shadow: 0 0 0 1px #ffffff;
+}
+
+section#login-wrap li.choice a{
+	display: block;
+}
+
+
+
+
+@media (max-width: 414px){
+	section#login-wrap #box{
+	width: 414px;
+	}
+	section#login-wrap #login_banner img{
+	width: 414px;
+	}
+	
+	section#login-wrap ul.kakaochoice li {
+    margin: 0 auto;
+    width: 100%;
+}
+	#modal-inner {
+    width: 100% !important;
+     left: 0 !important;  
+}
+div#mid.modal-content {
+    width: 100%;
+}
+}

@@ -1,0 +1,509 @@
+body {
+	-ms-overflow-style: none;
+}
+
+button#btnh1 {
+	height: 53px;
+	position: absolute;
+	right: 40px;
+	top: 120px;
+	flex-direction: column;
+	display: inline-flex;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+button#btnh1 div {
+	line-height: 20px;
+}
+
+.fa-solid {
+	font-size: 2rem;
+	color:white;
+	margin-left: auto;
+	margin-right: auto;
+	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+::-webkit-scrollbar {
+	display: none;
+} /*특정 부분 스크롤바 없애기*/
+.box {
+	-ms-overflow-style: none;
+}
+
+.box::-webkit-scrollbar {
+	display: none;
+}
+
+div#map {
+	width: 100%;
+	height: 100vh;
+}
+
+body {
+	margin: 0;
+	position: relative;
+}
+
+div#nav-filter {
+	position: absolute;
+	width: 40%;
+	height: 91.7vh;
+	background: white;
+	z-index: 100;
+	top: 80px;
+	left: -40vw;
+}
+
+.flex {
+	display: flex;
+}
+
+.input_wrap {
+	width: 90%;
+	height: 60px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#img_wrap {
+	background-image: url("../../images/filter.png");
+	width: 12%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#input_wrap {
+	width: 88%;
+	position: relative;
+}
+
+#input_wrap a {
+	cursor: pointer;
+}
+
+.input_wrap input[type="text"] {
+	height: 100%;
+	border-radius: 1.8rem;
+	width: 100%;
+	border: none;
+	background: #d9d4d461;
+}
+
+.input_wrap input[type="text"]::placeholder {
+	margin-left: 20px;
+}
+
+input[type="text"]:focus {
+	background-color: #d9d4d461 !important;
+}
+
+#input_img {
+	position: absolute;
+	background: url("../../images/find_search.png");
+	width: 50px;
+	height: 50px;
+	right: 20px;
+	top: 5px;
+}
+
+div#table {
+    display: table;
+    width: 100%;
+    height: 76vh;
+}
+
+
+div.table-row {
+	height: 94%;
+	width: 100%;
+	overflow-y: scroll;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+div.table-cell {
+	float: left;
+	width: 33.333%;
+	padding: 2%;
+}
+div.table-cells {
+	width: 100%;
+}
+
+.img-wrap {
+	width: 100%;
+	height: 200px;
+	border-top-right-radius: 1rem;
+	background-size: cover;
+	border-top-left-radius: 1rem;
+}
+.img-wrap1 {
+    width: 99%;
+    height: 200px;
+    background-size: cover;
+}
+
+div.cell-wrap {
+	border: 1px solid;
+	border-radius: 1rem;
+}
+
+div.content-wrapper {
+	border-top: 1px solid;
+	padding: 1px;
+}
+div.content-wrapper1 {
+border-top: 1px solid;
+    padding-left: 0;
+    font-size: 1rem;
+    width: 182px;
+
+}
+
+span.name, span.gu {
+	color: #1187CF;
+}
+
+span.name {
+	font-family: 'GmarketSansMedium';
+	fon
+}
+
+span.gu {
+	font-size: 0.7em;
+}
+
+div.content {
+	margin-left: 6px;
+}
+div.content1 {
+	    margin-left: 5px;
+}
+
+
+
+div.content2 {
+	margin: 0;
+	font-size: 0.8em;
+	text-align: center;
+	color: black;
+}
+
+span {
+	margin-right: 10px !important;
+}
+
+span.open-beds, span.opened-beds-count {
+	margin: 0 !important;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+div#open_img {
+	background: url(../../images/open.png);
+	width: 100px;
+	height: 120px;
+	background-size: cover;
+	position: absolute;
+	left: 40vw;
+	top: 15vh;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+div#open_img2 {
+	background: url(../../images/close.png);
+	width: 100px;
+	height: 120px;
+	background-size: cover;
+	position: absolute;
+	left: 40vw;
+	top: 15vh;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	opacity: 0.8;
+	cursor: pointer;
+	display: none;
+}
+
+div#filter-wrap {
+	position: absolute;
+	background: white;
+	width: 100%;
+	left: -40vw;
+	height: 87.7%;
+}
+
+div#container {
+	width: 90%;
+	margin: auto;
+}
+
+div.filter-flex {
+	display: flex;
+}
+
+div.filter-flex>div {
+	border: 1px solid;
+	border-radius: 1rem;
+	width: 15%;
+	text-align: center;
+	margin-right: 10px;
+}
+
+div.filter {
+	margin-top: 40px;
+}
+
+div.multi-range-slider{
+	display:flex;
+}
+
+select#input-left, select#input-right{
+	height: 32px;
+    line-height: 32px;
+    width: 25%;
+    appearance: auto;
+    background-color: #ffffff;
+    border-color: #555; 
+    cursor: pointer;
+    padding-right: 0;
+}
+
+span#important {
+	margin: 0px 10px;
+}
+
+/* div input[type="range"] {
+	width: 90%;
+}
+
+.middle {
+	position: relative;
+	width: 90%;
+} 
+
+ .slider {
+	position: relative;
+	z-index: 1;
+	height: 5px;
+	margin: 0 15px;
+}
+
+.slider>.track {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: 5px;
+	background-color: #ade0ff;
+}
+
+.slider>.range {
+	position: absolute;
+	z-index: 2;
+	left: 25%;
+	right: 25%;
+	top: 0;
+	bottom: 0;
+	border-radius: 5px;
+	background-color: #1187CF;
+}
+
+.slider>.thumb {
+	position: absolute;
+	z-index: 3;
+	width: 20px;
+	height: 20px;
+	background-color: #1187CF;
+	border-radius: 50%;
+	right: 30%;
+	top: 2px;
+}
+
+.slider>.thumb.left {
+	transform: translate(-15px, -10px);
+	left: 25%;
+	top: 2px;
+}
+
+.slider>.thumb.right {
+	right: 25%;
+	transform: translate(15px, -10px);
+}
+
+input[type="range"] {
+	position: absolute; opacity로 가린 것을 이벤트도 비활성화하기 위해
+	pointer-events: none;
+	-webkit-appearance: none;
+	z-index: 2;
+	height: 10px;
+	width: 100%;
+	opacity: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb { 겹쳐진 두 thumb를 모두 활성화
+	pointer-events: all;
+	width: 30px;
+	height: 30px;
+	border-radius: 0;
+	border: 0 none;
+	background-color: red;
+	cursor: pointer; appearance를 해야 위의 스타일들을 볼 수 있음
+	-webkit-appearance: none;
+} */
+
+div.check {
+	font-size: 0.9rem;
+	height: 100%;
+	line-height: 31px;
+	cursor: pointer;
+	width: 100%;
+	border: 1px solid;
+	border-radius: 1rem;
+}
+
+div.button-wrap {
+	border: none !important;
+	border-radius: 2rem;
+	width: 30% !important;
+	background: #1187CF;
+}
+
+div.button-wrap input {
+	width: 100%;
+	color: white;
+	border: none;
+}
+
+div.filter-flex label {
+	margin: 0 !important;
+}
+
+input[type="checkbox"]+label:before {
+	display: none !important;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+div.filter-flex label {
+	padding: 0 !important;
+	width: 100%;
+	height: 100%
+}
+
+div.filter-flex>div {
+	width: 15%;
+	text-align: center;
+	margin-right: 10px;
+	height: 100%;
+	border: none;
+}
+
+input[type="date"] {
+	border: 1px solid;
+    outline: none;
+    border-color: #555;
+    border-radius:4px;
+    padding: 0 1em;
+}
+
+div.btn {
+	margin-top: 40px;
+}
+
+div.btn input[type="button"]:hover {
+	color: white;
+}
+
+.filter-flex input:checked+label {
+	border-radius: 1rem;
+	background: #1187CF;
+	color: #fff;
+}
+
+@media ( max-width :414px) {
+	div#nav-filter {
+		width: 81%;
+		left: -81vw;
+		height: 91vh;
+	}
+	div#open_img2 {
+		width: 83px;
+		height: 100px;
+		left: 80vw;
+		top: 15vh;
+		display: none;
+	}
+	div#open_img {
+		width: 83px;
+		height: 100px;
+		left: 80vw;
+		top: 15vh;
+	}
+	#img_wrap {
+		width: 40px;
+		height: 40px;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#input_wrap {
+		width: 88%;
+		height: 40px;
+	}
+	#input_img {
+		width: 30px;
+		height: 30px;
+		background-size: cover;
+		right: 10px;
+		top: 5px;
+	}
+	div#table {
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+	div.table-row {
+		height: 100%;
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 0
+	}
+	div.table-cell {
+		float: left;
+		width: 50%;
+		padding: 2%;
+		margin: 0 auto;
+	}
+	div.content-wrapper {
+		border-top: 1px solid;
+		padding: 0;
+	}
+	div.content-wrapper div.content {
+		font-size: 0.7rem;
+		margin-left: 12px;
+	}
+	span {
+		margin-right: 5px !important;
+	}
+	div#table-wrap {
+		height: 86.5%;
+	}
+	div.img-wrap {
+		height: 155px;
+	}
+	div#filter-wrap {
+		display: none;
+	}
+}

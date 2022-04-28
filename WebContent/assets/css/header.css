@@ -1,0 +1,227 @@
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background-color: rgb(255, 255, 255);
+}
+
+body {
+	position: relative;
+	margin: 0 !important;
+}
+
+#header #container {
+	max-width: 1320px;
+	width: 70%;
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	height: 80px !important;
+	display: block;
+}
+
+#header .menu-btn-list {
+    width: 74%;
+    float: right;
+    font-size: 1vw;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0;
+
+}
+
+#header li.p_menu {
+	display: inline-block;
+	line-height: 80px;
+	width: 126px;
+	text-align: center;
+}
+
+#header li#memberId {
+	font-family: 'GmarketSansMedium';
+}
+
+#header a {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 20px;
+	font-family: 'GmarketSansMedium';
+}
+
+#header a:hover {
+	color: #1187CF;
+	font-weight: bold;
+}
+
+#header .sub-menu-btn-list a {
+	display: block;
+}
+
+#header li {
+	list-style: none;
+	padding: 0 !important;
+}
+
+nav#nav-mobile {
+	display: none;
+}
+
+#header ul {
+	padding: 0;
+	margin: 0 0 0.5em 0;
+}
+
+#header .login_status {
+	display: none;
+}
+
+#header .mouseover {
+	display: none;
+}
+
+#header .mouseover li {
+	height: 50px;
+	line-height: 50px;
+}
+
+#header #slogun {
+    position: absolute;
+    top: 77px;
+    left: 287px;
+    border-radius: 1rem;
+    width: 100px;
+}
+
+#header #slogun2 {
+position: absolute;
+    top: 100px;
+    left: 363px;
+    width: 300px;
+}
+
+#header div#container-mobile {
+	display: none;
+}
+
+@media ( max-width :414px) {
+	#header #container {
+		display: none;
+	}
+	#header div#container-mobile {
+		text-align: center;
+		width: 100%;
+		display: block;
+	}
+	#header div#container-mobile a {
+		display: inline-block;
+	}
+	#header input[id="menuicon"] {
+		display: none !important;
+	}
+	#header input[id="menuicon"]+label {
+		display: block;
+		width: 40px;
+		height: 30px;
+		position: relative;
+		cursor: pointer;
+	}
+	#header input[id="menuicon"]+label span {
+		display: block;
+		position: absolute;
+		width: 70%;
+		height: 5px;
+		border-radius: 30px;
+		background: #000;
+		transition: all .35s;
+	}
+	#header input[id="menuicon"]+label span:nth-child(1) {
+		top: 0;
+	}
+	#header input[id="menuicon"]+label span:nth-child(2) {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	#header input[id="menuicon"]+label span:nth-child(3) {
+		bottom: 0;
+	}
+	#header div#nav-wrap {
+		position: fixed;
+		right: 40px;
+		top: 25px;
+		z-index: 1002;
+	}
+	#header input[id="menuicon"]:checked+label span:nth-child(1) {
+		top: 50%;
+		transform: translateY(-50%) rotate(45deg);
+	}
+	#header input[id="menuicon"]:checked+label span:nth-child(2) {
+		opacity: 0;
+	}
+	#header input[id="menuicon"]:checked+label span:nth-child(3) {
+		bottom: 50%;
+		transform: translateY(50%) rotate(-45deg);
+	}
+	nav#nav-mobile {
+		width: 100%;
+		border-left: 1px solid;
+		position: fixed;
+		right: 0;
+		top: 0;
+		height: 100vh;
+		background-color: rgb(0 0 0/ 50%);
+		z-index: 90;
+		display: none;
+	}
+	nav#nav-mobile div#container {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 60%;
+		max-width: 25rem;
+		min-height: 100vh;
+		padding: 1rem;
+		padding-bottom: 11.5rem;
+		background-color: #FFF;
+		box-sizing: border-box;
+	}
+	nav#nav-mobile div#nav-menu {
+		margin-top: 100px;
+	}
+	#header input[type="checkbox"]+label:before {
+		display: none !important;
+	}
+	nav#nav-mobile div#button-wrap {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	nav#nav-mobile div#button-wrap input[type="button"] {
+		width: 45%;
+	}
+	nav#nav-mobile div#button-wrap input[name="login"] {
+		background: #1187CF !important;
+		color: white
+	}
+	nav#nav-mobile div#button-wrap input[name="join"] {
+		border: 1px solid #1187CF;
+		color: #1187CF;
+	}
+	nav#nav-mobile div#menu-wrap {
+		margin-left: 10px;
+	}
+	nav#nav-mobile div.menu {
+		margin-top: 25px;
+		font-family: GmarketSansMedium;
+		border-bottom: 1px solid;
+	}
+	nav#nav-mobile a {
+		text-decoration: none;
+		color: black;
+		font-size: 1.2rem;
+	}
+}

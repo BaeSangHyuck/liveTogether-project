@@ -1,0 +1,136 @@
+#footer {
+	width: 100%;
+	height: 320px;
+	background-color: #333;
+	padding: 0 !important;
+}
+
+#footer div#container {
+	height: 100%;
+}
+
+#footer div.content span {
+	display: inline-block;
+	margin-top: 6px;
+}
+
+#footer .right-wrapper #footer .left-wrapper {
+	margin-top: 1.5em !important;
+}
+
+#footer .wrapper {
+	margin-top: 1.5em;
+}
+
+#footer .lower-footer {
+	height: 100%;
+}
+
+#footer a {
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#footer .lower-footer .wrapper.left-wrapper .header .menu-btn-list .menu-btn
+	{
+	float: left;
+	margin-right: 1rem;
+}
+
+#footer .lower-footer .wrapper.left-wrapper .header .menu-btn-list {
+	float: left;
+	margin: 0;
+	padding: 0;
+	color: #CCC;
+	list-style: none;
+}
+
+#footer .lower-footer .wrapper.right-wrapper {
+	float: right;
+}
+
+#footer div {
+	font-size: 12.8px;
+	color: #999999;
+}
+
+#footer .container {
+	max-width: 1320px;
+	width: 70%;
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#footer .lower-footer .wrapper {
+	padding: 0 1rem;
+	float: left;
+}
+
+#footer .lower-footer .wrapper.right-wrapper .signup-btn {
+	display: block;
+	width: 192px;
+	height: 42px;
+	line-height: 2.5rem;
+	margin: 0 auto;
+	color: #999;
+	text-align: center;
+	border: 1px solid #757575;
+	border-radius: 0.2rem;
+}
+
+#footer .lower-footer .wrapper.right-wrapper .sns-btn-list {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+#footer .lower-footer .wrapper.left-wrapper .header {
+	height: 2rem;
+	line-height: 2rem;
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+#footer .lower-footer .wrapper.left-wrapper .header .logo {
+	float: left;
+	height: 2rem;
+	margin-right: 2rem;
+}
+
+#footer .logo {
+	width: 140px;
+}
+
+#footer .lower-footer .wrapper.left-wrapper .header .logo {
+	margin-right: 0;
+}
+
+#footer div.right-wrapper {
+	width: 400px !important;
+	height: 200px !important;
+}
+
+@media ( max-width :414px) {
+	.wrapper.right-wrapper {
+		display: none;
+	}
+	#footer {
+		height: 371px;
+	}
+	#footer .lower-footer .wrapper {
+		padding: 0 0rem;
+	}
+	#footer .container {
+		max-width: 1320px;
+		width: 76%;
+		margin: 0 auto;
+		padding: 0;
+		box-sizing: border-box;
+		height: 100%;
+	}
+	#footer div.content span {
+		display: inline-block;
+		margin-top: 5px;
+	}
+}

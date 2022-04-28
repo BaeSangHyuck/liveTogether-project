@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Files">
+	<!-- 첨부파일 추가 -->
+	<insert id="insert" parameterType="filesVO">
+		insert into tbl_boardFile (fileName, boardNumber, fileNameOriginal) 
+		values(#{fileName}, #{boardNumber}, #{fileNameOriginal})
+	</insert>
+	
+	<!-- 첨부파일 삭제 -->
+	<delete id="delete" parameterType="_int">
+		delete from tbl_boardFile where boardNumber = #{boardNumber}
+	</delete>
+	
+	<!-- 첨부파일 가져오기 -->
+	<select id="select" parameterType="_int" resultType="filesVO">
+		select fileName, boardNumber, fileNameOriginal from tbl_boardFile 
+		where boardNumber = #{boardNumber}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

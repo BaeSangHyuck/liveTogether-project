@@ -1,0 +1,386 @@
+/*  .my_span01{
+   font-size:2em;
+}
+.inner_ab{
+   position: absolute;
+   bottom: -11.5px;
+   left: 1783px;
+   color: #444;
+}  */
+.inner_ab {
+	display: none;
+}
+
+.my {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.mypage {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.mypage .wrapper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 80px;
+	margin: 0 auto;
+}
+
+.mypage .mypagetool {
+	width: 100%;
+	height: 50px;
+	margin-top: 1rem;
+	margin-bottom: 3em;
+}
+
+.mypage  .mypagetool .mypagebar {
+	margin-left: 25%;
+	width: 50%;
+	height: 50px;
+	display: flex;
+	float: left;
+	justify-content: space-evenly;
+	font-weight: 500;
+	font-size: 20px;
+	text-align: left;
+}
+
+.mypagebar .num4 {
+	box-shadow: inset 0 -3px 0 #1187cf;
+	background-color: #FFF;
+	color: #1187CF;
+	font-weight: 600;
+}
+
+.myhousename {
+	margin-right: 1rem;
+	color: #1187CF;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.a2 {
+	display: none;
+}
+
+.myhousecode {
+	margin-right: 1rem;
+	font-weight: 700;
+}
+
+.mybtn {
+	float: right;
+	margin-top: 0.8rem;
+	display: inline-block;
+	height: 2rem;
+	line-height: 1.5rem;
+	background-color: #1187CF;
+	color: #FFF;
+	cursor: pointer;
+	box-sizing: border-box;
+	padding: 0.3rem 0.8rem;
+	border-radius: 0.2rem;
+	font-size: 0.9rem;
+	text-decoration-line: none;
+}
+
+.info-title {
+	padding: 1rem 1rem;
+	font-size: 0.9rem;
+	font-weight: 900;
+}
+
+#mypageheader .inner {
+	margin-top: 3em;
+	background-image: url(../../images/mybanner4.png);
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-left: -10em;
+	text-align: center;
+	height: 350px;
+	background-color: #ffffff;
+	position: relative;
+}
+
+.mypage .mypagenotice {
+	font-size: small;
+	margin-bottom: 1rem;
+	/*     padding: 3rem 4rem; */
+	color: #999;
+}
+
+.mypage .mypagebar a {
+	text-decoration-line: none !important;
+	color: black;
+}
+
+.mypage .mypagecontents .myconheader {
+	width: 100%;
+}
+
+.book-list {
+	width: 100%;
+	float: left;
+	display: flex;
+	justify-content: space-between;
+}
+
+.book-list .process.active .process-title {
+	background-color: #1187CF;
+	/*     box-shadow: none; */
+	color: #FFF;
+}
+
+.book-list .process.active .gt {
+	background-color: #fff;
+	box-shadow: none;
+	color: #1187CF;
+}
+
+.book-list .process .process-title {
+	float: left;
+	width: 11.75rem;
+	height: 4rem;
+	line-height: 4rem;
+	background-color: #FFF;
+	box-shadow: inset 0 0 0 1px #e9e9e9;
+	color: #808080;
+	text-align: center;
+}
+
+.gt {
+	float: left;
+	height: 4rem;
+	line-height: 4rem;
+	width: 6rem;
+	color: #CCC;
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.contract-title {
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+}
+
+.contract-title2 {
+	font-size: 18px;
+	color: #1187CF;
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-family: 'GmarketSansMedium';
+}
+
+.contract-table {
+	border: 1px solid #eee;
+	background-color: #fff;
+	padding: 30px 20px;
+	margin-top: 20px;
+	margin-left: 0;
+	margin-right: 0;
+	display: flex;
+}
+
+.contract-btn {
+	font-family: 'GmarketSansMedium';
+}
+
+.tab1 {
+	border: 1px solid #eee;
+	padding: 15px;
+	width: 45%;
+	margin: 0 auto;
+}
+
+.tab2 {
+	padding: 20px;
+	width: 45%;
+	border: 1px solid #eee;
+	margin: 0 auto;
+}
+
+#tab2-container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+/* 자바스크립트  a1적용해야댐*/
+/*  .a1 {
+   display:none;
+} */
+.b1 .active {
+	display: block;
+}
+
+.contract-btn-li {
+	border: 1px solid #eee;
+	text-align: center;
+	padding: 11px 0px;
+	margin: 4px 0px;
+}
+
+.contract-btn-li a {
+	text-decoration-line: none !important;
+	color: #1187CF;
+}
+
+.contract-contents {
+	font-size: 14px;
+}
+
+.tab-pane-title {
+	font-size: 16px;
+	margin-bottom: 30px;
+	font-family: 'GmarketSansMedium';
+}
+
+.contract-table table td {
+	border: 1px solid #dddd;
+	font-size: 1rem;
+}
+
+.t-subject {
+	background: #fafafa;
+	font-weight: bold;
+	padding-left: 5px;
+	border: 1px solid #dddd;
+	width: 19%;
+}
+
+.cardwrap a {
+	text-decoration-line: none !important;
+	color: #1187CF;
+}
+
+.cardwrap {
+	width: 100%;
+	margin-top: 3em;
+	display: inline-block;
+	padding: 30px;
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+
+.card-title {
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.87);
+	margin-bottom: 6px;
+}
+
+.card-subtitle {
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.87);
+}
+
+@media ( max-width : 414px) {
+	.mypagetool {
+		height: 1px;
+	}
+	/*    .mypagetool .mypagebar {
+    margin-left: 0%;
+    width: 100%;
+    font-size: 14px;
+    height: 31px;
+    margin-top: 20px;
+    box-shadow: none;
+} */
+	.mypagetool .mypagebar {
+		margin-left: 0% !important;
+		width: 100% !important;
+		font-size: 14px !important;
+		height: 31px !important;
+		margin-top: 20px !important;
+	}
+	ul {
+		padding-left: 0em;
+	}
+	.mypagebar .num4 {
+		box-shadow: none;
+		background-color: #FFF;
+		color: #1187CF;
+		border-bottom: 2px solid #1187CF;
+		font-weight: 600;
+	}
+	#main .inner {
+		background-image: none;
+		height: 76px;
+	}
+	div.mypagetool {
+		margin-top: 1em;
+	}
+	.contract-table {
+		border: 0;
+		/* background-color: #fff; */
+		padding: 0;
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+		display: block;
+		width: 100%;
+	}
+	.tab1 {
+		border: none;
+		padding: 0;
+		margin: 0 auto;
+		width: 100%;
+	}
+	.tab2 {
+		padding: 0;
+		width: 100%;
+		border: none;
+		/* margin: 0 auto; */
+	}
+	.contract-table img {
+		width: 100% !important;
+		margin-top: -2em;
+	}
+	.mypage .wrapper {
+		padding: 0;
+	}
+	.my {
+		width: 100%;
+	}
+	.contract-table table td {
+		font-size: 12px;
+	}
+	.tab-pane-title {
+		margin-bottom: 10px;
+	}
+	.contract-download-btn img {
+		width: 45% !important;
+	}
+	.mypage .mypagetool .mypagebar {
+		margin-left: 0;
+		width: 100%;
+		display: flex;
+		float: left;
+		justify-content: space-evenly;
+		font-weight: 500;
+		font-size: 14px;
+		text-align: left;
+	}
+	ul li {
+		padding-left: 0em;
+	}
+	.cardwrap {
+		margin-bottom: 3em;
+	}
+	.inner_ab {
+		display: block;
+		position: absolute;
+		bottom: -8px;
+		left: 162px;
+	}
+	.my_span01 {
+		font-size: 20px;
+	}
+	#mypageName {
+		display: none !important;
+	}
+}

@@ -1,0 +1,388 @@
+#no {
+	margin-top: 10em;
+}
+
+#none {
+	height: 370px;
+}
+
+#nonebox {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border: 1px solid #edeff0;
+	border-radius: 1em;
+	box-shadow: 0px 0px 10px #0000001a;
+	border-width: 0;
+	width: 40%;
+	margin: 40px auto;
+	position: relative;
+	height: 200px;
+}
+
+#nonebox h4 {
+	margin: 0 0 0 0;
+}
+
+#nonebox h6 {
+	margin: 0 0 0 0;
+	color: #afabab;
+}
+
+#nonehtag {
+	margin: 0 auto;
+	margin-top: 4em;
+}
+
+.my {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.mypage {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.mypage .wrapper {
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+}
+
+.mypage .mypagetool {
+	width: 100%;
+	height: 50px;
+	margin-top: 1rem;
+	margin-bottom: 3em;
+}
+
+.mypage  .mypagetool .mypagebar {
+	margin-left: 25%;
+	width: 50%;
+	height: 50px;
+	display: flex;
+	float: left;
+	justify-content: space-evenly;
+	font-weight: 500;
+	font-size: 20px;
+	text-align: left;
+}
+
+.mypagebar .num4 {
+	box-shadow: inset 0 -3px 0 #1187cf;
+	background-color: #FFF;
+	color: #1187CF;
+	font-weight: 600;
+}
+
+.myhousename {
+	margin-right: 1rem;
+	color: #1187CF;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.myhousecode {
+	margin-right: 1rem;
+	font-weight: 700;
+}
+
+.mybtn {
+	float: right;
+	margin-top: 0.8rem;
+	display: inline-block;
+	height: 2rem;
+	line-height: 1.5rem;
+	background-color: #1187CF;
+	color: #FFF;
+	cursor: pointer;
+	box-sizing: border-box;
+	padding: 0.3rem 0.8rem;
+	border-radius: 0.2rem;
+	font-size: 0.9rem;
+	text-decoration-line: none;
+}
+
+.info-title {
+	padding-bottom: 20px;
+	font-size: 24px;
+	font-weight: 900;
+}
+
+#mypageheader .inner {
+	margin-top: 3em;
+	background-image: url('../../images/mybanner4.png');
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-left: -10em;
+	text-align: center;
+	height: 350px;
+	background-color: #ffffff;
+	position: relative;
+}
+
+.mypage .mypagenotice {
+	font-size: small;
+	margin-bottom: 1rem;
+	/*     padding: 3rem 4rem; */
+	color: #999;
+}
+
+.mypage .mypagebar a {
+	text-decoration-line: none !important;
+	color: black;
+}
+
+.mypage .mypagecontents .myconheader {
+	width: 100%;
+}
+
+.book-list {
+	width: 100%;
+	float: left;
+	display: flex;
+}
+
+.book-list .process.active .process-title {
+	background-color: #1187CF;
+	/*     box-shadow: none; */
+	color: #FFF;
+}
+
+.book-list .process.active .gt {
+	background-color: #fff;
+	box-shadow: none;
+	color: #1187CF;
+}
+
+.book-list .process .process-title {
+	float: left;
+	width: 11.75rem;
+	height: 4rem;
+	line-height: 4rem;
+	background-color: #FFF;
+	box-shadow: inset 0 0 0 1px #e9e9e9;
+	color: #808080;
+	text-align: center;
+}
+
+.gt {
+	float: left;
+	height: 4rem;
+	line-height: 4rem;
+	width: 6rem;
+	color: #CCC;
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.mypagebook1 {
+	width: 100%;
+	margin-top: 5em;
+}
+
+.mypagebook1 .before {
+	width: 10%;
+	padding: 0 2rem;
+	background-color: #1187CF;
+	color: #FFF;
+	text-align: center;
+	float: left;
+}
+
+.mypagebook1 .notice-content {
+	margin-left: 10em;
+	font-size: smaller;
+	line-height: 2.5;
+}
+
+.myhouse {
+	height: 9rem;
+}
+
+.myconheader2 {
+	margin-top: 5em;
+}
+
+.house-info-wrapper {
+	width: 100%;
+	display: flex;
+}
+
+div.column {
+	float: left;
+	width: 50%;
+}
+
+div.column-title {
+	float: left;
+	width: 40%;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #E9E9E9;
+	background-color: #F5F3F1;
+	padding: 0 1rem;
+	height: 3rem;
+	line-height: 3rem;
+}
+
+div.column-value {
+	float: left;
+	width: 60%;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #E9E9E9;
+	padding: 0 1rem;
+	height: 3rem;
+	line-height: 3rem;
+}
+
+.column-wrap {
+	border-width: 1px 0 0 1px;
+	border-style: solid;
+	border-color: #E9E9E9;
+	height: 150px;
+}
+
+.myconheader3 {
+	margin-top: 5em;
+	width: 100%;
+}
+
+div.process {
+	margin-left: 10px;
+}
+
+table#paging {
+	text-align: center;
+}
+
+table#paging a {
+	text-decoration: none;
+	color: #8c8a8c;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+div.active div.process-title a {
+	color: white;
+}
+
+.inner_ab {
+	position: absolute;
+	bottom: 10px;
+	left: 208px;
+	color: black;
+	display: none;
+}
+
+.my_span01 {
+	font-size: 3em;
+}
+
+div.table-wrap {
+	height: 350px;
+}
+
+@media ( max-width : 414px) {
+	#navigation_wraper .navigation {
+		width: 414px;
+	}
+	#change_info .content-wrapper .content {
+		width: 414px;
+		padding: 10px 10px;
+	}
+	.mypagelook #box {
+		width: 100%;
+		heigth: 100%;
+	}
+	.inner_ab {
+		position: absolute;
+		bottom: -8px;
+		left: 162px;
+	}
+	.my_span01 {
+		font-size: 20px;
+	}
+	#main .inner {
+		background-image: none;
+		height: 110px;
+	}
+	.mypagetool .mypagebar {
+		margin-left: 0% !important;
+		width: 100% !important;
+		font-size: 14px !important;
+		height: 31px !important;
+		margin-top: 20px !important;
+	}
+	.mypagetool {
+		height: 1px;
+	}
+	ul {
+		padding-left: 0em;
+	}
+	ul li {
+		padding-left: 0em;
+	}
+	table th, table td {
+		font-size: 1px;
+	}
+	.myconheader3 {
+		margin-top: 2em;
+	}
+	th.th1, th.th2, th.th3, th.th4, th.th5, td.td1, td.td2, td.td3, td.td4,
+		td.td5 {
+		border-right: 1px solid #dddddd;
+		width: 54.14px;
+		text-align: center;
+		line-height: 30px;
+	}
+	th.th6, td.td6 {
+		border-right: 1px solid #dddddd;
+		width: 49.75px;
+		text-align: center;
+	}
+	th.th7, td.td7 {
+		border-right: 1px solid #dddddd;
+		width: 84.14px;
+		text-align: center;
+	}
+	th.th8, td.td8 {
+		width: 59.14px;
+		text-align: center;
+	}
+	th {
+		font-weight: bold;
+	}
+	th.th3, td.td3 {
+		display: none;
+	}
+	tr.anotherTr {
+		display: none;
+	}
+	.my {
+		width: 100% !important;
+	}
+	.info-title {
+		font-size: 12px !important;
+		padding-bottom: 10px !important;
+	}
+	#nonebox {
+		width: 100%;
+	}
+	#none {
+		height: 290px;
+	}
+	#no {
+		margin-top: 6em;
+	}
+	.inner_ab {
+		display: block;
+	}
+}

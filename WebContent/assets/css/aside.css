@@ -1,0 +1,85 @@
+#aside #room a {
+	width: 80px;
+	height: 80px;
+	background-image: url("../../images/room.png");
+	background-size: cover;
+	display: inline-block;
+	border-radius: 1rem;
+	border:solid white;
+}
+
+#aside #inquiry {
+	width: 100%;
+	height: 90px;
+	margin: 0 auto;
+}
+
+a{
+	cursor: pointer;
+}
+
+
+#aside #inquiry a {
+	width: 80px;
+	height: 80px;
+	background-image: url("../../images/inquiry.png");
+	background-size: cover;
+	display: inline-block;
+	border-radius: 1rem;
+	border:solid white;
+}
+
+#aside #room {
+	width: 100%;
+	height: 90px;
+	margin: 0 auto;
+}
+
+#aside #hosting a {
+	width: 80px;
+	height: 80px;
+	background-image: url("../../images/hosting.png");
+	background-size: cover;
+	display: inline-block;
+	border-radius: 1rem;
+	border:solid white;
+}
+
+#aside #hosting {
+	width: 90px;
+	height: 90px;
+	margin: 0 auto;
+}
+
+
+#aside #top a {
+	width: 86px;
+	height: 45px;
+	background-image: url("../../images/top.png");
+	background-size: cover;
+	display: inline-block;
+	border-radius: 1rem;
+}
+
+#aside #top {
+	width: 100%;
+	height: 50px
+}
+
+#aside {
+	width: 90px;
+	right: 3vw;
+	bottom: 3vw;
+	position: fixed;
+	z-index: 999;
+}
+
+body {
+	position: relative;
+}
+
+@media ( max-width :414px){
+	#aside{
+		display: none;
+	}
+}

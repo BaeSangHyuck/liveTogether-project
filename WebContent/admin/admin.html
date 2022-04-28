@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가치살자 관리자 페이지</title>
+    <style>
+        #first-wrapper{
+            background-color: white;
+            text-align: right;
+        }
+
+        #second-wrapper{
+            width: 87%;
+            background-color: #EFEFEF;
+            display: inline-block;
+        }
+
+        .two-wrapper{
+            display: flex;
+            width: 100%;
+            height: 280px;
+            justify-content: space-evenly;
+        }
+        
+        #two-wrapper-final{
+            display: flex;
+            width: 100%;
+            height: 98px;
+            justify-content: space-evenly;
+        }
+
+        #two-wrapper-first{
+            margin-top: 15px;
+        }
+
+        #firstBox, #secondBox, #thirdBox, #fourthBox, #fifthBox, #sixthBox, #seventhBox, #eightBox{
+            background: white;
+            width: 48%;
+            height: 93%;
+        }
+
+        div#hr-tag{
+			border-bottom: 3px solid #EFEFEF;
+		}
+        
+        div#hr-tag2{
+			border-bottom: 1px solid #EFEFEF;
+		}
+        
+        p.header-p{
+            text-align: left;
+            padding-left: 25px;
+            letter-spacing: -0.5px;
+            font-weight: 540;
+            font-size: 20px;
+        }
+
+        .first-span{
+            width: 80%;
+            height: 50px;
+            border: 0;
+            margin-right: 45px;
+            color: #606060;
+            font-size: 18px;
+        }
+
+        .second-span{
+            color: #606060;
+            margin-left: 130px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span1{
+            color: #606060;
+            margin-left: 112px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span2{
+            color: #606060;
+            margin-left: 124px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span3{
+            color: #606060;
+            margin-left: 130px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span3{
+            color: #606060;
+            margin-left: 81.5px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span4{
+            color: #606060;
+            margin-left: 111.5px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span5{
+            color: #606060;
+            margin-left: 165.5px;
+            font-size: 18px;
+            color: black;
+        }
+
+        .second-span6{
+            color: #606060;
+            margin-left: 111.5px;
+            font-size: 18px;
+            color: black;
+        }
+
+        div.half-half-div1, div.half-half-div2 {
+            text-align: left;
+            padding-left: 30px;
+            height: 100%;
+            width: 85%;
+            color: #606060;
+        }
+
+        div.half-half-div3, div.half-half-div4 {
+            text-align: left;
+            padding-left: 30px;
+            height: 100%;
+            width: 85%;
+            padding-top: 35px;
+            color: #606060;
+        }
+
+        div.half-div1{
+            width: 49.5%;
+            height: 79%;
+            display: inline-block;
+        }
+
+        div.half-div2{
+            width: 49.5%;
+            height: 79%;
+            display: inline-block;
+        }
+
+        #guest-div, #host-div{
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="first-wrapper">
+        <div id="second-wrapper">
+        <div class="two-wrapper" id="two-wrapper-first">
+            <div id="firstBox">
+                <p class="header-p">방관리</p>
+                <div id="hr-tag"></div>
+            </div>
+            <div id="secondBox">
+                <p class="header-p">회원관리</p>
+                <div id="hr-tag"></div>
+                <div class="half-div1">
+                    <div id="guest-div"><p>게스트</p></div>
+                <div class="half-half-div1">
+                <span class="first-span">예정된 계약 수</span><span class="second-span">0</span> 건<br><div id="hr-tag2"></div><br>
+                <span class="first-span">예정된 해지 수</span><span class="second-span">0</span> 건<br><div id="hr-tag2"></div><br>
+                <span class="first-span">답변대기 문의 수</span><span class="second-span1">0</span> 건<div id="hr-tag2"></div>
+                </div>
+                </div>
+                
+                <div class="half-div2">
+                    <div id="host-div"><p>호스트</p></div>
+                <div class="half-half-div2">
+                <span class="first-span">계약 예정 방 수</span><span class="second-span2">0</span> 건<div id="hr-tag2"></div><br>
+                <span class="first-span">계약 해지 예정 방 수</span><span class="second-span3">0</span> 건<div id="hr-tag2"></div><br>
+                <span class="first-span">답변대기 문의 수</span><span class="second-span4">0</span> 건<div id="hr-tag2"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="two-wrapper">
+            <div id="thirdBox">
+                <p class="header-p">블랙리스트 관리</p>
+                <div id="hr-tag"></div>
+            </div>
+            <div id="fourthBox">
+                <p class="header-p">스태프 관리</p>
+                <div id="hr-tag"></div>
+            </div>
+        </div>
+        <div class="two-wrapper">
+            <div id="fifthBox">
+                <p class="header-p">하루 통계</p>
+                <div id="hr-tag"></div>
+            </div>
+            <div id="sixthBox">
+                <p class="header-p">누적 통계</p>
+                <div id="hr-tag"></div>
+                <div class="half-div1">
+                <div class="half-half-div3">
+                <span class="first-span">총 가입 수</span><span class="second-span5">0</span> 건<br><div id="hr-tag2"></div><br>
+                <span class="first-span">총 계약 수</span><span class="second-span5">0</span> 건<div id="hr-tag2"></div><br>
+                <span class="first-span">총 셰어하우스 수</span><span class="second-span6">0</span> 건<div id="hr-tag2"></div>
+                </div>
+                </div>
+                
+                <div class="half-div2">
+                <div class="half-half-div4">
+                <span class="first-span">총 문의 수</span><span class="second-span5">0</span> 건<div id="hr-tag2"></div><br>
+                <span class="first-span">총 후기 수</span><span class="second-span5">0</span> 건<div id="hr-tag2"></div><br>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="two-wrapper" id="two-wrapper-final">
+            <div id="seventhBox"></div>
+            <div id="eightBox"></div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

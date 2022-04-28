@@ -1,0 +1,388 @@
+/* body {
+	font-family: 'Noto Sans KR', sans-serif;
+} */
+
+section#join-wrap #main {
+	margin-top: 100px;
+	margin-bottom: 195px;
+}
+
+section#join-wrap li a.button.alt.kakao {
+	background-color: #ffe500;
+}
+
+section#join-wrap ul.actions.fit.kakaochoice li {
+	width: 350px;
+}
+
+section#join-wrap ul.actions.fit.kakaochoice {
+	display: flex;
+	flex-direction: column;
+}
+
+section#join-wrap ul.kakaochoice li {
+	margin: 0 auto;
+}
+
+section#join-wrap ul.kakaochoice li img {
+	position: absolute;
+	width: 40px;
+	left: 56px;
+	top: 9px;
+}
+
+section#join-wrap ul.kakaochoice li img.tstory {
+	top: 6px;
+}
+
+section#join-wrap a.button.alt.kakao {
+	box-shadow: none;
+}
+
+section#join-wrap li a.kakao, li a.tstory {
+	position: relative;
+}
+
+section#join-wrap a#starttsory {
+	color: #616161;
+	font-size: 14px;
+	margin: 0 auto;
+}
+
+section#join-wrap span.ir_wa {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+
+section#join-wrap div#starttsory {
+	text-align: center;
+}
+
+section#join-wrap #main {
+	margin: 0 auto;
+}
+
+section#join-wrap #kakaoServiceLogo {
+	margin-bottom: 20px;
+    text-align: center;
+}
+
+section#join-wrap div#mArticle {
+	display: flex;
+	justify-content: center;
+	width: 320px;
+	margin: 0 auto;
+	padding: 50px 20px 50px 20px;
+}
+
+section#join-wrap #box {
+	display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #edeff0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 40px #0000001a;
+    border-width: 0;
+    width: 440px;
+    margin: 200px auto;
+	position: relative;
+}
+
+section#join-wrap #choices {
+	display: flex;
+    justify-content: space-evenly;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+section#join-wrap .choice{
+	width: 50%;
+    text-align: center;
+    padding: 0px;
+    line-height: 60px;
+}
+
+section#join-wrap .choice a{
+	text-decoration: none;
+	color: #888888 !important;
+	font-weight: 500;
+}
+
+section#join-wrap #find_join a{
+	color: #888888 !important;
+}
+
+section#join-wrap #kakaoServiceLogo img{
+    width:250px;
+}
+
+section#join-wrap div.wrap_form {	
+	width: 480px;
+}
+
+section#join-wrap span.line_or {
+	font-size: 14px;
+}
+
+section#join-wrap form#login-form {
+	margin: 0;
+}
+
+section#join-wrap div.item_tf {
+	position: relative;
+}
+
+section#join-wrap label#id_email_2_label, label#id_password_3_label {
+	position: absolute;
+	
+}
+
+section#join-wrap div.wrap_btn {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: column;
+	color: #616161;
+	margin-top: 20px;
+}
+
+section#join-wrap div.wrap_btn button {
+	border-radius: 1;
+	font-size: 16px;
+}
+
+section#join-wrap div.info_user {
+	display: flex;
+	justify-content: space-between;
+}
+
+section#join-wrap ul.list_user {
+	display: flex;
+	list-style: none;
+}
+
+section#join-wrap div.info_user a {
+	color: black;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+section#join-wrap div.login_banner {
+	margin: auto 0;
+}
+
+section#join-wrap .btn_g {
+	display: block;
+	width: 70%;
+	height: 50px;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	font-size: 15px;
+	background-color: #f6f6f6;
+	color: #fff  !important;
+	font-weight: 600;
+	font-family: 'GmarketSansLight';
+}
+
+/* .btn_g:hover {
+	background-color: #e7e7e7;
+} */
+
+section#join-wrap input#memberId, input#id_password_3, input#pwCheck, input#nickname, input#tel, input#memberPhone, input#memberProfile, input#memberName{
+	border: none;
+	border-bottom: 1px solid #e5e5e5;
+	border-radius: 0;
+	background: none;
+	color: #888888;
+	width: 100%;
+	padding: 0;
+}
+
+section#join-wrap .ico_qr img {
+	width: 20px;
+	height: 20px;
+	margin: 8px 5px -4px -1px;
+}
+
+section#join-wrap .btn_confirm{
+	background-color: #1187CF;
+	width: 100%;
+	border-radius: none;
+	/* border: 1px solid #8AAAE5; */
+	color: #fff;
+}
+
+/* .btn_confirm:hover {
+	background-color: #8AAAE5;
+} */
+
+section#join-wrap .item_inp.item_check {
+	margin: 20px 0 40px 0;
+}
+
+section#join-wrap div.item_tf {
+	margin-top: 5px;
+	margin-bottom: 30px;
+}
+
+section#join-wrap #loginEmailField p {
+	font-size: 12px;
+	margin: 0;
+	line-height: 16px;
+	margin-top: 6px;
+}
+
+section#join-wrap input[type="checkbox"]+label:before {
+	border-radius: 2px;
+}
+
+section#join-wrap input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+	background-color: white;
+	height: 20px;
+	width: 20px;
+	top: 3px;
+	left: 3px;
+}
+
+/* input[type="checkbox"]:checked+label:before, input[type="radio"]:checked+label:before
+	{
+	background: #fee500;
+	border-color: #fee500;
+	color: #ffffff;
+	content: '\f00c';
+} */
+
+
+section#join-wrap input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
+    background-color: #1187CF !important;
+    border-color: #1187CF !important;
+    color: #ffffff;
+}
+
+section#join-wrap input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
+	{
+	border-color: #e5e5e5;
+	box-shadow: 0 0 0 1px #ffffff;
+}
+
+section#join-wrap input[type="checkbox"]+label, input[type="radio"]+label {
+	font-size: 13px;
+}
+
+section#join-wrap input:focus {
+	outline:none;
+}
+
+
+section#join-wrap #login-form input[placeholder]{
+	font-size: 15px;
+}
+
+
+
+section#join-wrap div.nickname_wrap {
+	margin-top: 16px;
+}
+
+section#join-wrap div.profile {
+	margin-top: 6px !important;
+}
+
+
+
+/* div#trans {
+	transform: scale(0.85);
+} */
+
+section#join-wrap div#term-wrap{
+	font-size: 12px;
+}
+
+section#join-wrap div a.showTerm {
+	color: #555555;
+	
+}
+
+section#join-wrap textarea.term-content{
+	resize: none;
+	font-size: 12px;
+}
+
+section#join-wrap input#id_password_3,  input#pwCheck{
+	margin-top: 20px;
+}
+
+section#join-wrap input.checkPw{
+	margin-top: 36px !important;
+    margin-bottom: 8px !important;
+}
+
+p#pwResult{
+	font-size: 12px;
+    margin: 0;
+    line-height: 16px;
+    margin-top: 6px;
+}
+
+section#join-wrap #houseIcon span{
+	background-image: url(../../images/houseIcon.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 94px;
+    height: 76px;
+    z-index: 50;
+    background-size: contain;
+	top: -61px;
+    right: 55px;
+}
+
+section#join-wrap #infoMsg {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+section#join-wrap #infoMsg span{
+	font-size: 18px;
+}
+
+section#join-wrap #term-wrap label {
+	margin: 0 !important;
+}
+
+section#join-wrap #memberType {
+	text-align: right;
+}
+
+section#join-wrap #memberType label{
+	font-size: 12px;
+}
+
+
+section#join-wrap input[type="text"], input[type="password"], input[type="email"], select {
+    height: 20px !important;
+}
+
+section#join-wrap textarea#memberProfile {
+	resize: none;
+	font-size: 15px;
+	background: none;
+}
+
+section#join-wrap div#genderChoice {	
+    margin-top: 20px;
+    display: flex;
+    margin-left: -26px;
+    justify-content: space-evenly;
+}
+
+section#join-wrap li.choice a{
+	display: block;
+}
+
+@media (max-width: 414px){
+	section#join-wrap #box{
+	width: 414px;
+	}
+}

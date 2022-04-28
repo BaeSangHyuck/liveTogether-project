@@ -1,0 +1,494 @@
+/* .my_span01{
+   font-size:2em;
+}
+.inner_ab{
+   position: absolute;
+   bottom: -11.5px;
+   left: 1783px;
+   color: #444;
+}  */
+.inner_ab {
+	display: none;
+}
+
+#no {
+	margin-top: 10em;
+}
+
+#none {
+	height: 500px;
+}
+
+#nonebox {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border: 1px solid #edeff0;
+	border-radius: 1em;
+	box-shadow: 0px 0px 10px #0000001a;
+	border-width: 0;
+	width: 40%;
+	margin: 40px auto;
+	position: relative;
+	height: 200px;
+}
+
+#nonebox h4 {
+	margin: 0 0 0 0;
+}
+
+#nonebox h6 {
+	margin: 0 0 0 0;
+	color: #afabab;
+}
+
+#nonehtag {
+	margin: 0 auto;
+	margin-top: 4em;
+}
+
+.my {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.mypage {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.mypage .wrapper {
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+}
+
+div.mypagetool {
+	width: 100%;
+	height: 50px;
+	margin-top: 1rem;
+	margin-bottom: 3em;
+}
+
+ul.mypagebar {
+	margin-left: 25%;
+	width: 50%;
+	height: 50px;
+	display: flex;
+	float: left;
+	justify-content: space-evenly;
+	font-weight: 500;
+	font-size: 20px;
+	text-align: left;
+}
+
+.mypagebar .num3 {
+	box-shadow: inset 0 -3px 0 #1187cf;
+	background-color: #FFF;
+	color: #1187CF;
+	font-weight: 600;
+}
+
+.myhousename {
+	margin-right: 1rem;
+	color: #1187CF;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.myhousecode {
+	margin-right: 1rem;
+	font-weight: 700;
+}
+
+.mybtn {
+	float: right;
+	margin-top: 0.8rem;
+	display: inline-block;
+	height: 2rem;
+	line-height: 1.5rem;
+	background-color: #1187CF;
+	color: #FFF;
+	cursor: pointer;
+	box-sizing: border-box;
+	padding: 0.3rem 0.8rem;
+	border-radius: 0.2rem;
+	font-size: 0.9rem;
+	text-decoration-line: none;
+}
+
+.info-title {
+	padding: 1rem 1rem;
+	font-size: 0.9rem;
+	font-weight: 900;
+}
+
+#mypageheader .inner {
+	margin-top: 3em;
+	background-image: url(../../images/mybanner4.png);
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-left: -10em;
+	text-align: center;
+	height: 350px;
+	background-color: #ffffff;
+	position: relative;
+}
+
+.mypage .mypagenotice {
+	font-size: small;
+	margin-bottom: 1rem;
+	/*     padding: 3rem 4rem; */
+	color: #999;
+}
+
+a {
+	text-decoration: none !important;
+	color: black;
+}
+
+.mypage .mypagecontents .myconheader {
+	width: 100%;
+}
+
+.book-list {
+	width: 100%;
+	float: left;
+	display: flex;
+	justify-content: space-between;
+}
+
+.book-list .process.active .process-title {
+	background-color: #1187CF;
+	/*     box-shadow: none; */
+	color: #FFF;
+}
+
+.active1 {
+	color: #1187CF !important;
+}
+
+.book-list .process.active .gt {
+	background-color: #fff;
+	box-shadow: none;
+	color: #1187CF;
+}
+
+.book-list .process .process-title {
+	float: left;
+	width: 11.75rem;
+	height: 4rem;
+	line-height: 4rem;
+	background-color: #FFF;
+	box-shadow: inset 0 0 0 1px #e9e9e9;
+	color: #808080;
+	text-align: center;
+}
+
+.gt {
+	float: left;
+	height: 4rem;
+	line-height: 4rem;
+	width: 6rem;
+	color: #CCC;
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.mypagebook1 {
+	width: 100%;
+	margin-top: 5em;
+}
+
+.mypagebook1 .before {
+	width: 10%;
+	padding: 0 2rem;
+	background-color: #1187CF;
+	color: #FFF;
+	text-align: center;
+	float: left;
+}
+
+.mypagebook1 .notice-content {
+	margin-left: 10em;
+	font-size: smaller;
+	line-height: 2.5;
+}
+
+.myhouse {
+	height: 9rem;
+}
+
+.myconheader2 {
+	margin-top: 1em;
+}
+
+.house-info-wrapper {
+	width: 100%;
+	display: flex;
+}
+
+div.column {
+	float: left;
+	width: 50%;
+}
+
+div.column-title {
+	float: left;
+	width: 30%;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #E9E9E9;
+	background-color: #F5F3F1;
+	padding: 0 1rem;
+	height: 3rem;
+	line-height: 3rem;
+}
+
+div.column-value {
+	float: left;
+	width: 70%;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #E9E9E9;
+	padding: 0 1rem;
+	height: 3rem;
+	line-height: 3rem;
+}
+
+.column-wrap {
+	border-width: 1px 0 0 1px;
+	border-style: solid;
+	border-color: #E9E9E9;
+	width: 85%;
+	/* height: 150px; */
+}
+
+.myconheader3 {
+	margin-top: 2em;
+	width: 100%;
+}
+
+.myconheader4 {
+	width: 100%;
+	margin-bottom: 8em;
+}
+
+#review-form {
+	width: 100%;
+	display: flex;
+	float: left;
+	height: 55px;
+	line-height: 55px;
+}
+/* #star{
+   width: 20%;
+    text-align: center;
+    line-height: 3;
+    font-size: larger;
+} */
+#review {
+	width: 50%;
+}
+
+input#reviewText {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #edeff0;
+	border-radius: 2px;
+	box-shadow: 0px 0px 5px #0000001a;
+}
+
+#reviewbtn {
+	margin-left: 2em;
+	height: 54px;
+	width: 10%;
+	background-color: #fff;
+	border: 1px solid #edeff0;
+	border-radius: 2px;
+	color: #555;
+	font-family: inherit;
+	box-shadow: 0px 0px 5px #0000001a;
+}
+
+.btns-wrap {
+	width: 30%;
+	display: flex;
+}
+
+.btns {
+	transition: background-color .5s;
+	border-bottom: 1px solid #dddd !important;
+	margin-left: 1.5rem;
+	height: 100%;
+	cursor: pointer;
+	text-align: center;
+	display: inline-block;
+	width: 20%;
+}
+
+.btns:hover {
+	border-bottom: 1px solid #1187cf !important;
+	color: #1187cf;
+}
+
+@media ( max-width : 414px) {
+	.mypagetool {
+		height: 1px;
+	}
+	.mypagetool .mypagebar {
+		margin-left: 0%;
+		width: 100%;
+		font-size: 14px;
+		height: 31px;
+		margin-top: 20px;
+		box-shadow: none;
+	}
+	.gt {
+		display: none;
+	}
+	.mypagebook1 .notice-content {
+		margin-left: 4em;
+		font-size: smaller;
+		/* line-height: 1; */
+		width: 65%;
+	}
+	ul {
+		padding-left: 0em;
+	}
+	.mypagebar .num3 {
+		box-shadow: none;
+		background-color: #FFF;
+		color: #1187CF;
+		border-bottom: 2px solid #1187CF;
+		font-weight: 600;
+	}
+	#nonebox {
+		width: 100%;
+	}
+	#nonehtag {
+		margin-top: 5em;
+	}
+	#none {
+		height: 300px;
+	}
+	#no {
+		margin-top: 3em;
+	}
+	#main .inner {
+		background-image: none;
+		height: 76px;
+	}
+	div.mypagetool {
+		margin-top: 1em;
+	}
+	.mypage .mypagenotice {
+		width: 100%;
+		font-size: 10px;
+		padding: 0;
+	}
+	.book-list {
+		width: 100%;
+		float: left;
+		display: block;
+		margin-left: 3em;
+	}
+	#review-form {
+		width: 100%;
+		display: block;
+	}
+	.star-rating {
+		display: block !important;
+		/* flex-direction: row-reverse; */
+		font-size: 1rem !important;
+		/* justify-content: space-around; */
+		padding: 0 0.2em;
+		text-align: left !important;
+		margin-right: 0 !important;
+	}
+	.star-rating label {
+		display: block;
+		font-size: 1rem;
+		font-weight: 700;
+		margin: 0;
+	}
+	#review-1 {
+		height: 64px;
+		line-height: none;
+	}
+	#review {
+		width: 100%;
+	}
+	div.column {
+		float: left;
+		width: 100%;
+	}
+	.house-info-wrapper {
+		width: 100%;
+		display: flex;
+	}
+	.column-wrap {
+		width: 100%;
+	}
+	div.column-title {
+		float: left;
+		width: 100%;
+		border-width: 0 1px 1px 0;
+		border-style: solid;
+		border-color: #E9E9E9;
+		background-color: #F5F3F1;
+		padding: 0 1rem;
+		height: 3rem;
+		line-height: 3rem;
+	}
+	div.column-value {
+		float: left;
+		width: 100%;
+		border-width: 0 1px 1px 0;
+		border-style: solid;
+		border-color: #E9E9E9;
+		padding: 0 1rem;
+		height: 3rem;
+		line-height: 3rem;
+	}
+	.notice-content #2 {
+		margin-top: 0 !important;
+	}
+	.mypagebook1 .before {
+		width: 65%;
+		margin-top: 1em;
+		margin-left: 3em;
+	}
+	.mypagebook1 .notice-content {
+		margin-left: 0;
+		font-size: smaller;
+		margin: 0 auto;
+		/* line-height: 2.5; */
+	}
+	table {
+		margin: 0;
+		width: 100%;
+		font-size: 10px;
+	}
+	table td {
+		padding: 0.1em 0.1em;
+		font-size: smaller;
+	}
+	.myconheader4 {
+		height: 150px;
+	}
+	.myconheader3 {
+		margin-bottom: 2em;
+	}
+	.inner_ab {
+		display: block;
+		position: absolute;
+		bottom: -8px;
+		left: 162px;
+	}
+	.my_span01 {
+		font-size: 20px;
+	}
+}

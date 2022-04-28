@@ -1,0 +1,226 @@
+@font-face {
+	font-family: 'GmarketSansBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansLight';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body, input, select, textarea, button, pre {
+	font-family: 'GmarketSansLight', Helvetica, Arial, sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+article.noticeDetail-first-wrap div.second-wrap {
+	width: 70%;
+	margin: 0 auto;
+}
+
+article.noticeDetail-first-wrap div.third-wrap {
+	text-align: left;
+	margin-top: 190px;
+	margin-bottom: 141px;
+}
+
+article.noticeDetail-first-wrap p#first-p {
+	font-weight: 600;
+	text-align: left;
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+article.noticeDetail-first-wrap p#second-p {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 10px;
+	margin-top: 0px;
+	border-bottom: 1px solid #dddd;
+}
+
+.replyContent pre{
+	height: 100px;
+}
+
+.replyContentButton{
+	top: 60px;
+}
+
+pre#inquiryContent {
+	font-size: 1.1rem;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+article.noticeDetail-first-wrap div#content-wrapper {
+	min-height: 122px;
+}
+
+article.noticeDetail-first-wrap input.btns {
+	height: 2.5rem;
+	background: white;
+	color: black;
+	padding: 0px 2.5rem;
+	border: 1px solid black;
+	font-size: 17px;
+	letter-spacing: -0.5px;
+	margin: 0 auto;
+	line-height: 0px;
+	cursor: pointer;
+}
+
+article.noticeDetail-first-wrap input#buttonBack {
+	background: #1187cf;;
+	color: white;
+	border: none;
+}
+
+article.noticeDetail-first-wrap div#button-wrapper {
+	text-align: right;
+}
+
+article.noticeDetail-first-wrap div.gradation-div-wrap {
+	position: relative;
+}
+
+article.noticeDetail-first-wrap div.gradation-div {
+	background: linear-gradient(90deg, #1187cfa1 0%, #bceaff4d 100%);
+	width: 260px;
+	position: absolute;
+	top: 27px;
+	left: -1px;
+	height: 10px;
+}
+
+textarea#reply {
+	border-radius: 0;
+	resize: none;
+	padding: 0.75em 1em;
+	width: 1220px;
+	font-size: 16px;
+}
+
+form.replyForm {
+	position: relative;
+}
+
+div#reply-wrap {
+	position: relative;
+}
+
+div#reply-wrap {
+	margin-bottom: 30px;
+	border-top: 1px solid #dddd;
+}
+
+button.replyContentButton {
+	right: 38px;
+	top: 15px;
+}
+
+button.replyContentButton, button#replyRegister {
+	background-color: #1187cf;
+	border: 1px solid black;
+	color: white;
+	display: inline-block;
+	width: 10%;
+	margin-left: 10px;
+	font-size: 1rem;
+	border-radius: 5px;
+	height: 40px;
+	position: absolute;
+}
+
+@media ( max-width : 414px) {
+	article.noticeDetail-first-wrap div.gradation-div-wrap {
+		left: 44px;
+	}
+	article.noticeDetail-first-wrap pre {
+		white-space: pre-wrap;
+		font-size: 15px !important;
+	}
+	article.noticeDetail-first-wrap #span-wrapper {
+		padding: 0px 0px;
+		padding-top: 30px;
+	}
+	article.noticeDetail-first-wrap p#second-p {
+		font-size: 25px;
+	}
+	article.noticeDetail-first-wrap p#first-p {
+		font-size: 25px;
+	}
+	article.noticeDetail-first-wrap div.gradation-div {
+		width: 202px;
+		left: 0px;
+		top: 20px;
+	}
+	article.noticeDetail-first-wrap div#button-wrapper {
+		padding-bottom: 30px;
+	}
+	input[name="login"] {
+		border-radius: 4px;
+		border-style: solid;
+		border-width: 1px;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 700;
+		height: 3.25em;
+		letter-spacing: 0.07em;
+		line-height: 3.35em;
+		overflow: hidden;
+		text-align: center;
+		text-decoration: none;
+		text-overflow: ellipsis;
+		text-transform: uppercase;
+		white-space: nowrap;
+		background: #1187CF !important;
+		color: white;
+		border-color: rgba(144, 144, 144, 0.3);
+		font-size: 10pt;
+		width: 45%;
+	}
+	input[name="join"] {
+		border-radius: 4px;
+		border-style: solid;
+		border-width: 1px;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 700;
+		height: 3.25em;
+		letter-spacing: 0.07em;
+		line-height: 3.35em;
+		overflow: hidden;
+		text-align: center;
+		text-decoration: none;
+		text-overflow: ellipsis;
+		text-transform: uppercase;
+		white-space: nowrap;
+		background: #ffffff !important;
+		color: #1187CF;
+		font-size: 10pt;
+		width: 45%;
+	}
+}

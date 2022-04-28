@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.liveTogether.app.member.vo.MemberVO" alias="memberVO"/>
+		<typeAlias type="com.liveTogether.app.member.vo.RoomGuestDTO" alias="roomGuestDTO"/>
+		<typeAlias type="com.liveTogether.app.board.vo.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.liveTogether.app.house.vo.HouseVO" alias="houseVO"/>
+		<typeAlias type="com.liveTogether.app.house.vo.HouseDTO" alias="houseDTO"/>
+		<typeAlias type="com.liveTogether.app.house.vo.HouseFileVO" alias="houseFileVO"/>
+		<typeAlias type="com.liveTogether.app.house.vo.HouseRoomVO" alias="houseRoomVO"/>
+		<typeAlias type="com.liveTogether.app.board.vo.FilesVO" alias="filesVO"/>
+		<typeAlias type="com.liveTogether.app.board.vo.BoardDTO" alias="boardDTO"/>
+		<typeAlias type="com.liveTogether.app.house.vo.HouseFilterDTO" alias="filterDTO"/>
+		<typeAlias type="com.liveTogether.app.member.vo.MyRoomGuestDTO" alias="myRoomGuestDTO"/>
+		<typeAlias type="com.liveTogether.app.member.vo.RoomGuestVO" alias="roomGuestVO"/>
+		<typeAlias type="com.liveTogether.app.house.vo.HouseMemberDTO" alias="houseMemberDTO"/>
+		<typeAlias type="com.liveTogether.app.board.vo.InquiryVO" alias="inquiryVO"/>
+		
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/house"/>
+				<property name="username" value="root"/>
+				<property name="password" value="1234"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/liveTogether/mybatis/mapper/member.xml"/>
+		<mapper resource="com/liveTogether/mybatis/mapper/board.xml"/>
+		<mapper resource="com/liveTogether/mybatis/mapper/house.xml"/>
+		<mapper resource="com/liveTogether/mybatis/mapper/files.xml"/>
+		<mapper resource="com/liveTogether/mybatis/mapper/houseFiles.xml"/>
+	</mappers>
+	
+</configuration>
