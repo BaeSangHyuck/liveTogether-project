@@ -1,1 +1,0 @@
-# liveTogether-project
